@@ -1,0 +1,469 @@
+<?php defined('BASEPATH') or exit('No direct script access allowed');
+
+require_once FCPATH."assets/vendor/office/autoload.php";
+
+use GuzzleHttp\Psr7;
+use \GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\ServerException;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\Worksheet\MemoryDrawing;
+
+/**********************************************************************************
+ * 
+ * Deskripsi
+ * Menampilkan halaman client/laporan_icd9
+ * 
+ **********************************************************************************/
+class C_laporan_icd9 extends CI_Controller
+{
+  public function __construct()
+  {
+    parent::__construct();
+
+    $this->load->library('pdf');
+    // add session statis
+    $data = [
+      'id_user' => "123",
+      'rs_key'  => "900614f7-7acd-11e8-a953-fa163e101f72",
+      'user_login' => [
+        'id_user' => "373680"
+      ],
+      'no_rm'      => "008000649",
+      'timezone' => "Asia/Jakarta"
+    ];
+    $this->session->set_userdata($data);
+
+    // token diambil dari postman, kalau sudah expired sikahkan ambil lagi.
+    $token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiTkFNQSAyIiwiaWRfdXNlciI6IjM3MzY4MSIsInJtX251bWJlciI6ImFkbWluIiwicnNfa2V5IjoiQTEyMyIsImlwX2FkZHJlc3MiOiIxMjcuMC4xLjEiLCJhY2Nlc3MiOiJ1c2VyIn0.ubW6fyc7ErYOW2T5qFbjXvLIVTLp05s3A0paQ6wfcmo";
+    $this->id_ref_global_tipe_42 = 503;
+
+    $this->title = "Laporan ICD9";
+    
+    // guzzle client
+    
+    $this->_client_ref = new Client([
+      'base_uri'  => $this->config->item('api_ref'),
+      'headers'   => [
+        'Content-Type' => 'application/json',
+        'x-token' => $token
+      ]
+    ]);
+
+    $this->_client_rs = new Client([
+      'base_uri'  => $this->config->item('api_rs'),
+      'headers'   => [
+        'Content-Type' => 'application/json',
+        'x-token' => $token
+      ]
+    ]);
+
+
+    $this->_client_laporan = new Client([
+      'base_uri'  => $this->config->item('laporan'),
+      'headers'   => [
+        'Content-Type' => 'application/json',
+        'x-token' => $token
+      ]
+    ]);
+
+    // NAMA FOLDER DALAM CONTROLLER. 
+    // HANYA EDIT DI SINI.. YANG LAIN TIDAK PERLU DIRUBAH... TOLONG GANTI DENGAN NAMA FOLDER YANG BARU
+    $this->c_folder = "C_laporan_icd9"; // <<< HANYA INI YANG PERLU DIRUBAH DI CONSTRUCT()!!!! SISANYA DIAMKAN
+
+    //menghilangkan 'C_' pada nama class untuk dinamisasi routing;
+    $this->class = str_replace("c_", "", $this->router->fetch_class());
+
+
+
+    //dummy id departemen
+    $this->id_dept = 3;
+
+    // untuk menyimpan data ke /tmp untuk ditampilkan di cetak
+    $this->folder = $this->config->item('tmp_folder');
+  }
+
+  // redirect ke fungsi list
+  public function index()
+  // $route['laporan_pasien_registrasi'] = 'laporan_pasien_registrasi/c_laporan_pasien_registrasi';
+  {
+    // echo base_url(); die;
+    redirect(base_url() . $this->class . '/list');
+  }
+
+
+  // Menampilkan tampilan aktif dan arsip
+  public function list()
+  {
+    $data = array(
+      'title'   => 'Laporan ICD9',
+      'class_name' => $this->class,
+      
+    );
+
+    $data['contents'] = 'contents/laporan/' . $this->class . '/index';
+    $this->load->view('master', $data);
+
+  }
+
+  //mengambil data registrasi untuk di tampilkan
+  function get_data()
+  {
+
+    $no_rm = $this->session->userdata('no_rm');
+
+     $data['class_name'] =  $this->class;
+     
+      //aktif
+    $response_pasien_reg = $this->_client_laporan->request('GET', 'statistik/icd9', [
+      'query' => [
+        'type_tgl' => 'checkin',
+        'tgl_start'  => '2019-01-02',
+        'tgl_end' => '2020-03-01'
+      ]
+    ]);
+
+    $data['laporan_icd9'] = json_decode($response_pasien_reg->getBody()->getContents(), true)['data'];
+
+    $this->load->view('contents/laporan/' . $this->class . '/list',$data);
+  }
+
+  // Export ke pdf
+function print_pdf(){
+    // Export ke pdf
+ $rs_key = $this->session->userdata('rs_key');
+
+ $response_prop_clinic     = $this->_client_rs->request('GET', 'clinic_profile', [
+  'query' => ['rs_key' => $rs_key]
+]);
+ $prop_clinic = json_decode($response_prop_clinic->getBody()->getContents(), true);
+ $clinic_profile = $prop_clinic['data'];
+
+      // form header
+ $id_form = $this->id_ref_global_tipe_42;
+
+ $form = $this->_client_ref->request('GET', 'form', [
+  'query' => ['id' => $id_form]
+]);
+
+ $form = json_decode($form->getbody()->getcontents(), true);
+ $form = $form['data'];
+
+ $no_rm = $this->session->userdata('no_rm');
+ $tgl_start = '2019-01-02';
+ $tgl_end = '2020-03-01';
+      //aktif
+ $response_pasien_reg = $this->_client_laporan->request('GET', 'statistik/icd9', [
+  'query' => [
+    'type_tgl' => 'checkin',
+    'tgl_start'  => '2019-01-02',
+    'tgl_end' => '2020-03-01'
+  ]
+]);
+
+ $response['laporan_icd9'] = json_decode($response_pasien_reg->getBody()->getContents(), true)['data'];
+ $laporan_icd9 = $response['laporan_icd9'];
+
+      $title  = $form['nama_form']; // title pdf
+      $kode   = $form['kode_form']; // kode form
+      $name   = $form['pdf_file_name']  . date('d-M-Y',  strtotime($tgl_start)) .'_'.date('d-M-Y',  strtotime($tgl_end)) . '.pdf'; // nama form
+      
+
+
+
+      $pdf = new FPDF('P','mm','A4');
+      $pdf->SetTitle($title);
+
+      $textColour = array( 0, 0, 0 );
+      $headerColour = array( 100, 100, 100 );
+      $tableHeaderTopTextColour = array( 255, 255, 255 );
+      $tableHeaderTopFillColour = array( 125, 152, 179 );
+      $tableHeaderTopProductTextColour = array( 0, 0, 0 );
+      $tableHeaderTopProductFillColour = array( 143, 173, 204 );
+      $tableHeaderLeftTextColour = array( 99, 42, 57 );
+      $tableHeaderLeftFillColour = array( 184, 207, 229 );
+      $tableBorderColour = array( 50, 50, 50 );
+      $tableRowFillColour = array( 213, 170, 170 );
+
+      $pdf->SetTextColor( $textColour[0], $textColour[1], $textColour[2] );
+      // membuat halaman baru
+      $pdf->AddPage();
+
+
+      ////////////////////////////////////////
+      // START Header PDF
+      ///////////////////////////////////////
+      $pdf->SetFont( 'Arial', 'B', 24 );
+      $pdf->Cell(27,30,'', 1,0, 'C');
+      $pdf->Image($clinic_profile['logo1'], 11,11,25,0,'JPG');
+      $x = $pdf->GetX();
+
+      $pdf->SetTextColor( $headerColour[0], $headerColour[1], $headerColour[2] );
+      $pdf->SetFont( 'Arial', '', 17 );
+      $pdf->Cell(130,15,$title, 1,0,'C');
+
+      $pdf->SetFont( 'Arial', 'B', 20 );
+      $pdf->Cell(30,30, $kode, 1,1, 'C');
+      $pdf->SetY(25);
+      $pdf->SetX($x);
+
+      $pdf->SetTextColor( $textColour[0], $textColour[1], $textColour[2] );
+      $pdf->SetFont( 'Arial', '', 14 );
+      $pdf->Cell(130,15, '  '.$clinic_profile['clinic_name'], 1,1);
+      // $pdf->Cell(130,12, '  Klinik Bahagia', 1,1);
+      
+      $pdf->SetTextColor( $headerColour[0], $headerColour[1], $headerColour[2] );
+      $pdf->SetFont( 'Arial', '', 10 );
+      $pdf->Cell(180,15,chr(149) . ' Rekapitulasi '. date('d-M-Y',  strtotime($tgl_start)) .' - '.date('d-M-Y',  strtotime($tgl_end)), 0,1,'L');
+
+      ////////////////////////////////////////
+      // START Body PDF
+      ///////////////////////////////////////
+
+      // Start Tabel Bagian ICD9
+      $pdf->SetTextColor( $headerColour[0], $headerColour[1], $headerColour[2] );
+      $pdf->SetFont( 'Arial', '', 14 );
+      $pdf->Cell(100,12, 'Laporan ICD9', 'B',1);
+
+      $pdf->SetDrawColor( $tableBorderColour[0], $tableBorderColour[1], $tableBorderColour[2] );
+      $pdf->ln(5);
+
+      $pdf->SetFont( 'Arial', 'B', 9 );
+      $pdf->SetTextColor( $tableHeaderTopTextColour[0], $tableHeaderTopTextColour[1], $tableHeaderTopTextColour[2] );
+      $pdf->SetFillColor( 118, 120, 122 );
+      $pdf->Cell( 10, 10, " #", 1, 0, 'C', true );
+      $pdf->Cell( 25, 10, 'Core Prosedur', 1, 0, 'C', true );
+      $pdf->Cell( 85, 10, 'Deskripsi', 1, 0, 'C', true );
+      $pdf->Cell( 20, 10, 'Total Pria', 1, 0, 'C', true );
+      $pdf->Cell( 25, 10, 'Total Wanita', 1, 0, 'C', true );
+      $pdf->Cell( 20, 10, 'Total Pasien', 1, 1, 'C', true );
+
+      $pdf->SetTextColor( $headerColour[0], $headerColour[1], $headerColour[2] );
+      $pdf->SetFillColor( 255, 255, 255 );
+      $data = $laporan_icd9;
+      $keys = array_keys((array)$data);
+      $no = 1;
+
+      for ($i=0; $i < count($keys); $i++) { 
+
+        $pdf->Cell( 10, 10, $no++ , 'B', 0, 'C', true );
+        $pdf->Cell( 25, 10, $keys[$i], 'B', 0, 'C', true );
+        $pdf->Cell( 85, 10, $data[$keys[$i]]['deskripsi'], 'B', 0, 'L', true );
+        $pdf->Cell( 20, 10, $data[$keys[$i]]['total']['pria'], 'B', 0, 'C', true );
+        $pdf->Cell( 25, 10, $data[$keys[$i]]['total']['wanita'], 'B', 0, 'C', true );
+        $pdf->Cell( 20, 10, $data[$keys[$i]]['total']['pria'] + $data[$keys[$i]]['total']['wanita'], 'B', 1, 'C', true );
+      }
+
+      $pdf->ln(10);
+      // End Tabel Bagian Data ICD9
+
+      $pdf->Output('',$name);
+    }
+
+  // Export ke excel
+     function export()
+  { 
+
+      $rs_key = $this->session->userdata('rs_key');
+
+      $response_prop_clinic     = $this->_client_rs->request('GET', 'clinic_profile', [
+        'query' => ['rs_key' => $rs_key]
+      ]);
+      $prop_clinic = json_decode($response_prop_clinic->getBody()->getContents(), true);
+      $clinic_profile = $prop_clinic['data'];
+
+      // form header
+      $id_form = $this->id_ref_global_tipe_42;
+
+      $form = $this->_client_ref->request('GET', 'form', [
+        'query' => ['id' => $id_form]
+      ]);
+
+      $form = json_decode($form->getbody()->getcontents(), true);
+      $form = $form['data'];
+
+      $no_rm = $this->session->userdata('no_rm');
+
+      $tgl_start = '2019-01-02';
+      $tgl_end = '2020-03-01';
+
+      $response_pasien_reg = $this->_client_laporan->request('GET', 'statistik/icd9', [
+        'query' => [
+          'type_tgl' => 'checkin',
+          'tgl_start'  => $tgl_start,
+          'tgl_end' => $tgl_end
+        ]
+      ]);
+     //aktif
+     $response_pasien_reg = $this->_client_laporan->request('GET', 'statistik/icd9', [
+        'query' => [
+          'type_tgl' => 'checkin',
+          'tgl_start'  => '2019-01-02',
+          'tgl_end' => '2020-03-01'
+        ]
+      ]);
+
+
+      $response['laporan_icd9'] = json_decode($response_pasien_reg->getBody()->getContents(), true)['data'];
+      $laporan_icd9 = $response['laporan_icd9'];
+
+      $title  = $form['nama_form'] . '_' . date('d-M-Y',  strtotime($tgl_start)) .'_'.date('d-M-Y',  strtotime($tgl_end)); // title excel
+      $kode   = $form['kode_form']; // kode form
+
+     
+
+      // Start Excel Code
+      // Create new Spreadsheet
+      /////////////////////////////////////////////
+      $spreadsheet = new Spreadsheet();
+      $sheet = $spreadsheet->getActiveSheet();
+      $horizontal_center = \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER;
+      $vertical_center = \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER;
+       $IMG = $clinic_profile['logo1'];
+
+      if (isset($IMG) && !empty($IMG)) {
+          $imageType = "png";
+
+          if (strpos($IMG, ".png") === false) {
+             $imageType = "jpg";
+          }
+
+          $drawing = new MemoryDrawing();
+          // $sheet->getRowDimension($row_num)->setRowHeight(80);
+          // $sheet->mergeCells('A'.$row_num.':H'.$row_num);
+          $gdImage = ($imageType == 'png') ? imagecreatefrompng($IMG) : imagecreatefromjpeg($IMG);
+          $drawing->setName('Company Logo');
+          $drawing->setDescription('Company Logo image');
+          $drawing->setResizeProportional(true);
+          $drawing->setImageResource($gdImage);
+          $drawing->setRenderingFunction(\PhpOffice\PhpSpreadsheet\Worksheet\MemoryDrawing::RENDERING_JPEG);
+          $drawing->setMimeType(\PhpOffice\PhpSpreadsheet\Worksheet\MemoryDrawing::MIMETYPE_DEFAULT);
+          $drawing->setWidth(100);
+          // $drawing->setOffsetX(5);
+          $drawing->setCoordinates('B1');
+          $drawing->setWorksheet($spreadsheet->getActiveSheet());
+      }
+
+      $titleStyle = array(        
+        'fill' => [
+            'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
+            'rotation' => 90,
+            'startColor' => [
+            'argb' => 'c5d9f1',
+            ],
+        ],
+      );
+      $subTitleStyle = array(
+        'fill' => [
+            'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
+            'rotation' => 90,
+            'startColor' => [
+                'argb' => 'f2f2f2',
+            ],
+        ],
+      );
+      $rowHeaderStyle = array(
+        'borders' => [
+            'allBorders' => [
+                'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                'color' => ['argb' => 'eeece1'],
+            ],
+        ],
+        'fill' => [
+            'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
+            'rotation' => 90,
+            'startColor' => [
+                'argb' => 'd9d9d9',
+            ],
+        ],
+      );
+      $rowStyle = array(
+        'borders' => [
+            'bottom' => [
+                'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                'color' => ['argb' => 'dbdbdb'],
+            ],
+        ],
+      );
+
+      $sheet->mergeCells('B1:F4');
+      $sheet->getStyle('B1:F4')->applyFromArray($titleStyle);
+      $sheet->getStyle('B1')->getAlignment()->setHorizontal($horizontal_center);
+      $sheet->getStyle('B1')->getAlignment()->setVertical($vertical_center);
+      $sheet->setCellValue('B1', $title);
+
+      $sheet->mergeCells('B5:F5');
+      $sheet->getStyle('B5:F5')->applyFromArray($subTitleStyle);
+      $sheet->getStyle('B5')->getAlignment()->setHorizontal($horizontal_center);
+      $sheet->getStyle('B5')->getAlignment()->setVertical($vertical_center);
+      $sheet->setCellValue('B5', $clinic_profile['clinic_name']);
+
+      $sheet->mergeCells('G1:G5');      
+      $sheet->getStyle('G1')->getAlignment()->setHorizontal($horizontal_center);
+      $sheet->getStyle('G1')->getAlignment()->setVertical($vertical_center);
+      $sheet->setCellValue('G1', $kode);
+
+
+      $sheet->mergeCells('B7:C7');
+      $sheet->getStyle('B7:D7')->getAlignment()->setVertical($vertical_center);
+      $sheet->setCellValue('B7', 'Rekapitulasi ');
+      $sheet->mergeCells('D7:E7');
+      $sheet->setCellValue('D7', ': ' . date('d-M-Y',  strtotime($tgl_start)) .' - '.date('d-M-Y',  strtotime($tgl_end)));
+
+      $cell = 9;
+      // Menampilkan data Umur
+      $sheet->getStyle('B'.$cell.':G'.$cell)->getAlignment()->setHorizontal($horizontal_center);
+      $sheet->getStyle('B'.$cell.':G'.$cell)->getAlignment()->setVertical($vertical_center);
+      $sheet->getStyle('B'.$cell.':G'.$cell)->applyFromArray($rowHeaderStyle);
+      $sheet->getStyle('B'.$cell.':G'.$cell)->getFont()->setSize(9);
+      $sheet->setCellValue('B'.$cell, '#');
+      $sheet->setCellValue('C'.$cell, 'Code Prosedure');
+      $sheet->setCellValue('D'.$cell, 'Deskripsi');
+      $sheet->setCellValue('E'.$cell, 'Total Pria');
+      $sheet->setCellValue('F'.$cell, 'Total Wanita');
+      $sheet->setCellValue('G'.$cell, 'Total Pasien');
+
+      
+      $data = $laporan_icd9;
+      $keys = array_keys((array)$data);
+      $tipe = '';
+      $no = 1;
+
+      for ($i=0; $i < count($keys); $i++) { 
+        
+        $sheet->getStyle('B8:C73')->getAlignment()->setHorizontal($horizontal_center);
+        $sheet->getStyle('B8:C73')->getAlignment()->setVertical($vertical_center);
+        $sheet->getStyle('E8:G73')->getAlignment()->setHorizontal($horizontal_center);
+        $sheet->getStyle('E8:G73')->getAlignment()->setVertical($vertical_center);
+        $sheet->getStyle('B'. ($i + 10).':'.'G'. ($i + 10))->applyFromArray($rowStyle);
+        $sheet->getStyle('B'. ($i + 10).':'.'G'. ($i + 10))->getFont()->setSize(8);
+        $sheet->setCellValue('B'. ($i + 10), $no++);
+        $sheet->setCellValue('C'. ($i + 10), $keys[$i]);
+        $sheet->setCellValue('D'. ($i + 10), $data[$keys[$i]]['deskripsi']);
+        $sheet->setCellValue('E'. ($i + 10), $data[$keys[$i]]['total']['pria']);
+        $sheet->setCellValue('F'. ($i + 10), $data[$keys[$i]]['total']['wanita']);
+        $sheet->setCellValue('G'. ($i + 10), '=SUM('.$data[$keys[$i]]['total']['pria'].'+'.$data[$keys[$i]]['total']['wanita'].')');
+      }
+
+
+
+      $sheet->getColumnDimension('B')->setWidth(5);
+      $sheet->getColumnDimension('C')->setWidth(15);
+      $sheet->getColumnDimension('D')->setWidth(55);
+      $sheet->getColumnDimension('E')->setWidth(10);
+      $sheet->getColumnDimension('F')->setWidth(12);
+      $sheet->getColumnDimension('G')->setWidth(11);
+      $sheet->getRowDimension('6')->setRowHeight(21);
+           
+      $writer = new Xlsx($spreadsheet);
+      
+      header('Content-Type: application/vnd.ms-excel');
+      header('Content-Disposition: attachment;filename="'. $title .'.xlsx"'); 
+      header('Cache-Control: max-age=0');
+
+      $writer->save('php://output');
+  }
+
+}
+
