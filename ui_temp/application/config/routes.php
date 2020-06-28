@@ -148,3 +148,10 @@ $route['59_notes_catatan_keperawatan/(:any)'] = 'notes/59_notes_catatan_keperawa
 $route['59_notes_catatan_keperawatan/(:any)/(:any)']               = 'notes/59_notes_catatan_keperawatan/c_59_notes_catatan_keperawatan/$1/$2';
 $route['59_notes_catatan_keperawatan/(:any)/(:num)/(:any)']        = 'notes/59_notes_catatan_keperawatan/c_59_notes_catatan_keperawatan/$1/$2/$3';
 $route['59_notes_catatan_keperawatan/(:any)/(:any)/(:any)/(:any)'] = 'notes/59_notes_catatan_keperawatan/c_59_notes_catatan_keperawatan/$1/$2/$3/$4';
+
+/// ROUTES START FOR 37_edukasi_pra_operasi
+$route['37_edukasi_pra_operasi'] = 'notes/37_edukasi_pra_operasi/c_37_edukasi_pra_operasi';
+$route['37_edukasi_pra_operasi/(:any)'] = 'notes/37_edukasi_pra_operasi/c_37_edukasi_pra_operasi/$1';
+$route['37_edukasi_pra_operasi/(:any)/(:any)']               = 'notes/37_edukasi_pra_operasi/c_37_edukasi_pra_operasi/$1/$2';
+$route['37_edukasi_pra_operasi/(:any)/(:num)/(:any)']        = 'notes/37_edukasi_pra_operasi/c_37_edukasi_pra_operasi/$1/$2/$3';
+$route['37_edukasi_pra_operasi/(:any)/(:any)/(:any)/(:any)'] = 'notes/37_edukasi_pra_operasi/c_37_edukasi_pra_operasi/$1/$2/$3/$4';
