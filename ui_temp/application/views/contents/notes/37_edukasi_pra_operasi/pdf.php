@@ -17,12 +17,12 @@
   }
 
   .centerp-left {
-    padding: 5px 0px 5px 5px;
+    padding: 2px 0px 2px 5px;
     text-align: left;
   }
 
   .centerp-row {
-    padding: 5px 0px 5px 5px;
+    padding: 2px 0px 2px 5px;
   }
 
 
@@ -289,55 +289,144 @@
         <div class="row-body">
           <table width="100%" cellspacing="0">
           <tr>
-            <td width="20%" class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">No. RM</td>
-            <td width="30%" class="font-size-8 border-right-0 centerp-row" colspan="2">: <?= $list['notes']['no_rm']; ?></td>
-            <td width="20%" class="r-bold font-size-8 border-bottom-0 border-left-0 border-right-0 centerp-left"> Nama Pasien</td>
-            <td width="30%" class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['nama_pasien']; ?></td>
+            <td width="20%" class="r-bold font-size-8 border-left-1 centerp-left">No. RM</td>
+            <td class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['no_rm']; ?></td>
           </tr>
           <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  </td>
-            <td class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['no_mr']; ?></td>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-0 border-right-0 centerp-left">  Pendidikan</td>
-            <td class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['pendidikan']; ?></td>
+            <td class="r-bold font-size-8 border-left-1 centerp-left">  Nama</td>
+            <td class="font-size-8 centerp-row">: <?= $list['notes']['nama_pasien']; ?></td>
+            <td class="r-bold font-size-8 border-right-1 centerp-left"> jenis kelamin: <?= $list['notes']['jenis_kelamin']; ?></td>
           </tr>
           <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  Tempat, Tgl.Lahir</td>
-            <td class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['ttl']; ?></td>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-0 border-right-0 centerp-left"> Pekerjaan</td>
-            <td class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['pekerjaan']; ?></td>
+            <td class="r-bold font-size-8 border-left-1 centerp-left">  Tanggal Lahir</td>
+            <td class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['tanggal_lahir']; ?></td>
           </tr>
           <tr>
-            <td class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-0 centerp-left">  Usia</td>
-            <td class="font-size-8 border-bottom-1 border-right-0 centerp-row">:<?= $list['notes']['usia']; ?></td>
-            <td class="r-bold font-size-8 border-bottom-1 border-left-0 border-right-1 centerp-left"> jenis kelamin: <?= $list['notes']['jenis_kelamin']; ?></td>
-            <td class="r-bold font-size-8 border-bottom-1 border-left-0 border-right-0 centerp-left"> Status Pernikahan</td>
-            <td class="font-size-8 border-bottom-1  border-right-1 centerp-row" colspan="2">: <?= $list['notes']['status_pernikahan']; ?></td>
+            <td class="r-bold font-size-8 border-bottom-1 border-left-1 centerp-left">  Ruangan</td>
+            <td class="font-size-8 border-right-1 border-bottom-1 centerp-row" colspan="2">: <?= $list['notes']['ruangan']; ?></td>
+          </tr>
+        </table>
+
+        <table width="100%" cellspacing="0">
+          <tr>
+            <td class="r-bold font-size-8 border-bottom-1 border-left-1 centerp-head" colspan="2"><b>Langkah-langkah</b></td>
+            <td width="10%" class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-head"><b>Paraf</b></td>
+          </tr>
+          <tr class="text-center bdu ">
+            <td align="center" width="10%" class="font-size-8 border-left-1 border-right-1 border-bottom-1 centerp-row" rowspan="12" style="text-rotate: 90">Relaksasi Nafas dalam (Manajemen Nyeri)</td>
+            <?php $no = 1; ?>
+            <td width="80%" class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= $no ?>. Ciptakan Ruangan yang tenang</td>
+            <td width="10%" class="font-size-8 border-bottom-1 border-right-1 centerp-head" rowspan="12" id="paraf" height="auto">
+              <div class="paraf">
+                <img height="200px" width="60px" src='<?php echo $list['notes']['coretan_paraf']; ?>' id="signature-pad-paraf">
+              </div>
+            </td>
           </tr>
           <tr>
-            <td class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-0 centerp-left">  Tanggal</td>
-            <td class="font-size-8 border-bottom-1 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['tanggal']; ?></td>
-            <td class="r-bold font-size-8 border-bottom-1 border-left-0 border-right-0 centerp-left"> Jam</td>
-            <td class="font-size-8 border-bottom-1 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['jam']; ?></td>
+            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Usahakan tetap rileks dan tenang</td>
           </tr>
           <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-1 centerp-head" colspan="6"><b>A. Autoanamnesis / Alloanamnesis</b></td>
+            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Menarik nafas dalam dari hidung dan mengisi paru-paru dengan udara melalui hitungan 1,2,3</td>
           </tr>
           <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  Keluhan Utama</td>
-            <td class="font-size-8 border-bottom-0 border-right-1 centerp-row" colspan="5">: <?= $list['notes']['keluhan_utama']; ?></td>
+            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Perlahan-lahan udara dihembuskan melalui mulut sambil merasakan ekstremitas atas dan bawah rileks</td>
           </tr>
           <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  Riwayat Penyakit Sekarang</td>
-            <td class="font-size-8 border-bottom-0 border-right-1 centerp-row" colspan="5">: <?= $list['notes']['riwayat_penyakit_sekarang']; ?></td>
+            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Anjurkan bernafas dengan irama normal tiga kali</td>
           </tr>
           <tr>
-            <td class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-0 centerp-left">  Riwayat Penyakit Dahulu</td>
-            <td class="font-size-8 border-bottom-1 border-right-1 centerp-row" colspan="5">: <?= $list['notes']['riwayat_penyakit_dahulu']; ?></td>
+            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Menarik nafas lagi melalui hidung dan menghembuskan melalui mulut secara perlahan</td>
+          </tr>
+          <tr>
+            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Membiarkan telapak tangan dan kaki rileks</td>
+          </tr>
+          <tr>
+            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Usahakan agar tetap konsentrasi mata sambil terpejam</td>
+          </tr>
+          <tr>
+            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Pada saat konsentrasi pusatkan pada daerah yang nyeri</td>
+          </tr>
+          <tr>
+            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Anjurkan untuk mengulangi prosedur hingga nyeri terasa berkurang</td>
+          </tr>
+          <tr>
+            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Ulangi sampai 15 kali, dengan selang istirahat singkat setiap 5 kali</td>
+          </tr>
+          <tr>
+            <td class="font-size-8 border-right-1 border-bottom-1 centerp-left"><?= ++$no ?>. Bila nyeri menjadi hebat, anjurkan pasien bernafas secara dangkal dan cepat</td>
+          </tr>
+          <tr>
+            <td align="center" class="font-size-8 border-left-1 border-right-1 border-bottom-1 centerp-row" style="text-rotate: 90" rowspan="5" >Batuk efektif</td>
+            <?php $no = 1; ?>
+            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= $no ?>. Duduk tegap</td>
+            <td class="font-size-8 border-bottom-1 border-right-1 centerp-head" rowspan="5" height="auto">
+              <div class="paraf">
+                <img height="80px" width="60px" src='<?php echo $list['notes']['coretan_paraf_batuk']; ?>' id="signature-pad-paraf-batuk">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Hirup nafas dalam 2x secara perlahan-lahan melalui hidung dan hembuskan melalui mulut</td>
+          </tr>
+          <tr>
+            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Hirup nafas dalam ketiga kalinya dan tahan nafas sampai hitungan ke-3, batukkan dengan kuat-kuat 3x secara berturut-turut tanpa menghirup nafas kembali selama melakukan batuk</td>
+          </tr>
+          <tr>
+            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Lanjutkan latihan batuk sebanyak 2-3x pada saat terjaga</td>
+          </tr>
+          <tr>
+            <td class="font-size-8 border-right-1 border-bottom-1 centerp-left"><?= ++$no ?>. Ulangi sesuai kebutuhan</td>
+          </tr>
+
+          <tr>
+            <td height="55px" align="center" class="font-size-8 border-left-1 border-right-1 border-bottom-1 centerp-row" style="text-rotate: 90; overflow: auto; height: 55px !important;" rowspan="4">Informasi tentang kamar operasi</td>
+            <?php $no = 1; ?>
+            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= $no ?>. Ruangannya sangat bersih dan bebas kuman, suhunya dingin</td>
+            <td class="font-size-8 border-bottom-1 border-right-1 centerp-head" rowspan="4" height="auto">
+              <div class="paraf">
+                <img height="55px" width="60px" src='<?php echo $list['notes']['coretan_paraf_kamar']; ?>' id="signature-pad-paraf-kamar">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Pencahayaan sangat terang</td>
+          </tr>
+          <tr>
+            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Dilengkapi dengan alat canggih</td>
+          </tr>
+          <tr>
+            <td class="font-size-8 border-right-1 border-bottom-1 centerp-left"><?= ++$no ?>. Tim terdiri dari ahli bedah, ahli anestesi dan perawat berketerampilan khusus</td>
           </tr>
         </table>
 
 
+
         <table width="100%" cellspacing="0">
+          <tr>
+            <td width="25%" class="r-bold font-size-8 border-bottom-1 border-left-1 centerp-left">  Tanggal</td>
+            <td width="25%" class="font-size-8 border-bottom-1 border-right-1 centerp-row">: <!-- <?= $list['notes']['tanggal']; ?> --></td>
+            <td width="25%" class="r-bold font-size-8 border-bottom-1 centerp-left"> Jam</td>
+            <td width="25%" class="font-size-8 border-bottom-1 border-right-1 centerp-row">: <!-- <?= $list['notes']['jam']; ?> --></td>
+          </tr>
+          <!-- <tr>
+            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-1 centerp-head" colspan="6"><b>A. Autoanamnesis / Alloanamnesis</b></td>
+          </tr>
+          <tr>
+            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  Keluhan Utama</td>
+            <td class="font-size-8 border-bottom-0 border-right-1 centerp-row" colspan="5">: <!-- <?= $list['notes']['keluhan_utama']; ?> --@></td>
+          </tr>
+          <tr>
+            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  Riwayat Penyakit Sekarang</td>
+            <td class="font-size-8 border-bottom-0 border-right-1 centerp-row" colspan="5">: <!-- <?= $list['notes']['riwayat_penyakit_sekarang']; ?> --@></td>
+          </tr>
+          <tr>
+            <td class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-0 centerp-left">  Riwayat Penyakit Dahulu</td>
+            <td class="font-size-8 border-bottom-1 border-right-1 centerp-row" colspan="5">: <!-- <?= $list['notes']['riwayat_penyakit_dahulu']; ?> --@></td>
+          </tr> -->
+        </table>
+
+
+        <!-- <table width="100%" cellspacing="0">
           <tr>
             <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-1 centerp-head" colspan="2"><b> B. Pemeriksaan Fisik & Tanda Vital</b></td>
             <td class="r-bold font-size-8 border-bottom-0 border-left- border-right-1 centerp-head" colspan="3"><b> C. Kemampuan Fungsional</b></td>
@@ -366,7 +455,6 @@
             </td>
             <td rowspan="8" width="20%" class="font-size-8 border-bottom-1 border-right-1 centerp-row text-center">
               <img width="150px" height="150px" src="<?php echo base_url() . 'assets/image/Human.png'; ?>">
-               <!-- <canvas id="signature-pad" class="signature-pad" width="400px" height="400px"> -->
               <img style="margin-bottom: 15px; margin-left: -155px;" width="150px" height="150px" src='<?php echo $list['notes']['coretan']; ?>' id='sign_prev'>
                 </div><br/>
             </td>
@@ -435,10 +523,10 @@
             <td class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-0 centerp-left">  8. Lain-lain</td>
             <td class="font-size-8 border-bottom-1 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['lainlain']; ?> </td>
           </tr>
-        </table>
+        </table> -->
 
 
-        <table width="100%" cellspacing="0">
+        <!-- <table width="100%" cellspacing="0">
           <tr>
             <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-1 centerp-head" colspan="8"><b>Pemeriksaan Sistemik Khusus</b></td>
           </tr>
@@ -478,19 +566,19 @@
             <td width="30%" class="font-size-8 border-bottom-1 border-right-1 centerp-row" colspan="7">: <?= $list['notes']['pengukuran_integumentum']; ?></td>
           </tr>
          
-        </table>
+        </table> -->
 
-        <div class="row-panel mt-20">
+        <!-- <div class="row-panel mt-20">
           <div class="column-left-header">
             <table border="0" width="100%" style="margin-left:150px">
               <tr>
-                <td style="vertical-align:top" class="detail-administration r-bold font-size-7"><!-- Petugas yang Menyetujui, --></td>
+                <td style="vertical-align:top" class="detail-administration r-bold font-size-7"><!-- Petugas yang Menyetujui, --@></td>
               </tr>
               <tr>
-                <td style="vertical-align:top" class="font-table font-size-7"><!-- <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>"> --></td>
+                <td style="vertical-align:top" class="font-table font-size-7"><!-- <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>"> --@></td>
               </tr>
               <tr>
-                <td style="vertical-align:top" class="font-table font-size-7 pl-3"><!-- <?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?> --></td>
+                <td style="vertical-align:top" class="font-table font-size-7 pl-3"><!-- <?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?> --@></td>
               </tr>
             </table>
           </div>
@@ -504,17 +592,18 @@
               </tr>
               <tr>
                 <td style="vertical-align:top" class="font-table font-size-7 pl-3"><?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?>
-                <!-- <br>digital signature added: <?php echo date("d-m-Y H:i",strtotime($list['notes']['created_date']));?> --></td>
+                <!-- <br>digital signature added: <?php echo date("d-m-Y H:i",strtotime($list['notes']['created_date']));?> --@></td>
               </tr>
             </table>
           </div>
-        </div>
+        </div> -->
+
       </div>
     </div>
   </div>
   <br><br><br><br>
   
-  <div class="row" style="margin-bottom:0px;">
+  <!-- <div class="row" style="margin-bottom:0px;">
     <?php $no = 1; ?>
     
     <div class="row-panel">
@@ -617,34 +706,19 @@
             <td  class="font-size-8 border-bottom-1 border-right-1 border-left-1 centerp-row" colspan="8"> <?= $list['notes']['evaluasi']; ?></td>
           </tr>
 
-
-          
-
-        </table>
-
-        <!-- <table>
-           <tr>
-            <td width="25%" class="detail-administration r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-row" style="padding: 20px 0px 5px 5px;" colspan="4">Kriteria Pemulihan Sedasi PAD5</td>
-          </tr>
-          <tr>
-            <td width="20%" class="detail-administration r-bold font-size-8 pl-5 pt-2 pr-2 border-left-1 border-right-1 border-bottom-1 centerp-head">Yang Dinilai</td>
-            <td width="60%" class="detail-administration r-bold font-size-8 pl-5 pt-2 pr-2 border-left-1 border-right-1 border-bottom-1" style="padding: 10px 0px 10px 5px; text-align: center">Penilaian</td>
-            <td width="10%" class="detail-administration r-bold font-size-8 pl-5 pt-2 pr-2 border-left-1 border-right-1 border-bottom-1 centerp-row" style="padding: 10px 0px 10px 5px; text-align: center;">Score</td>
-            <td width="10%" class="detail-administration r-bold font-size-8 pl-5 pt-2 pr-2 border-left-1 border-right-1 border-bottom-1 centerp-row" style="padding: 10px 0px 10px 5px; text-align: center;">Score Pasien</td>
-          </tr>          
         </table> -->
 
-           <div class="row-panel mt-20">
+           <!--<div class="row-panel mt-20">
             <div class="column-left-header">
               <table border="0" width="100%" style="margin-left:150px">
                 <tr>
-                  <td style="vertical-align:top" class="detail-administration r-bold font-size-7"><!-- Petugas yang Menyetujui, --></td>
+                  <td style="vertical-align:top" class="detail-administration r-bold font-size-7"><!-- Petugas yang Menyetujui, --@></td>
                 </tr>
                 <tr>
-                  <td style="vertical-align:top" class="font-table font-size-7"><!-- <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>"> --></td>
+                  <td style="vertical-align:top" class="font-table font-size-7"><!-- <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>"> --@></td>
                 </tr>
                 <tr>
-                  <td style="vertical-align:top" class="font-table font-size-7 pl-3"><!-- <?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?> --></td>
+                  <td style="vertical-align:top" class="font-table font-size-7 pl-3"><!-- <?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?> --@></td>
                 </tr>
               </table>
             </div>
@@ -658,12 +732,12 @@
                 </tr>
                 <tr>
                   <td style="vertical-align:top" class="font-table font-size-7 pl-3"><?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?>
-                  <!-- <br>digital signature added: <?php echo date("d-m-Y H:i",strtotime($list['notes']['created_date']));?> --></td>
+                  <!-- <br>digital signature added: <?php echo date("d-m-Y H:i",strtotime($list['notes']['created_date']));?> --@></td>
                 </tr>
               </table>
               
             </div>
-          </div>
+          </div>-->
 
         
 

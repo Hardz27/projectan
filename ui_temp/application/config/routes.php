@@ -36,6 +36,13 @@ $route['notes_evaluasi_awal_mpp/(:any)/(:any)']               = 'notes/notes_eva
 $route['notes_evaluasi_awal_mpp/(:any)/(:num)/(:any)']        = 'notes/notes_evaluasi_awal_mpp/c_notes_evaluasi_awal_mpp/$1/$2/$3';
 $route['notes_evaluasi_awal_mpp/(:any)/(:any)/(:any)/(:any)'] = 'notes/notes_evaluasi_awal_mpp/c_notes_evaluasi_awal_mpp/$1/$2/$3/$4';
 
+/// ROUTES START FOR 28_notes_case_manager_a
+$route['28_notes_case_manager_a'] = 'notes/28_notes_case_manager_a/c_28_notes_case_manager_a';
+$route['28_notes_case_manager_a/(:any)'] = 'notes/28_notes_case_manager_a/c_28_notes_case_manager_a/$1';
+$route['28_notes_case_manager_a/(:any)/(:any)']               = 'notes/28_notes_case_manager_a/c_28_notes_case_manager_a/$1/$2';
+$route['28_notes_case_manager_a/(:any)/(:num)/(:any)']        = 'notes/28_notes_case_manager_a/c_28_notes_case_manager_a/$1/$2/$3';
+$route['28_notes_case_manager_a/(:any)/(:any)/(:any)/(:any)'] = 'notes/28_notes_case_manager_a/c_28_notes_case_manager_a/$1/$2/$3/$4';
+
 /// ROUTES START FOR notes_skrining_tb
 $route['docs_pasien_tb_dewasa'] = 'docs/docs_pasien_tb_dewasa/c_docs_pasien_tb_dewasa';
 $route['docs_pasien_tb_dewasa/(:any)'] = 'docs/docs_pasien_tb_dewasa/c_docs_pasien_tb_dewasa/$1';
