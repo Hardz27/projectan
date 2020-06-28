@@ -142,16 +142,9 @@ $route['22_notes_odontogram/(:any)/(:any)']               = 'notes/22_notes_odon
 $route['22_notes_odontogram/(:any)/(:num)/(:any)']        = 'notes/22_notes_odontogram/c_22_notes_odontogram/$1/$2/$3';
 $route['22_notes_odontogram/(:any)/(:any)/(:any)/(:any)'] = 'notes/22_notes_odontogram/c_22_notes_odontogram/$1/$2/$3/$4';
 
-/// ROUTES START FOR 59_notes_catatan_keperawatan
-$route['59_notes_catatan_keperawatan'] = 'notes/59_notes_catatan_keperawatan/c_59_notes_catatan_keperawatan';
-$route['59_notes_catatan_keperawatan/(:any)'] = 'notes/59_notes_catatan_keperawatan/c_59_notes_catatan_keperawatan/$1';
-$route['59_notes_catatan_keperawatan/(:any)/(:any)']               = 'notes/59_notes_catatan_keperawatan/c_59_notes_catatan_keperawatan/$1/$2';
-$route['59_notes_catatan_keperawatan/(:any)/(:num)/(:any)']        = 'notes/59_notes_catatan_keperawatan/c_59_notes_catatan_keperawatan/$1/$2/$3';
-$route['59_notes_catatan_keperawatan/(:any)/(:any)/(:any)/(:any)'] = 'notes/59_notes_catatan_keperawatan/c_59_notes_catatan_keperawatan/$1/$2/$3/$4';
-
-/// ROUTES START FOR 37_edukasi_pra_operasi
-$route['37_edukasi_pra_operasi'] = 'notes/37_edukasi_pra_operasi/c_37_edukasi_pra_operasi';
-$route['37_edukasi_pra_operasi/(:any)'] = 'notes/37_edukasi_pra_operasi/c_37_edukasi_pra_operasi/$1';
-$route['37_edukasi_pra_operasi/(:any)/(:any)']               = 'notes/37_edukasi_pra_operasi/c_37_edukasi_pra_operasi/$1/$2';
-$route['37_edukasi_pra_operasi/(:any)/(:num)/(:any)']        = 'notes/37_edukasi_pra_operasi/c_37_edukasi_pra_operasi/$1/$2/$3';
-$route['37_edukasi_pra_operasi/(:any)/(:any)/(:any)/(:any)'] = 'notes/37_edukasi_pra_operasi/c_37_edukasi_pra_operasi/$1/$2/$3/$4';
+/// ROUTES START FOR 71_assesmen_bayi_baru_lahir
+$route['71_assesmen_bayi_baru_lahir'] = 'notes/71_assesmen_bayi_baru_lahir/c_71_assesmen_bayi_baru_lahir';
+$route['71_assesmen_bayi_baru_lahir/(:any)'] = 'notes/71_assesmen_bayi_baru_lahir/c_71_assesmen_bayi_baru_lahir/$1';
+$route['71_assesmen_bayi_baru_lahir/(:any)/(:any)']               = 'notes/71_assesmen_bayi_baru_lahir/c_71_assesmen_bayi_baru_lahir/$1/$2';
+$route['71_assesmen_bayi_baru_lahir/(:any)/(:num)/(:any)']        = 'notes/71_assesmen_bayi_baru_lahir/c_71_assesmen_bayi_baru_lahir/$1/$2/$3';
+$route['71_assesmen_bayi_baru_lahir/(:any)/(:any)/(:any)/(:any)'] = 'notes/71_assesmen_bayi_baru_lahir/c_71_assesmen_bayi_baru_lahir/$1/$2/$3/$4';

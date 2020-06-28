@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "80e3176e-4e26-4d37-8a4f-02db7798d2f7",
+		"name": "Laporan_rl",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Laporan_rl3_11/ref",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiTkFNQSAyIiwiaWRfdXNlciI6IjM3MzY4MSIsInJtX251bWJlciI6ImFkbWluIiwicnNfa2V5IjoiQTEyMyIsImlwX2FkZHJlc3MiOiIxMjcuMC4xLjEiLCJhY2Nlc3MiOiJ1c2VyIn0.ubW6fyc7ErYOW2T5qFbjXvLIVTLp05s3A0paQ6wfcmo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/ci_aljuni/server/laporan_rl3_11/ref",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ci_aljuni",
+						"server",
+						"laporan_rl3_11",
+						"ref"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Laporan_rl3_11",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiTkFNQSAyIiwiaWRfdXNlciI6IjM3MzY4MSIsInJtX251bWJlciI6ImFkbWluIiwicnNfa2V5IjoiQTEyMyIsImlwX2FkZHJlc3MiOiIxMjcuMC4xLjEiLCJhY2Nlc3MiOiJ1c2VyIn0.ubW6fyc7ErYOW2T5qFbjXvLIVTLp05s3A0paQ6wfcmo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/ci_aljuni/server/laporan_rl3_11?periode_start=2020-01-01&periode_end=2020-06-30&is_reg_del_date_null=1&is_visit_del_date_null=1&is_order_del_date_null=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ci_aljuni",
+						"server",
+						"laporan_rl3_11"
+					],
+					"query": [
+						{
+							"key": "periode_start",
+							"value": "2020-01-01"
+						},
+						{
+							"key": "periode_end",
+							"value": "2020-06-30"
+						},
+						{
+							"key": "is_reg_del_date_null",
+							"value": "1"
+						},
+						{
+							"key": "is_visit_del_date_null",
+							"value": "1"
+						},
+						{
+							"key": "is_order_del_date_null",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Laporan_rl3_10/ref",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiTkFNQSAyIiwiaWRfdXNlciI6IjM3MzY4MSIsInJtX251bWJlciI6ImFkbWluIiwicnNfa2V5IjoiQTEyMyIsImlwX2FkZHJlc3MiOiIxMjcuMC4xLjEiLCJhY2Nlc3MiOiJ1c2VyIn0.ubW6fyc7ErYOW2T5qFbjXvLIVTLp05s3A0paQ6wfcmo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/ci_aljuni/server/laporan_rl3_10/ref",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ci_aljuni",
+						"server",
+						"laporan_rl3_10",
+						"ref"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Laporan_rl3_10",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiTkFNQSAyIiwiaWRfdXNlciI6IjM3MzY4MSIsInJtX251bWJlciI6ImFkbWluIiwicnNfa2V5IjoiQTEyMyIsImlwX2FkZHJlc3MiOiIxMjcuMC4xLjEiLCJhY2Nlc3MiOiJ1c2VyIn0.ubW6fyc7ErYOW2T5qFbjXvLIVTLp05s3A0paQ6wfcmo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/ci_aljuni/server/laporan_rl3_10?periode_start=2020-01-01&periode_end=2020-06-30&is_reg_del_date_null=1&is_visit_del_date_null=1&is_order_del_date_null=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ci_aljuni",
+						"server",
+						"laporan_rl3_10"
+					],
+					"query": [
+						{
+							"key": "periode_start",
+							"value": "2020-01-01"
+						},
+						{
+							"key": "periode_end",
+							"value": "2020-06-30"
+						},
+						{
+							"key": "is_reg_del_date_null",
+							"value": "1"
+						},
+						{
+							"key": "is_visit_del_date_null",
+							"value": "1"
+						},
+						{
+							"key": "is_order_del_date_null",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Laporan_rl3_9",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiTkFNQSAyIiwiaWRfdXNlciI6IjM3MzY4MSIsInJtX251bWJlciI6ImFkbWluIiwicnNfa2V5IjoiQTEyMyIsImlwX2FkZHJlc3MiOiIxMjcuMC4xLjEiLCJhY2Nlc3MiOiJ1c2VyIn0.ubW6fyc7ErYOW2T5qFbjXvLIVTLp05s3A0paQ6wfcmo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/ci_aljuni/server/laporan_rl3_9?periode_start=2020-01-01&periode_end=2020-06-30&is_reg_del_date_null=1&is_visit_del_date_null=1&is_order_del_date_null=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ci_aljuni",
+						"server",
+						"laporan_rl3_9"
+					],
+					"query": [
+						{
+							"key": "periode_start",
+							"value": "2020-01-01"
+						},
+						{
+							"key": "periode_end",
+							"value": "2020-06-30"
+						},
+						{
+							"key": "is_reg_del_date_null",
+							"value": "1"
+						},
+						{
+							"key": "is_visit_del_date_null",
+							"value": "1"
+						},
+						{
+							"key": "is_order_del_date_null",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Laporan_rl3_9/ref",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiTkFNQSAyIiwiaWRfdXNlciI6IjM3MzY4MSIsInJtX251bWJlciI6ImFkbWluIiwicnNfa2V5IjoiQTEyMyIsImlwX2FkZHJlc3MiOiIxMjcuMC4xLjEiLCJhY2Nlc3MiOiJ1c2VyIn0.ubW6fyc7ErYOW2T5qFbjXvLIVTLp05s3A0paQ6wfcmo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/ci_aljuni/server/laporan_rl3_9/ref",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ci_aljuni",
+						"server",
+						"laporan_rl3_9",
+						"ref"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Laporan_rl3_3/ref",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiTkFNQSAyIiwiaWRfdXNlciI6IjM3MzY4MSIsInJtX251bWJlciI6ImFkbWluIiwicnNfa2V5IjoiQTEyMyIsImlwX2FkZHJlc3MiOiIxMjcuMC4xLjEiLCJhY2Nlc3MiOiJ1c2VyIn0.ubW6fyc7ErYOW2T5qFbjXvLIVTLp05s3A0paQ6wfcmo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/ci_aljuni/server/laporan_rl3_3/ref",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ci_aljuni",
+						"server",
+						"laporan_rl3_3",
+						"ref"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Laporan_rl3_3",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiTkFNQSAyIiwiaWRfdXNlciI6IjM3MzY4MSIsInJtX251bWJlciI6ImFkbWluIiwicnNfa2V5IjoiQTEyMyIsImlwX2FkZHJlc3MiOiIxMjcuMC4xLjEiLCJhY2Nlc3MiOiJ1c2VyIn0.ubW6fyc7ErYOW2T5qFbjXvLIVTLp05s3A0paQ6wfcmo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/ci_aljuni/server/laporan_rl3_3?periode_start=2020-01-01&periode_end=2020-06-30&is_reg_del_date_null=1&is_visit_del_date_null=1&is_order_del_date_null=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ci_aljuni",
+						"server",
+						"laporan_rl3_3"
+					],
+					"query": [
+						{
+							"key": "periode_start",
+							"value": "2020-01-01"
+						},
+						{
+							"key": "periode_end",
+							"value": "2020-06-30"
+						},
+						{
+							"key": "is_reg_del_date_null",
+							"value": "1"
+						},
+						{
+							"key": "is_visit_del_date_null",
+							"value": "1"
+						},
+						{
+							"key": "is_order_del_date_null",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

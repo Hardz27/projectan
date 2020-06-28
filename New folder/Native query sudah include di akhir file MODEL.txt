@@ -1,0 +1,1 @@
+Native SQL Query sudah ada di masing-masing model, di bagian akhir
