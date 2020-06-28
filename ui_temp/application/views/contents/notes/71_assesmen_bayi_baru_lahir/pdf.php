@@ -289,6 +289,7 @@
         <div class="row-body">
           <table width="100%" cellspacing="0">
           <tr>
+<<<<<<< HEAD:ui_temp/application/views/contents/notes/37_edukasi_pra_operasi/pdf.php
             <td width="20%" class="r-bold font-size-8 border-left-1 centerp-left">No. RM</td>
             <td class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['no_rm']; ?></td>
           </tr>
@@ -376,6 +377,18 @@
           </tr>
           <tr>
             <td class="font-size-8 border-right-1 border-bottom-1 centerp-left"><?= ++$no ?>. Ulangi sesuai kebutuhan</td>
+=======
+            <td width="20%" class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">Nama Pasien</td>
+            <td width="30%" class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['nama_pasien']; ?></td>
+            <td width="20%" class="r-bold font-size-8 border-bottom-0 border-left-0 border-right-0 centerp-left">Agama</td>
+            <td width="30%" class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['agama']; ?></td>
+          </tr>
+          <tr>
+            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  No. MR</td>
+            <td class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['no_mr']; ?></td>
+            <td class="r-bold font-size-8 border-bottom-0 border-left-0 border-right-0 centerp-left">  Pendidikan</td>
+            <td class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['pendidikan']; ?></td>
+>>>>>>> 50b56c9e12247ffe1a4c090889d8f52bfef00021:ui_temp/application/views/contents/notes/71_assesmen_bayi_baru_lahir/pdf.php
           </tr>
 
           <tr>
@@ -568,6 +581,7 @@
          
         </table> -->
 
+<<<<<<< HEAD:ui_temp/application/views/contents/notes/37_edukasi_pra_operasi/pdf.php
         <!-- <div class="row-panel mt-20">
           <div class="column-left-header">
             <table border="0" width="100%" style="margin-left:150px">
@@ -604,6 +618,58 @@
   <br><br><br><br>
   
   <!-- <div class="row" style="margin-bottom:0px;">
+=======
+        <!-- <table>
+           <tr>
+            <td width="25%" class="detail-administration r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-row" style="padding: 20px 0px 5px 5px;" colspan="4">Kriteria Pemulihan Sedasi PAD5</td>
+          </tr>
+          <tr>
+            <td width="20%" class="detail-administration r-bold font-size-8 pl-5 pt-2 pr-2 border-left-1 border-right-1 border-bottom-1 centerp-head">Yang Dinilai</td>
+            <td width="60%" class="detail-administration r-bold font-size-8 pl-5 pt-2 pr-2 border-left-1 border-right-1 border-bottom-1" style="padding: 10px 0px 10px 5px; text-align: center">Penilaian</td>
+            <td width="10%" class="detail-administration r-bold font-size-8 pl-5 pt-2 pr-2 border-left-1 border-right-1 border-bottom-1 centerp-row" style="padding: 10px 0px 10px 5px; text-align: center;">Score</td>
+            <td width="10%" class="detail-administration r-bold font-size-8 pl-5 pt-2 pr-2 border-left-1 border-right-1 border-bottom-1 centerp-row" style="padding: 10px 0px 10px 5px; text-align: center;">Score Pasien</td>
+          </tr>          
+        </table> -->
+
+           <div class="row-panel mt-20">
+            <div class="column-left-header">
+              <table border="0" width="100%" style="margin-left:150px">
+                <tr>
+                  <td style="vertical-align:top" class="detail-administration r-bold font-size-7"><!-- Petugas yang Menyetujui, --></td>
+                </tr>
+                <tr>
+                  <td style="vertical-align:top" class="font-table font-size-7"><!-- <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>"> --></td>
+                </tr>
+                <tr>
+                  <td style="vertical-align:top" class="font-table font-size-7 pl-3"><!-- <?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?> --></td>
+                </tr>
+              </table>
+            </div>
+            <div class="column-right-header">
+              <table border="0" width="100%" style="text-align: right; margin-right: 50px;">
+                <tr>
+                  <td style="vertical-align:top" class="r-bold font-size-7">Petugas yang Menyetujui,</td>
+                </tr>
+                <tr>
+                  <td height="77px" style="vertical-align:top" class="font-table font-size-7 pl-5"><img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>"></td>
+                </tr>
+                <tr>
+                  <td style="vertical-align:top" class="font-table font-size-7 pl-3"><?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?>
+                  <!-- <br>digital signature added: <?php echo date("d-m-Y H:i",strtotime($list['notes']['created_date']));?> --></td>
+                </tr>
+              </table>
+              
+            </div>
+          </div>
+
+        
+
+        </div>
+      </div>
+    </div>
+<br><br><br><br>
+<div class="row" style="margin-bottom:0px;">
+>>>>>>> 50b56c9e12247ffe1a4c090889d8f52bfef00021:ui_temp/application/views/contents/notes/71_assesmen_bayi_baru_lahir/pdf.php
     <?php $no = 1; ?>
     
     <div class="row-panel">

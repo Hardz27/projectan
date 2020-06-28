@@ -8,7 +8,7 @@ use GuzzleHttp\Exception\ServerException;
 /**********************************************************************************
  * 
  * Deskripsi
- * Menampilkan halaman client/notes_odontogram
+ * Menampilkan halaman client/notes_penolakan_resusitasi
  * 
  **********************************************************************************/
 class C_22_notes_odontogram extends CI_Controller
@@ -69,7 +69,7 @@ class C_22_notes_odontogram extends CI_Controller
 
   // redirect ke fungsi list
   public function index()
-  // $route['22_notes_odontogram'] = '22_notes_odontogram/c_22_notes_odontogram';
+  // $route['notes_penolakan_resusitasi'] = 'notes_penolakan_resusitasi/c_notes_penolakan_resusitasi';
   {
     // echo base_url(); die;
     redirect(base_url() . $this->class . '/list');
