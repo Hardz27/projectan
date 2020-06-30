@@ -30,8 +30,8 @@
   [data-toggle="buttons"]>.btn>input[type="checkbox"] {
     clip: rect(1px 1px 1px 1px);
   }
-  #signature{
-    width: 400px; height: 400px;
+  .signature{
+    width: 200px; height: 200px;
     border: 1px solid black;
     /* background-image: url("<?php echo base_url();?>assets/image/Human.png"); */
   }
@@ -242,7 +242,17 @@
                   </div>
                   <br>
                 </div>
-                <div class="col-md-6">  
+                <div class="col-md-6">
+                <div class="row">
+                    <!-- nama -->
+                    <div class="col-md-3">
+                      <b>Usia</b>
+                    </div>
+                    <div class="col-md-9">
+                      <input type="text" name="usia_wali" id="usia_wali" class="form-control" placeholder="Usia"  autocomplete="off">
+                    </div>
+                  </div>
+                  <br> 
                   <div class="row">
                     <div class="col-md-6">
                         <b>Jenis Kelamin</b>
@@ -250,14 +260,14 @@
                     <div class="col-md-3">
                       <div class="text-center">L
                         <label class="container radio-select" style="width: 2%">
-                      <input type="radio" name="jenis_kelamin" value="L" >
+                      <input type="radio" name="jenis_kelamin_wali" value="L" >
                       <span class="checkmark"></span>
                         </label>
                       </div>
                     </div>
                     <div class="col-md-3 text-center">P
                       <label class="container radio-select" style="width: 2%">
-                      <input type="radio" name="jenis_kelamin" value="P" >
+                      <input type="radio" name="jenis_kelamin_wali" value="P" >
                       <span class="checkmark"></span>
                     </label>
                     </div>
@@ -277,9 +287,28 @@
                     </div>
                   </div>
                   <br>
+                  <div class="row">
+                    <div class="col-md-4">
+                        <b>Jenis Kelamin</b>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="text-center">L
+                        <label class="container radio-select" style="width: 2%">
+                      <input type="radio" name="jenis_kelamin_pasien" value="L" >
+                      <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-3 text-center">P
+                      <label class="container radio-select" style="width: 2%">
+                      <input type="radio" name="jenis_kelamin_pasien" value="P" >
+                      <span class="checkmark"></span>
+                    </label>
+                    </div>
+                  </div>
+                  <br>
                 </div>
-                
-          </div>
+            </div>
           <div class="row">
             <div class="col-md-12">  
                   <div class="row">
@@ -356,7 +385,7 @@
                       <b>Diagnosis Banding</b>
                     </div>
                     <div class="col-md-7">
-                      <textarea type="text" name="diagnosis_banding " class="form-control" placeholder="Diagnosis Banding"  autocomplete="off"></textarea>
+                      <textarea type="text" name="diagnosis_banding" id="diagnosis_banding" class="form-control" placeholder="Diagnosis Banding"  autocomplete="off"></textarea>
                     </div>
                   </div>
                   <br>
@@ -502,6 +531,47 @@
                         </div>
                       </div>
                     </div>
+
+                    
+                  </div>
+
+                  <div class="col-md-12"> 
+                    <br>
+                    <div class="row">
+                      
+                      <div class="col-md-5">
+                        <b>Prognosis</b>
+                      </div>
+                      <div class="col-md-7">
+                        <textarea type="text" name="prognosis" id="prognosis" class="form-control" placeholder="Prognosis"  autocomplete="off"></textarea>
+                      </div>
+                    </div>
+                    <br>
+                  </div>
+                  <div class="col-md-12">  
+                    <div class="row">
+                      <!-- nama -->
+                      <div class="col-md-5">
+                        <b>Alternatif</b>
+                      </div>
+                      <div class="col-md-7">
+                        <textarea type="text" name="alternatif" class="form-control" placeholder="Alternatif"  autocomplete="off"></textarea>
+                      </div>
+                    </div>
+                    <br>
+                  </div>
+               
+                  <div class="col-md-12">  
+                    <div class="row">
+                      <!-- nama -->
+                      <div class="col-md-5">
+                        <b>Lain lain/ analgetik post operasi</b>
+                      </div>
+                      <div class="col-md-7">
+                        <textarea type="text" name="lain_lain" class="form-control" placeholder="lain_lain"  autocomplete="off"></textarea>
+                      </div>
+                    </div>
+                    <br>
                   </div>
                   <br>
                 </div>
@@ -516,72 +586,286 @@
           <div class="panel panel-primary">
             <div class="panel-heading">Tambah Data Fisioterapi Asesment</div>
             <div class="panel-body">
-            <div class="row">
-              <div class="col-md-12"> 
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <b>PERSERTUJUAN TINDAKAN ANSETESI UMUM SEDASI</b>
                 </div>
-                <div class="col-md-12"> 
-                  <div class="row">
+              </div>
 
-                    <div class="col-md-5">
-                      <b>Prognosis</b>
+              <div class="row">
+                <div class="col-md-12">
+                  <br>
+                  <br>
+                  <p>Setelah saya membaca dan diterangkan mengenai tindakan di atas, maka saya yang bertanda tangan dibawah ini :</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <br>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <b>Nama</b>
                     </div>
-                    <div class="col-md-7">
-                      <textarea type="text" name="prognosis" id="prognosis" class="form-control" placeholder="Prognosis"  autocomplete="off"></textarea>
+                    <div class="col-md-9">
+                      <input type="text" name="nama_persetujuan" id="nama_pesetujuan" class="form-control" placeholder="nama_pesetujuan"  autocomplete="off">
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <b>Tgl.Lahir</b>
+                    </div>
+                    <div class="col-md-9">
+                      <input type="text" name="tl_persetujuan" id="tl_persetujuan" class="form-control" placeholder="Tgl.Lahir"  autocomplete="off">
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                      <!-- nama -->
+                    <div class="col-md-3">
+                      <b>Alamat</b>
+                    </div>
+                    <div class="col-md-9">
+                      <textarea type="text" name="alamat_persetujuan" class="form-control" placeholder="Alamat"  autocomplete="off"></textarea>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <b>No.Identitas</b>
+                    </div>
+                    <div class="col-md-9">
+                      <input type="text" name="no_identitas_persetujuan" id="no_identitas_persetujuan" class="form-control" placeholder="Nomor Identitas"  autocomplete="off">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <br>
+                  <div class="row">
+                    <div class="col-md-6">
+                        <b>Jenis Kelamin</b>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="text-center">L
+                        <label class="container radio-select" style="width: 2%">
+                      <input type="radio" name="jenis_kelamin_persetujuan" value="L" >
+                      <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-3 text-center">P
+                      <label class="container radio-select" style="width: 2%">
+                      <input type="radio" name="jenis_kelamin_persetujuan" value="P" >
+                      <span class="checkmark"></span>
+                    </label>
+                    </div>
+                  </div>
+
+                  <br>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <b>Usia</b>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="text" name="usia_persetujuan" id="usia_persetujuan" class="form-control" placeholder="Usia"  autocomplete="off">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col-md-12 p-md-3">
+                  Bertidank selaku 
+                  /<input type="radio" name="hubungan_persetujuan" id="hubungan_persetujuan" value="pasien sendiri" style="margin-left: 3px;"> <label for="hubungan_persetujuan" style="margin-left: 3px;">pasien sendiri</label>
+                  /<input type="radio" name="hubungan_persetujuan" id="suami" value="suami" style="margin-left: 3px;"> <label for="suami" style="margin-left: 3px;">suami</label>
+                  /<input type="radio" name="hubungan_persetujuan" id="istri" value="istri" style="margin-left: 3px;"> <label for="istri" style="margin-left: 3px;">istri</label>
+                  /<input type="radio" name="hubungan_persetujuan" id="anak" value="anak" style="margin-left: 3px;"> <label for="anak" style="margin-left: 3px;">anak</label>
+                  /<input type="radio" name="hubungan_persetujuan" id="orang_tua" value="orang tua" style="margin-left: 3px;"> <label for="orang_tua" style="margin-left: 3px;">orang tua</label>
+                   dan penanggung jawab atau wali atas pasien, menyatakan <b>SETUJU</b> untuk dilakukan tindakan berupa <b>ANASTESI UMUM / SEDASI</b> terhadap :
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <br>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <b>Nama</b>
+                    </div>
+                    <div class="col-md-9">
+                      <input type="text" name="nama_persetujuan" id="nama_pesetujuan" class="form-control" placeholder="nama_pesetujuan"  autocomplete="off">
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <b>Tgl.Lahir</b>
+                    </div>
+                    <div class="col-md-9">
+                      <input type="text" name="tl_persetujuan" id="tl_persetujuan" class="form-control" placeholder="Tgl.Lahir"  autocomplete="off">
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                      <!-- nama -->
+                    <div class="col-md-3">
+                      <b>No. MR</b>
+                    </div>
+                    <div class="col-md-9">
+                      <textarea type="text" name="no_mr_persetujuan" class="form-control" placeholder="No. MR"  autocomplete="off"></textarea>
                     </div>
                   </div>
                   <br>
                 </div>
-                <div class="col-md-12">  
+
+                <div class="col-md-4">
+                  <br>
                   <div class="row">
-                    <!-- nama -->
-                    <div class="col-md-5">
-                      <b>Alternatif</b>
+                    <div class="col-md-6">
+                        <b>Jenis Kelamin</b>
                     </div>
-                    <div class="col-md-7">
-                      <textarea type="text" name="alternatif" class="form-control" placeholder="Alternatif"  autocomplete="off"></textarea>
+                    <div class="col-md-3">
+                      <div class="text-center">L
+                        <label class="container radio-select" style="width: 2%">
+                      <input type="radio" name="jenis_kelamin_pasien_persetujuan" value="L" >
+                      <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-3 text-center">P
+                      <label class="container radio-select" style="width: 2%">
+                      <input type="radio" name="jenis_kelamin_pasien_persetujuan" value="P" >
+                      <span class="checkmark"></span>
+                    </label>
                     </div>
                   </div>
+
                   <br>
-                </div>
-               
-                <div class="col-md-12">  
                   <div class="row">
-                    <!-- nama -->
-                    <div class="col-md-5">
-                      <b>Lain lain/ analgetik post operasi</b>
+                    <div class="col-md-6">
+                      <b>Usia</b>
                     </div>
-                    <div class="col-md-7">
-                      <textarea type="text" name="lain_lain" class="form-control" placeholder="lain_lain"  autocomplete="off"></textarea>
+                    <div class="col-md-6">
+                      <input type="text" name="usia_pasien_persetujuan" id="usia_pasien_persetujuan" class="form-control" placeholder="Usia"  autocomplete="off">
                     </div>
                   </div>
-                  <br>
                 </div>
+              </div>
 
-            </div>
-              <br><br>
+              <div class="row">
+                <div class="col-md-12">
+                  <p>
+                    Saya menyatakan bahwa sesunguhnya dan tanpa paksaan bahwa :
+                  </p>
+                  <ol type="number">
+                    <li>Saya telah menerima informasi jenis anestesi yang dilakukan.</li>
+                    <li>Saya mengerti bahwa tindakan anestesi mengandung beberapa resiko, termasuk perubahan tekanan darah
+                      , resiko obat (alergi), henti jantung, kerusakan otak, kelumpuhan, kerusakan syaraf serta komplikasi lain yang juga mungkin terjadi bahkan kematian.
+                    </li>
+                    <li>
+                      Saya telah membaca penjelasan secara teliti tentang tindakan anestesi yang diberikan, mengerti dan menyetujui pejelasan tentang tindakan yang akan 
+                      dilakukan termasuk kemungkinan komplikasi yang mungkin terjadi serta kelebihan atau kelemahan dari setiap jenis pembiusan yang dilakukan.
+                    </li>
+                    <li>
+                      Saya mempunyai kewajiban untuk memberi informasi kepada dokter mengenai semua penyakit dan obat yang pasien minum, seperti aspirin, pengencer darah,
+                      kontrasepsi, obat flu, narkotik, marijuana, kokain, dan lain - lain.
+                    </li>
+                    <li>
+                      Saya bersedia menanggung tindakan anestesi, kecuali terhadap pihak lain yang menyatakan bertanggung jawab secara finansial terhadap tindakan anestesi ini.
+                    </li>
+                  </ol>
+                  <p>
+                    Berdasarkan hal - hal tersebut diatas, saya menjamin sepenuhnya bahwa tindakan saya untuk menyetujui tindakan anestesi diatas adalah untuk mewakili kepentingan
+                    saya/ pasien dan keluarga pasien, dan saya bertanggung jawab sepenuhnya apabila terhadap pihak lain yang mengajukan keberatan atas persetujuan ini.
+                  </p>
+                  <p>
+                    Demikian surat persetujuan ini dibuat dengan kesadaran dan tanpa paksaan dari pihak manapun juga.
+                  </p>
+                </div>
+              </div>
 
-            <br><br>
-
-
+              <br>
+              <br>
             <div class="row">
               <div class="col-md-12"> 
                 <div class="row">
-                  <div class="col-md-5">
-                    <b>H. Gambar</b>
-                  </div>
-                  <div class="col-md-7"> 
+                  <div class="col-md-6 text-center"> 
                     <!-- Signature -->
-                    <div id="signature" style=''>
-                      <canvas id="signature-pad" class="signature-pad" width="400px" height="400px">
-                    </div><br/>
-                     
-                    <button type="button" id="undo">Undo</button>
-                    <button type="button" id="clear">Clear</button>
-                    <input type='hidden' id='generate' name="coretan" value=''><br/>
-                  </div>
-                </div> 
+                    <b>Wali Pasien</b>
+                    <br>
+                     <!-- Signature -->
+                    <center>
+                      <div class="signature">
+                        <canvas id="signature-pad-wali-pasien" class="signature-pad-wali-pasien" height="200px" width="200px">
+                      </div>
+                      <br>
+                      <button type="button" id="undo-wali">Undo</button>
+                      <button type="button" id="clear-wali">Clear</button>
+                      <br>
+                      <br>
+                      <input type="text" name="ttd_nama_wali_pasien" placeholder="Wali Pasien" class="form-control">
+                    </center>
+                  </div> 
+                  <div class="col-md-6 text-center"> 
+                    <!-- Signature -->
+                    <b>Pasien</b>
+                    <br>
+                     <!-- Signature -->
+                    <center>
+                      <div class="signature">
+                        <canvas id="signature-pad-pasien" class="signature-pad-pasien" height="200px" width="200px">
+                      </div>
+                      <br>
+                      <button type="button" id="undo-pasien">Undo</button>
+                      <button type="button" id="clear-pasien">Clear</button>
+                      <br>
+                      <br>
+                      <input type="text" name="ttd_nama_pasien" placeholder="Pasien" class="form-control">
+                    </center>
+                  </div> 
                 <br>               
               </div>
+              <div class="row">
+                <div class="col-md-6 text-center"> 
+                  <!-- Signature -->
+                  <b>Saksi Pihak RS</b>
+                  <br>
+                    <!-- Signature -->
+                  <center>
+                    <div class="signature">
+                      <canvas id="signature-pad-saksi-pihak-rs" class="signature-pad-saksi-pihak-rs" height="200px" width="200px">
+                    </div>
+                    <br>
+                    <button type="button" id="undo-saksi">Undo</button>
+                    <button type="button" id="clear-saksi">Clear</button>
+                    <br>
+                    <br>
+                    <input type="text" name="ttd_saksi_pihak_rs" placeholder="Saksi Pihak RS" class="form-control">
+                  </center>
+                </div> 
+                <div class="col-md-6 text-center"> 
+                  <!-- Signature -->
+                  <b>Dokter Anestesi</b>
+                  <br>
+                    <!-- Signature -->
+                  <center>
+                    <div class="signature">
+                      <canvas id="signature-pad-dokter-anestesi" class="signature-pad-dokter-anestesi" height="200px" width="200px">
+                    </div>
+                    <br>
+                    <button type="button" id="undo-dokter">Undo</button>
+                    <button type="button" id="clear-dokter">Clear</button>
+                    <br>
+                    <br>
+                    <input type="text" name="ttd_nama_dokter_anestesi" placeholder="Dokter Anestesi" class="form-control">
+                  </center>
+                </div> 
+              <br>               
+            </div>
             </div>
 
           </div>
@@ -716,8 +1000,12 @@
 </script>
 
 <script>
+ var signaturePadWaliPasien = new SignaturePad(document.getElementById('signature-pad-wali-pasien'));
+ var signaturePadPasien = new SignaturePad(document.getElementById('signature-pad-pasien'));
+ var signaturePadSaksiPihakRS = new SignaturePad(document.getElementById('signature-pad-saksi-pihak-rs'));
+ var signaturePadDokterAnestesi = new SignaturePad(document.getElementById('signature-pad-dokter-anestesi'));
+
 $(document).ready(function() {
- var signaturePad = new SignaturePad(document.getElementById('signature-pad'));
 
  $('.btn-kirim-<?= $this->router->fetch_class(); ?>').click(function(){
   var data = signaturePad.toDataURL('image/png');
@@ -730,40 +1018,56 @@ $(document).ready(function() {
   //window.open(data);
  });
 
- document.getElementById('clear').addEventListener('click', function () {
-    signaturePad.clear();
-  });
-
-  document.getElementById('undo').addEventListener('click', function () {
-    var data = signaturePad.toData();
-    if (data) {
-      data.pop(); // remove the last dot or line
-      signaturePad.fromData(data);
-    }
-  });
-
 })
 
-// document.getElementById('save-png').addEventListener('click', function () {
-//   if (signaturePad.isEmpty()) {
-//     return alert("Please provide a signature first.");
-//   }
-  
-//   var data = signaturePad.toDataURL('image/png');
-//   console.log(data);
-//   window.open(data);
-// });
+$('#undo-wali').click(() => {
+  let data_wali = signaturePadWaliPasien.toData()
+    if (data_wali) {
+      data_wali.pop(); // remove the last dot or line
+      signaturePadWaliPasien.fromData(data_wali)
+    }
+})
 
-// document.getElementById('clear').addEventListener('click', function () {
-//   signaturePad.clear();
-// });
+$('#clear-wali').click(() => {
+  signaturePadWaliPasien.clear()
+})
 
-// document.getElementById('undo').addEventListener('click', function () {
-//   var data = signaturePad.toData();
-//   if (data) {
-//     data.pop(); // remove the last dot or line
-//     signaturePad.fromData(data);
-//   }
-// });
+$('#undo-pasien').click(() => {
+  let data_pasien = signaturePadPasien.toData()
+    if (data_pasien) {
+      data_pasien.pop(); // remove the last dot or line
+      signaturePadPasien.fromData(data_pasien)
+    }
+})
+
+$('#clear-pasien').click(() => {
+  signaturePadPasien.clear()
+})
+
+$('#undo-saksi').click(() => {
+  let data_saksi = signaturePadSaksiPihakRS.toData()
+    if (data_saksi) {
+      data_saksi.pop(); // remove the last dot or line
+      signaturePadSaksiPihakRS.fromData(data_saksi)
+    }
+})
+
+$('#clear-saksi').click(() => {
+  signaturePadSaksiPihakRS.clear()
+})
+
+$('#undo-dokter').click(() => {
+  let data_dokter = signaturePadDokterAnestesi.toData()
+    if (data_dokter) {
+      data_dokter.pop(); // remove the last dot or line
+      signaturePadDokterAnestesi.fromData(data_dokter)
+    }
+})
+
+$('#clear-dokter').click(() => {
+  signaturePadDokterAnestesi.clear()
+})
+
+
 
  </script>

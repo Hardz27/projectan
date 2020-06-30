@@ -310,9 +310,12 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       $this->load->view('contents/notes/' . $this->class  . '/add', $data);
     }
   }
-
+  
   public function add_process()
   {
+    // echo json_encode(["test" => $this->input->post('nama_pasien')]);
+    // exit();
+
     $notes = [
       'tanggal'                             =>  $this->input->post('tanggal'),
       'jam'                                 =>  $this->input->post('jam'),
@@ -320,7 +323,7 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'no_mr'                               =>  $this->input->post('no_mr'),
       'ttl'                                 =>  $this->input->post('ttl'),
       'usia'                                =>  $this->input->post('usia'),
-      'jenis_kelamin'                       =>  $this->input->post('jenis_kelamin'),
+      'jenis_kelamin_pasien'                =>  $this->input->post('jenis_kelamin_pasien'),
       'nama_wali'                           =>  $this->input->post('nama_wali'),
       'usia_wali'                           =>  $this->input->post('usia_wali'),
       'hubungan'                            =>  $this->input->post('hubungan'),
@@ -329,7 +332,6 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'diagnosis_banding'                   =>  $this->input->post('diagnosis_banding'),
       'tindakan_yang_dilakukan'             =>  $this->input->post('tindakan_yang_dilakukan'),
       'indikasi_tindakan'                   =>  $this->input->post('indikasi_tindakan'),
-      'tata_cara'                           =>  $this->input->post('tata_cara'),
       'risiko_tindakan'                     =>  $this->input->post('risiko_tindakan'),
       'komplikasi'                          =>  $this->input->post('komplikasi'),
       'prognosis'                           =>  $this->input->post('prognosis'),
@@ -338,6 +340,7 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'coretan'                             =>  $this->input->post('coretan'),
     ];
 
+    
     $params = [
       'no_rm'                 => $this->data['no_rm'],
       'id_pasien_registrasi'  => $this->input->post('id_reg'),
@@ -347,6 +350,9 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'id_ref_global_tipe_42' => $this->id_ref_global_tipe_42,
       'notes'                 => $notes, // NAMANYA HARUS NOTES
     ];
+    
+    echo json_encode($params);
+    exit();
 
     $this->_config['body'] = json_encode($params);
     $response = $this->_client_rs->request('POST', 'notes', $this->_config);
