@@ -293,6 +293,10 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'coretan_pasien'                      =>  $this->input->post('coretan_pasien'),
       'coretan_wali'                        =>  $this->input->post('coretan_wali'),
       'coretan_saksi'                       =>  $this->input->post('coretan_saksi'),
+      // 'nama_pesetujuan'                     =>  $this->input->post('nama_persetujuan'),
+      // 'tl_pesetujuan'                       =>  $this->input->post('tl_persetujuan'),
+      // 'alamat_persetujuan'                  =>  $this->input->post('talamat_persetujuan'),
+      // 'no_identitas_persetujuan'            =>  $this->input->post('tno_identitas_persetujuan'),
     ];
 
     
