@@ -8,10 +8,10 @@ use GuzzleHttp\Exception\ServerException;
 /**********************************************************************************
  * 
  * Deskripsi
- * Menampilkan halaman client/notes_penolakan_resusitasi
+ * Menampilkan halaman client/29_notes_case_manager_b
  * 
  **********************************************************************************/
-class C_notes_evaluasi_awal_mpp extends CI_Controller
+class C_29_notes_case_manager_b extends CI_Controller
 {
   public $data;
   public function __construct()
@@ -32,19 +32,11 @@ class C_notes_evaluasi_awal_mpp extends CI_Controller
 
     // token diambil dari postman, kalau sudah expired sikahkan ambil lagi.
     $token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiTkFNQSAyIiwiaWRfdXNlciI6IjM3MzY4MSIsInJtX251bWJlciI6ImFkbWluIiwicnNfa2V5IjoiQTEyMyIsImlwX2FkZHJlc3MiOiIxMjcuMC4xLjEiLCJhY2Nlc3MiOiJ1c2VyIn0.ubW6fyc7ErYOW2T5qFbjXvLIVTLp05s3A0paQ6wfcmo";
-    $this->id_ref_global_tipe_42 = 128;
+    $this->id_ref_global_tipe_42 = 29;
     
     // guzzle client
     $this->_client_rs = new Client([
       'base_uri'  => $this->config->item('api_rs'),
-      'headers'   => [
-        'Content-Type' => 'application/json',
-        'x-token' => $token
-      ]
-    ]);
-
-    $this->_client_notes = new Client([
-      'base_uri'  => $this->config->item('api_notes'),
       'headers'   => [
         'Content-Type' => 'application/json',
         'x-token' => $token
@@ -61,10 +53,12 @@ class C_notes_evaluasi_awal_mpp extends CI_Controller
 
     // NAMA FOLDER DALAM CONTROLLER. 
     // HANYA EDIT DI SINI.. YANG LAIN TIDAK PERLU DIRUBAH... TOLONG GANTI DENGAN NAMA FOLDER YANG BARU
-    $this->c_folder = "C_notes_evaluasi_awal_mpp"; // <<< HANYA INI YANG PERLU DIRUBAH DI CONSTRUCT()!!!! SISANYA DIAMKAN
+    $this->c_folder = "C_29_notes_case_manager_b"; // <<< HANYA INI YANG PERLU DIRUBAH DI CONSTRUCT()!!!! SISANYA DIAMKAN
 
     //menghilangkan 'C_' pada nama class untuk dinamisasi routing;
     $this->class = str_replace("c_", "", $this->router->fetch_class());
+
+    $this->title = 'Notes Case Manager B';
 
     //dummy id departemen
     $this->id_dept = 3;
@@ -75,7 +69,7 @@ class C_notes_evaluasi_awal_mpp extends CI_Controller
 
   // redirect ke fungsi list
   public function index()
-  // $route['notes_penolakan_resusitasi'] = 'notes_penolakan_resusitasi/c_notes_penolakan_resusitasi';
+  // $route['29_notes_case_manager_b'] = '29_notes_case_manager_b/c_29_notes_case_manager_b';
   {
     // echo base_url(); die;
     redirect(base_url() . $this->class . '/list');
@@ -93,7 +87,7 @@ class C_notes_evaluasi_awal_mpp extends CI_Controller
   public function list()
   {
     $data = array(
-      'title'   => 'Notes Evaluasi Awal Mpp',
+      'title'   => $this->title,
       'class_name' => $this->class,
     );
 
@@ -183,23 +177,8 @@ class C_notes_evaluasi_awal_mpp extends CI_Controller
             'approved_petugas'                    => $jdata['approved_petugas'],
             'tanggal'                             => $jdata['notes']['tanggal'],
             'jam'                                 => $jdata['notes']['jam'],
-            'tanggal_lahir'                       => $jdata['notes']['tanggal_lahir'],
-            'ruang_rawat'                         => $jdata['notes']['ruang_rawat'],
-            'tindakan'                            => $jdata['notes']['tindakan'],
-            'usia'                                => $jdata['notes']['usia'],
-            'fungsi_kognitif'                     => $jdata['notes']['fungsi_kognitif'],
-            'pasien_risiko_tinggi'                => $jdata['notes']['pasien_risiko_tinggi'],
-            'potensi_complain'                    => $jdata['notes']['potensi_complain'],
-            'riwayat_sakit_kronis'                => $jdata['notes']['riwayat_sakit_kronis'],
-            'status_fungsional_rendah'            => $jdata['notes']['status_fungsional_rendah'],
-            'riwayat_alat_medis'                  => $jdata['notes']['riwayat_alat_medis'],
-            'riwayat_gangguan_mental'             => $jdata['notes']['riwayat_gangguan_mental'],
-            'readmisi'                            => $jdata['notes']['readmisi'],
-            'perkiraan_biaya_tinggi'              => $jdata['notes']['perkiraan_biaya_tinggi'],
-            'sistem_biaya'                        => $jdata['notes']['sistem_biaya'],
-            'lama_dirawat'                        => $jdata['notes']['lama_dirawat'],
-            'risiko_komplikasi_berat_di_rumah'    => $jdata['notes']['risiko_komplikasi_berat_di_rumah'],
-            'kesimpulan'                          => $jdata['notes']['kesimpulan'],
+            'item'                                => $jdata['notes']['item'],
+            'catatan'                   	        => $jdata['notes']['catatan']
           ];
         };
 
@@ -241,6 +220,32 @@ class C_notes_evaluasi_awal_mpp extends CI_Controller
     ]);
     $data_visit = json_decode($response_visit->getBody()->getContents(), true)['data']['visit'];
 
+    $has_visit = 0;
+
+    try {
+      $response     = $this->_client_rs->request('GET', 'notes_registrasi', [
+        'query' => [
+          // 'id_pasien_registrasi'  => $this->input->post('id_reg', true),
+          'no_rm'               => $this->session->userdata('no_rm'),
+          'id_ref_global_tipe_42' => $this->id_ref_global_tipe_42
+        ]
+      ]);
+      $result_data = json_decode($response->getBody()->getContents(), true);
+
+      foreach ($result_data['data'] as $key => $value) {
+        if($value['id_pasien_registrasi'] == $this->input->post('id_reg', true)){
+          $has_visit = json_decode($value['json_data'], true);
+        }
+      }
+    } catch (GuzzleHttp\Exception\RequestException $e) {
+        if ($e->hasResponse()) {
+            
+         }
+        else {
+            return trace("Error nih");
+        }
+    }
+
     if ($type == 'list') {
       $response_dokter     = $this->_client_rs->request('GET', 'ref/dokter');
       $data['data_dokter'] = json_decode($response_dokter->getBody()->getContents(), true)['data'];
@@ -248,12 +253,14 @@ class C_notes_evaluasi_awal_mpp extends CI_Controller
       $response_perawat     = $this->_client_rs->request('GET', 'ref/perawat');
       $data['data_perawat'] = json_decode($response_perawat->getBody()->getContents(), true)['data'];
 
-      $data['title'] = $this->input->post('id_reg', true);
+      $data['title'] = $this->title;
       $data['id_reg'] = $this->input->post('id_reg', true);
       $data['data_visit'] = $data_visit;
+      $data['data_regis'] = $has_visit;
 
       $this->load->view('contents/notes/' . $this->class  . '/add', $data);
     }
+
   }
 
   public function add_process()
@@ -261,23 +268,8 @@ class C_notes_evaluasi_awal_mpp extends CI_Controller
     $notes = [
       'tanggal'                             =>  $this->input->post('tanggal'),
       'jam'                                 =>  $this->input->post('jam'),
-      'tanggal_lahir'                       =>  $this->input->post('tanggal_lahir'),
-      'ruang_rawat'                         =>  $this->input->post('ruang_rawat'),
-      'tindakan'                            =>  $this->input->post('tindakan'),
-      'usia'                                =>  $this->input->post('usia'),
-      'fungsi_kognitif'                     =>  $this->input->post('fungsi_kognitif'),
-      'pasien_risiko_tinggi'                =>  $this->input->post('pasien_risiko_tinggi'),
-      'potensi_complain'                    =>  $this->input->post('potensi_complain'),
-      'riwayat_sakit_kronis'                =>  $this->input->post('riwayat_sakit_kronis'),
-      'status_fungsional_rendah'            =>  $this->input->post('status_fungsional_rendah'),
-      'riwayat_alat_medis'                  =>  $this->input->post('riwayat_alat_medis'),
-      'riwayat_gangguan_mental'             =>  $this->input->post('riwayat_gangguan_mental'),
-      'readmisi'                            =>  $this->input->post('readmisi'),
-      'perkiraan_biaya_tinggi'              =>  $this->input->post('perkiraan_biaya_tinggi'),
-      'sistem_biaya'                        =>  $this->input->post('sistem_biaya'),
-      'lama_dirawat'                        =>  $this->input->post('lama_dirawat'),
-      'risiko_komplikasi_berat_di_rumah'    =>  $this->input->post('risiko_komplikasi_berat_di_rumah'),
-      'kesimpulan'                          =>  $this->input->post('kesimpulan')
+      'item'                                =>  $this->input->post('item'),
+      'catatan'           	                =>  $this->input->post('catatan'),
     ];
 
     $params = [
@@ -327,29 +319,15 @@ class C_notes_evaluasi_awal_mpp extends CI_Controller
     // trace($result_data);
     $result = $result_data['data'][0]['json_data'];
     $detail = [
-      'approved_petugas'                    => $result['approved_petugas'],
-      'tanggal'                             => $result['notes']['tanggal'],
-      'jam'                                 => $result['notes']['jam'],
-      'tanggal_lahir'                       => $result['notes']['tanggal_lahir'],
-      'ruang_rawat'                         => $result['notes']['ruang_rawat'],
-      'tindakan'                            => $result['notes']['tindakan'],
-      'usia'                                => $result['notes']['usia'],
-      'fungsi_kognitif'                     => $result['notes']['fungsi_kognitif'],
-      'pasien_risiko_tinggi'                => $result['notes']['pasien_risiko_tinggi'],
-      'potensi_complain'                    => $result['notes']['potensi_complain'],
-      'riwayat_sakit_kronis'                => $result['notes']['riwayat_sakit_kronis'],
-      'status_fungsional_rendah'            => $result['notes']['status_fungsional_rendah'],
-      'riwayat_alat_medis'                  => $result['notes']['riwayat_alat_medis'],
-      'riwayat_gangguan_mental'             => $result['notes']['riwayat_gangguan_mental'],
-      'readmisi'                            => $result['notes']['readmisi'],
-      'perkiraan_biaya_tinggi'              => $result['notes']['perkiraan_biaya_tinggi'],
-      'sistem_biaya'                        => $result['notes']['sistem_biaya'],
-      'lama_dirawat'                        => $result['notes']['lama_dirawat'],
-      'risiko_komplikasi_berat_di_rumah'    => $result['notes']['risiko_komplikasi_berat_di_rumah'],
-      'kesimpulan'                          => $result['notes']['kesimpulan'],
+            'approved_petugas'                    => $result['approved_petugas'],
+            'tanggal'                             => $result['notes']['tanggal'],
+            'jam'                                 => $result['notes']['jam'],
+            'item'                                => $result['notes']['item'],
+            'catatan'                             => $result['notes']['catatan']
     ];
     $result_data = $result_data['data'][0];
 
+    $data['title'] = $this->title;
     $detail['id_notes'] = $result_data['id'];
     $detail['id_reg'] = $result_data['id_pasien_registrasi'];
     $detail['id_visit'] = $result_data['id_pasien_visit'];
@@ -364,23 +342,8 @@ class C_notes_evaluasi_awal_mpp extends CI_Controller
     $notes = [
       'tanggal'                             =>  $this->input->post('tanggal'),
       'jam'                                 =>  $this->input->post('jam'),
-      'tanggal_lahir'                       =>  $this->input->post('tanggal_lahir'),
-      'ruang_rawat'                         =>  $this->input->post('ruang_rawat'),
-      'tindakan'                            =>  $this->input->post('tindakan'),
-      'usia'                                =>  $this->input->post('usia'),
-      'fungsi_kognitif'                     =>  $this->input->post('fungsi_kognitif'),
-      'pasien_risiko_tinggi'                =>  $this->input->post('pasien_risiko_tinggi'),
-      'potensi_complain'                    =>  $this->input->post('potensi_complain'),
-      'riwayat_sakit_kronis'                =>  $this->input->post('riwayat_sakit_kronis'),
-      'status_fungsional_rendah'            =>  $this->input->post('status_fungsional_rendah'),
-      'riwayat_alat_medis'                  =>  $this->input->post('riwayat_alat_medis'),
-      'riwayat_gangguan_mental'             =>  $this->input->post('riwayat_gangguan_mental'),
-      'readmisi'                            =>  $this->input->post('readmisi'),
-      'perkiraan_biaya_tinggi'              =>  $this->input->post('perkiraan_biaya_tinggi'),
-      'sistem_biaya'                        =>  $this->input->post('sistem_biaya'),
-      'lama_dirawat'                        =>  $this->input->post('lama_dirawat'),
-      'risiko_komplikasi_berat_di_rumah'    =>  $this->input->post('risiko_komplikasi_berat_di_rumah'),
-      'kesimpulan'                          =>  $this->input->post('kesimpulan')
+      'item'                                =>  $this->input->post('item'),
+      'catatan'           	                =>  $this->input->post('catatan'),
     ];
 
     $params = [
@@ -432,33 +395,33 @@ class C_notes_evaluasi_awal_mpp extends CI_Controller
       ]
     ]);
     $result_data = json_decode($response->getBody()->getContents(), true);
-    // trace($result_data);
-    // $no_rm = $result_data['data'][0]['no_rm'];
-    $result = $result_data['data'][0]['json_data'];
-    $detail = [
-      'approved_petugas'                    => $result['approved_petugas'],
-      'digital_signature_approved_petugas'  => $result['digital_signature_approved_petugas'],
-      'created_date'                        => $result['created_date'],
-      'tanggal'                             => $result['notes']['tanggal'],
-      'jam'                                 => $result['notes']['jam'],
-      'tanggal_lahir'                       => $result['notes']['tanggal_lahir'],
-      'ruang_rawat'                         => $result['notes']['ruang_rawat'],
-      'tindakan'                            => $result['notes']['tindakan'],
-      'usia'                                => $result['notes']['usia'],
-      'fungsi_kognitif'                     => $result['notes']['fungsi_kognitif'],
-      'pasien_risiko_tinggi'                => $result['notes']['pasien_risiko_tinggi'],
-      'potensi_complain'                    => $result['notes']['potensi_complain'],
-      'riwayat_sakit_kronis'                => $result['notes']['riwayat_sakit_kronis'],
-      'status_fungsional_rendah'            => $result['notes']['status_fungsional_rendah'],
-      'riwayat_alat_medis'                  => $result['notes']['riwayat_alat_medis'],
-      'riwayat_gangguan_mental'             => $result['notes']['riwayat_gangguan_mental'],
-      'readmisi'                            => $result['notes']['readmisi'],
-      'perkiraan_biaya_tinggi'              => $result['notes']['perkiraan_biaya_tinggi'],
-      'sistem_biaya'                        => $result['notes']['sistem_biaya'],
-      'lama_dirawat'                        => $result['notes']['lama_dirawat'],
-      'risiko_komplikasi_berat_di_rumah'    => $result['notes']['risiko_komplikasi_berat_di_rumah'],
-      'kesimpulan'                          => $result['notes']['kesimpulan'],
-    ];
+    $id_pasien_registrasi = $result_data['data'][0]['id_pasien_registrasi'];
+
+    $response     = $this->_client_rs->request('GET', 'notes_registrasi', [
+      'query' => [
+        'id_pasien_registrasi'  => $id_pasien_registrasi,
+        'no_rm'               => $this->session->userdata('no_rm'),
+        'id_ref_global_tipe_42' => $this->id_ref_global_tipe_42
+      ]
+    ]);
+    $result_data = json_decode($response->getBody()->getContents(), true);
+    
+    // $result = $result_data['data'][0]['json_data'];
+    $result = $result_data['data'];
+
+    foreach ($result as $key => $value) {
+      $catatan = json_decode($value['json_data'], true);
+      
+      $catatan_perawat[] = [
+              'approved_petugas'                    => $catatan['approved_petugas'],
+              'digital_signature_approved_petugas'  => $catatan['digital_signature_approved_petugas'],
+              'tanggal'                             => $catatan['notes']['tanggal'],
+              'jam'                                 => $catatan['notes']['jam'],
+              'item'                                => $catatan['notes']['item'],
+              'catatan'                             => $catatan['notes']['catatan']
+      ];
+    }
+
     $result_data = $result_data['data'][0];
     $detail['id_notes'] = $result_data['id'];
     $detail['id_reg'] = $result_data['id_pasien_registrasi'];
@@ -503,7 +466,8 @@ class C_notes_evaluasi_awal_mpp extends CI_Controller
       'title' => $title,
       'list' => [
         'pasien' => $data_visit,
-        'notes'  => $detail,
+        'notes'  => $catatan_perawat,
+        'detail' => $detail
       ],
     ];
 
@@ -520,24 +484,24 @@ class C_notes_evaluasi_awal_mpp extends CI_Controller
     $mpdf->SetMargins(0, 0, 12);
 
 
-    $header = '<div class="row">
-                      <table border="1" width="100%">
-                        <tr>
-                          <td rowspan="4" width="15%" style="text-align:center;">
-                            <img style="width: 12%;" src="' . $clinic_profile['logo1'] . '">
-                          </td>
-                          <td colspan="5" style="border-left:none;text-align:center;padding:10px;padding-left:20px;">
-                            <h4 class="r-bold"><b>' . $title . '</h4>
-                          </td>
-                          <td style="border-left:none;padding:10px;text-align:center;"><h4 class="r-bold">' . $kode . '</h4></td>
-                        </tr>
-                        <tr>
-                          <td colspan="6" style="border-top:none;border-left:none;padding:10px;">
-                            <span style="font-size:10pt;font-weight:bold">' . $clinic_profile['clinic_name'] . '</span><br>
-                          </td>
-                        </tr>
-                      </table>
-                    </div>';
+    $header ='<div class="row">
+                <table border="1" width="100%">
+                  <tr>
+                    <td rowspan="4" width="15%" style="text-align:center;">
+                      <img style="width: 12%;" src="' . $clinic_profile['logo1'] . '">
+                    </td>
+                    <td colspan="5" style="border-left:none;text-align:center;padding:10px;padding-left:20px;">
+                      <h4 class="r-bold"><b>' . $title . '</h4>
+                    </td>
+                    <td style="border-left:none;padding:10px;text-align:center;"><h4 class="r-bold">' . $kode . '</h4></td>
+                  </tr>
+                  <tr>
+                    <td colspan="6" style="border-top:none;border-left:none;padding:10px;">
+                      <span style="font-size:10pt;font-weight:bold">' . $clinic_profile['clinic_name'] . '</span><br>
+                    </td>
+                  </tr>
+                </table>
+              </div>';
 
     $mpdf->SetHeader($header);
     $mpdf->setFooter('PDF Hal' . '{PAGENO} / {nb}');

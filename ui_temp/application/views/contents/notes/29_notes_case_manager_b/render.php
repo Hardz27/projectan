@@ -1,5 +1,6 @@
 
 <style>
+  
   .mt-1 {
     margin-top: 1px;
   }
@@ -91,11 +92,22 @@
   }
 
   td.with-ellipsis{
-    width: 175px;
+    text-align: right;
+    margin-top: -1px;
     overflow: hidden;
     display: inline-block;
     white-space: nowrap;
     text-overflow: ellipsis;
+    width: 100%;
+  }
+  td.line-1{ 
+    max-width: 100%;
+  }
+  td.line-2 {
+    max-width: 320px;
+  }
+  td.line-3 {
+    max-width: 320px;
   }
 </style>
 
@@ -106,15 +118,17 @@
       <?php if ($list) { 
         $isAny = 0;
       ?>
-      <?php foreach ($list as $k => $v) : ?>
+      <?php foreach ($list as $k => $v) :?>
         <?php foreach ($v['data'] as $k) : ?>
           <?php $isAny++; ?>
           <div class="col-md-2 text-right">
             <button class="btn btn-primary btn-sm ubah-aktif" data-id-notes="<?= $k['notes_id']; ?>"><i class="fa fa-fw fa-pencil"></i></button>
             <button class="btn btn-danger btn-sm hapus-aktif" data-id-notes="<?= $k['notes_id']; ?>"><i class="fa fa-fw fa-trash"></i></button>
+            <?php if($isAny <= 1) { ?>
             <button class="btn btn-success btn-sm cetak-aktif" data-id-notes="<?= $k['notes_id']; ?>">Cetak</button>
-            <!-- <div class="row text-center"><?= $k['notes_vitals'][0]['created_date']; ?></div> -->
+            <?php } ?>
           </div>
+          
           <div class="col-md-10">
             <div class="row">
               <div class="col-lg-12">
@@ -122,117 +136,57 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <table class="table nowrap">
                   <tbody>
                     <tr>
-                      <td>Petugas Approve</td>
-                      <td class="with-ellipsis"><?= ucwords(strtolower($k['approved_petugas'])); ?></td>
+                      <td>Perawat Approve</td>
+                      <td class="with-ellipsis line-1"><?= ucwords(strtolower($k['approved_petugas'])); ?></td>
                     </tr>
                     <tr>
                       <td>Tanggal</td>
-                      <td class="with-ellipsis"><?= $k['tanggal']; ?></td>
+                      <td class="with-ellipsis line-1"><?= $k['tanggal']; ?></td>
                     </tr>
                     <tr>
                       <td>Jam</td>
-                      <td class="with-ellipsis"><?= $k['jam']; ?></td>
+                      <td class="with-ellipsis line-1"><?= $k['jam']; ?></td>
                     </tr>
                     <tr>
-                      <td class="text-center" colspan="2"><b>Assesment</b></td>
+                      <td>Kegiatan</td>
+                      <?php 
+                        if ($k['item'] == 'A') {
+                          $kegiatan = 'Pelaksanaan Perencanaan MPP';
+                        }else if ($k['item'] == 'B') {
+                          $kegiatan = 'Monitoring';
+                        }else if ($k['item'] == 'C') {
+                          $kegiatan = 'Identifikasi masalah-resiko-kesempatan';
+                        }else if ($k['item'] == 'D') {
+                          $kegiatan = 'Fasilitasi, Koordinasi, Komunikasi';
+                        }else if ($k['item'] == 'E') {
+                          $kegiatan = 'Kolaborasi';
+                        }else if ($k['item'] == 'F') {
+                          $kegiatan = 'Advokasi';
+                        }else if ($k['item'] == 'G') {
+                          $kegiatan = 'Hasil pelayanan';
+                        }else if ($k['item'] == 'H') {
+                          $kegiatan = 'Terminal MPP';
+                        }
+                      ?>
+                      <td class="with-ellipsis line-1"><?= $kegiatan ?></td>
                     </tr>
                     <tr>
-                      <td>Fisik, Fungsional, Kognitif, kekuatan-kemampuan, kemandirian</td>
-                      <td class="with-ellipsis"><?= $k['fisik_fungsional']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Riwayat Kesehatan</td>
-                      <td class="with-ellipsis"><?= $k['riwayat_kesehatan']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Perilaku Psiko-Sosio-Kultural</td>
-                      <td class="with-ellipsis"><?= $k['perilaku']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Kesehatan mental</td>
-                      <td class="with-ellipsis"><?= $k['kesehatan_mental']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Tersedianya dukungan keluarga kemampuan merawat dari pemberi asuhan</td>
-                      <td class="with-ellipsis"><?= $k['dukungan_keluarga']; ?></td>
+                      <td>Catatan</td>
+                      <td class="with-ellipsis line-1"><?= $k['catatan']; ?></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
 
-              <div class="col-md-4">
-                <table class="table nowrap">
-                  <tbody>
-                    <tr>
-                      <td>Finansial</td>
-                      <td class="with-ellipsis"><?= $k['finansial']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Status Asuransi</td>
-                      <td class="with-ellipsis"><?= $k['status_asuransi']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Riwayat penggunaan obat, alternatif</td>
-                      <td class="with-ellipsis"><?= $k['riwayat_penggunaan_obat']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Riwayat Trauma, kekerasan</td>
-                      <td class="with-ellipsis"><?= $k['riwayat_trauma']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Pemahaman tentang kesehatan</td>
-                      <td class="with-ellipsis"><?= $k['pemahaman_kesehatan']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Harapan hasil asuhan, kemampuan menerima perubahan</td>
-                      <td class="with-ellipsis"><?= $k['harapan_hasil_asuhan']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Aspek Legal</td>
-                      <td class="with-ellipsis"><?= $k['aspek_legal']; ?></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <div class="col-md-4">
-                <table class="table nowrap">
-                  <tbody>
-                    <tr>
-                      <td  class="text-center" ><b>Identifikasi Masalah</b></td>
-                    </tr>
-                    <tr class=" <?= $k['asuhan'] != '' ? '' : 'hide' ?>">
-                      <td colspan="2"><?= $k['asuhan']; ?></td>
-                    </tr>
-                    <tr class=" <?= $k['penurunan_determinasi'] != '' ? '' : 'hide' ?>">
-                      <td colspan="2"><?= $k['penurunan_determinasi']; ?></td>
-                    </tr>
-                    <tr class=" <?= $k['utilization'] != '' ? '' : 'hide' ?>">
-                      <td colspan="2"><?= $k['utilization']; ?></td>
-                    </tr>
-                    <tr class=" <?= $k['kendala_keuangan'] != '' ? '' : 'hide' ?>">
-                      <td colspan="2"><?= $k['kendala_keuangan']; ?></td>
-                    </tr>
-                    <tr class=" <?= $k['edukasi_yang_belum'] != '' ? '' : 'hide' ?>">
-                      <td colspan="2"><?= $k['edukasi_yang_belum']; ?></td>
-                    </tr>
-                    <tr class=" <?= $k['penyebab_ketidakpatuhan'] != '' ? '' : 'hide' ?>">
-                      <td colspan="2"><?= $k['penyebab_ketidakpatuhan']; ?></td>
-                    </tr>
-                    <tr class=" <?= $k['kurangnya_dukungan'] != '' ? '' : 'hide' ?>">
-                      <td colspan="2"><?= $k['kurangnya_dukungan']; ?></td>
-                    </tr>
-                    <tr class=" <?= $k['pemulangan'] != '' ? '' : 'hide' ?>">
-                      <td colspan="2"><?= $k['pemulangan']; ?></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
             </div>
+
+          </div>
+        </div>
+
           </div>
           <hr>
         <?php endforeach; ?>

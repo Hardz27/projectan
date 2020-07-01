@@ -273,8 +273,8 @@
                 <div class="col-md-6">
                   <div class="text-center" style="padding-left: 0px">
                     <label class="container-checkbox checkbox-left">
-                      &nbsp;&nbsp;Over / Under utulization pelayanan
-                      <input type="checkbox" name="utilization" value="Over / Under utulization pelayanan">
+                      &nbsp;&nbsp;Over / Under utilization pelayanan
+                      <input type="checkbox" name="utilization" value="Over / Under utilization pelayanan">
                       <span class="checkmark-checkbox"></span>
                     </label>
                   </div>

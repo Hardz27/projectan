@@ -36,13 +36,6 @@ $route['notes_evaluasi_awal_mpp/(:any)/(:any)']               = 'notes/notes_eva
 $route['notes_evaluasi_awal_mpp/(:any)/(:num)/(:any)']        = 'notes/notes_evaluasi_awal_mpp/c_notes_evaluasi_awal_mpp/$1/$2/$3';
 $route['notes_evaluasi_awal_mpp/(:any)/(:any)/(:any)/(:any)'] = 'notes/notes_evaluasi_awal_mpp/c_notes_evaluasi_awal_mpp/$1/$2/$3/$4';
 
-/// ROUTES START FOR 28_notes_case_manager_a
-$route['28_notes_case_manager_a'] = 'notes/28_notes_case_manager_a/c_28_notes_case_manager_a';
-$route['28_notes_case_manager_a/(:any)'] = 'notes/28_notes_case_manager_a/c_28_notes_case_manager_a/$1';
-$route['28_notes_case_manager_a/(:any)/(:any)']               = 'notes/28_notes_case_manager_a/c_28_notes_case_manager_a/$1/$2';
-$route['28_notes_case_manager_a/(:any)/(:num)/(:any)']        = 'notes/28_notes_case_manager_a/c_28_notes_case_manager_a/$1/$2/$3';
-$route['28_notes_case_manager_a/(:any)/(:any)/(:any)/(:any)'] = 'notes/28_notes_case_manager_a/c_28_notes_case_manager_a/$1/$2/$3/$4';
-
 /// ROUTES START FOR notes_skrining_tb
 $route['docs_pasien_tb_dewasa'] = 'docs/docs_pasien_tb_dewasa/c_docs_pasien_tb_dewasa';
 $route['docs_pasien_tb_dewasa/(:any)'] = 'docs/docs_pasien_tb_dewasa/c_docs_pasien_tb_dewasa/$1';
@@ -149,6 +142,20 @@ $route['22_notes_odontogram/(:any)/(:any)']               = 'notes/22_notes_odon
 $route['22_notes_odontogram/(:any)/(:num)/(:any)']        = 'notes/22_notes_odontogram/c_22_notes_odontogram/$1/$2/$3';
 $route['22_notes_odontogram/(:any)/(:any)/(:any)/(:any)'] = 'notes/22_notes_odontogram/c_22_notes_odontogram/$1/$2/$3/$4';
 
+/// ROUTES START FOR 28_notes_case_manager_a
+$route['28_notes_case_manager_a'] = 'notes/28_notes_case_manager_a/c_28_notes_case_manager_a';
+$route['28_notes_case_manager_a/(:any)'] = 'notes/28_notes_case_manager_a/c_28_notes_case_manager_a/$1';
+$route['28_notes_case_manager_a/(:any)/(:any)']               = 'notes/28_notes_case_manager_a/c_28_notes_case_manager_a/$1/$2';
+$route['28_notes_case_manager_a/(:any)/(:num)/(:any)']        = 'notes/28_notes_case_manager_a/c_28_notes_case_manager_a/$1/$2/$3';
+$route['28_notes_case_manager_a/(:any)/(:any)/(:any)/(:any)'] = 'notes/28_notes_case_manager_a/c_28_notes_case_manager_a/$1/$2/$3/$4';
+
+/// ROUTES START FOR 29_notes_case_manager_b
+$route['29_notes_case_manager_b'] = 'notes/29_notes_case_manager_b/c_29_notes_case_manager_b';
+$route['29_notes_case_manager_b/(:any)'] = 'notes/29_notes_case_manager_b/c_29_notes_case_manager_b/$1';
+$route['29_notes_case_manager_b/(:any)/(:any)']               = 'notes/29_notes_case_manager_b/c_29_notes_case_manager_b/$1/$2';
+$route['29_notes_case_manager_b/(:any)/(:num)/(:any)']        = 'notes/29_notes_case_manager_b/c_29_notes_case_manager_b/$1/$2/$3';
+$route['29_notes_case_manager_b/(:any)/(:any)/(:any)/(:any)'] = 'notes/29_notes_case_manager_b/c_29_notes_case_manager_b/$1/$2/$3/$4';
+
 /// ROUTES START FOR 59_notes_catatan_keperawatan
 $route['59_notes_catatan_keperawatan'] = 'notes/59_notes_catatan_keperawatan/c_59_notes_catatan_keperawatan';
 $route['59_notes_catatan_keperawatan/(:any)'] = 'notes/59_notes_catatan_keperawatan/c_59_notes_catatan_keperawatan/$1';
@@ -169,3 +176,10 @@ $route['71_assesmen_bayi_baru_lahir/(:any)'] = 'notes/71_assesmen_bayi_baru_lahi
 $route['71_assesmen_bayi_baru_lahir/(:any)/(:any)']               = 'notes/71_assesmen_bayi_baru_lahir/c_71_assesmen_bayi_baru_lahir/$1/$2';
 $route['71_assesmen_bayi_baru_lahir/(:any)/(:num)/(:any)']        = 'notes/71_assesmen_bayi_baru_lahir/c_71_assesmen_bayi_baru_lahir/$1/$2/$3';
 $route['71_assesmen_bayi_baru_lahir/(:any)/(:any)/(:any)/(:any)'] = 'notes/71_assesmen_bayi_baru_lahir/c_71_assesmen_bayi_baru_lahir/$1/$2/$3/$4';
+
+/// ROUTES START FOR 141_edukasi_tindakan_anastesi_sedasi
+$route['141_edukasi_tindakan_anastesi_sedasi'] = 'notes/141_edukasi_tindakan_anastesi_sedasi/c_141_edukasi_tindakan_anastesi_sedasi';
+$route['141_edukasi_tindakan_anastesi_sedasi/(:any)'] = 'notes/141_edukasi_tindakan_anastesi_sedasi/c_141_edukasi_tindakan_anastesi_sedasi/$1';
+$route['141_edukasi_tindakan_anastesi_sedasi/(:any)/(:any)']               = 'notes/141_edukasi_tindakan_anastesi_sedasi/c_141_edukasi_tindakan_anastesi_sedasi/$1/$2';
+$route['141_edukasi_tindakan_anastesi_sedasi/(:any)/(:num)/(:any)']        = 'notes/141_edukasi_tindakan_anastesi_sedasi/c_141_edukasi_tindakan_anastesi_sedasi/$1/$2/$3';
+$route['141_edukasi_tindakan_anastesi_sedasi/(:any)/(:any)/(:any)/(:any)'] = 'notes/141_edukasi_tindakan_anastesi_sedasi/c_141_edukasi_tindakan_anastesi_sedasi/$1/$2/$3/$4';
