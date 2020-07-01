@@ -277,63 +277,74 @@
         </table>
       </div>
     </div>
-    <?php $no = 1; ?>
     
     <div class="row-panel">
       <div class="row-heading border-blue bg-blue font-white font-size-9 r-bold">Data <?= $title; ?></div>
         <div class="row-body">
           <table width="100%" cellspacing="0">
             <tr>
-              <td width="2%" class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left"></td>
-              <td width="15%" class="font-size-8 border-bottom-0 border-left-0 border-right-0 centerp-left">Nama</td>
-              <td width="25%" class="font-size-8 border-bottom-0 border-left-0 border-right-0 centerp-left">: <?= $list['notes'][0]['nama_pasien']; ?></td>
-              <td width="12%" class="font-size-8 border-bottom-0 border-left-0 border-right-0 centerp-left">Jenis Kelamin</td>
-              <td width="20%" class="font-size-8 border-bottom-0 border-left-0 border-right-0 centerp-left">: <?= $list['notes'][0]['jenis_kelamin']; ?></td>
-              <td width="10%" class="font-size-8 border-bottom-0 border-left-0 border-right-0 centerp-left">No RM</td>
-              <td class="font-size-8 border-bottom-0 border-left-0 border-right-1 centerp-left">: <?= $list['notes'][0]['no_rm']; ?></td>
+              <td width="3%" class="r-bold font-size-8 border-left-1 centerp-head" rowspan="9"></td>
+              <td class="r-bold font-size-8 border-right-1 centerp-left" colspan="2">Keterangan Item :</td>
             </tr>
             <tr>
-              <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left"></td>
-              <td class="font-size-8 border-bottom-0 border-left-0 border-right-0 centerp-left">Umur</td>
-              <td class="font-size-8 border-bottom-0 border-left-0 border-right-0 centerp-left">: <?= $list['notes'][0]['usia'] ?></td>
-              <td class="font-size-8 border-bottom-0 border-left-0 border-right-0 centerp-left">Tahun / Bulan</td>
-              <td class="font-size-8 border-right-1 centerp-row" colspan="3">: <?= $list['notes'][0]['tahun'] .' Tahun / '. $list['notes'][0]['bulan'] .'  Bulan'?></td>
+              <td width="3%" class="font-size-8 centerp-left"><?= 'A' ?>.</td>
+              <td class="font-size-8 border-right-1 centerp-left">Pelaksanaan Perencanaan MPP</td>
             </tr>
             <tr>
-              <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left"></td>
-              <td class="font-size-8 border-bottom-0 border-left-0 border-right-0 centerp-left">Ruangan / Kelas</td>
-              <td class="font-size-8 border-right-1 centerp-row" colspan="5">: <?= 'Ruangan '.$list['notes'][0]['ruangan'] .' / Kelas '. $list['notes'][0]['kelas']?></td>
+              <td class="font-size-8 centerp-left"><?= 'B' ?>.</td>
+              <td class="font-size-8 border-right-1 centerp-left">Monitoring</td>
             </tr>
             <tr>
-              <td height="10px" class="font-size-8 border-left-1 border-right-1 border-bottom-1 centerp-row" colspan="7"> </td>
+              <td class="font-size-8 centerp-left"><?= 'C' ?>.</td>
+              <td class="font-size-8 border-right-1 centerp-left">Identifikasi masalah-resiko-kesempatan</td>
             </tr>
-        </table>
+            <tr>
+              <td class="font-size-8 centerp-left"><?= 'D' ?>.</td>
+              <td class="font-size-8 border-right-1 centerp-left">Fasilitasi, Koordinasi, Komunikasi</td>
+            </tr>
+            <tr>
+              <td class="font-size-8 centerp-left"><?= 'E' ?>.</td>
+              <td class="font-size-8 border-right-1 centerp-left">Kolaborasi</td>
+            </tr>
+            <tr>
+              <td class="font-size-8 centerp-left"><?= 'F' ?>.</td>
+              <td class="font-size-8 border-right-1 centerp-left">Advokasi</td>
+            </tr>
+            <tr>
+              <td class="font-size-8 centerp-left"><?= 'G' ?>.</td>
+              <td class="font-size-8 border-right-1 centerp-left">Hasil pelayanan</td>
+            </tr>
+            <tr>
+              <td class="font-size-8 centerp-left"><?= 'H' ?>.</td>
+              <td class="font-size-8 border-right-1 centerp-left">Terminal MPP</td>
+            </tr>
+          </table>
 
-        <table width="100%" cellspacing="0">
-          <tr>
-            <td height="35px" width="15%" class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-head">Tanggal</td>
-            <td height="35px" width="15%" class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-head">Jam</td>
-            <td height="35px" width="50%" class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-head">Catatan Perawat</td>
-            <td height="35px" class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-head">Nama Perawat</td>
-          </tr>
-          <?php for($i = count($list['notes']) - 1; $i >= 0; $i--) : ?>
-          <tr>
-            <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-head"><?= $list['notes'][$i]['tanggal'] ?></td>
-            <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-head"><?= $list['notes'][$i]['jam'] ?></td>
-            <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left"><?= $list['notes'][$i]['catatan_perawat'] ?></td>
-            <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-head"><?= $list['notes'][$i]['approved_petugas'] ?></td>
-          </tr>
-          <?php endfor; ?>
-          <?php for($i = 0; $i < 20 - count($list['notes']); $i++) : ?>
+          <table width="100%" cellspacing="0">
             <tr>
-            <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left"></td>
-            <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left"></td>
-            <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left"></td>
-            <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left"></td>
-          </tr>
-          <?php endfor; ?>
+              <td height="35px" width="20%" class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head">Tanggal & Jam</td>
+              <td height="35px" width="5%" class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head">Item</td>
+              <td height="35px" width="50%" class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head">Kegiatan Managemen Pelayanan Pasien</td>
+              <td height="35px" class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head">Nama Petugas</td>
+            </tr>
+            <?php for($i = count($list['notes']) - 1; $i >= 0; $i--) : ?>
+            <tr>
+              <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-head"><?= $list['notes'][$i]['tanggal'] .' '. $list['notes'][$i]['jam'] ?></td>
+              <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-head"><?= $list['notes'][$i]['item'] ?></td>
+              <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left"><?= $list['notes'][$i]['catatan'] ?></td>
+              <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-head"><?= $list['notes'][$i]['approved_petugas'] ?></td>
+            </tr>
+            <?php endfor; ?>
+            <?php for($i = 0; $i < 18 - count($list['notes']); $i++) : ?>
+              <tr>
+              <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left"></td>
+              <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left"></td>
+              <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left"></td>
+              <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left"></td>
+            </tr>
+            <?php endfor; ?>
 
-        </table>
+          </table>
 
            <!-- <div class="row-panel mt-20">
             <div class="column-left-header">
