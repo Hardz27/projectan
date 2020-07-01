@@ -574,6 +574,69 @@
                     <br>
                   </div>
                   <br>
+
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-6 text-center"> 
+                        <!-- Signature -->
+                        <b>Wali Pasien</b>
+                        <br>
+                        <!-- Signature -->
+                        <center>
+                          <div class="signature">
+                            <canvas id="signature-pad-wali-pasien" class="signature-pad-wali-pasien" height="200px" width="200px">
+                          </div>
+                          <br>
+                          <button type="button" id="undo-wali">Undo</button>
+                          <button type="button" id="clear-wali">Clear</button>
+                          <br>
+                          <br>
+                          <input type="text" name="ttd_nama_wali_pasien" placeholder="Wali Pasien" class="form-control">
+                          <input type="hidden" name="coretan_wali" id="coretan_wali">
+                        </center>
+                      </div> 
+                      <div class="col-md-6 text-center"> 
+                        <!-- Signature -->
+                        <b>Pasien</b>
+                        <br>
+                        <!-- Signature -->
+                        <center>
+                          <div class="signature">
+                            <canvas id="signature-pad-pasien" class="signature-pad-pasien" height="200px" width="200px">
+                          </div>
+                          <br>
+                          <button type="button" id="undo-pasien">Undo</button>
+                          <button type="button" id="clear-pasien">Clear</button>
+                          <br>
+                          <br>
+                          <input type="text" name="ttd_nama_pasien" placeholder="Pasien" class="form-control">
+                          <input type="hidden" name="coretan_pasien" id="coretan_pasien" required>
+                        </center>
+                      </div> 
+                    </div>
+                    <br>
+                    <br>               
+                    <div class="row">
+                      <div class="col-md-6 text-center"> 
+                  <!-- Signature -->
+                        <b>Saksi Pihak RS</b>
+                        <br>
+                          <!-- Signature -->
+                        <center>
+                          <div class="signature">
+                            <canvas id="signature-pad-saksi-pihak-rs" class="signature-pad-saksi-pihak-rs" height="200px" width="200px">
+                          </div>
+                          <br>
+                          <button type="button" id="undo-saksi">Undo</button>
+                          <button type="button" id="clear-saksi">Clear</button>
+                          <br>
+                          <br>
+                          <input type="text" name="ttd_saksi_pihak_rs" placeholder="Saksi Pihak RS" class="form-control">
+                          <input type="hidden" name="coretan_saksi" id="coretan_saksi">
+                        </center>
+                      </div> 
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -792,61 +855,9 @@
               <br>
             <div class="row">
               <div class="col-md-12"> 
-                <div class="row">
-                  <div class="col-md-6 text-center"> 
-                    <!-- Signature -->
-                    <b>Wali Pasien</b>
-                    <br>
-                     <!-- Signature -->
-                    <center>
-                      <div class="signature">
-                        <canvas id="signature-pad-wali-pasien" class="signature-pad-wali-pasien" height="200px" width="200px">
-                      </div>
-                      <br>
-                      <button type="button" id="undo-wali">Undo</button>
-                      <button type="button" id="clear-wali">Clear</button>
-                      <br>
-                      <br>
-                      <input type="text" name="ttd_nama_wali_pasien" placeholder="Wali Pasien" class="form-control">
-                    </center>
-                  </div> 
-                  <div class="col-md-6 text-center"> 
-                    <!-- Signature -->
-                    <b>Pasien</b>
-                    <br>
-                     <!-- Signature -->
-                    <center>
-                      <div class="signature">
-                        <canvas id="signature-pad-pasien" class="signature-pad-pasien" height="200px" width="200px">
-                      </div>
-                      <br>
-                      <button type="button" id="undo-pasien">Undo</button>
-                      <button type="button" id="clear-pasien">Clear</button>
-                      <br>
-                      <br>
-                      <input type="text" name="ttd_nama_pasien" placeholder="Pasien" class="form-control">
-                    </center>
-                  </div> 
-                <br>               
-              </div>
+                
               <div class="row">
-                <div class="col-md-6 text-center"> 
-                  <!-- Signature -->
-                  <b>Saksi Pihak RS</b>
-                  <br>
-                    <!-- Signature -->
-                  <center>
-                    <div class="signature">
-                      <canvas id="signature-pad-saksi-pihak-rs" class="signature-pad-saksi-pihak-rs" height="200px" width="200px">
-                    </div>
-                    <br>
-                    <button type="button" id="undo-saksi">Undo</button>
-                    <button type="button" id="clear-saksi">Clear</button>
-                    <br>
-                    <br>
-                    <input type="text" name="ttd_saksi_pihak_rs" placeholder="Saksi Pihak RS" class="form-control">
-                  </center>
-                </div> 
+                
                 <div class="col-md-6 text-center"> 
                   <!-- Signature -->
                   <b>Dokter Anestesi</b>
@@ -1008,14 +1019,9 @@
 $(document).ready(function() {
 
  $('.btn-kirim-<?= $this->router->fetch_class(); ?>').click(function(){
-  var data = signaturePad.toDataURL('image/png');
-  $('#output').val(data);
-
-  $("#sign_prev").show();
-  $("#sign_prev").attr("src",data);
-  $('#generate').val(data);
-  // Open image in the browser
-  //window.open(data);
+   $('#coretan_pasien').val(signaturePadPasien.toDataURL('image/png'))
+   $('#coretan_saksi').val(signaturePadSaksiPihakRS.toDataURL('image/png'))
+   $('#coretan_wali').val(signaturePadWaliPasien.toDataURL('image/png'))
  });
 
 })
