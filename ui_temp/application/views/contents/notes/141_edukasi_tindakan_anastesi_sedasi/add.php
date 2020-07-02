@@ -446,7 +446,7 @@
                     <div class="col-md-7">
                         <div class="row">
                           <div class="col-md-6">
-                            <label class="customcheck"> Mual, Muntah
+                            <label class="customcheck"> Mual, muntah
                               <input type="checkbox" name="risiko_tindakan[]" value="Mual, Muntah">
                               <span class="checkmark"></span>
                             </label>
@@ -454,7 +454,7 @@
                               <input type="checkbox" name="risiko_tindakan[]" value="Suara serak">
                               <span class="checkmark"></span>
                             </label>
-                            <label class="customcheck"> nyeri tenggorokan
+                            <label class="customcheck"> Nyeri tenggorokan
                               <input type="checkbox" name="risiko_tindakan[]" value="nyeri tenggorokan">
                               <span class="checkmark"></span>
                             </label>

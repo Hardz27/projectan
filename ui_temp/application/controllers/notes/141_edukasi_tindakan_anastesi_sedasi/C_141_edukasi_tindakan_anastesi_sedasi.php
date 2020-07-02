@@ -469,6 +469,7 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
     // $no_rm = $result_data['data'][0]['no_rm'];
     $result = $result_data['data'][0]['json_data'];
     $detail = [
+      'digital_signature_approved_petugas'  => $result['digital_signature_approved_petugas'],
       'approved_petugas'                    =>  $result['approved_petugas'],
       'tanggal'                             =>  $result['notes']['tanggal'],
       'jam'                                 =>  $result['notes']['jam'],

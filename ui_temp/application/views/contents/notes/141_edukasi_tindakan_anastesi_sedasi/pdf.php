@@ -1,7 +1,6 @@
 <html>
 <head>
 <title><?php echo $title;?></title>
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style>
   .row {
     margin-bottom: 15px;
@@ -333,53 +332,74 @@
           <tr>
             <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left">Tindakan yang dilakukan</td>
             <td class="font-size-8 border-bottom-1 border-left-0 border-right-1 centerp-left">
-              <ul>
-                <?php
-                  foreach($list['notes']['tindakan_yang_dilakukan'] as $tyd):
-                ?>
-                  <li><?=$tyd?></li>
-                
-                <?php endforeach ?>
-              </ul>
+            <lable class="font-size-8"><input type="checkbox" <?= in_array( "Anestesi Umum",$list['notes']['tindakan_yang_dilakukan']) ? "checked=checked" : '' ; ?> name="" id=""  >Anestesi Umum</lable>
+            <lable class="font-size-8"><input type="checkbox" <?= in_array( "Sedasi",$list['notes']['tindakan_yang_dilakukan']) ? "checked=checked" : '' ; ?> name="" id=""  >Sedasi</lable>
             </td>
           </tr>
           <tr>
             <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left">Indikasi Tindakan</td>
             <td class="font-size-8 border-bottom-1 border-left-0 border-right-1 centerp-left">
-              <ul>
-                <?php
-                  foreach($list['notes']['indikasi_tindakan'] as $it):
-                ?>
-                  <li><?=$it?></li>
-                
-                <?php endforeach ?>
-              </ul>
+            <lable class="font-size-8"><input type="checkbox" <?= in_array( "Menghilangkan kesadaran selama prosedur atau tindakan pembedahan",$list['notes']['indikasi_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  style="margin-right: 5px;"> Menghilangkan kesadaran selama prosedur atau tindakan pembedahan</lable>
+            <br>
+            <lable class="font-size-8"><input type="checkbox" <?= in_array( "Menghilangkan nyeri selama prosedur atau tindakan pembedahan",$list['notes']['indikasi_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  style="margin-right: 5px;"> Menghilangkan nyeri selama prosedur atau tindakan pembedahan</lable>
+            <br>
+            <lable class="font-size-8"><input type="checkbox" <?= in_array( "Relaksasi selama prosedur atau tindakan pembedahan",$list['notes']['indikasi_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  style="margin-right: 5px;"> Relaksasi selama prosedur atau tindakan pembedahan</lable>
+            <br>
             </td>
           </tr>
           <tr>
             <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left">Risiko Tindakan</td>
             <td class="font-size-8 border-bottom-1 border-left-0 border-right-1 centerp-left">
-              <ul>
-                <?php
-                  foreach($list['notes']['risiko_tindakan'] as $rt):
-                ?>
-                  <li><?=$rt?></li>
-                
-                <?php endforeach ?>
-              </ul>
+              <table width="100%" cellspacing="0">
+                <tr>
+                  <td class="font-size-8">
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Mual, Muntah",$list['notes']['risiko_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  >Mual, Muntah</lable>
+                    <br>
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Suara serak",$list['notes']['risiko_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  >Suara serak</lable>
+                    <br>
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "nyeri tenggorokan",$list['notes']['risiko_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  >nyeri tenggorokan</lable>
+                    <br>
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Penyempitan jalan nafas",$list['notes']['risiko_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  >Penyempitan jalan nafas</lable>
+                    <br>
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Perubahan tekanan darah",$list['notes']['risiko_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  >Perubahan tekanan darah</lable>
+                  </td>
+                  <td class="font-size-8">
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Penurunan kesadaran",$list['notes']['risiko_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  >Penurunan kesadaran</lable>
+                    <br>
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Stroke",$list['notes']['risiko_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  >Stroke</lable>
+                    <br>
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Reaksi alergi",$list['notes']['risiko_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  >Reaksi alergi</lable>
+                    <br>
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Kematian",$list['notes']['risiko_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  >Suara serak</lable>
+
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
           <tr>
             <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left">Komplikasi</td>
             <td class="font-size-8 border-bottom-1 border-left-0 border-right-1 centerp-left">
-              <ul>
-                <?php
-                  foreach($list['notes']['komplikasi'] as $kk):
-                ?>
-                  <li><?=$kk?></li>
-                
-                <?php endforeach ?>
-              </ul>
+              <table width="100%" cellspacing="0">
+                <tr>
+                  <td width="50%" class="font-size-8">
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Luka lecet pada daerah bibir, gusi, dan lidah",$list['notes']['komplikasi']) ? "checked=checked" : '' ; ?> name="" id="" style="margin-right: 10px;" >Luka lecet pada daerah bibir, gusi, dan lidah</lable>
+                    <br>
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Trauma pada gigi",$list['notes']['komplikasi']) ? "checked=checked" : '' ; ?> name="" id="" style="margin-right: 10px;" >Trauma pada gigi</lable>
+                    <br>
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Kerusakan otak",$list['notes']['komplikasi']) ? "checked=checked" : '' ; ?> name="" id="" style="margin-right: 10px;" >Kerusakan otak</lable>
+                    <br>
+                  </td>
+                  <td class="font-size-8">
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Serangan jantung",$list['notes']['komplikasi']) ? "checked=checked" : '' ; ?> name="" id="" style="margin-right: 10px;" >Serangan jantung</lable>
+                    <br>
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Gangguan irama jantung",$list['notes']['komplikasi']) ? "checked=checked" : '' ; ?> name="" id="" style="margin-right: 10px;" >Gangguan irama jantung</lable>
+                    <br>
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Henti jantung",$list['notes']['komplikasi']) ? "checked=checked" : '' ; ?> name="" id="" style="margin-right: 10px;" >Henti jantung</lable>
+                    <br>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
           <tr>
@@ -443,7 +463,11 @@
                           <img src="<?= $list['notes']['coretan_saksi']; ?>" alt="" height="100px" width="100px">
                         </center>
                       </td>
-                      <td class="text-center font-size-8 r-bold"> 
+                      <td class="text-center font-size-8 r-bold">
+                        <b>Petugas yang Menyetujui</b>
+                        <center>
+                          <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>" height="100px" width="100px">
+                        </center>
                       </td>
                     </tr>
               </table>
@@ -479,10 +503,10 @@
             <div class="column-right-header">
               <table border="0" width="100%" style="text-align: right; margin-right: 50px;">
                 <tr>
-                  <td style="vertical-align:top" class="r-bold font-size-7">Petugas yang Menyetujui,</td>
+                 
                 </tr>
                 <tr>
-                  <td height="77px" style="vertical-align:top" class="font-table font-size-7 pl-5"><img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>"></td>
+                  <td height="77px" style="vertical-align:top" class="font-table font-size-7 pl-5"></td>
                 </tr>
                 <tr>
                   <td style="vertical-align:top" class="font-table font-size-7 pl-3"><?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?>
