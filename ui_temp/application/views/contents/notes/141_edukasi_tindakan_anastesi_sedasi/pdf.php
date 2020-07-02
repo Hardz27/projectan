@@ -444,6 +444,11 @@
                         </center>
                       </td>
                       <td class="text-center font-size-8 r-bold"> 
+                        <b>Petugas yang Menyetujui,<b>
+                        <center>
+                          <img width="100px" height="100px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>">
+                        </center>
+                        <b><?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?></b>
                       </td>
                     </tr>
               </table>
@@ -460,40 +465,7 @@
             <td width="10%" class="detail-administration r-bold font-size-8 pl-5 pt-2 pr-2 border-left-1 border-right-1 border-bottom-1 centerp-row" style="padding: 10px 0px 10px 5px; text-align: center;">Score</td>
             <td width="10%" class="detail-administration r-bold font-size-8 pl-5 pt-2 pr-2 border-left-1 border-right-1 border-bottom-1 centerp-row" style="padding: 10px 0px 10px 5px; text-align: center;">Score Pasien</td>
           </tr>          
-        </table> -->
-
-           <div class="row-panel mt-20">
-            <div class="column-left-header">
-              <table border="0" width="100%" style="margin-left:150px">
-                <tr>
-                  <td style="vertical-align:top" class="detail-administration r-bold font-size-7"><!-- Petugas yang Menyetujui, --></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align:top" class="font-table font-size-7"><!-- <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>"> --></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align:top" class="font-table font-size-7 pl-3"><!-- <?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?> --></td>
-                </tr>
-              </table>
-            </div>
-            <div class="column-right-header">
-              <table border="0" width="100%" style="text-align: right; margin-right: 50px;">
-                <tr>
-                  <td style="vertical-align:top" class="r-bold font-size-7">Petugas yang Menyetujui,</td>
-                </tr>
-                <tr>
-                  <td height="77px" style="vertical-align:top" class="font-table font-size-7 pl-5"><img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>"></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align:top" class="font-table font-size-7 pl-3"><?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?>
-                  <!-- <br>digital signature added: <?php echo date("d-m-Y H:i",strtotime($list['notes']['created_date']));?> --></td>
-                </tr>
-              </table>
-              
-            </div>
-          </div>
-
-        
+        </table> -->        
 
         </div>
       </div>
