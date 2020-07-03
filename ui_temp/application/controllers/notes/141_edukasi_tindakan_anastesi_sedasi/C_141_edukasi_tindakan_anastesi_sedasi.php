@@ -189,6 +189,8 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
             'nama_pasien'                         =>  $jdata['notes']['nama_pasien'],
             'no_mr'                               =>  $jdata['notes']['no_mr'],
             'ttl'                                 =>  $jdata['notes']['ttl'],
+            'ttl_wali'                            =>  $jdata['notes']['ttl_wali'],
+            'alamat'                              =>  $jdata['notes']['alamat'],
             'usia'                                =>  $jdata['notes']['usia'],
             'jenis_kelamin_pasien'                =>  $jdata['notes']['jenis_kelamin_pasien'],
             'nama_wali'                           =>  $jdata['notes']['nama_wali'],
@@ -207,6 +209,8 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
             'coretan_pasien'                      =>  $jdata['notes']['coretan_pasien'],
             'coretan_wali'                        =>  $jdata['notes']['coretan_wali'],
             'coretan_saksi'                       =>  $jdata['notes']['coretan_saksi'],
+            'no_identitas'                        =>  $jdata['notes']['no_identitas'],
+            'saksi'                               =>  $jdata['notes']['saksi'],
             
           ];
         };
@@ -275,6 +279,8 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'nama_pasien'                         =>  $this->input->post('nama_pasien'),
       'no_mr'                               =>  $this->input->post('no_mr'),
       'ttl'                                 =>  $this->input->post('ttl'),
+      'ttl_wali'                            =>  $this->input->post('ttl_wali'),
+      'alamat'                              =>  $this->input->post('alamat'),
       'usia'                                =>  $this->input->post('usia'),
       'jenis_kelamin_pasien'                =>  $this->input->post('jenis_kelamin_pasien'),
       'nama_wali'                           =>  $this->input->post('nama_wali'),
@@ -293,10 +299,8 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'coretan_pasien'                      =>  $this->input->post('coretan_pasien'),
       'coretan_wali'                        =>  $this->input->post('coretan_wali'),
       'coretan_saksi'                       =>  $this->input->post('coretan_saksi'),
-      // 'nama_pesetujuan'                     =>  $this->input->post('nama_persetujuan'),
-      // 'tl_pesetujuan'                       =>  $this->input->post('tl_persetujuan'),
-      // 'alamat_persetujuan'                  =>  $this->input->post('talamat_persetujuan'),
-      // 'no_identitas_persetujuan'            =>  $this->input->post('tno_identitas_persetujuan'),
+      'no_identitas'                       =>  $this->input->post('no_identitas'),
+      'saksi'                               =>  $this->input->post('saksi'),
     ];
 
     
@@ -310,7 +314,7 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'notes'                 => $notes, // NAMANYA HARUS NOTES
     ];
     
-    // echo json_encode($params);
+    // echo json_encode($notes);
     // exit();
 
     $this->_config['body'] = json_encode($params);
@@ -357,6 +361,8 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'nama_pasien'                         =>  $result['notes']['nama_pasien'],
       'no_mr'                               =>  $result['notes']['no_mr'],
       'ttl'                                 =>  $result['notes']['ttl'],
+      'ttl_wali'                            =>  $result['notes']['ttl_wali'],
+      'alamat'                              =>  $result['notes']['alamat'],
       'usia'                                =>  $result['notes']['usia'],
       'jenis_kelamin_pasien'                =>  $result['notes']['jenis_kelamin_pasien'],
       'nama_wali'                           =>  $result['notes']['nama_wali'],
@@ -375,6 +381,8 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'coretan_pasien'                      =>  $result['notes']['coretan_pasien'],
       'coretan_wali'                        =>  $result['notes']['coretan_wali'],
       'coretan_saksi'                       =>  $result['notes']['coretan_saksi'],
+      'no_identitas'                        =>  $result['notes']['no_identitas'],
+      'saksi'                              =>  $result['notes']['saksi'],
             
     ];
     $result_data = $result_data['data'][0];
@@ -396,6 +404,8 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'nama_pasien'                         =>  $this->input->post('nama_pasien'),
       'no_mr'                               =>  $this->input->post('no_mr'),
       'ttl'                                 =>  $this->input->post('ttl'),
+      'ttl_wali'                            =>  $this->input->post('ttl_wali'),
+      'alamat'                              =>  $this->input->post('alamat'),
       'usia'                                =>  $this->input->post('usia'),
       'jenis_kelamin_pasien'                =>  $this->input->post('jenis_kelamin_pasien'),
       'nama_wali'                           =>  $this->input->post('nama_wali'),
@@ -414,6 +424,8 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'coretan_pasien'                      =>  $this->input->post('coretan_pasien'),
       'coretan_wali'                        =>  $this->input->post('coretan_wali'),
       'coretan_saksi'                       =>  $this->input->post('coretan_saksi'),
+      'no_identitas'                        =>  $this->input->post('no_identitas'),
+      'saksi'                               =>  $this->input->post('saksi'),
     ];
 
     $params = [
@@ -469,6 +481,7 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
     // $no_rm = $result_data['data'][0]['no_rm'];
     $result = $result_data['data'][0]['json_data'];
     $detail = [
+      'digital_signature_approved_petugas'  => $result['digital_signature_approved_petugas'],
       'approved_petugas'                    =>  $result['approved_petugas'],
       'digital_signature_approved_petugas'  =>  $result['digital_signature_approved_petugas'],
       'tanggal'                             =>  $result['notes']['tanggal'],
@@ -477,6 +490,8 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'nama_pasien'                         =>  $result['notes']['nama_pasien'],
       'no_mr'                               =>  $result['notes']['no_mr'],
       'ttl'                                 =>  $result['notes']['ttl'],
+      'ttl_wali'                            =>  $result['notes']['ttl_wali'],
+      'alamat'                              =>  $result['notes']['alamat'],
       'usia'                                =>  $result['notes']['usia'],
       'jenis_kelamin_pasien'                =>  $result['notes']['jenis_kelamin_pasien'],
       'nama_wali'                           =>  $result['notes']['nama_wali'],
@@ -495,6 +510,8 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'coretan_pasien'                      =>  $result['notes']['coretan_pasien'],
       'coretan_wali'                        =>  $result['notes']['coretan_wali'],
       'coretan_saksi'                       =>  $result['notes']['coretan_saksi'],
+      'no_identitas'                        =>  $result['notes']['no_identitas'],
+      'saksi'                               =>  $result['notes']['saksi'],
     ];
     $result_data = $result_data['data'][0];
     $detail['id_notes'] = $result_data['id'];

@@ -176,8 +176,16 @@
                       <td class="with-ellipsis"><?= $k['nama_wali']; ?></td>
                     </tr>
                     <tr>
+                      <td>No Identitas</td>
+                      <td class="with-ellipsis"><?= $k['no_identitas']; ?></td>
+                    </tr>
+                    <tr>
                       <td>Usia</td>
                       <td class="with-ellipsis"><?= $k['usia_wali']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Alamat</td>
+                      <td class="with-ellipsis"><?= $k['alamat']; ?></td>
                     </tr>
                     <tr>
                       <td>Hubungan</td>
