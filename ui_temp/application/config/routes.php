@@ -177,6 +177,13 @@ $route['71_assesmen_bayi_baru_lahir/(:any)/(:any)']               = 'notes/71_as
 $route['71_assesmen_bayi_baru_lahir/(:any)/(:num)/(:any)']        = 'notes/71_assesmen_bayi_baru_lahir/c_71_assesmen_bayi_baru_lahir/$1/$2/$3';
 $route['71_assesmen_bayi_baru_lahir/(:any)/(:any)/(:any)/(:any)'] = 'notes/71_assesmen_bayi_baru_lahir/c_71_assesmen_bayi_baru_lahir/$1/$2/$3/$4';
 
+/// ROUTES START FOR 72_rekam_medik_bayi_baru_lahir
+$route['72_rekam_medik_bayi_baru_lahir'] = 'notes/72_rekam_medik_bayi_baru_lahir/c_72_rekam_medik_bayi_baru_lahir';
+$route['72_rekam_medik_bayi_baru_lahir/(:any)'] = 'notes/72_rekam_medik_bayi_baru_lahir/c_72_rekam_medik_bayi_baru_lahir/$1';
+$route['72_rekam_medik_bayi_baru_lahir/(:any)/(:any)']               = 'notes/72_rekam_medik_bayi_baru_lahir/c_72_rekam_medik_bayi_baru_lahir/$1/$2';
+$route['72_rekam_medik_bayi_baru_lahir/(:any)/(:num)/(:any)']        = 'notes/72_rekam_medik_bayi_baru_lahir/c_72_rekam_medik_bayi_baru_lahir/$1/$2/$3';
+$route['72_rekam_medik_bayi_baru_lahir/(:any)/(:any)/(:any)/(:any)'] = 'notes/72_rekam_medik_bayi_baru_lahir/c_72_rekam_medik_bayi_baru_lahir/$1/$2/$3/$4';
+
 
 /// ROUTES START FOR 141_edukasi_tindakan_anastesi_sedasi
 $route['141_edukasi_tindakan_anastesi_sedasi'] = 'notes/141_edukasi_tindakan_anastesi_sedasi/c_141_edukasi_tindakan_anastesi_sedasi';
