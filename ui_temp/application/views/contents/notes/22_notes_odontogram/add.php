@@ -22,7 +22,7 @@
     border-color: #337ab7;
   }
 
-      .radio-select{
+  .radio-select{
     padding: 3px 0px 10px 25px;
   }
 
