@@ -135,7 +135,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <table class="table nowrap">
                   <tbody>
                     <tr>
@@ -151,36 +151,102 @@
                       <td class="with-ellipsis line-1"><?= $k['jam']; ?></td>
                     </tr>
                     <tr>
-                      <td>Kegiatan</td>
-                      <?php 
-                        if ($k['item'] == 'A') {
-                          $kegiatan = 'Pelaksanaan Perencanaan MPP';
-                        }else if ($k['item'] == 'B') {
-                          $kegiatan = 'Monitoring';
-                        }else if ($k['item'] == 'C') {
-                          $kegiatan = 'Identifikasi masalah-resiko-kesempatan';
-                        }else if ($k['item'] == 'D') {
-                          $kegiatan = 'Fasilitasi, Koordinasi, Komunikasi';
-                        }else if ($k['item'] == 'E') {
-                          $kegiatan = 'Kolaborasi';
-                        }else if ($k['item'] == 'F') {
-                          $kegiatan = 'Advokasi';
-                        }else if ($k['item'] == 'G') {
-                          $kegiatan = 'Hasil pelayanan';
-                        }else if ($k['item'] == 'H') {
-                          $kegiatan = 'Terminal MPP';
-                        }
-                      ?>
-                      <td class="with-ellipsis line-1"><?= $kegiatan ?></td>
+                      <td>Nama Anak</td>
+                      <td class="with-ellipsis line-1"><?= $k['nama_anak']; ?></td>
                     </tr>
                     <tr>
-                      <td>Catatan</td>
-                      <td class="with-ellipsis line-1"><?= $k['catatan']; ?></td>
+                      <td>Masa Gestasi</td>
+                      <td class="with-ellipsis line-1"><?= $k['gestasi'] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Tempratur <span class="pull-right">(&#8451;)</span> </td>
+                      <td class="with-ellipsis line-1"><?= $k['tempratur']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Berat badan (gram)</td>
+                      <td class="with-ellipsis line-1"><?= $k['bb']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Sianosis <span class="pull-right">(+/-)</span> </td>
+                      <td class="with-ellipsis line-1"><?= $k['sianosis']; ?></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
 
+              <div class="col-md-5">
+                <table class="table nowrap">
+                  <tbody>
+                    <tr>
+                      <td>Bilirubin total (mg/dL)</td>
+                      <td class="with-ellipsis line-2"><?= $k['bilirubin']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Keadaan Umum</td>
+                      <td class="with-ellipsis line-2"><?= $k['keadaan_umum']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>SSP, Tonus</td>
+                      <td class="with-ellipsis line-2"><?= $k['ssp_tonus']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Kepala, Leher, Palatum</td>
+                      <td class="with-ellipsis line-2"><?= $k['kepala_leher_palatum'] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Ubun-Ubun, Sutura</td>
+                      <td class="with-ellipsis line-2"><?= $k['ubun_sutura'] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Paru</td>
+                      <td class="with-ellipsis line-2"><?= $k['Paru'] ?></td>
+                    </tr>
+                     <tr>
+                      <td>Jantung, a. femoralis</td>
+                      <td class="with-ellipsis line-2"><?= $k['jantung_femoralis'] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Abdomen, anus (+/-)</td>
+                      <td class="with-ellipsis line-2"><?= $k['abdomen_anus'] ?></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="col-md-3">
+                <table class="table nowrap">
+                  <tbody>
+                    <tr>
+                      <td>Sex, (Lk/Pr, Lengkap, tdk)</td>
+                      <td class="with-ellipsis line-3"><?= $k['sex'] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Kulit (warna, dll)</td>
+                      <td class="with-ellipsis line-3"><?= $k['kulit']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Ekstremitas</td>
+                      <td class="with-ellipsis line-3"><?= $k['ekstremitas']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Panggul</td>
+                      <td class="with-ellipsis line-3"><?= $k['panggul']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Muntah (+/-)</td>
+                      <td class="with-ellipsis line-3"><?= $k['muntah']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Defekasi</td>
+                      <td class="with-ellipsis line-3"><?= $k['defekasi']; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Catatan</td>
+                      <td class="with-ellipsis line-3"><?= $k['catatan']; ?></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
           </div>
