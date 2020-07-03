@@ -223,7 +223,7 @@
                       <b>No Identitas</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="no_identitas" class="form-control" placeholder="no_identitas" value="<?=$result['hubungan']?>" autocomplete="off">
+                      <input type="text" name="no_identitas" class="form-control" placeholder="no_identitas" value="<?=$result['no_identitas']?>" autocomplete="off">
                     </div>
                   </div>
                 </div>
@@ -704,7 +704,7 @@
                           <button type="button" id="clear-wali">Clear</button>
                           <br>
                           <br>
-                          <input type="hidden" name="coretan_wali" id="coretan_wali">
+                          <input type="hidden" name="coretan_wali" value="<?=$result['coretan_wali']?>" id="coretan_wali" >
                         </center>
                       </div> 
                       <div class="col-md-6 text-center"> 
@@ -721,7 +721,7 @@
                           <button type="button" id="clear-pasien">Clear</button>
                           <br>
                           <br>
-                          <input type="hidden" name="coretan_pasien" id="coretan_pasien" required>
+                          <input type="hidden" name="coretan_pasien" value="<?=$result['coretan_pasien']?>"  id="coretan_pasien" required>
                         </center>
                       </div> 
                     </div>
@@ -743,7 +743,7 @@
                           <br>
                           <br>
                           <input type="text" name="saksi" placeholder="Saksi Pihak RS"  value="<?=$result['saksi']?>" class="form-control">
-                          <input type="hidden" name="coretan_saksi" id="coretan_saksi">
+                          <input type="hidden" name="coretan_saksi" value="<?=$result['coretan_saksi']?>"  id="coretan_saksi">
                         </center>
                       </div> 
                     </div>
@@ -949,9 +949,25 @@
 $(document).ready(function() {
 
  $('.btn-kirim-<?= $this->router->fetch_class(); ?>').click(function(){
-   $('#coretan_pasien').val(signaturePadPasien.toDataURL('image/png'))
-   $('#coretan_saksi').val(signaturePadSaksiPihakRS.toDataURL('image/png'))
-   $('#coretan_wali').val(signaturePadWaliPasien.toDataURL('image/png'))
+   
+   let ttdPasienImage = signaturePadPasien.toDataURL('image/png')
+   let ttdPasien = signaturePadPasien.toData()
+   if(ttdPasien.pop()){
+      $('#coretan_pasien').val(ttdPasienImage)
+   }
+
+   let ttdWaliImage = signaturePadWaliPasien.toDataURL('image/png')
+   let ttdWali = signaturePadWaliPasien.toData()
+   if(ttdWali.pop()){
+      $('#coretan_wali').val(ttdWaliImage)
+   }
+
+   let ttdSakiImage = signaturePadSaksiPihakRS.toDataURL('image/png')
+   let ttdSaksi = signaturePadSaksiPihakRS.toData()
+   if(ttdSaksi.pop()){
+    $('#coretan_saksi').val(ttdSakiImage)
+   }
+
  });
 
 })

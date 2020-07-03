@@ -428,6 +428,9 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'saksi'                               =>  $this->input->post('saksi'),
     ];
 
+    // echo json_encode($notes);
+    // exit();
+
     $params = [
       'id_notes'             => $this->input->post('id_notes'),
       'id_pasien_registrasi' => $this->input->post('id_reg'),
@@ -439,13 +442,11 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'no_rm'               => $this->session->userdata('no_rm'),
       'notes'               => $notes, /// NAMA HARUS NOTES YA
     ];
-
     $this->_config['body'] = json_encode($params);
     $response     = $this->_client_rs->request('PUT', 'notes', $this->_config);
     $result = json_decode($response->getBody()->getContents(), true);
-
+    
     echo json_encode($result);
-    // echo trace($result);
   }
 
   function delete()

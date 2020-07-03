@@ -119,7 +119,7 @@
               <div class="btn-group-toggle" data-toggle="buttons">
                 <?php foreach ($data_visit as $v) : ?>
                   <label name="label_<?= $v['id_visit']; ?>" class="btn btn-sm btn-default" style="margin-bottom:5px;">
-                    <input value="<?= $v['id_visit']; ?>"  name="id_visit" id="id_visit_<?= $v['id_visit']; ?>" type="radio"><?= $v['nama_dept']; ?> - <?= $v['checkin']; ?>
+                    <input value="<?= $v['id_visit']; ?>"  name="id_visit" id="id_visit_<?= $v['id_visit']; ?>" type="radio" required><?= $v['nama_dept']; ?> - <?= $v['checkin']; ?>
                   </label>
                 <?php endforeach; ?>
               </div>
@@ -132,7 +132,7 @@
                   <b>Petugas Approve</b>
                 </div>
                 <div class="col-md-8">
-                  <select name="petugas_approved" class="petugas_approved" style="width: 100%" >
+                  <select name="petugas_approved" class="petugas_approved" style="width: 100%" required>
                     <option value=""></option>
                     <?php foreach ($data_perawat as $k => $v) : ?>
                       <option value="<?= $v['id'] ?>"><?= $v['nama'] ?></option>
@@ -149,7 +149,7 @@
                     <b>Tanggal</b>
                   </div>
                   <div class="col-md-9">
-                    <input type="text" name="tanggal" id="tanggal" class="form-control" value="<?= date('Y-m-d') ?>"  autocomplete="off">
+                    <input type="text" name="tanggal" id="tanggal" class="form-control" value="<?= date('Y-m-d') ?>" required autocomplete="off">
                   </div>
                 </div>
                 <br>
@@ -161,7 +161,7 @@
                     <b>Jam</b>
                   </div>
                   <div class="col-md-10">
-                    <input type="text" name="jam" id="jam" class="form-control" value="07:00"  autocomplete="off">
+                    <input type="text" name="jam" id="jam" class="form-control" value="07:00" required autocomplete="off">
                   </div>
                 </div>
               </div>
