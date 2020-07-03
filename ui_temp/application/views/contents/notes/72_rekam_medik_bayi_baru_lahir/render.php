@@ -100,13 +100,13 @@
     width: 100%;
   }
   td.line-1{ 
-    max-width: 100%;
+    max-width: 150%;
   }
   td.line-2 {
-    max-width: 320px;
+    max-width: 150px;
   }
   td.line-3 {
-    max-width: 320px;
+    max-width: 150px;
   }
 </style>
 
@@ -174,7 +174,7 @@
                 </table>
               </div>
 
-              <div class="col-md-5">
+              <div class="col-md-4">
                 <table class="table nowrap">
                   <tbody>
                     <tr>
@@ -213,7 +213,7 @@
                 </table>
               </div>
 
-              <div class="col-md-3">
+              <div class="col-md-4">
                 <table class="table nowrap">
                   <tbody>
                     <tr>
