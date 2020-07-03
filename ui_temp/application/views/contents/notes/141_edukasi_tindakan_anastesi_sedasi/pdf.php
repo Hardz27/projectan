@@ -432,18 +432,21 @@
             <td class=" border-bottom-1 border-left-0 border-right-1 centerp-left">
               <table width="100%" cellspacing="0">
                     <tr>
-                      <td class="text-center font-size-8 r-bold">
-                        <b>Wali Pasien</b>
+                      <td class="text-center font-size-8">
+                        <div class="r-bold">Wali Pasien</div>
                         <center>
                           <img src="<?= $list['notes']['coretan_wali']; ?>" alt="" height="100px" width="100px">
                         </center>
+                        <div><?= $list['notes']['nama_wali']; ?></div>
                       </td>
-                      <td class="text-center font-size-8 r-bold"> 
+                      <td class="text-center font-size-8"> 
                         <b>Pasien</b>
                         <center>
                           <img src="<?= $list['notes']['coretan_pasien']; ?>" alt="" height="100px" width="100px">
                         </center>
-                        <b><?=$list['notes']['nama_pasien']?></b>
+                          <div>
+                            <?= $list['notes']['nama_pasien']; ?>
+                          </div>
                       </td>
                     </tr>
               </table>
@@ -457,16 +460,22 @@
             <td class=" border-bottom-1 border-left-0 border-right-1 centerp-left">
               <table width="100%" cellspacing="0">
                     <tr>
-                      <td class="text-center font-size-8 r-bold" width="50%">
-                        <b>Saksi Pihak RS</b>
+                      <td class="text-center font-size-8" width="50%">
+                        <div class="r-bold">Saksi Pihak RS</div>
                         <center>
                           <img src="<?= $list['notes']['coretan_saksi']; ?>" alt="" height="100px" width="100px">
                         </center>
+                          <div>
+                            <?php echo ucwords(strtolower($list['notes']['saksi'])); ?> 
+                          </div>
                       </td>
-                      <td class="text-center font-size-8 r-bold">
-                        <b>Petugas yang Menyetujui</b>
+                      <td class="text-center font-size-8">
+                        <div class="r-bold">Petugas yang Menyetujui</div>
                         <center>
                           <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>" height="100px" width="100px">
+                          <div>
+                            <?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?> 
+                          </div>
                         </center>
                       </td>
                     </tr>
@@ -474,50 +483,6 @@
             </td>
           </tr>
         </table>
-        <!-- <table>
-           <tr>
-            <td width="25%" class="detail-administration r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-row" style="padding: 20px 0px 5px 5px;" colspan="4">Kriteria Pemulihan Sedasi PAD5</td>
-          </tr>
-          <tr>
-            <td width="20%" class="detail-administration r-bold font-size-8 pl-5 pt-2 pr-2 border-left-1 border-right-1 border-bottom-1 centerp-head">Yang Dinilai</td>
-            <td width="60%" class="detail-administration r-bold font-size-8 pl-5 pt-2 pr-2 border-left-1 border-right-1 border-bottom-1" style="padding: 10px 0px 10px 5px; text-align: center">Penilaian</td>
-            <td width="10%" class="detail-administration r-bold font-size-8 pl-5 pt-2 pr-2 border-left-1 border-right-1 border-bottom-1 centerp-row" style="padding: 10px 0px 10px 5px; text-align: center;">Score</td>
-            <td width="10%" class="detail-administration r-bold font-size-8 pl-5 pt-2 pr-2 border-left-1 border-right-1 border-bottom-1 centerp-row" style="padding: 10px 0px 10px 5px; text-align: center;">Score Pasien</td>
-          </tr>          
-        </table> -->
-
-           <div class="row-panel mt-20">
-            <div class="column-left-header">
-              <table border="0" width="100%" style="margin-left:150px">
-                <tr>
-                  <td style="vertical-align:top" class="detail-administration r-bold font-size-7"><!-- Petugas yang Menyetujui, --></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align:top" class="font-table font-size-7"><!-- <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>"> --></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align:top" class="font-table font-size-7 pl-3"><!-- <?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?> --></td>
-                </tr>
-              </table>
-            </div>
-            <div class="column-right-header">
-              <table border="0" width="100%" style="text-align: right; margin-right: 50px;">
-                <tr>
-                 
-                </tr>
-                <tr>
-                  <td height="77px" style="vertical-align:top" class="font-table font-size-7 pl-5"></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align:top" class="font-table font-size-7 pl-3"><?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?>
-                  <!-- <br>digital signature added: <?php echo date("d-m-Y H:i",strtotime($list['notes']['created_date']));?> --></td>
-                </tr>
-              </table>
-              
-            </div>
-          </div>
-
-        
 
         </div>
       </div>
@@ -529,57 +494,225 @@
     <div class="row-panel">
       <div class="row-heading border-blue bg-blue font-white font-size-9 r-bold">Data <?= $title; ?></div>
         <div class="row-body">
-         <br>
         <table width="100%" cellspacing="0">
             <tr>
-              <td class="text-center r-bold"><b>PERSERTUJUAN TINDAKAN ANSETESI UMUM SEDASI</b></td>
+              <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-1 text-center">
+                <br>
+                <center>PERSERTUJUAN TINDAKAN ANSETESI UMUM SEDASI</center>
+              </td>
             </tr>
         </table>
-        <br>
         <table width="100%" cellspacing="0">
             <tr>
-              <td  class="font-size-8">
+              <td  class="font-size-8  border-bottom-0 border-left-1 border-right-1">
+                <br>
                 <p>Setelah saya membaca dan diterangkan mengenai tindakan di atas, maka saya yang bertanda tangan dibawah ini :</p>
               </td>
             </tr>
         </table>
-        <br>
         <table width="100%" cellspacing="0">
-            <tr>
-              <td width="30%" class="font-size-8">Nama</td>
-              :<td width="70%" class="font-size-8"><?=$list['notes']['nama_wali'];?></td>
-            </tr>
+          <tr>
+            <td width="50%" class="border-left-1">
+              <br>
+              <table width="100%" cellspacing="0">
+                <tr>
+                  <td width="40%" class="font-size-8 ">Nama</td>
+                  <td class="font-size-8">: <?=$list['notes']['nama_wali'];?></td>
+                </tr>
+                <tr>
+                  <td width="40%" class="font-size-8 ">Tanggal lahir</td>
+                  <td class="font-size-8">: <?=$list['notes']['ttl_wali'];?></td>
+                </tr>
+                <tr>
+                  <td width="40%" class="font-size-8 ">Alamat</td>
+                  <td class="font-size-8">: <?=$list['notes']['alamat'];?></td>
+                </tr>
+                <tr>
+                  <td width="40%" class="font-size-8 ">No Identitas</td>
+                  <td class="font-size-8">: <?=$list['notes']['no_identitas'];?></td>
+                </tr>
+              </table>
+            </td>
+            <td class="border-right-1">
+              <table width="100%" cellspacing="0">
+                <tr>
+                  <td width="40%" class="font-size-8">Jenis Kelamin</td>
+                  <td class="font-size-8">: <?=$list['notes']['jenis_kelamin_wali'];?></td>
+                </tr>
+                <tr>
+                  <td width="40%" class="font-size-8">Usia</td>
+                  <td class="font-size-8">: <?=$list['notes']['usia_wali'];?></td>
+                </tr>
+                <tr>
+                  <td width="40%" class="font-size-8"></td>
+                  <td class="font-size-8"></td>
+                </tr>
+                <tr>
+                  <td width="40%" class="font-size-8"></td>
+                  <td class="font-size-8"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
         </table>
+
+        <table width="100%" cellspacing="0">
+          <tr>
+            <td class="border-left-1 border-right-1 font-size-8">
+              <br>
+             Bertidank selaku <span class="r-bold"><?=$list['notes']['hubungan'];?></span> dan penanggung jawab atau wali atas pasien, menyatakan <b>SETUJU</b> untuk dilakukan tindakan berupa <b>ANASTESI UMUM / SEDASI</b> terhadap :
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" cellspacing="0">
+          <tr>
+            <td width="50%" class="border-left-1">
+              <br>
+              <table width="100%" cellspacing="0">
+                <tr>
+                  <td width="40%" class="font-size-8 ">Nama</td>
+                  <td class="font-size-8">: <?=$list['notes']['nama_wali'];?></td>
+                </tr>
+                <tr>
+                  <td width="40%" class="font-size-8 ">Tanggal lahir</td>
+                  <td class="font-size-8">: <?=$list['notes']['ttl'];?></td>
+                </tr>
+                <tr>
+                  <td width="40%" class="font-size-8 ">No. MR</td>
+                  <td class="font-size-8">: <?=$list['notes']['no_mr'];?></td>
+                </tr>
+              </table>
+            </td>
+            <td class="border-right-1">
+              <table width="100%" cellspacing="0">
+                <tr>
+                  <td width="40%" class="font-size-8">Jenis Kelamin</td>
+                  <td class="font-size-8">: <?=$list['notes']['jenis_kelamin_pasien'];?></td>
+                </tr>
+                <tr>
+                  <td width="40%" class="font-size-8">Usia</td>
+                  <td class="font-size-8">: <?=$list['notes']['usia'];?></td>
+                </tr>
+                <tr>
+                  <td width="40%" class="font-size-8"></td>
+                  <td class="font-size-8"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" cellspacing="0">
+          <tr>
+            <td class="border-left-1 border-right-1 font-size-8">
+              <br>
+              <p>
+                Saya menyatakan bahwa sesunguhnya dan tanpa paksaan bahwa :
+              </p>
+              <ol type="number">
+                <li>Saya telah menerima informasi jenis anestesi yang dilakukan.</li>
+                <li>Saya mengerti bahwa tindakan anestesi mengandung beberapa resiko, termasuk perubahan tekanan darah
+                  , resiko obat (alergi), henti jantung, kerusakan otak, kelumpuhan, kerusakan syaraf serta komplikasi lain yang juga mungkin terjadi bahkan kematian.
+                </li>
+                <li>
+                  Saya telah membaca penjelasan secara teliti tentang tindakan anestesi yang diberikan, mengerti dan menyetujui pejelasan tentang tindakan yang akan 
+                  dilakukan termasuk kemungkinan komplikasi yang mungkin terjadi serta kelebihan atau kelemahan dari setiap jenis pembiusan yang dilakukan.
+                </li>
+                <li>
+                  Saya mempunyai kewajiban untuk memberi informasi kepada dokter mengenai semua penyakit dan obat yang pasien minum, seperti aspirin, pengencer darah,
+                  kontrasepsi, obat flu, narkotik, marijuana, kokain, dan lain - lain.
+                </li>
+                <li>
+                  Saya bersedia menanggung tindakan anestesi, kecuali terhadap pihak lain yang menyatakan bertanggung jawab secara finansial terhadap tindakan anestesi ini.
+                </li>
+              </ol>
+              <p>
+                <br>
+                Berdasarkan hal - hal tersebut diatas, saya menjamin sepenuhnya bahwa tindakan saya untuk menyetujui tindakan anestesi diatas adalah untuk mewakili kepentingan
+                saya/ pasien dan keluarga pasien, dan saya bertanggung jawab sepenuhnya apabila terhadap pihak lain yang mengajukan keberatan atas persetujuan ini.
+              </p>
+              <p>
+                <br>
+                Demikian surat persetujuan ini dibuat dengan kesadaran dan tanpa paksaan dari pihak manapun juga.
+              </p>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" cellspacing="0">
+        <tr>
+            <td class="font-size-8  border-left-1 border-right-0 centerp-left text-center">
+             <table>
+               <tr>
+               <td class="font-size-8 r-bold">Tanggal: <?= $list['notes']['tanggal']; ?> </td>
+               </tr>
+               <tr>
+                  <td class="font-size-8 r-bold">Jam: <?= $list['notes']['jam']; ?></td>
+               </tr>
+             </table>
+            </td>
+            <td class=" centerp-left border-right-1">
+              <table width="100%" cellspacing="0">
+                    <tr>
+                      <td class="text-center font-size-8 ">
+                        <b class="r-bold">Wali Pasien</b>
+                        <center>
+                          <img src="<?= $list['notes']['coretan_wali']; ?>" alt="" height="100px" width="100px">
+                        </center>
+                        <div>
+                            <?php echo ucwords(strtolower($list['notes']['nama_wali'])); ?> 
+                          </div>
+                      </td>
+                      <td class="text-center font-size-8 "> 
+                        <b class="r-bold">Pasien</b>
+                        <center>
+                          <img src="<?= $list['notes']['coretan_pasien']; ?>" alt="" height="100px" width="100px">
+                        </center>
+                        <div>
+                            <?php echo ucwords(strtolower($list['notes']['nama_pasien'])); ?> 
+                          </div>
+                      </td>
+                    </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="font-size-8  border-left-1 border-bottom-1 border-right-0 centerp-left text-center">
+             
+            </td>
+            <td class="centerp-left  border-right-1 border-bottom-1">
+              <table width="100%" cellspacing="0">
+                    <tr>
+                      <td class="text-center font-size-8" width="50%">
+                        <div class="r-bold">Saksi Pihak RS</div>
+                        <center>
+                          <img src="<?= $list['notes']['coretan_saksi']; ?>" alt="" height="100px" width="100px">
+                        </center>
+                        <div>
+                            <?php echo ucwords(strtolower($list['notes']['saksi'])); ?> 
+                          </div>
+                      </td>
+                      <td class="text-center font-size-8">
+                        <div class="r-bold">Petugas yang Menyetujui</div>
+                        <center>
+                          <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>" height="100px" width="100px">
+                          <div>
+                            <?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?> 
+                          </div>
+                        </center>
+                      </td>
+                    </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
 
        
 
            <div class="row-panel mt-20">
-            <div class="column-left-header">
-              <table border="0" width="100%" style="margin-left:150px">
-                <tr>
-                  <td style="vertical-align:top" class="detail-administration r-bold font-size-7"><!-- Petugas yang Menyetujui, --></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align:top" class="font-table font-size-7"><!-- <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>"> --></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align:top" class="font-table font-size-7 pl-3"><!-- <?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?> --></td>
-                </tr>
-              </table>
-            </div>
             <div class="column-right-header">
-              <table border="0" width="100%" style="text-align: right; margin-right: 50px;">
-                <tr>
-                  <td style="vertical-align:top" class="r-bold font-size-7">Petugas yang Menyetujui,</td>
-                </tr>
-                <tr>
-                  <td height="77px" style="vertical-align:top" class="font-table font-size-7 pl-5"><img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>"></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align:top" class="font-table font-size-7 pl-3"><?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?>
-                  <!-- <br>digital signature added: <?php echo date("d-m-Y H:i",strtotime($list['notes']['created_date']));?> --></td>
-                </tr>
-              </table>
               
             </div>
           </div>

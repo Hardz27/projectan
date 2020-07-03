@@ -113,19 +113,17 @@
       <input type="hidden" class="form-control input-sm" name="id_notes" id="id_notes" value="<?= $result['id_notes']; ?>" >
       <input type="hidden" class="form-control input-sm" name="id_reg" id="id_reg" value="<?= $result['id_reg']; ?>" >
       <input type="hidden" class="form-control input-sm" name="id_visit" id="id_visit" value="<?= $result['id_visit']; ?>" >
+
       <div class="panel panel-primary">
-        <div class="panel-heading"></div>
+        <div class="panel-heading">
+          <?php foreach ($data_visit as $v) : ?>
+            <?php if ($v['id_visit'] == $result['id_visit']) { ?>
+              <?= $v['nama_dept']; ?> - <?= $v['checkin']; ?>
+            <?php } ?>
+          <?php endforeach; ?>
+        </div>
         <div class="panel-body">
           <div class="row">
-            <div class="col-lg-12 mb-5">
-              <div class="btn-group-toggle" data-toggle="buttons">
-                <?php foreach ($data_visit as $v) : ?>
-                  <label name="label_<?= $v['id_visit']; ?>" class="btn btn-sm btn-default" style="margin-bottom:5px;">
-                    <input value="<?= $v['id_visit']; ?>"  name="id_visit" id="id_visit_<?= $v['id_visit']; ?>" type="radio"><?= $v['nama_dept']; ?> - <?= $v['checkin']; ?>
-                  </label>
-                <?php endforeach; ?>
-              </div>
-            </div>
 
             <div class="col-lg-6">
               <div class="row">
@@ -134,10 +132,10 @@
                   <b>Petugas Approve</b>
                 </div>
                 <div class="col-md-8">
-                  <select name="petugas_approved" class="petugas_approved" style="width: 100%" >
+                  <select name="petugas_approved" class="petugas_approved" style="width: 100%" required>
                     <option value=""></option>
                     <?php foreach ($data_perawat as $k => $v) : ?>
-                      <option value="<?= $v['id'] ?>"><?= $v['nama'] ?></option>
+                      <option value="<?= $v['id'] ?>" <?= $v['nama'] == $result['approved_petugas'] ? 'selected' : ''; ?>><?= $v['nama'] ?></option>
                     <?php endforeach; ?>
                   </select>
                 </div>
@@ -151,7 +149,7 @@
                     <b>Tanggal</b>
                   </div>
                   <div class="col-md-9">
-                    <input type="text" name="tanggal" id="tanggal" class="form-control" value="<?= date('Y-m-d') ?>"  autocomplete="off">
+                    <input type="text" name="tanggal" id="tanggal" class="form-control" value="<?= date('Y-m-d') ?>" required autocomplete="off">
                   </div>
                 </div>
                 <br>
@@ -163,7 +161,7 @@
                     <b>Jam</b>
                   </div>
                   <div class="col-md-10">
-                    <input type="text" name="jam" id="jam" class="form-control" value="<?=$result['jam']?>"  autocomplete="off">
+                    <input type="text" name="jam" id="jam" class="form-control" value="<?= $result['jam']; ?>" required autocomplete="off">
                   </div>
                 </div>
               </div>
@@ -171,11 +169,12 @@
           </div>
         </div>
       </div>
-
+      
+      
       <div class="row">
         <div class="col-md-6">
           <div class="panel panel-primary">
-            <div class="panel-heading">Tambah Data Fisioterapi Asesment</div>
+            <div class="panel-heading">Edit Data Fisioterapi Asesment</div>
             <div class="panel-body">
 
               <div class="row">
@@ -221,10 +220,10 @@
                   <div class="row">
                     <!-- nama -->
                     <div class="col-md-3">
-                      <b>Hubungan</b>
+                      <b>No Identitas</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="hubungan" class="form-control" placeholder="Hubungan" value="<?=$result['hubungan']?>" autocomplete="off">
+                      <input type="text" name="no_identitas" class="form-control" placeholder="no_identitas" value="<?=$result['hubungan']?>" autocomplete="off">
                     </div>
                   </div>
                 </div>
@@ -254,25 +253,6 @@
                     </div>
                   </div>
                   <br> 
-                  <div class="row">
-                    <div class="col-md-6">
-                        <b>Jenis Kelamin</b>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="text-center">L
-                        <label class="container radio-select" style="width: 2%">
-                      <input type="radio" name="jenis_kelamin_wali" <?=$result['jenis_kelamin_wali'] == "L" ? "checked" : '' ?> value="L">
-                      <span class="checkmark"></span>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-md-3 text-center">P
-                      <label class="container radio-select" style="width: 2%">
-                      <input type="radio" name="jenis_kelamin_wali" <?=$result['jenis_kelamin_wali'] == "P" ? "checked" : '' ?> value="P" >
-                      <span class="checkmark"></span>
-                    </label>
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -284,32 +264,143 @@
                       <b>Usia</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="usia" id="usia" class="form-control" placeholder="Usia" value="<?$result['usia']?>"  autocomplete="off">
+                      <input type="text" name="usia" id="usia" class="form-control" placeholder="Usia" value="<?=$result['usia']?>"  autocomplete="off">
                     </div>
                   </div>
-                  <br>
+                </div>
+                <div class="col-md-6">
                   <div class="row">
+                    <!-- nama -->
+                    <div class="col-md-3">
+                      <b>Tgl.Lahir</b>
+                    </div>
+                    <div class="col-md-9">
+                      <input type="text" name="ttl_wali" id="ttl_wali" class="form-control" placeholder="Tgl.Lahir"  autocomplete="off">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <br>
+                <div class="row">
                     <div class="col-md-4">
                         <b>Jenis Kelamin</b>
                     </div>
                     <div class="col-md-3">
                       <div class="text-center">L
                         <label class="container radio-select" style="width: 2%">
-                      <input type="radio" name="jenis_kelamin_pasien" <?=$result['jenis_kelamin_wali'] == "L" ? "checked" : '' ?> value="L" >
+                      <input type="radio" name="jenis_kelamin_pasien" <?=$result['jenis_kelamin_pasien'] == "L" ? "checked" : '' ?> value="L" >
                       <span class="checkmark"></span>
                         </label>
                       </div>
                     </div>
                     <div class="col-md-3 text-center">P
                       <label class="container radio-select" style="width: 2%">
-                      <input type="radio" name="jenis_kelamin_pasien" <?=$result['jenis_kelamin_wali'] == "P" ? "checked" : '' ?> value="P" >
+                      <input type="radio" name="jenis_kelamin_pasien" <?=$result['jenis_kelamin_pasien'] == "P" ? "checked" : '' ?> value="P" >
                       <span class="checkmark"></span>
                     </label>
                     </div>
                   </div>
-                  <br>
                 </div>
-            </div>
+                <div class="col-md-6">
+                  <br>
+                  <div class="row">
+                    <!-- nama -->
+                    <div class="col-md-3">
+                      <b>Alamat</b>
+                    </div>
+                    <div class="col-md-9">
+                      <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Alamat"  autocomplete="off">
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                
+                </div>
+                <div class="col-md-6"> 
+                  <div class="row">
+                    <div class="col-md-6">
+                        <b>Jenis Kelamin</b>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="text-center">L
+                        <label class="container radio-select" style="width: 2%">
+                      <input type="radio" name="jenis_kelamin_wali" <?= $result['jenis_kelamin_wali'] == "L" ? "checked" : '' ?> value="L" >
+                      <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-3 text-center">P
+                      <label class="container radio-select" style="width: 2%">
+                      <input type="radio" name="jenis_kelamin_wali" <?= $result['jenis_kelamin_wali'] == "P" ? "checked" : '' ?> value="P" >
+                      <span class="checkmark"></span>
+                    </label>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6"> 
+                  
+                </div>
+                <div class="col-md-6"> 
+                  <br> 
+                  <div class="row">
+                    <!-- nama -->
+                    <div class="col-md-3">
+                      <b>Hubungan</b>
+                    </div>
+                    <div class="col-md-9">
+                      <div class="row">
+                          <div class="col-xs-6">
+                            <label class="container radio-select" style="width: 5%"> Pasien Sendiri
+                              <input type="radio" name="hubungan" <?= $result['hubungan'] == "Pasien Sendiri" ? "checked" : '' ?> value="Pasien Sendiri" >
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                          <div class="col-xs-6">
+                            <label class="container radio-select" style="width: 5%"> Suami
+                              <input type="radio" name="hubungan" <?= $result['hubungan'] == "Suami" ? "checked" : '' ?> value="Suami" >
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-6">
+                            <label class="container radio-select"  style="width: 5%"> Istri
+                              <input type="radio" name="hubungan" <?= $result['hubungan'] == "Istri" ? "checked" : '' ?> value="Istri" >
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                          <div class="col-xs-6">
+                            <label class="container radio-select" style="width: 5%"> Anak
+                              <input type="radio" name="hubungan"  <?= $result['hubungan'] == "Anak" ? "checked" : '' ?> value="Anak" >
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-6">
+                            <label class="container radio-select" style="width: 5%"> Orang Tua
+                              <input type="radio" name="hubungan"  <?= $result['hubungan'] == "Orang Tua" ? "checked" : '' ?> value="Orang Tua" >
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
           <div class="row">
             <div class="col-md-12">  
                   <div class="row">
@@ -536,10 +627,26 @@
                     
                   </div>
 
+
+                </div>
+              </div>
+
+            </div>
+            <div class="panel-footer text-right">
+                <button class="btn btn-default btn-sm btn-batal-<?= $this->router->fetch_class(); ?>">Batal</button>
+                <button type="submit" class="btn btn-primary btn-sm btn-kirim-<?= $this->router->fetch_class(); ?>">Simpan</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">Edit Data Fisioterapi Asesment</div>
+              <div class="panel-body">
+
+                <div class="row">
                   <div class="col-md-12"> 
-                    <br>
                     <div class="row">
-                      
                       <div class="col-md-5">
                         <b>Prognosis</b>
                       </div>
@@ -547,8 +654,11 @@
                         <textarea type="text" name="prognosis" id="prognosis" class="form-control" placeholder="Prognosis"  autocomplete="off"><?=$result['prognosis']?></textarea>
                       </div>
                     </div>
-                    <br>
                   </div>
+                </div>
+                  <br>
+
+                <div class="row">
                   <div class="col-md-12">  
                     <div class="row">
                       <!-- nama -->
@@ -556,27 +666,29 @@
                         <b>Alternatif</b>
                       </div>
                       <div class="col-md-7">
-                        <textarea type="text" name="alternatif" class="form-control" placeholder="Alternatif"  autocomplete="off"><?= $result['alternatif']?></textarea>
+                        <textarea type="text" name="alternatif" class="form-control" placeholder="Alternatif"  autocomplete="off"><?=$result['alternatif']?></textarea>
                       </div>
                     </div>
                     <br>
                   </div>
-               
-                  <div class="col-md-12">  
-                    <div class="row">
-                      <!-- nama -->
-                      <div class="col-md-5">
-                        <b>Lain lain/ analgetik post operasi</b>
-                      </div>
-                      <div class="col-md-7">
-                        <textarea type="text" name="lain_lain" class="form-control" placeholder="lain_lain"  autocomplete="off"><?=$result['lain_lain']?></textarea>
-                      </div>
-                    </div>
-                    <br>
-                  </div>
-                  <br>
+                </div>
 
-                  <div class="col-md-12">
+               <div class="row">
+                 <div class="col-md-12">  
+                   <div class="row">
+                     <!-- nama -->
+                     <div class="col-md-5">
+                       <b>Lain lain/ analgetik post operasi</b>
+                     </div>
+                     <div class="col-md-7">
+                       <textarea type="text" name="lain_lain" class="form-control" placeholder="lain_lain"  autocomplete="off"><?=$result['lain_lain']?></textarea>
+                     </div>
+                   </div>
+                   <br>
+                 </div>
+               </div>
+
+               <div class="col-md-12">
                     <div class="row">
                       <div class="col-md-6 text-center"> 
                         <!-- Signature -->
@@ -592,7 +704,6 @@
                           <button type="button" id="clear-wali">Clear</button>
                           <br>
                           <br>
-                          <input type="text" name="ttd_nama_wali_pasien" placeholder="Wali Pasien" class="form-control">
                           <input type="hidden" name="coretan_wali" id="coretan_wali">
                         </center>
                       </div> 
@@ -610,7 +721,6 @@
                           <button type="button" id="clear-pasien">Clear</button>
                           <br>
                           <br>
-                          <input type="text" name="ttd_nama_pasien" placeholder="Pasien" class="form-control">
                           <input type="hidden" name="coretan_pasien" id="coretan_pasien" required>
                         </center>
                       </div> 
@@ -632,23 +742,32 @@
                           <button type="button" id="clear-saksi">Clear</button>
                           <br>
                           <br>
-                          <input type="text" name="ttd_saksi_pihak_rs" placeholder="Saksi Pihak RS" class="form-control">
+                          <input type="text" name="saksi" placeholder="Saksi Pihak RS"  value="<?=$result['saksi']?>" class="form-control">
                           <input type="hidden" name="coretan_saksi" id="coretan_saksi">
                         </center>
                       </div> 
                     </div>
                   </div>
-                </div>
+
+
+
+               
+
               </div>
 
-            </div>
-            <div class="panel-footer text-right">
-                <button class="btn btn-default btn-sm btn-batal-<?= $this->router->fetch_class(); ?>">Batal</button>
-                <button type="submit" class="btn btn-primary btn-sm btn-kirim-<?= $this->router->fetch_class(); ?>">Simpan</button>
-            </div>
+
+
+          <div class="panel-footer text-right">
+            <button class="btn btn-default btn-sm btn-batal-<?= $this->router->fetch_class(); ?>">Batal</button>
+            <button type="submit" class="btn btn-primary btn-sm btn-kirim-<?= $this->router->fetch_class(); ?>">Simpan</button>
           </div>
         </div>
-      </div>
+
+        </div>
+      </div> 
+
+
+
     </form>
   </div>
 </div>
@@ -811,7 +930,7 @@
       $('.btn-kirim-<?= $this->router->fetch_class(); ?>').removeAttr('disabled');
     });
   });
-  update();
+  // update();
 
 
 // $(document).ready(function(){
