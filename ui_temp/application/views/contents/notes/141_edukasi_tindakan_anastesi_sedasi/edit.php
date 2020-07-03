@@ -275,7 +275,7 @@
                       <b>Tgl.Lahir</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="ttl_wali" id="ttl_wali" class="form-control" placeholder="Tgl.Lahir"  autocomplete="off">
+                      <input type="text" name="ttl_wali" value="<?=$result['ttl_wali']?>" id="ttl_wali" class="form-control" placeholder="Tgl.Lahir"  autocomplete="off">
                     </div>
                   </div>
                 </div>
@@ -312,7 +312,7 @@
                       <b>Alamat</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Alamat"  autocomplete="off">
+                      <input type="text" name="alamat" id="alamat" value="<?=$result['alamat']?>" class="form-control" placeholder="Alamat"  autocomplete="off">
                     </div>
                   </div>
 
