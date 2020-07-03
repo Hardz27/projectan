@@ -118,109 +118,263 @@
       </div>
 
       <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-6">
           <div class="panel panel-primary">
             <div class="panel-heading">Tambah data <?= $title ?></div>
             <div class="panel-body">
 
               <div class="row">
-                <div class="col-md-12">
-                  <table width="100%">
-                    <!-- New line -->
-                    <tr>
-                      <td width="32%" class="bd text-left nb-left nb-top nb-right">
-                        <div class="text-center" style="padding-left: 0px">
-                          <label class="container radio-left">
-                            &nbsp;&nbsp;Pelaksanaan Perencanaan MPP
-                            <input type="radio" name="item" required value="A">
-                            <span class="checkmark"></span>
-                          </label>
-                        </div>
-                      </td>
-                      <td width="35%" class="bd text-left nb-left nb-top nb-right">
-                        <div class="text-center" style="padding-left: 0px">
-                          <label class="container radio-left">
-                            &nbsp;&nbsp;Identifikasi masalah-resiko-kesempatan
-                            <input type="radio" name="item" required value="C">
-                            <span class="checkmark"></span>
-                          </label>
-                        </div>
-                      </td>
-                      <td width="17%" class="bd text-left nb-left nb-top nb-right">
-                        <div class="text-center" style="padding-left: 0px">
-                          <label class="container radio-left">
-                            &nbsp;&nbsp;Monitoring
-                            <input type="radio" name="item" required value="B">
-                            <span class="checkmark"></span>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="bd text-left nb-bottom nb-left nb-top nb-right">
-                        <div class="text-center" style="padding-left: 0px">
-                          <label class="container radio-left">
-                            &nbsp;&nbsp;Kolaborasi
-                            <input type="radio" name="item" required value="E">
-                            <span class="checkmark"></span>
-                          </label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="bd text-left nb-bottom nb-left nb-top nb-right">
-                        <div class="text-center" style="padding-left: 0px">
-                          <label class="container radio-left">
-                            &nbsp;&nbsp;Fasilitasi, Koordinasi, Komunikasi
-                            <input type="radio" name="item" required value="D">
-                            <span class="checkmark"></span>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="bd text-left nb-bottom nb-left nb-top nb-right">
-                        <div class="text-center" style="padding-left: 0px">
-                          <label class="container radio-left">
-                            &nbsp;&nbsp;Hasil pelayanan
-                            <input type="radio" name="item" required value="G">
-                            <span class="checkmark"></span>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="bd text-left nb-bottom nb-left nb-top nb-right">
-                        <div class="text-center" style="padding-left: 0px">
-                          <label class="container radio-left">
-                            &nbsp;&nbsp;Advokasi
-                            <input type="radio" name="item" required value="F">
-                            <span class="checkmark"></span>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="bd text-left nb-bottom nb-left nb-top nb-right">
-                        <div class="text-center" style="padding-left: 0px">
-                          <label class="container radio-left">
-                            &nbsp;&nbsp;Terminal MPP
-                            <input type="radio" name="item" required value="H">
-                            <span class="checkmark"></span>
-                          </label>
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
+                <div class="col-xs-6">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      Nama Anak
+                    </div>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control input-sm" name="nama_anak" value="" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      Masa Gestasi
+                    </div>
+                    <div class="col-xs-6">
+                      <input type="text" class="form-control input-sm" name="gestasi" value="" required>
+                    </div>
+                    <div class="col-xs-2" style="padding-left: 0px">
+                       Minggu
+                    </div>
+                  </div>
                 </div>
               </div>
-              <br><br>
+              <br>
 
               <div class="row">
-                <div class="col-md-12"> 
+                <div class="col-xs-6">
                   <div class="row">
-                    <div class="col-md-4">
-                      <b>Kegiatan Managemen Pelayanan Pasien</b>
+                    <div class="col-xs-4">
+                      Tempratur <span class="pull-right">(&#8451;)</span> 
                     </div>
-                    <div class="col-md-8"> 
-                      <textarea type="text" name="catatan" class="form-control" placeholder=""  autocomplete="off" required></textarea>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control input-sm" name="tempratur" value="" required>
                     </div>
-                  </div> 
-                  <br>               
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      Berat badan (gram)
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control input-sm" name="bb" value="" required>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <br>
+
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      Sianosis <span class="pull-right">(+/-)</span> 
+                    </div>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control input-sm" name="sianosis" value="" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      Bilirubin total (mg/dL)
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control input-sm" name="bilirubin" value="" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      Keadaan Umum
+                    </div>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control input-sm" name="keadaan_umum" value="" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      SSP, Tonus
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control input-sm" name="ssp_tonus" value="" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      Kepala, Leher, Palatum
+                    </div>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control input-sm" name="kepala_leher_palatum" value="" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      Ubun-Ubun, Sutura
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control input-sm" name="ubun_sutura" value="" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+               <div class="row">
+                <div class="col-xs-6">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      Paru
+                    </div>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control input-sm" name="Paru" value="" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      Jantung, a. femoralis
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control input-sm" name="jantung_femoralis" value="" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">Tambah data <?= $title ?></div>
+            <div class="panel-body">
+
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      Abdomen, anus (+/-)
+                    </div>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control input-sm" name="abdomen_anus" value="" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      Sex, (Lk/Pr, Lengkap, tdk)
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control input-sm" name="sex" value="" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      Kulit (warna, dll)
+                    </div>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control input-sm" name="kulit" value="" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      Ekstremitas
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control input-sm" name="ekstremitas" value="" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      Panggul
+                    </div>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control input-sm" name="panggul" value="" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      Muntah (+/-)
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control input-sm" name="muntah" value="" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="row">
+                    <div class="col-xs-2">
+                      Defekasi
+                    </div>
+                    <div class="col-md-10">
+                      <input type="text" class="form-control input-sm" name="defekasi" value="" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="row">
+                <div class="col-md-2">
+                  Catatan
+                </div>
+                <div class="col-md-10"> 
+                  <textarea type="text" name="catatan" class="form-control" placeholder=""  autocomplete="off" required></textarea>
+                </div>
+              </div> 
+              <br>               
 
             </div>
             <div class="panel-footer text-right">
