@@ -572,7 +572,7 @@
               <table width="100%" cellspacing="0">
                 <tr>
                   <td width="40%" class="font-size-8 ">Nama</td>
-                  <td class="font-size-8">: <?=$list['notes']['nama_wali'];?></td>
+                  <td class="font-size-8">: <?=$list['notes']['nama_pasien'];?></td>
                 </tr>
                 <tr>
                   <td width="40%" class="font-size-8 ">Tanggal lahir</td>
