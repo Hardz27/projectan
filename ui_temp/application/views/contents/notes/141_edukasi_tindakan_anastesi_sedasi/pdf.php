@@ -494,9 +494,9 @@
     <div class="row-panel">
       <div class="row-heading border-blue bg-blue font-white font-size-9 r-bold">Data <?= $title; ?></div>
         <div class="row-body">
-        <table width="100%" cellspacing="0">
+        <table width="100%" cellspacing="0" >
             <tr>
-              <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-1 text-center">
+              <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-1 text-center" style="padding: 10px;"> 
                 <br>
                 <center>PERSERTUJUAN TINDAKAN ANSETESI UMUM SEDASI</center>
               </td>
@@ -504,7 +504,7 @@
         </table>
         <table width="100%" cellspacing="0">
             <tr>
-              <td  class="font-size-8  border-bottom-0 border-left-1 border-right-1">
+              <td  class="font-size-8  border-bottom-0 border-left-1 border-right-1" style="padding: 10px;">
                 <br>
                 <p>Setelah saya membaca dan diterangkan mengenai tindakan di atas, maka saya yang bertanda tangan dibawah ini :</p>
               </td>
@@ -512,7 +512,7 @@
         </table>
         <table width="100%" cellspacing="0">
           <tr>
-            <td width="50%" class="border-left-1">
+            <td width="50%" class="border-left-1" style="padding: 10px;">
               <br>
               <table width="100%" cellspacing="0">
                 <tr>
@@ -558,7 +558,7 @@
 
         <table width="100%" cellspacing="0">
           <tr>
-            <td class="border-left-1 border-right-1 font-size-8">
+            <td class="border-left-1 border-right-1 font-size-8" style="padding: 10px;">
               <br>
              Bertidank selaku <span class="r-bold"><?=$list['notes']['hubungan'];?></span> dan penanggung jawab atau wali atas pasien, menyatakan <b>SETUJU</b> untuk dilakukan tindakan berupa <b>ANASTESI UMUM / SEDASI</b> terhadap :
             </td>
@@ -567,7 +567,7 @@
 
         <table width="100%" cellspacing="0">
           <tr>
-            <td width="50%" class="border-left-1">
+            <td width="50%" class="border-left-1" style="padding: 10px;">
               <br>
               <table width="100%" cellspacing="0">
                 <tr>
@@ -605,7 +605,7 @@
 
         <table width="100%" cellspacing="0">
           <tr>
-            <td class="border-left-1 border-right-1 font-size-8">
+            <td class="border-left-1 border-right-1 font-size-8" style="padding: 10px; text-align: justify;">
               <br>
               <p>
                 Saya menyatakan bahwa sesunguhnya dan tanpa paksaan bahwa :
