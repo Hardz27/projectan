@@ -715,7 +715,8 @@
       $('.btn-kirim-<?= $this->router->fetch_class(); ?>').removeAttr('disabled');
     });
   });
-  update();
+
+update();
     
 function update() {
   $(document).ready(function(){
