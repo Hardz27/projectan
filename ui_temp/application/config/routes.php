@@ -177,6 +177,13 @@ $route['71_assesmen_bayi_baru_lahir/(:any)/(:any)']               = 'notes/71_as
 $route['71_assesmen_bayi_baru_lahir/(:any)/(:num)/(:any)']        = 'notes/71_assesmen_bayi_baru_lahir/c_71_assesmen_bayi_baru_lahir/$1/$2/$3';
 $route['71_assesmen_bayi_baru_lahir/(:any)/(:any)/(:any)/(:any)'] = 'notes/71_assesmen_bayi_baru_lahir/c_71_assesmen_bayi_baru_lahir/$1/$2/$3/$4';
 
+/// ROUTES START FOR 142_asesmen_pra_anastesi
+$route['142_asesmen_pra_anastesi'] = 'notes/142_asesmen_pra_anastesi/c_142_asesmen_pra_anastesi';
+$route['142_asesmen_pra_anastesi/(:any)'] = 'notes/142_asesmen_pra_anastesi/c_142_asesmen_pra_anastesi/$1';
+$route['142_asesmen_pra_anastesi/(:any)/(:any)']               = 'notes/142_asesmen_pra_anastesi/c_142_asesmen_pra_anastesi/$1/$2';
+$route['142_asesmen_pra_anastesi/(:any)/(:num)/(:any)']        = 'notes/142_asesmen_pra_anastesi/c_142_asesmen_pra_anastesi/$1/$2/$3';
+$route['142_asesmen_pra_anastesi/(:any)/(:any)/(:any)/(:any)'] = 'notes/142_asesmen_pra_anastesi/c_142_asesmen_pra_anastesi/$1/$2/$3/$4';
+
 /// ROUTES START FOR 41_edukasi_tindakan_sc
 $route['41_edukasi_tindakan_sc'] = 'notes/41_edukasi_tindakan_sc/c_41_edukasi_tindakan_sc';
 $route['41_edukasi_tindakan_sc/(:any)'] = 'notes/41_edukasi_tindakan_sc/c_41_edukasi_tindakan_sc/$1';
