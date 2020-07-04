@@ -177,6 +177,13 @@ $route['37_edukasi_pra_operasi/(:any)/(:any)']               = 'notes/37_edukasi
 $route['37_edukasi_pra_operasi/(:any)/(:num)/(:any)']        = 'notes/37_edukasi_pra_operasi/c_37_edukasi_pra_operasi/$1/$2/$3';
 $route['37_edukasi_pra_operasi/(:any)/(:any)/(:any)/(:any)'] = 'notes/37_edukasi_pra_operasi/c_37_edukasi_pra_operasi/$1/$2/$3/$4';
 
+/// ROUTES START FOR 38_edukasi_prosedur_risiko_tinggi
+$route['38_edukasi_prosedur_risiko_tinggi'] = 'notes/38_edukasi_prosedur_risiko_tinggi/c_38_edukasi_prosedur_risiko_tinggi';
+$route['38_edukasi_prosedur_risiko_tinggi/(:any)'] = 'notes/38_edukasi_prosedur_risiko_tinggi/c_38_edukasi_prosedur_risiko_tinggi/$1';
+$route['38_edukasi_prosedur_risiko_tinggi/(:any)/(:any)']               = 'notes/38_edukasi_prosedur_risiko_tinggi/c_38_edukasi_prosedur_risiko_tinggi/$1/$2';
+$route['38_edukasi_prosedur_risiko_tinggi/(:any)/(:num)/(:any)']        = 'notes/38_edukasi_prosedur_risiko_tinggi/c_38_edukasi_prosedur_risiko_tinggi/$1/$2/$3';
+$route['38_edukasi_prosedur_risiko_tinggi/(:any)/(:any)/(:any)/(:any)'] = 'notes/38_edukasi_prosedur_risiko_tinggi/c_38_edukasi_prosedur_risiko_tinggi/$1/$2/$3/$4';
+
 /// ROUTES START FOR 71_assesmen_bayi_baru_lahir
 $route['71_assesmen_bayi_baru_lahir'] = 'notes/71_assesmen_bayi_baru_lahir/c_71_assesmen_bayi_baru_lahir';
 $route['71_assesmen_bayi_baru_lahir/(:any)'] = 'notes/71_assesmen_bayi_baru_lahir/c_71_assesmen_bayi_baru_lahir/$1';

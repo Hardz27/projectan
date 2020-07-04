@@ -213,6 +213,17 @@
                                 </div>
                               </div>
                             </div>
+                            <div class="row">
+                              <div class="text-left col-md-12">
+                                <div class="col-md-5">
+                              <b>Sakit Lain </b> 
+                              
+                              </div>      
+                              <label class="col-md-7">
+                              <input type="text" name="sakit_lain" class="form-control" placeholder="sakit_lain" required autocomplete="off">
+                              </label>
+                              </div>
+                            </div>
                         </td> 
                       </tr>
                       <tr>
@@ -258,7 +269,7 @@
                               
                               </div>      
                               <label class="col-md-7">
-                              <input type="text" name="goldar_bayi" class="form-control" placeholder="goldar bayi" required autocomplete="off">
+                              <input type="text" name="goldar_bayi" class="form-control" placeholder="goldar bayi" autocomplete="off">
                               </label>
                             </td>
                             <td class="text-right bd">
@@ -364,7 +375,7 @@
                                     <b>Tanggal</b>
                                   </div>
                                   <div class="col-md-9">
-                                    <input type="text" name="ketuban_pecah_tgl" id="tanggal" class="form-control" value="<?= date('Y-m-d') ?>" required autocomplete="off">
+                                    <input type="text" name="ketuban_pecah_tgl" id="ketuban_pecah_tgl" class="form-control" value="<?= date('Y-m-d') ?>" required autocomplete="off">
                                   </div>
                                 </div>
                                 <br>
@@ -386,7 +397,7 @@
                               <b>Warna </b>
                             </div>
                              <label class="col-md-9">
-                             <input type="text" name="warna" id="warna" class="form-control" required="" autocomplete="off">
+                             <input type="text" name="ketuban_pecah_warna" id="warna" class="form-control" required="" autocomplete="off">
                              </label>
                              
                         </td>
@@ -394,12 +405,12 @@
                         <tr>
                           <td class="text-left bd">
                              <label class="col-md-12">
-                             <input type="text" name="tahun2" id="tahun2" class="form-control" placeholder="20..." required="" autocomplete="off">
+                             <input type="text" name="tahun2" id="tahun2" class="form-control" placeholder="20..." autocomplete="off">
                              </label>
                         </td>
                         <td class="text-left bd">
                              <label class="col-md-12">
-                             <textarea type="text" name="riwayat_kehamilan2" id="riwayat_kehamilan2" required=""  class="form-control"   autocomplete="off"></textarea>
+                             <textarea type="text" name="riwayat_kehamilan2" id="riwayat_kehamilan2"   class="form-control"   autocomplete="off"></textarea>
                              </label>
                         </td>
                         
@@ -608,120 +619,6 @@
                               </div>
                             </div>
                         </td> 
-
-
-                      </tr>
-                      </tbody>
-                    </table>
-
-                    <table width="100%">
-                      <tbody>
-                        <tr>
-                         
-                         <td class="text-left bd">
-                            <div class="row">
-                              <div class="col-xs-12">
-                                <div class="row">
-                                  <div class="col-xs-12"> 
-                                    <b>Bayi Dilahirkan Dengan</b>
-                                    <div class="row">
-                                      <div class="col-xs-4">
-                                        <label class="container radio-select" style="width: 5%"> Letak Kepala
-                                          <input type="radio" name="penyakit_ibu" value="anemia" >
-                                          <span class="checkmark"></span>
-                                        </label>
-                                      </div>
-                                      <div class="col-xs-4">
-                                         <label class="container radio-select" style="width: 5%"> Spontan
-                                          <input type="radio" name="penyakit_ibu" value="hipertensi" >
-                                          <span class="checkmark"></span>
-                                        </label>
-                                      </div>
-                                      <div class="col-xs-4">
-                                        <label class="container radio-select" style="width: 5%"> Eks Vakum
-                                          <input type="radio" name="penyakit_ibu" value="hepatitis b" >
-                                          <span class="checkmark"></span> 
-                                        </label>
-                                      </div>
-                                    </div>
-                                    <div class="row">
-                                      <div class="col-xs-4">
-                                        <label class="container radio-select" style="width: 5%"> Letak Sungsang
-                                          <input type="radio" name="penyakit_ibu" value="tbc" >
-                                          <span class="checkmark"></span>
-                                        </label>
-                                      </div>
-                                      <div class="col-xs-4">
-                                         <label class="container radio-select" style="width: 5%"> Eks Cunam
-                                          <input type="radio" name="penyakit_ibu" value="diabetes" >
-                                          <span class="checkmark"></span>
-                                        </label>
-                                      </div>
-                                      <div class="col-xs-4">
-                                        <label class="container radio-select" style="width: 5%"> Op Caesar
-                                          <input type="radio" name="penyakit_ibu" value="kel jantung" >
-                                          <span class="checkmark"></span> 
-                                        </label>
-                                      </div>
-                                    </div>
-                                    <div class="row">
-                                      <div class="text-center col-md-3">
-                                        <b>Indikasi </b>
-                                      </div>
-                                       <label class="col-md-9">
-                                       <input type="text" name="indikasi" id="indikasi" class="form-control" autocomplete="off">
-                                       </label>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </td> 
-
-                        <td class="text-right bd ">
-                          <label class="col-md-12">
-                              
-                              <div class="col-md-6"> 
-                                <div class="row">
-                                  <!-- nama -->
-                                  <div class="col-md-4">
-                                    <b>Kala I</b>
-                                  </div>
-                                  <div class="col-md-8">
-                                    <input type="text" name="kala1" class="form-control" placeholder="" required autocomplete="off">
-                                  </div>
-                                </div>
-                                <br>
-                              </div>
-                              <div class="col-md-6">  
-                                <div class="row">
-                                  <!-- nama -->
-                                  <div class="col-md-4">
-                                    <b>Kala II</b>
-                                  </div>
-                                  <div class="col-md-8">
-                                    <input type="text" name="kala2" class="form-control" placeholder="" required autocomplete="off">
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="row">
-                                <div class="col-md-12">  
-                                <div class="row">
-                                  <!-- nama -->
-                                  <div class="col-md-5">
-                                    <b>Obat-Obatan Selama Hamil / Persalinan</b>
-                                  </div>
-                                  <div class="col-md-7">
-                                    <textarea type="text" name="obat_selama_hamil" class="form-control" placeholder="" required autocomplete="off"></textarea>
-                                  </div>
-                                </div>
-                              </div>
-                              </div>
-            
-                             </label>
-                              
-                            </td>
                       </tr>
                       </tbody>
                     </table>
@@ -737,7 +634,7 @@
                       <tbody>
                         <tr>
                          
-                          <td class="text-left bd">
+                          <td class="text-left bd" style="vertical-align: top">
                              <label class="col-md-12">
                               
                               <div class="col-md-6"> 
@@ -748,7 +645,7 @@
                                     <b>Tanggal</b>
                                   </div>
                                   <div class="col-md-9">
-                                    <input type="text" name="ketuban_pecah_tgl" id="tanggal" class="form-control" value="<?= date('Y-m-d') ?>" required autocomplete="off">
+                                    <input type="text" name="bayi_lahir_tgl" id="bayi_lahir_tgl" class="form-control" value="<?= date('Y-m-d') ?>" required autocomplete="off">
                                   </div>
                                 </div>
                                 <br>
@@ -760,7 +657,7 @@
                                     <b>Jam</b>
                                   </div>
                                   <div class="col-md-10">
-                                    <input type="text" name="ketuban_pecah_jam" id="jam1" class="form-control" value="07:00" required autocomplete="off">
+                                    <input type="text" name="bayi_lahir_jam" id="jam1" class="form-control" value="07:00" required autocomplete="off">
                                   </div>
                                 </div>
                               </div>
@@ -802,7 +699,7 @@
                                     <b>Panjang Badan</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="kala1" class="form-control" placeholder="cm" required autocomplete="off">
+                                    <input type="text" name="bayi_panjang" class="form-control" placeholder="cm" required autocomplete="off">
                                   </div>
                                 </div>
                                 <br>
@@ -814,7 +711,7 @@
                                     <b>Lingkar Kepala</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="kala2" class="form-control" placeholder="cm" required autocomplete="off">
+                                    <input type="text" name="bayi_lingkar_kepala" class="form-control" placeholder="cm" required autocomplete="off">
                                   </div>
                                 </div>
                               </div>
@@ -825,7 +722,7 @@
                                     <b>Lingkar Dada</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="kala2" class="form-control" placeholder="cm" required autocomplete="off">
+                                    <input type="text" name="bayi_lingkar_dada" class="form-control" placeholder="cm" required autocomplete="off">
                                   </div>
                                 </div>
                               </div>
@@ -852,13 +749,13 @@
                             <div class="row">
                              <div class="col-xs-6">
                                         <label class="container radio-select" style="width: 5%"> Keluar
-                                          <input type="radio" name="bayi_kelamin" value="lelaki" >
+                                          <input type="radio" name="urin" value="keluar" required="" >
                                           <span class="checkmark"></span>
                                         </label>
                                       </div>
                                       <div class="col-xs-6">
                                          <label class="container radio-select" style="width: 5%"> Belum
-                                          <input type="radio" name="bayi_kelamin" value="perempuan" >
+                                          <input type="radio" name="urin" value="belum" required="" >
                                           <span class="checkmark"></span>
                                         </label>
                               </div>
@@ -870,13 +767,13 @@
                             <div class="row">
                              <div class="col-xs-6">
                                         <label class="container radio-select" style="width: 5%"> Keluar
-                                          <input type="radio" name="bayi_kelamin" value="lelaki" >
+                                          <input type="radio" name="mekonium" value="keluar" required="" >
                                           <span class="checkmark"></span>
                                         </label>
                                       </div>
                                       <div class="col-xs-6">
                                          <label class="container radio-select" style="width: 5%"> Belum
-                                          <input type="radio" name="bayi_kelamin" value="perempuan" >
+                                          <input type="radio" name="mekonium" value="belum" required="" >
                                           <span class="checkmark"></span>
                                         </label>
                               </div>
@@ -889,25 +786,25 @@
                              
                               <div class="col-xs-3">
                                         <label class="container radio-select" style="width: 5%"> Pembersihan Jalan Nafas
-                                          <input type="radio" name="anestesia" value="pudendal" >
+                                          <input type="radio" name="resusitasi" value="Pembersihan Jalan Nafas" >
                                           <span class="checkmark"></span>
                                         </label>
                                       </div>
                                       <div class="col-xs-3">
                                          <label class="container radio-select" style="width: 5%"> Oksigen
-                                          <input type="radio" name="anestesia" value="epidural" >
+                                          <input type="radio" name="resusitasi" value="oksigen" >
                                           <span class="checkmark"></span>
                                         </label>
                                       </div>
                                       <div class="col-xs-3">
                                         <label class="container radio-select" style="width: 5%"> Tanpa Tekanan
-                                          <input type="radio" name="anestesia" value="spinal" >
+                                          <input type="radio" name=resusitasi" value="Tanpa Tekanan" >
                                           <span class="checkmark"></span> 
                                         </label>
                                       </div>
                                      <div class="col-xs-3">
                                         <label class="container radio-select" style="width: 5%"> Dgn Tekanan
-                                          <input type="radio" name="anestesia" value="umum" >
+                                          <input type="radio" name="resusitasi" value="Dengan Tekanan" >
                                           <span class="checkmark"></span> 
                                         </label>
                                       </div> 
@@ -921,7 +818,7 @@
                                     <b>Obat-obatan</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="kala1" class="form-control" placeholder="cm" required autocomplete="off">
+                                    <input type="text" name="obat_obatan" class="form-control" placeholder="" required autocomplete="off">
                                   </div>
                                 </div>
                                 <br>
@@ -933,7 +830,7 @@
                                     <b>Dosis</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="kala2" class="form-control" placeholder="cm" required autocomplete="off">
+                                    <input type="text" name="dosis" class="form-control" placeholder="" required autocomplete="off">
                                   </div>
                                 </div>
                               </div>
@@ -995,7 +892,7 @@
                                     <b>Dari Menit Ke</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="dari_menitke_bagging" class="form-control" placeholder="menit" required autocomplete="off">
+                                    <input type="text" name="dari_menitke_bagging" class="form-control" placeholder="menit"  autocomplete="off">
                                   </div>
                                 </div>
                               </div>
@@ -1006,7 +903,7 @@
                                     <b>s/d menit ke</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="sd_menitke_bagging" class="form-control" placeholder="menit" required autocomplete="off">
+                                    <input type="text" name="sd_menitke_bagging" class="form-control" placeholder="menit"  autocomplete="off">
                                   </div>
                                 </div>
                               </div>
@@ -1031,7 +928,7 @@
                                     <b>Dari Menit Ke</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="dari_menitke_pijat_jantung" class="form-control" placeholder="menit" required autocomplete="off">
+                                    <input type="text" name="dari_menitke_pijat_jantung" class="form-control" placeholder="menit" autocomplete="off">
                                   </div>
                                 </div>
                               </div>
@@ -1042,7 +939,7 @@
                                     <b>s/d menit ke</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="sd_menitke_pijat_jantung" class="form-control" placeholder="menit" required autocomplete="off">
+                                    <input type="text" name="sd_menitke_pijat_jantung" class="form-control" placeholder="menit" autocomplete="off">
                                   </div>
                                 </div>
                               </div>
@@ -1069,6 +966,49 @@
                                 </div>
                               </div>
                              </label>
+                             <label class="col-md-12">
+                              
+                              <div class="col-md-4"> 
+                                <div class="row">
+                                  <!-- nama -->
+                                  <div class="col-md-12">
+                                    <b>Plasenta</b>
+                                  </div>
+                                  
+                                </div>
+                                <br>
+                              </div>
+                              <div class="col-md-8">  
+                                <div class="row">
+                                  <!-- nama -->
+                                  <div class="col-md-12">
+                                    <textarea type="text" name="plasenta" class="form-control" placeholder="" required autocomplete="off"></textarea>
+                                  </div>
+                                </div>
+                              </div>
+                             </label>
+                             <label class="col-md-12">
+                              
+                              <div class="col-md-4"> 
+                                <div class="row">
+                                  <!-- nama -->
+                                  <div class="col-md-12">
+                                    <b>Tali Pusat</b>
+                                  </div>
+                                  
+                                </div>
+                                <br>
+                              </div>
+                              <div class="col-md-8">  
+                                <div class="row">
+                                  <!-- nama -->
+                                  <div class="col-md-12">
+                                    <textarea type="text" name="tali_pusat" class="form-control" placeholder="" required autocomplete="off"></textarea>
+                                  </div>
+                                </div>
+                              </div>
+                             </label>
+                             
                         </td>
                       </tr>
                       </tbody>
@@ -1110,38 +1050,38 @@
                           </td>
                           <td class="bd" colspan="2" width="20%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%"> &nbsp;&nbsp; Tidak Ada
-                              <input type="radio" name="tanda_gawat_janin" value="tidak" >
+                              <input type="radio" name="frek_jantung" value="tidak ada" >
                                <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd" colspan="2" width="20%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%"> &nbsp;&nbsp; < 100
-                              <input type="radio" name="tanda_gawat_janin" value="tidak" >
+                              <input type="radio" name="frek_jantung" value="< 100" >
                                <span class="checkmark"></span>
                             </label>
                           </td>
                           
                           <td class="bd" colspan="2" width="20%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%"> &nbsp;&nbsp; > 100
-                              <input type="radio" name="tanda_gawat_janin" value="tidak" >
+                              <input type="radio" name="frek_jantung" value="> 100" >
                                <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd"  width="7%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%">
-                              <input type="radio" name="tanda_gawat_janin" value="1 menit" >
+                              <input type="radio" name="menit_frek_jantung" value="1" >
                               <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd"  width="7%">
                             <label class=" col-md-12 container radio-selectt text-left" style="width: 100%">
-                              <input type="radio" name="tanda_gawat_janin" value="5 menit" >
+                              <input type="radio" name="menit_frek_jantung" value="5" >
                               <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd"  width="6%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%">
-                              <input type="radio" name="tanda_gawat_janin" value="10 menit" >
+                              <input type="radio" name="menit_frek_jantung" value="10" >
                               <span class="checkmark"></span>
                             </label>
                           </td>
@@ -1164,38 +1104,38 @@
                           </td>
                           <td class="bd" colspan="2" width="20%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%"> &nbsp;&nbsp; Tidak Ada
-                              <input type="radio" name="tanda_gawat_janin" value="tidak" >
+                              <input type="radio" name="usaha_nafas" value="tidak ada" >
                                <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd" colspan="2" width="20%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%"> &nbsp;&nbsp; Lambat, Tidak Teratur
-                              <input type="radio" name="tanda_gawat_janin" value="tidak" >
+                              <input type="radio" name="usaha_nafas" value="Lambat, Tidak Teratur" >
                                <span class="checkmark"></span>
                             </label>
                           </td>
                           
                           <td class="bd" colspan="2" width="20%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%"> &nbsp;&nbsp;Menangis Kuat
-                              <input type="radio" name="tanda_gawat_janin text-left" value="tidak" >
+                              <input type="radio" name="usaha_nafas" value="Menangis Kuat" >
                                <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd"  width="7%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%">
-                              <input type="radio" name="tanda_gawat_janin" value="1 menit" >
+                              <input type="radio" name="menit_usaha_nafas" value="1" >
                               <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd"  width="7%">
                             <label class=" col-md-12 container radio-selectt text-left" style="width: 100%">
-                              <input type="radio" name="tanda_gawat_janin" value="5 menit" >
+                              <input type="radio" name="menit_usaha_nafas" value="5" >
                               <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd"  width="6%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%">
-                              <input type="radio" name="tanda_gawat_janin" value="10 menit" >
+                              <input type="radio" name="menit_usaha_nafas" value="10" >
                               <span class="checkmark"></span>
                             </label>
                           </td>
@@ -1218,38 +1158,38 @@
                           </td>
                           <td class="bd" colspan="2" width="20%">
                             <label class="col-md-12 container radio-selectt  text-left" style="width: 100%"> &nbsp;&nbsp; Ekstensi
-                              <input type="radio" name="tanda_gawat_janin" value="tidak" >
+                              <input type="radio" name="tonus_otot" value="ekstensi" >
                                <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd" colspan="2" width="20%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%"> &nbsp;&nbsp; Ekstensi, Sedikit Fleksi
-                              <input type="radio" name="tanda_gawat_janin" value="tidak" >
+                              <input type="radio" name="tonus_otot" value="ekstensi, sedikit fleksi" >
                                <span class="checkmark"></span>
                             </label>
                           </td>
                           
                           <td class="bd" colspan="2" width="20%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%"> &nbsp;&nbsp; Gerakan Aktif
-                              <input type="radio" name="tanda_gawat_janin" value="tidak" >
+                              <input type="radio" name="tonus_otot" value="gerakan aktif" >
                                <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd"  width="7%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%">
-                              <input type="radio" name="tanda_gawat_janin" value="1 menit" >
+                              <input type="radio" name="menit_tonus_otot" value="1" >
                               <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd"  width="7%">
                             <label class=" col-md-12 container radio-selectt text-left" style="width: 100%">
-                              <input type="radio" name="tanda_gawat_janin" value="5 menit" >
+                              <input type="radio" name="menit_tonus_otot" value="5" >
                               <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd"  width="6%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%">
-                              <input type="radio" name="tanda_gawat_janin" value="10 menit" >
+                              <input type="radio" name="menit_tonus_otot" value="10" >
                               <span class="checkmark"></span>
                             </label>
                           </td>
@@ -1272,38 +1212,38 @@
                           </td>
                           <td class="bd" colspan="2" width="20%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%"> &nbsp;&nbsp; Tidak Ada
-                              <input type="radio" name="tanda_gawat_janin" value="tidak" >
+                              <input type="radio" name="reflek" value="tidak ada" >
                                <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd" colspan="2" width="20%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%"> &nbsp;&nbsp; Nyengir
-                              <input type="radio" name="tanda_gawat_janin" value="tidak" >
+                              <input type="radio" name="reflek" value="nyengir" >
                                <span class="checkmark"></span>
                             </label>
                           </td>
                           
                           <td class="bd" colspan="2" width="20%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%"> &nbsp;&nbsp; Bersin Batuk
-                              <input type="radio" name="tanda_gawat_janin" value="tidak" >
+                              <input type="radio" name="reflek" value="bersin batuk" >
                                <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd"  width="7%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%">
-                              <input type="radio" name="tanda_gawat_janin" value="1 menit" >
+                              <input type="radio" name="menit_reflek" value="1" >
                               <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd"  width="7%">
                             <label class=" col-md-12 container radio-selectt text-left" style="width: 100%">
-                              <input type="radio" name="tanda_gawat_janin" value="5 menit" >
+                              <input type="radio" name="menit_reflek" value="5" >
                               <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd"  width="6%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%">
-                              <input type="radio" name="tanda_gawat_janin" value="10 menit" >
+                              <input type="radio" name="menit_reflek" value="10" >
                               <span class="checkmark"></span>
                             </label>
                           </td>
@@ -1326,45 +1266,45 @@
                           </td>
                           <td class="text-center bd" colspan="2" width="20%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%"> &nbsp;&nbsp; Biru / Pucat
-                              <input type="radio" name="tanda_gawat_janin" value="tidak" >
+                              <input type="radio" name="warna_kulit" value="biru/pucat" >
                                <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="text-center bd" colspan="2" width="20%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%"> &nbsp;&nbsp; Tubuh Pink, ekstremitas biru
-                              <input type="radio" name="tanda_gawat_janin" value="tidak" >
+                              <input type="radio" name="warna_kulit" value="tubuh pink, ekstremitas biru" >
                                <span class="checkmark"></span>
                             </label>
                           </td>
                           
                           <td class="text-center bd" colspan="2" width="20%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%"> &nbsp;&nbsp; Pink seluruh tubuh
-                              <input type="radio" name="tanda_gawat_janin" value="tidak" >
+                              <input type="radio" name="warna_kulit" value="pink seluruh tubuh" >
                                <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd"  width="7%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%">
-                              <input type="radio" name="tanda_gawat_janin" value="1 menit" >
+                              <input type="radio" name="menit_warna_kulit" value="1" >
                               <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd"  width="7%">
                             <label class=" col-md-12 container radio-selectt text-left" style="width: 100%">
-                              <input type="radio" name="tanda_gawat_janin" value="5 menit" >
+                              <input type="radio" name="menit_warna_kulit" value="5" >
                               <span class="checkmark"></span>
                             </label>
                           </td>
                           <td class="bd"  width="6%">
                             <label class="col-md-12 container radio-selectt text-left" style="width: 100%">
-                              <input type="radio" name="tanda_gawat_janin" value="10 menit" >
+                              <input type="radio" name="menit_warna_kulit" value="10" >
                               <span class="checkmark"></span>
                             </label>
                           </td>
                           
                         </tr>
                         <tr class="text-right bd">
-                          <td class="bd" colspan="8" width="20%">
+                          <td class="bd" colspan="12" width="20%">
                             <label class="col-md-12">
                               <div class="col-md-12"> 
                                 <div class="row">
@@ -1377,34 +1317,446 @@
                                 <br>
                               </div>
                              </label>
-                          </td>
-                          <td class="bd"  width="7%">
-                            <label class="col-md-12 container radio-selectt" style="width: 5%">
-                              <input type="radio" name="menit" value="1" >
-                              <span class="checkmark"></span>
-                            </label>
-                          </td>
-                          <td class="bd"  width="7%">
-                            <label class=" col-md-12 container radio-selectt" style="width: 5%">
-                              <input type="radio" name="menit" value="5" >
-                              <span class="checkmark"></span>
-                            </label>
-                          </td>
-                          <td class="bd"  width="6%">
-                            <label class="col-md-12 container radio-selectt" style="width: 5%">
-                              <input type="radio" name="menit" value="10" >
-                              <span class="checkmark"></span>
-                            </label>
-                          </td>
-                          
+                          </td>  
                         </tr>
                       </tbody>
                     </table>
                     <table width="100%">
                       <tbody>
                         <tr>
-                          
+                            <td class="text-center bd ">
+                              <div class="col-md-3">
+                              <b>Nafas Pertama </b>
+                              
+                              </div>     
+                              <label class="col-md-9">
+                              <input type="text" name="nafas_pertama" class="form-control" placeholder="" required autocomplete="off">
+                             </label> 
+                            </td>
+                            
+                           <td class="text-right bd">
+                              <div class="col-md-5">
+                              <b>Nafas Spontan & Teratur </b> 
+                              
+                              </div>      
+                              <label class="col-md-7">
+                              <input type="text" name="nafas_spontan" class="form-control" placeholder="menit" required autocomplete="off">
+                              </label>
+                            </td>
+                            <td class="text-right bd">
+                              <div class="col-md-5">
+                              <b>Waktu s/d Menangis </b> 
+                              
+                              </div>     
+                              <label class="col-md-7">
+                              <input type="text" name="waktu_sd_menangis" class="form-control" placeholder="menit" required autocomplete="off">
+                              </label> 
+                            </td>
+                          </tr>
+                      </tbody>
+                    </table>
+                    
+                    <table width="100%">
+                      <thead>
+                        <tr class="text-center bd ">
+                              <td width="30%" colspan="3" class="bd"><b>PEMERIKSAAN FISIK</b></td>
+                              <td width="10%" class="bd"><b>Normal</b></td>
+                              <td width="10%" class="bd"><b>Tidak Normal</b></td>
+                              <td  colspan="5" width="50%" class="bd"><b>CATATAN</b></td>
                         </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td width="30%" colspan="3" class="text-center bd ">
+                              <div class="col-md-12">
+                              <b>Keadaan Umum </b>
+                              </div>     
+                            </td>
+                            
+                           <td width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                <input type="radio" name="keadaan_umum" value="normal" >
+                                <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                              
+                            </td>
+                            <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                 <input type="radio" name="keadaan_umum" value="tidak normal" >
+                                 <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                              
+                            </td>
+                            <td rowspan="3" colspan="5" width="50%" class="text-right bd" style="vertical-align: top">
+                              <div class="col-md-5">
+                              <b>Kel. Kongenital / Anomali / Lainlain </b> 
+                              
+                              </div>     
+                              <label class="col-md-7">
+                              <textarea type="text" name="catatan" class="form-control" placeholder="catatan" required autocomplete="off"></textarea>
+                              </label> 
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td width="30%" colspan="3" class="text-center bd ">
+                              <div class="col-md-12">
+                              <b>Sianosis (+/-) </b>
+                              </div>     
+                            </td>
+                            
+                           <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                <input type="radio" name="sianosis" value="normal" >
+                                <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                              
+                            </td>
+                            <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                 <input type="radio" name="sianosis" value="tidak normal" >
+                                 <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                              
+                            </td>
+                           
+                          </tr>
+                          <tr>
+                            <td width="30%" colspan="3" class="text-center bd ">
+                              <div class="col-md-12">
+                              <b>Ikterus / Kuning (+/-) </b>
+                              </div>     
+                            </td>
+                            
+                           <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                <input type="radio" name="ikterus_kuning" value="normal" >
+                                <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                              
+                            </td>
+                            <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                 <input type="radio" name="ikterus_kuning" value="tidak normal" >
+                                 <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="30%" colspan="3" class="text-center bd ">
+                              <div class="col-md-12">
+                              <b>SSP, Tonus </b>
+                              </div>     
+                            </td>
+                            
+                           <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                <input type="radio" name="ssp_tonus" value="normal" >
+                                <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                              
+                            </td>
+                            <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                 <input type="radio" name="ssp_tonus" value="tidak normal" >
+                                 <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                            </td>
+                            <td rowspan="3" colspan="5" width="50%" class="text-right bd" style="vertical-align: top">
+                              <div class="col-md-5">
+                              <b>Diagnosis</b> 
+                              
+                              </div>     
+                              <label class="col-md-7">
+                              <textarea type="text" name="diagnosis" class="form-control" placeholder="diagnosis" required autocomplete="off"></textarea>
+                              </label> 
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="30%" colspan="3" class="text-center bd ">
+                              <div class="col-md-12">
+                              <b>Kepala,Leher,Palatum </b>
+                              </div>     
+                            </td>
+                            
+                           <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                <input type="radio" name="kepala_leher_palatum" value="normal" >
+                                <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                              
+                            </td>
+                            <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                 <input type="radio" name="kepala_leher_palatum" value="tidak normal" >
+                                 <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="30%" colspan="3" class="text-center bd ">
+                              <div class="col-md-12">
+                              <b>Paru </b>
+                              </div>     
+                            </td>
+                            
+                           <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                <input type="radio" name="paru" value="normal" >
+                                <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                              
+                            </td>
+                            <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                 <input type="radio" name="paru" value="tidak normal" >
+                                 <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="30%" colspan="3" class="text-center bd ">
+                              <div class="col-md-12">
+                              <b>Ubun-ubun, Sutura </b>
+                              </div>     
+                            </td>
+                            
+                           <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                <input type="radio" name="ubun_ubun" value="normal" >
+                                <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                              
+                            </td>
+                            <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                 <input type="radio" name="ubun_ubun" value="tidak normal" >
+                                 <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="30%" colspan="3" class="text-center bd ">
+                              <div class="col-md-12">
+                              <b>Jantung, a.Femoralis </b>
+                              </div>     
+                            </td>
+                            
+                           <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                <input type="radio" name="jantung" value="normal" >
+                                <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                              
+                            </td>
+                            <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                 <input type="radio" name="jantung" value="tidak normal" >
+                                 <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                            </td>
+                            <td rowspan="5" colspan="5" width="50%" class="text-right bd" style="vertical-align: top">
+                              <div class="col-md-5">
+                              <b>Penatalaksanaan</b> 
+                              
+                              </div>     
+                              <label class="col-md-7">
+                              <textarea type="text" name="penatalaksanaan" class="form-control" placeholder="penatalaksanaan" required autocomplete="off"></textarea>
+                              </label> 
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="30%" colspan="3" class="text-center bd ">
+                              <div class="col-md-12">
+                              <b>Abdomen, Anus (+/-) </b>
+                              </div>     
+                            </td>
+                            
+                           <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                <input type="radio" name="abdomen" value="normal" >
+                                <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                              
+                            </td>
+                            <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                 <input type="radio" name="abdomen" value="tidak normal" >
+                                 <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="30%" colspan="3" class="text-center bd ">
+                              <div class="col-md-12">
+                              <b>Kelamin </b>
+                              </div>     
+                            </td>
+                            
+                           <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                <input type="radio" name="kelamin" value="normal" >
+                                <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                              
+                            </td>
+                            <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                 <input type="radio" name="kelamin" value="tidak normal" >
+                                 <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="30%" colspan="3" class="text-center bd ">
+                              <div class="col-md-12">
+                              <b>Kulit </b>
+                              </div>     
+                            </td>
+                            
+                           <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                <input type="radio" name="kulit" value="normal" >
+                                <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                              
+                            </td>
+                            <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                 <input type="radio" name="kulit" value="tidak normal" >
+                                 <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="30%" colspan="3" class="text-center bd ">
+                              <div class="col-md-12">
+                              <b>Ekstremitas </b>
+                              </div>     
+                            </td>
+                            
+                           <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                <input type="radio" name="ekstremitas" value="normal" >
+                                <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                              
+                            </td>
+                            <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                 <input type="radio" name="ekstremitas" value="tidak normal" >
+                                 <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="30%" colspan="3" class="text-center bd ">
+                              <div class="col-md-12">
+                              <b>Panggul </b>
+                              </div>     
+                            </td>
+                            
+                           <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                <input type="radio" name="panggul" value="normal" >
+                                <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                              
+                            </td>
+                            <td  width="10%" class="text-right bd">
+                              <div class="col-md-12">
+                               
+                              <label class="col-md-12 container radio-selectt" style="width: 100%">
+                                 <input type="radio" name="panggul" value="tidak normal" >
+                                 <span class="checkmark"></span>
+                              </label>
+                              </div>      
+                            </td>
+                            <td colspan="5" width="50%" class="text-right bd" style="vertical-align: top">
+                              <div class="col-md-5">
+                              <b>Inisiasi Menetek Dini(IMD): Jam</b> 
+                              
+                              </div>     
+                              <label class="col-md-7">
+                                <input type="text" name="inisiasi" id="jam4" class="form-control" value="07:00" required autocomplete="off">
+                              </label> 
+                            </td>
+                          </tr>
                       </tbody>
                     </table>
                     
@@ -1531,8 +1883,37 @@
         vertical: 'bottom'
     }
   });
+  $('#jam4').datetimepicker({
+    format:"HH:mm",
+    showTodayButton:true,
+    timeZone:'',
+    dayViewHeaderFormat: 'MMMM YYYY',
+    stepping: 5,
+    locale:moment.locale(),
+    collapse:true,
+    icons: {
+          time:'fa fa-clock-o',
+          date:'fa fa-calendar',
+          up:'fa fa-chevron-up',
+          down:'fa fa-chevron-down',
+          previous:'fa fa-chevron-left',
+          next:'fa fa-chevron-right',
+          today:'fa fa-crosshairs',
+          clear:'fa fa-trash-o',
+          close:'fa fa-times'
+    },
+    sideBySide:true,
+    calendarWeeks:false,
+    viewMode:'days',
+    viewDate:false,
+    toolbarPlacement:'bottom',
+    widgetPositioning:{
+        horizontal: 'left',
+        vertical: 'bottom'
+    }
+  });
 
-  $('#tanggal, #tanggal_lahir').datetimepicker({
+  $('#tanggal, #tanggal_lahir, #ketuban_pecah_tgl, #bayi_lahir_tgl').datetimepicker({
     format:"YYYY-MM-DD",
     showTodayButton:true,
     timeZone:'',
