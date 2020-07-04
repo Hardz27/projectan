@@ -183,6 +183,7 @@ class C_144_edukasi_tindakan_anastesi extends CI_Controller
           $notes[$n] = [
             'notes_id'                            => $o['id'],
             'approved_petugas'                    => $jdata['approved_petugas'],
+            'approved_dokter'                     => $jdata['approved_dokter'],
             'tanggal'                             => $jdata['notes']['tanggal'],
             'jam'                                 => $jdata['notes']['jam'],
             'tanggal'                             =>  $jdata['notes']['tanggal'],
@@ -200,6 +201,7 @@ class C_144_edukasi_tindakan_anastesi extends CI_Controller
             'diagnosis_kerja'                     =>  $jdata['notes']['diagnosis_kerja'],
             'diagnosis_banding'                   =>  $jdata['notes']['diagnosis_banding'],
             'tindakan_yang_dilakukan'             =>  $jdata['notes']['tindakan_yang_dilakukan'],
+            'tyd_ll_value'             =>  $jdata['notes']['tyd_ll_value'],
             'indikasi_tindakan'                   =>  $jdata['notes']['indikasi_tindakan'],
             'tata_cara'                           =>  $jdata['notes']['tata_cara'],
             'risiko_tindakan'                     =>  $jdata['notes']['risiko_tindakan'],
@@ -291,8 +293,9 @@ class C_144_edukasi_tindakan_anastesi extends CI_Controller
       'diagnosis_kerja'                     =>  $this->input->post('diagnosis_kerja'),
       'diagnosis_banding'                   =>  $this->input->post('diagnosis_banding'),
       'tindakan_yang_dilakukan'             =>  $this->input->post('tindakan_yang_dilakukan'),
+      'tyd_ll_value'                        =>  $this->input->post('tyd_ll_value'),
       'indikasi_tindakan'                   =>  $this->input->post('indikasi_tindakan'),
-      'tata_cara'                   =>  $this->input->post('tata_cara'),
+      'tata_cara'                           =>  $this->input->post('tata_cara'),
       'risiko_tindakan'                     =>  $this->input->post('risiko_tindakan'),
       'komplikasi'                          =>  $this->input->post('komplikasi'),
       'prognosis'                           =>  $this->input->post('prognosis'),
@@ -316,7 +319,7 @@ class C_144_edukasi_tindakan_anastesi extends CI_Controller
       'notes'                 => $notes, // NAMANYA HARUS NOTES
     ];
     
-    // echo json_encode($notes);
+    // echo json_encode($params);
     // exit();
 
     $this->_config['body'] = json_encode($params);
@@ -357,6 +360,7 @@ class C_144_edukasi_tindakan_anastesi extends CI_Controller
     $result = $result_data['data'][0]['json_data'];
     $detail = [
       'approved_petugas'                    =>  $result['approved_petugas'],
+      'approved_dokter'                     => $result['approved_dokter'],
       'tanggal'                             =>  $result['notes']['tanggal'],
       'jam'                                 =>  $result['notes']['jam'],
       'tanggal'                             =>  $result['notes']['tanggal'],
@@ -374,6 +378,7 @@ class C_144_edukasi_tindakan_anastesi extends CI_Controller
       'diagnosis_kerja'                     =>  $result['notes']['diagnosis_kerja'],
       'diagnosis_banding'                   =>  $result['notes']['diagnosis_banding'],
       'tindakan_yang_dilakukan'             =>  $result['notes']['tindakan_yang_dilakukan'],
+      'tyd_ll_value'             =>  $result['notes']['tyd_ll_value'],
       'indikasi_tindakan'                   =>  $result['notes']['indikasi_tindakan'],
       'tata_cara'                           =>  $result['notes']['tata_cara'],
       'risiko_tindakan'                     =>  $result['notes']['risiko_tindakan'],
@@ -418,6 +423,7 @@ class C_144_edukasi_tindakan_anastesi extends CI_Controller
       'diagnosis_kerja'                     =>  $this->input->post('diagnosis_kerja'),
       'diagnosis_banding'                   =>  $this->input->post('diagnosis_banding'),
       'tindakan_yang_dilakukan'             =>  $this->input->post('tindakan_yang_dilakukan'),
+      'tyd_ll_value'             =>  $this->input->post('tyd_ll_value'),
       'indikasi_tindakan'                   =>  $this->input->post('indikasi_tindakan'),
       'tata_cara'                   =>  $this->input->post('tata_cara'),
       'risiko_tindakan'                     =>  $this->input->post('risiko_tindakan'),
@@ -487,6 +493,7 @@ class C_144_edukasi_tindakan_anastesi extends CI_Controller
     $result = $result_data['data'][0]['json_data'];
     $detail = [
       'digital_signature_approved_petugas'  => $result['digital_signature_approved_petugas'],
+      'approved_dokter'                     => $result['approved_dokter'],
       'approved_petugas'                    =>  $result['approved_petugas'],
       'tanggal'                             =>  $result['notes']['tanggal'],
       'jam'                                 =>  $result['notes']['jam'],
@@ -505,6 +512,7 @@ class C_144_edukasi_tindakan_anastesi extends CI_Controller
       'diagnosis_kerja'                     =>  $result['notes']['diagnosis_kerja'],
       'diagnosis_banding'                   =>  $result['notes']['diagnosis_banding'],
       'tindakan_yang_dilakukan'             =>  $result['notes']['tindakan_yang_dilakukan'],
+      'tyd_ll_value'             =>  $result['notes']['tyd_ll_value'],
       'indikasi_tindakan'                   =>  $result['notes']['indikasi_tindakan'],
       'tata_cara'                   =>  $result['notes']['tata_cara'],
       'risiko_tindakan'                     =>  $result['notes']['risiko_tindakan'],

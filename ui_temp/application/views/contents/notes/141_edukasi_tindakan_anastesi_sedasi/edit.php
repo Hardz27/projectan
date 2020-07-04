@@ -125,11 +125,11 @@
         <div class="panel-body">
           <div class="row">
 
-            <div class="col-lg-6">
+          <div class="col-lg-4">
               <div class="row">
                 <!-- nama -->
                 <div class="col-md-4">
-                  <b>Petugas Approve</b>
+                  <b>Nama Pemberi Edukasi</b>
                 </div>
                 <div class="col-md-8">
                   <select name="petugas_approved" class="petugas_approved" style="width: 100%" required>
@@ -141,7 +141,24 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6"> 
+            <div class="col-lg-4">
+              <div class="row">
+                <!-- nama -->
+                <div class="col-md-4">
+                  <b>Nama Pelaksana Tindakan</b>
+                </div>
+                <div class="col-md-8">
+                  <select name="dokter_approved" class="dokter_approved" style="width: 100%" required>
+                    <option value=""></option>
+                    <?php foreach ($data_dokter as $dd) : ?>
+                      <option value="<?= $dd['id'] ?>" <?= $dd['nama'] == $result['approved_dokter'] ? 'selected' : ''; ?>><?= $dd['nama'] ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4"> 
               <div class="col-md-6"> 
                 <div class="row">
                   <!-- nama -->
@@ -631,10 +648,6 @@
                 </div>
               </div>
 
-            </div>
-            <div class="panel-footer text-right">
-                <button class="btn btn-default btn-sm btn-batal-<?= $this->router->fetch_class(); ?>">Batal</button>
-                <button type="submit" class="btn btn-primary btn-sm btn-kirim-<?= $this->router->fetch_class(); ?>">Simpan</button>
             </div>
           </div>
         </div>

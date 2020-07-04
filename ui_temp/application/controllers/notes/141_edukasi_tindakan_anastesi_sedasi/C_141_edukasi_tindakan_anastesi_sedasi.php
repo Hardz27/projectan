@@ -183,6 +183,7 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
           $notes[$n] = [
             'notes_id'                            => $o['id'],
             'approved_petugas'                    => $jdata['approved_petugas'],
+            'approved_dokter'                     => $jdata['approved_dokter'],
             'tanggal'                             => $jdata['notes']['tanggal'],
             'jam'                                 => $jdata['notes']['jam'],
             'tanggal'                             =>  $jdata['notes']['tanggal'],
@@ -355,6 +356,7 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
     $result = $result_data['data'][0]['json_data'];
     $detail = [
       'approved_petugas'                    =>  $result['approved_petugas'],
+      'approved_dokter'                     => $result['approved_dokter'],
       'tanggal'                             =>  $result['notes']['tanggal'],
       'jam'                                 =>  $result['notes']['jam'],
       'tanggal'                             =>  $result['notes']['tanggal'],
@@ -485,6 +487,7 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'digital_signature_approved_petugas'  => $result['digital_signature_approved_petugas'],
       'approved_petugas'                    =>  $result['approved_petugas'],
       'digital_signature_approved_petugas'  =>  $result['digital_signature_approved_petugas'],
+      'approved_dokter'                     => $result['approved_dokter'],
       'tanggal'                             =>  $result['notes']['tanggal'],
       'jam'                                 =>  $result['notes']['jam'],
       'tanggal'                             =>  $result['notes']['tanggal'],

@@ -124,12 +124,12 @@
         </div>
         <div class="panel-body">
           <div class="row">
-
-            <div class="col-lg-6">
+            
+            <div class="col-lg-4">
               <div class="row">
                 <!-- nama -->
                 <div class="col-md-4">
-                  <b>Petugas Approve</b>
+                  <b>Nama Pemberi Edukasi</b>
                 </div>
                 <div class="col-md-8">
                   <select name="petugas_approved" class="petugas_approved" style="width: 100%" required>
@@ -141,7 +141,24 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6"> 
+            <div class="col-lg-4">
+              <div class="row">
+                <!-- nama -->
+                <div class="col-md-4">
+                  <b>Nama Pelaksana Tindakan</b>
+                </div>
+                <div class="col-md-8">
+                  <select name="dokter_approved" class="dokter_approved" style="width: 100%" required>
+                    <option value=""></option>
+                    <?php foreach ($data_dokter as $dd) : ?>
+                      <option value="<?= $dd['id'] ?>" <?= $dd['nama'] == $result['approved_dokter'] ? 'selected' : ''; ?>><?= $dd['nama'] ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4"> 
               <div class="col-md-6"> 
                 <div class="row">
                   <!-- nama -->
@@ -457,9 +474,10 @@
                             <span class="checkmark"></span>
                           </label>
                           <label class="customcheck"> Lain lain
-                            <input type="checkbox" name="tindakan_yang_dilakukan[]" <?= in_array("Lain lain", $result['tindakan_yang_dilakukan']) ? "checked" : '' ?> value="Lain lain">
+                            <input type="checkbox" id="tyd-ll" name="tindakan_yang_dilakukan[]" <?=  $result['tyd_ll_value'] ? "checked" : '' ?> value="Lain lain">
                             <span class="checkmark"></span>
                           </label>
+                          <input type="text" name="tyd_ll_value" id="tyd-ll-value" class="form-control" value="<?=$result['tyd_ll_value']?>" style="display: none;" placeholder="Lain lain">
                         </div>
                       </div>
                     </div>
@@ -926,6 +944,10 @@
  var signaturePadSaksiPihakRS = new SignaturePad(document.getElementById('signature-pad-saksi-pihak-rs'));
 $(document).ready(function() {
 
+  if($('#tyd-ll-value').val().length > 0){
+    $('#tyd-ll-value').removeAttr('style')
+  }
+
  $('.btn-kirim-<?= $this->router->fetch_class(); ?>').click(function(){
    
    let ttdPasienImage = signaturePadPasien.toDataURL('image/png')
@@ -944,6 +966,11 @@ $(document).ready(function() {
    let ttdSaksi = signaturePadSaksiPihakRS.toData()
    if(ttdSaksi.pop()){
     $('#coretan_saksi').val(ttdSakiImage)
+   }
+
+   if($('#tyd-ll-value').length > 0){
+     let tydValue = $('#tyd-ll-value').val()
+     $('#tyd-ll').val(`Lain lain - ${tydValue}`)
    }
 
  });
@@ -985,6 +1012,18 @@ $('#undo-saksi').click(() => {
 $('#clear-saksi').click(() => {
   signaturePadSaksiPihakRS.clear()
 })
+
+$('#tyd-ll').click(() => {
+  if($('#tyd-ll').is(':checked')){
+    $('#tyd-ll-value').removeAttr('style')
+    $('#tyd-ll-value').attr('required', 'required')
+  }else{
+    $('#tyd-ll-value').attr('style', 'display:none')
+    $('#tyd-ll-value').removeAttr('required')
+    $('#tyd-ll-value').val('')
+  }
+})
+
 
 
  </script>
