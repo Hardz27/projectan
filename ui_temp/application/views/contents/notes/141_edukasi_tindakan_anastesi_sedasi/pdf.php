@@ -698,11 +698,11 @@
                           </div>
                       </td>
                       <td class="text-center font-size-8">
-                        <div class="r-bold">Petugas yang Menyetujui</div>
+                        <div class="r-bold">Dokter Pelaksana Tindakan</div>
                         <center>
-                          <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>" height="100px" width="100px">
+                          <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_dokter'];?>" height="100px" width="100px">
                           <div>
-                            <?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?> 
+                            <?php echo ucwords(strtolower($list['notes']['approved_dokter'])); ?> 
                           </div>
                         </center>
                       </td>
