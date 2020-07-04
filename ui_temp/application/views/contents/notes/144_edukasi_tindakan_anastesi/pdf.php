@@ -319,7 +319,6 @@
         </table>
 
 
-
         <table width="100%" cellspacing="0">
           <tr>
             <td class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left" style="width: 30%;">Jenis Informasi</td>
@@ -336,19 +335,47 @@
           <tr>
             <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left">Tindakan yang dilakukan</td>
             <td class="font-size-8 border-bottom-1 border-left-0 border-right-1 centerp-left">
-            <lable class="font-size-8"><input type="checkbox" <?= in_array( "Anestesi Umum",$list['notes']['tindakan_yang_dilakukan']) ? "checked=checked" : '' ; ?> name="" id=""  >Anestesi Umum</lable>
-            <lable class="font-size-8"><input type="checkbox" <?= in_array( "Sedasi",$list['notes']['tindakan_yang_dilakukan']) ? "checked=checked" : '' ; ?> name="" id=""  >Sedasi</lable>
+              <table width="100%" cellspacing="0">
+                <tr>
+                  <td class="font-size-8">
+                    <lable ><input type="checkbox" <?= in_array( "Anestesi spinal",$list['notes']['tindakan_yang_dilakukan']) ? "checked=checked" : '' ; ?> name="" id=""  >Anestesi spinal</lable>
+                  </td>
+                  <td class="font-size-8">
+                    <lable ><input type="checkbox" <?= in_array( "Block saraf",$list['notes']['tindakan_yang_dilakukan']) ? "checked=checked" : '' ; ?> name="" id=""  >Block saraf</lable>
+                  </td>
+                  <td class="font-size-8">
+                    <lable ><input type="checkbox" <?= in_array( "Anestesi epidural",$list['notes']['tindakan_yang_dilakukan']) ? "checked=checked" : '' ; ?> name="" id=""  >Anestesi epidural</lable>
+                  </td>
+                  <td class="font-size-8">
+                    <lable ><input type="checkbox" <?= in_array( "Lain lain - ".$list['notes']['tyd_ll_value'], $list['notes']['tindakan_yang_dilakukan']) ? "checked=checked" : '' ; ?> name="" id=""  >Lain lain<?=!empty($list['notes']['tyd_ll_value']) ? " - " . $list['notes']['tyd_ll_value'] : ''?></lable>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
           <tr>
             <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left">Indikasi Tindakan</td>
             <td class="font-size-8 border-bottom-1 border-left-0 border-right-1 centerp-left">
-            <lable class="font-size-8"><input type="checkbox" <?= in_array( "Menghilangkan kesadaran selama prosedur atau tindakan pembedahan",$list['notes']['indikasi_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  style="margin-right: 5px;"> Menghilangkan kesadaran selama prosedur atau tindakan pembedahan</lable>
-            <br>
-            <lable class="font-size-8"><input type="checkbox" <?= in_array( "Menghilangkan nyeri selama prosedur atau tindakan pembedahan",$list['notes']['indikasi_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  style="margin-right: 5px;"> Menghilangkan nyeri selama prosedur atau tindakan pembedahan</lable>
-            <br>
-            <lable class="font-size-8"><input type="checkbox" <?= in_array( "Relaksasi selama prosedur atau tindakan pembedahan",$list['notes']['indikasi_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  style="margin-right: 5px;"> Relaksasi selama prosedur atau tindakan pembedahan</lable>
-            <br>
+              <lable class="font-size-8"><input type="checkbox" <?= in_array( "Menghilangkan nyeri selama prosedur atau tindakan pembedahan",$list['notes']['indikasi_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  style="margin-right: 5px;"> Menghilangkan nyeri selama prosedur atau tindakan pembedahan</lable>
+              <br>
+              <lable class="font-size-8"><input type="checkbox" <?= in_array( "Relaksasi selama prosedur atau tindakan pembedahan",$list['notes']['indikasi_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  style="margin-right: 5px;"> Relaksasi selama prosedur atau tindakan pembedahan</lable>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left">Tata Cara</td>
+            <td class="font-size-8 border-bottom-1 border-left-0 border-right-1 centerp-left">
+              <label > 
+                <input type="checkbox" <?= in_array('Obat anastesi disuntikan melalui jarum  atau kateter yang ditempatkan kedalam rongga sumsum tulang belakang atau rongga didekatnya', $list['notes']['tata_cara']) ? "checked=checked" : '' ?> name="tata_cara[]" value="Obat anastesi disuntikan melalui jarum  atau kateter yang ditempatkan kedalam rongga sumsum tulang belakang atau rongga didekatnya" >
+               
+                <span style="display: inline-block; padding: 5px;"> Obat anastesi disuntikan melalui jarum  atau kateter yang ditempatkan kedalam rongga sumsum tulang belakang atau rongga didekatnya </span>
+              </label>
+              <br>
+              <label> 
+                <input type="checkbox" <?= in_array('Obat anastesi disuntikan kejaringan sekitar saraf melalui kulit', $list['notes']['tata_cara']) ? "checked=checked" : '' ?> name="tata_cara[]" value="Obat anastesi disuntikan kejaringan sekitar saraf melalui kulit" >
+                Obat anastesi disuntikan kejaringan sekitar saraf melalui kulit
+              </label>
+              <br>
             </td>
           </tr>
           <tr>
@@ -359,13 +386,13 @@
                   <td class="font-size-8">
                     <lable class="font-size-8"><input type="checkbox" <?= in_array( "Mual, Muntah",$list['notes']['risiko_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  >Mual, Muntah</lable>
                     <br>
-                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Suara serak",$list['notes']['risiko_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  >Suara serak</lable>
-                    <br>
-                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "nyeri tenggorokan",$list['notes']['risiko_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  >nyeri tenggorokan</lable>
-                    <br>
-                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Penyempitan jalan nafas",$list['notes']['risiko_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  >Penyempitan jalan nafas</lable>
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Nyeri otot",$list['notes']['risiko_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  >Nyeri otot</lable>
                     <br>
                     <lable class="font-size-8"><input type="checkbox" <?= in_array( "Perubahan tekanan darah",$list['notes']['risiko_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  >Perubahan tekanan darah</lable>
+                    <br>
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Kelumpuhan",$list['notes']['risiko_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  >Kelumpuhan</lable>
+                    <br>
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Infeksi",$list['notes']['risiko_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  >Infeksi</lable>
                   </td>
                   <td class="font-size-8">
                     <lable class="font-size-8"><input type="checkbox" <?= in_array( "Penurunan kesadaran",$list['notes']['risiko_tindakan']) ? "checked=checked" : '' ; ?> name="" id=""  >Penurunan kesadaran</lable>
@@ -387,11 +414,11 @@
               <table width="100%" cellspacing="0">
                 <tr>
                   <td width="50%" class="font-size-8">
-                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Luka lecet pada daerah bibir, gusi, dan lidah",$list['notes']['komplikasi']) ? "checked=checked" : '' ; ?> name="" id="" style="margin-right: 10px;" >Luka lecet pada daerah bibir, gusi, dan lidah</lable>
-                    <br>
-                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Trauma pada gigi",$list['notes']['komplikasi']) ? "checked=checked" : '' ; ?> name="" id="" style="margin-right: 10px;" >Trauma pada gigi</lable>
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Sakit punggung",$list['notes']['komplikasi']) ? "checked=checked" : '' ; ?> name="" id="" style="margin-right: 10px;" >Sakit punggung</lable>
                     <br>
                     <lable class="font-size-8"><input type="checkbox" <?= in_array( "Kerusakan otak",$list['notes']['komplikasi']) ? "checked=checked" : '' ; ?> name="" id="" style="margin-right: 10px;" >Kerusakan otak</lable>
+                    <br>
+                    <lable class="font-size-8"><input type="checkbox" <?= in_array( "Kerusakan saraf",$list['notes']['komplikasi']) ? "checked=checked" : '' ; ?> name="" id="" style="margin-right: 10px;" >Kerusakan saraf</lable>
                     <br>
                   </td>
                   <td class="font-size-8">
@@ -439,14 +466,14 @@
                       <td class="text-center font-size-8">
                         <div class="r-bold">Wali Pasien</div>
                         <center>
-                          <img src="<?= $list['notes']['coretan_wali']; ?>" alt="" height="100px" width="100px">
+                          <img src="<?= $list['notes']['coretan_wali']; ?>" alt="" height="80px" width="80px">
                         </center>
                         <div><?= $list['notes']['nama_wali']; ?></div>
                       </td>
                       <td class="text-center font-size-8"> 
                         <b>Pasien</b>
                         <center>
-                          <img src="<?= $list['notes']['coretan_pasien']; ?>" alt="" height="100px" width="100px">
+                          <img src="<?= $list['notes']['coretan_pasien']; ?>" alt="" height="80px" width="80px">
                         </center>
                           <div>
                             <?= $list['notes']['nama_pasien']; ?>
@@ -467,7 +494,7 @@
                       <td class="text-center font-size-8" width="50%">
                         <div class="r-bold">Saksi Pihak RS</div>
                         <center>
-                          <img src="<?= $list['notes']['coretan_saksi']; ?>" alt="" height="100px" width="100px">
+                          <img src="<?= $list['notes']['coretan_saksi']; ?>" alt="" height="80px" width="80px">
                         </center>
                           <div>
                             <?php echo ucwords(strtolower($list['notes']['saksi'])); ?> 
@@ -476,7 +503,7 @@
                       <td class="text-center font-size-8">
                         <div class="r-bold">Petugas yang Menyetujui</div>
                         <center>
-                          <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>" height="100px" width="100px">
+                          <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>" height="80px" width="80px">
                           <div>
                             <?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?> 
                           </div>
@@ -502,7 +529,7 @@
             <tr>
               <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-1 text-center" style="padding: 10px;"> 
                 <br>
-                <center>PERSERTUJUAN TINDAKAN ANSETESI UMUM SEDASI</center>
+                <center>PERSERTUJUAN TINDAKAN ANESTESI REGIONAL/ BLOCK SARAF PERIFER</center>
               </td>
             </tr>
         </table>
@@ -564,7 +591,7 @@
           <tr>
             <td class="border-left-1 border-right-1 font-size-8" style="padding: 10px;">
               <br>
-             Bertidank selaku <span class="r-bold"><?=$list['notes']['hubungan'];?></span> dan penanggung jawab atau wali atas pasien, menyatakan <b>SETUJU</b> untuk dilakukan tindakan berupa <b>ANASTESI UMUM / SEDASI</b> terhadap :
+             Bertidank selaku <span class="r-bold"><?=$list['notes']['hubungan'];?></span> dan penanggung jawab atau wali atas pasien, menyatakan <b>SETUJU</b> untuk dilakukan tindakan berupa <b>ANESTESI REGIONAL/ ANESTESI EPIDURAL/ ANESTESI BLOCK</b> terhadap :
             </td>
           </tr>
         </table>

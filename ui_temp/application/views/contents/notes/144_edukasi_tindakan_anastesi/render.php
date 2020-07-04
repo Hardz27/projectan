@@ -204,7 +204,7 @@
               </div>
 
               <div class="col-md-4">
-                <table class="table nowrap">
+               <table class="table nowrap">
                  <tr>
                    <td>Diagnosis Kerja</td>
                    <td><?=$k['diagnosis_kerja']?></td>
@@ -235,6 +235,20 @@
                       foreach($k['indikasi_tindakan'] as $it){
                     ?>
                       <li> <?= $it ?> </li> 
+                    <?php
+                      }
+                     ?>
+                     </ul>
+                    </td>
+                 </tr>
+                 <tr>
+                   <td>Tata Cara</td>
+                   <td>
+                     <ul>
+                     <?php
+                      foreach($k['tata_cara'] as $tc){
+                    ?>
+                      <li> <?= $tc ?> </li> 
                     <?php
                       }
                      ?>
@@ -288,7 +302,7 @@
               <div class="col-md-4">
                 <table class="table nowrap">
                   <div class="text-center col-lg-12">
-                      <b>Wali Pasien</b>
+                      <b>Tanda Tangan Wali Pasien</b>
                   </div>
                   <tr>
                     <td>
@@ -310,7 +324,7 @@
                 </table>
                 <table class="table nowrap">
                   <div class="text-center col-lg-12">
-                      <b>Pasien</b>
+                      <b>Tanda Tangan Pasien</b>
                   </div>
                   <tr>
                     <td>
@@ -322,17 +336,10 @@
                       <center><img src="<?=$k['coretan_pasien']?>" alt=""></center>
                     </td>
                   </tr>
-                  <tr>
-                    <td>
-                    <div class="text-center col-lg-12">
-                      <?=$k['nama_pasien']?>
-                    </div>
-                    </td>
-                  </tr>
                 </table>
                 <table class="table nowrap">
                   <div class="text-center col-lg-12">
-                      <b>Saksi Pihak RS</b>
+                      <b>Tanda Tangan Saksi Pihak RS</b>
                   </div>
                   <tr>
                     <td>
@@ -352,6 +359,8 @@
                   </tr>
                 </table>
               </div>
+
+            </div>
 
             </div>
 

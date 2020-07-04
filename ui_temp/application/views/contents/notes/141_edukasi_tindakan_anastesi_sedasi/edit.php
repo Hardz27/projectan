@@ -125,11 +125,11 @@
         <div class="panel-body">
           <div class="row">
 
-            <div class="col-lg-6">
+          <div class="col-lg-4">
               <div class="row">
                 <!-- nama -->
                 <div class="col-md-4">
-                  <b>Petugas Approve</b>
+                  <b>Nama Pemberi Edukasi</b>
                 </div>
                 <div class="col-md-8">
                   <select name="petugas_approved" class="petugas_approved" style="width: 100%" required>
@@ -141,7 +141,24 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6"> 
+            <div class="col-lg-4">
+              <div class="row">
+                <!-- nama -->
+                <div class="col-md-4">
+                  <b>Nama Pelaksana Tindakan</b>
+                </div>
+                <div class="col-md-8">
+                  <select name="dokter_approved" class="dokter_approved" style="width: 100%" required>
+                    <option value=""></option>
+                    <?php foreach ($data_dokter as $dd) : ?>
+                      <option value="<?= $dd['id'] ?>" <?= $dd['nama'] == $result['approved_dokter'] ? 'selected' : ''; ?>><?= $dd['nama'] ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4"> 
               <div class="col-md-6"> 
                 <div class="row">
                   <!-- nama -->
@@ -223,7 +240,7 @@
                       <b>No Identitas</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="no_identitas" class="form-control" placeholder="no_identitas" value="<?=$result['hubungan']?>" autocomplete="off">
+                      <input type="text" name="no_identitas" class="form-control" placeholder="no_identitas" value="<?=$result['no_identitas']?>" autocomplete="off">
                     </div>
                   </div>
                 </div>
@@ -275,7 +292,7 @@
                       <b>Tgl.Lahir</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="ttl_wali" id="ttl_wali" class="form-control" placeholder="Tgl.Lahir"  autocomplete="off">
+                      <input type="text" name="ttl_wali" value="<?=$result['ttl_wali']?>" id="ttl_wali" class="form-control" placeholder="Tgl.Lahir"  autocomplete="off">
                     </div>
                   </div>
                 </div>
@@ -312,7 +329,7 @@
                       <b>Alamat</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Alamat"  autocomplete="off">
+                      <input type="text" name="alamat" id="alamat" value="<?=$result['alamat']?>" class="form-control" placeholder="Alamat"  autocomplete="off">
                     </div>
                   </div>
 
@@ -632,10 +649,6 @@
               </div>
 
             </div>
-            <div class="panel-footer text-right">
-                <button class="btn btn-default btn-sm btn-batal-<?= $this->router->fetch_class(); ?>">Batal</button>
-                <button type="submit" class="btn btn-primary btn-sm btn-kirim-<?= $this->router->fetch_class(); ?>">Simpan</button>
-            </div>
           </div>
         </div>
 
@@ -704,7 +717,7 @@
                           <button type="button" id="clear-wali">Clear</button>
                           <br>
                           <br>
-                          <input type="hidden" name="coretan_wali" id="coretan_wali">
+                          <input type="hidden" name="coretan_wali" value="<?=$result['coretan_wali']?>" id="coretan_wali" >
                         </center>
                       </div> 
                       <div class="col-md-6 text-center"> 
@@ -721,7 +734,7 @@
                           <button type="button" id="clear-pasien">Clear</button>
                           <br>
                           <br>
-                          <input type="hidden" name="coretan_pasien" id="coretan_pasien" required>
+                          <input type="hidden" name="coretan_pasien" value="<?=$result['coretan_pasien']?>"  id="coretan_pasien" required>
                         </center>
                       </div> 
                     </div>
@@ -743,7 +756,7 @@
                           <br>
                           <br>
                           <input type="text" name="saksi" placeholder="Saksi Pihak RS"  value="<?=$result['saksi']?>" class="form-control">
-                          <input type="hidden" name="coretan_saksi" id="coretan_saksi">
+                          <input type="hidden" name="coretan_saksi" value="<?=$result['coretan_saksi']?>"  id="coretan_saksi">
                         </center>
                       </div> 
                     </div>
@@ -949,9 +962,25 @@
 $(document).ready(function() {
 
  $('.btn-kirim-<?= $this->router->fetch_class(); ?>').click(function(){
-   $('#coretan_pasien').val(signaturePadPasien.toDataURL('image/png'))
-   $('#coretan_saksi').val(signaturePadSaksiPihakRS.toDataURL('image/png'))
-   $('#coretan_wali').val(signaturePadWaliPasien.toDataURL('image/png'))
+   
+   let ttdPasienImage = signaturePadPasien.toDataURL('image/png')
+   let ttdPasien = signaturePadPasien.toData()
+   if(ttdPasien.pop()){
+      $('#coretan_pasien').val(ttdPasienImage)
+   }
+
+   let ttdWaliImage = signaturePadWaliPasien.toDataURL('image/png')
+   let ttdWali = signaturePadWaliPasien.toData()
+   if(ttdWali.pop()){
+      $('#coretan_wali').val(ttdWaliImage)
+   }
+
+   let ttdSakiImage = signaturePadSaksiPihakRS.toDataURL('image/png')
+   let ttdSaksi = signaturePadSaksiPihakRS.toData()
+   if(ttdSaksi.pop()){
+    $('#coretan_saksi').val(ttdSakiImage)
+   }
+
  });
 
 })
