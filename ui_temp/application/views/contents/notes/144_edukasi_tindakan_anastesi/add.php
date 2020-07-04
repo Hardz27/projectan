@@ -1,3 +1,4 @@
+
 <style>
   .btn-default.active.focus,
   .btn-default.active:focus,
@@ -157,7 +158,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="col-md-4"> 
               <div class="col-md-6"> 
                 <div class="row">
@@ -449,6 +450,7 @@
                   </div>
                   <br>
                 </div>
+
                 <div class="col-md-12 mb-lg-5">  
                   <div class="row">
                     <!-- nama -->
@@ -456,17 +458,33 @@
                       <b>Tindakan yang dilakukan</b>
                     </div>
                     <div class="col-md-7">
-                      <label class="customcheck"> Anestesi Umum
-                        <input type="checkbox" name="tindakan_yang_dilakukan[]" value="Anestesi Umum">
-                        <span class="checkmark"></span>
-                      </label>
-                      <label class="customcheck"> Sedasi
-                        <input type="checkbox" name="tindakan_yang_dilakukan[]" value="Sedasi">
-                        <span class="checkmark"></span>
-                      </label>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="customcheck"> Anestesi spinal
+                            <input type="checkbox" name="tindakan_yang_dilakukan[]" value="Anestesi spinal">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="customcheck"> Anestesi epidural
+                            <input type="checkbox" name="tindakan_yang_dilakukan[]" value="Anestesi epidural">
+                            <span class="checkmark"></span>
+                          </label>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="customcheck"> Block saraf
+                            <input type="checkbox" name="tindakan_yang_dilakukan[]" value="Block saraf">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="customcheck"> Lain lain
+                            <input type="checkbox" name="tindakan_yang_dilakukan[]" value="Lain lain" id="tyd-ll">
+                            <span class="checkmark"></span>
+                          </label>
+                          <input type="text" name="tyd_ll_value" id="tyd-ll-value" class="form-control" style="display: none;" placeholder="Lain lain">
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+
               </div>
 
 
@@ -480,10 +498,6 @@
                       <b>Indikasi Tindakan</b>
                     </div>
                     <div class="col-md-7">
-                      <label class="customcheck"> Menghilangkan kesadaran selama prosedur atau tindakan pembedahan
-                        <input type="checkbox" name="indikasi_tindakan[]" value="Menghilangkan kesadaran selama prosedur atau tindakan pembedahan">
-                        <span class="checkmark"></span>
-                      </label>
                       <label class="customcheck"> Menghilangkan nyeri selama prosedur atau tindakan pembedahan
                         <input type="checkbox" name="indikasi_tindakan[]" value="Menghilangkan nyeri selama prosedur atau tindakan pembedahan">
                         <span class="checkmark"></span>
@@ -496,6 +510,30 @@
                   </div>
                   <br>
                 </div>
+
+                <div class="col-md-12"> 
+                  <div class="row">
+
+                    <div class="col-md-5">
+                      <b>Tata Cara</b>
+                    </div>
+                    <div class="col-md-7">
+                      <label class="customcheck"> Obat anastesi disuntikan melalui jarum  atau kateter yang ditempatkan kedalam rongga sumsum tulang belakang atau rongga didekatnya
+                        <input type="checkbox" name="tata_cara[]" value="Obat anastesi disuntikan melalui jarum  atau kateter yang ditempatkan kedalam rongga sumsum tulang belakang atau rongga didekatnya">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="customcheck"> Obat anastesi disuntikan kejaringan sekitar saraf melalui kulit
+                        <input type="checkbox" name="tata_cara[]" value="Obat anastesi disuntikan kejaringan sekitar saraf melalui kulit">
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <br>
+                </div>
+
+
+               
+
                 <div class="col-md-12">  
                   <div class="row">
                     <!-- nama -->
@@ -509,20 +547,20 @@
                               <input type="checkbox" name="risiko_tindakan[]" value="Mual, Muntah">
                               <span class="checkmark"></span>
                             </label>
-                            <label class="customcheck"> Suara serak
-                              <input type="checkbox" name="risiko_tindakan[]" value="Suara serak">
-                              <span class="checkmark"></span>
-                            </label>
-                            <label class="customcheck"> Nyeri tenggorokan
-                              <input type="checkbox" name="risiko_tindakan[]" value="nyeri tenggorokan">
-                              <span class="checkmark"></span>
-                            </label>
-                            <label class="customcheck"> Penyempitan jalan nafas
-                              <input type="checkbox" name="risiko_tindakan[]" value="Penyempitan jalan nafas">
+                            <label class="customcheck"> Nyeri otot
+                              <input type="checkbox" name="risiko_tindakan[]" value="Nyeri otot">
                               <span class="checkmark"></span>
                             </label>
                             <label class="customcheck"> Perubahan tekanan darah
                               <input type="checkbox" name="risiko_tindakan[]" value="Perubahan tekanan darah">
+                              <span class="checkmark"></span>
+                            </label>
+                            <label class="customcheck"> Kelumpuhan
+                              <input type="checkbox" name="risiko_tindakan[]" value="Kelumpuhan">
+                              <span class="checkmark"></span>
+                            </label>
+                            <label class="customcheck"> Infeksi
+                              <input type="checkbox" name="risiko_tindakan[]" value="Infeksi">
                               <span class="checkmark"></span>
                             </label>
                           </div>
@@ -560,16 +598,16 @@
                     <div class="col-md-7">
                       <div class="row">
                         <div class="col-md-6">
-                          <label class="customcheck"> Luka lecet pada daerah bibir, gusi, dan lidah
-                            <input type="checkbox" name="komplikasi[]" value="Luka lecet pada daerah bibir, gusi, dan lidah">
-                            <span class="checkmark"></span>
-                          </label>
-                          <label class="customcheck"> Trauma pada gigi
-                            <input type="checkbox" name="komplikasi[]" value="Trauma pada gigi">
+                          <label class="customcheck"> Sakit punggung
+                            <input type="checkbox" name="komplikasi[]" value="Sakit punggung">
                             <span class="checkmark"></span>
                           </label>
                           <label class="customcheck"> Kerusakan otak
                             <input type="checkbox" name="komplikasi[]" value="Kerusakan otak">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="customcheck"> Kerusakan saraf
+                            <input type="checkbox" name="komplikasi[]" value="Kerusakan saraf">
                             <span class="checkmark"></span>
                           </label>
                         </div>
@@ -629,7 +667,6 @@
                 <div class="row">
                   <div class="col-md-12">  
                     <div class="row">
-                      <!-- nama -->
                       <div class="col-md-5">
                         <b>Alternatif</b>
                       </div>
@@ -867,7 +904,10 @@ $(document).ready(function() {
    $('#coretan_saksi').val(signaturePadSaksiPihakRS.toDataURL('image/png'))
    $('#coretan_wali').val(signaturePadWaliPasien.toDataURL('image/png'))
 
-   console.log($('#coretan_wali').val())
+   if($('#tyd-ll-value').length > 0){
+     let tydValue = $('#tyd-ll-value').val()
+     $('#tyd-ll').val(`Lain lain - ${tydValue}`)
+   }
  });
 
 })
@@ -918,6 +958,17 @@ $('#undo-dokter').click(() => {
 
 $('#clear-dokter').click(() => {
   signaturePadDokterAnestesi.clear()
+})
+
+$('#tyd-ll').click(() => {
+  if($('#tyd-ll').is(':checked')){
+    $('#tyd-ll-value').removeAttr('style')
+    $('#tyd-ll-value').attr('required', 'required')
+  }else{
+    $('#tyd-ll-value').attr('style', 'display:none')
+    $('#tyd-ll-value').removeAttr('required')
+    $('#tyd-ll-value').val('')
+  }
 })
 
 

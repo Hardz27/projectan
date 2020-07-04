@@ -109,22 +109,22 @@
 
 <!-- start input panel col 6 sendiri -->
 
-    <form id="form-add-1-<?= $this->router->fetch_class(); ?>">
-      <input type="hidden" class="form-control input-sm" name="id_reg" id="id_reg" value="<?= $id_reg ?>">
+    <form id="form-edit-1-<?= $this->router->fetch_class(); ?>">
+      <input type="hidden" class="form-control input-sm" name="id_notes" id="id_notes" value="<?= $result['id_notes']; ?>" >
+      <input type="hidden" class="form-control input-sm" name="id_reg" id="id_reg" value="<?= $result['id_reg']; ?>" >
+      <input type="hidden" class="form-control input-sm" name="id_visit" id="id_visit" value="<?= $result['id_visit']; ?>" >
+
       <div class="panel panel-primary">
-        <div class="panel-heading"></div>
+        <div class="panel-heading">
+          <?php foreach ($data_visit as $v) : ?>
+            <?php if ($v['id_visit'] == $result['id_visit']) { ?>
+              <?= $v['nama_dept']; ?> - <?= $v['checkin']; ?>
+            <?php } ?>
+          <?php endforeach; ?>
+        </div>
         <div class="panel-body">
           <div class="row">
-            <div class="col-lg-12 mb-5">
-              <div class="btn-group-toggle" data-toggle="buttons">
-                <?php foreach ($data_visit as $v) : ?>
-                  <label name="label_<?= $v['id_visit']; ?>" class="btn btn-sm btn-default" style="margin-bottom:5px;">
-                    <input value="<?= $v['id_visit']; ?>"  name="id_visit" id="id_visit_<?= $v['id_visit']; ?>" type="radio" required><?= $v['nama_dept']; ?> - <?= $v['checkin']; ?>
-                  </label>
-                <?php endforeach; ?>
-              </div>
-            </div>
-
+            
             <div class="col-lg-4">
               <div class="row">
                 <!-- nama -->
@@ -135,29 +135,29 @@
                   <select name="petugas_approved" class="petugas_approved" style="width: 100%" required>
                     <option value=""></option>
                     <?php foreach ($data_perawat as $k => $v) : ?>
-                      <option value="<?= $v['id'] ?>"><?= $v['nama'] ?></option>
-                      <?php endforeach; ?>
-                    </select>
-                  </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="row">
-                  <!-- nama -->
-                <div class="col-md-5">
-                  <b>Nama Pelaksana Tindakan</b>
-                </div>
-                <div class="col-md-7">
-                  <select name="dokter_approved" class="dokter_approved" style="width: 100%" required>
-                    <option value=""></option>
-                    <?php foreach ($data_dokter as $dd) : ?>
-                      <option value="<?= $dd['id'] ?>"><?= $dd['nama'] ?></option>
+                      <option value="<?= $v['id'] ?>" <?= $v['nama'] == $result['approved_petugas'] ? 'selected' : ''; ?>><?= $v['nama'] ?></option>
                     <?php endforeach; ?>
                   </select>
                 </div>
               </div>
             </div>
-            
+            <div class="col-lg-4">
+              <div class="row">
+                <!-- nama -->
+                <div class="col-md-4">
+                  <b>Nama Pelaksana Tindakan</b>
+                </div>
+                <div class="col-md-8">
+                  <select name="dokter_approved" class="dokter_approved" style="width: 100%" required>
+                    <option value=""></option>
+                    <?php foreach ($data_dokter as $dd) : ?>
+                      <option value="<?= $dd['id'] ?>" <?= $dd['nama'] == $result['approved_dokter'] ? 'selected' : ''; ?>><?= $dd['nama'] ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                </div>
+              </div>
+            </div>
+
             <div class="col-md-4"> 
               <div class="col-md-6"> 
                 <div class="row">
@@ -178,7 +178,7 @@
                     <b>Jam</b>
                   </div>
                   <div class="col-md-10">
-                    <input type="text" name="jam" id="jam" class="form-control" value="07:00" required autocomplete="off">
+                    <input type="text" name="jam" id="jam" class="form-control" value="<?= $result['jam']; ?>" required autocomplete="off">
                   </div>
                 </div>
               </div>
@@ -186,11 +186,12 @@
           </div>
         </div>
       </div>
-
+      
+      
       <div class="row">
         <div class="col-md-6">
           <div class="panel panel-primary">
-            <div class="panel-heading">Tambah Data Fisioterapi Asesment</div>
+            <div class="panel-heading">Edit Data Fisioterapi Asesment</div>
             <div class="panel-body">
 
               <div class="row">
@@ -201,7 +202,7 @@
                       <b>Nama Pasien</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="nama_pasien" id="nama_pasien" class="form-control" placeholder="Nama Pasien"  autocomplete="off">
+                      <input type="text" name="nama_pasien" id="nama_pasien" class="form-control" placeholder="Nama Pasien"  value="<?=$result['nama_pasien']?>" autocomplete="off">
                     </div>
                   </div>
                   <br>
@@ -213,7 +214,7 @@
                       <b>Nama Wali</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="nama_wali" class="form-control" placeholder="Nama Wali"  autocomplete="off">
+                      <input type="text" name="nama_wali" class="form-control" placeholder="Nama Wali"  value="<?=$result['nama_wali']?>" autocomplete="off">
                     </div>
                   </div>
                 </div>
@@ -227,22 +228,21 @@
                       <b>No. MR</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="no_mr" id="no_mr" class="form-control" placeholder="No. MR"  autocomplete="off">
+                      <input type="text" name="no_mr" id="no_mr" class="form-control" placeholder="No. MR"  value="<?=$result['no_mr']?>" autocomplete="off">
                     </div>
                   </div>
                   <br>
                 </div>
-                <div class="col-md-6"> 
+                <div class="col-md-6">  
                   <div class="row">
                     <!-- nama -->
                     <div class="col-md-3">
                       <b>No Identitas</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="no_identitas" id="no_identitas" class="form-control" placeholder="No Identitas"  autocomplete="off">
+                      <input type="text" name="no_identitas" class="form-control" placeholder="no_identitas" value="<?=$result['no_identitas']?>" autocomplete="off">
                     </div>
                   </div>
-                  <br>
                 </div>
               </div>
 
@@ -254,52 +254,53 @@
                       <b>Tempat. Tgl.Lahir</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="ttl" id="ttl" class="form-control" placeholder="Tempat. Tgl.Lahir"  autocomplete="off">
+                      <input type="text" name="ttl" id="ttl" class="form-control" placeholder="Tempat. Tgl.Lahir"  value="<?=$result['ttl']?>" autocomplete="off">
                     </div>
                   </div>
                   <br>
                 </div>
                 <div class="col-md-6">
-                  <div class="row">
+                <div class="row">
                     <!-- nama -->
                     <div class="col-md-3">
                       <b>Usia</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="usia_wali" id="usia_wali" class="form-control" placeholder="Usia"  autocomplete="off">
+                      <input type="text" name="usia_wali" id="usia_wali" class="form-control" placeholder="Usia" value="<?=$result['usia_wali']?>" autocomplete="off">
                     </div>
                   </div>
+                  <br> 
                 </div>
               </div>
 
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6"> 
                   <div class="row">
                     <!-- nama -->
                     <div class="col-md-3">
                       <b>Usia</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="usia" id="usia" class="form-control" placeholder="Usia"  autocomplete="off">
+                      <input type="text" name="usia" id="usia" class="form-control" placeholder="Usia" value="<?=$result['usia']?>"  autocomplete="off">
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6"> 
+                <div class="col-md-6">
                   <div class="row">
                     <!-- nama -->
                     <div class="col-md-3">
                       <b>Tgl.Lahir</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="ttl_wali" id="ttl_wali" class="form-control" placeholder="Tgl.Lahir"  autocomplete="off">
+                      <input type="text" name="ttl_wali" value="<?=$result['ttl_wali']?>" id="ttl_wali" class="form-control" placeholder="Tgl.Lahir"  autocomplete="off">
                     </div>
                   </div>
-                  <br>
                 </div>
               </div>
-
+              
               <div class="row">
                 <div class="col-md-6">
+                  <br>
                 <div class="row">
                     <div class="col-md-4">
                         <b>Jenis Kelamin</b>
@@ -307,33 +308,34 @@
                     <div class="col-md-3">
                       <div class="text-center">L
                         <label class="container radio-select" style="width: 2%">
-                      <input type="radio" name="jenis_kelamin_pasien" value="L" >
+                      <input type="radio" name="jenis_kelamin_pasien" <?=$result['jenis_kelamin_pasien'] == "L" ? "checked" : '' ?> value="L" >
                       <span class="checkmark"></span>
                         </label>
                       </div>
                     </div>
                     <div class="col-md-3 text-center">P
                       <label class="container radio-select" style="width: 2%">
-                      <input type="radio" name="jenis_kelamin_pasien" value="P" >
+                      <input type="radio" name="jenis_kelamin_pasien" <?=$result['jenis_kelamin_pasien'] == "P" ? "checked" : '' ?> value="P" >
                       <span class="checkmark"></span>
                     </label>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6"> 
+                <div class="col-md-6">
+                  <br>
                   <div class="row">
                     <!-- nama -->
                     <div class="col-md-3">
                       <b>Alamat</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Alamat"  autocomplete="off">
+                      <input type="text" name="alamat" id="alamat" value="<?=$result['alamat']?>" class="form-control" placeholder="Alamat"  autocomplete="off">
                     </div>
                   </div>
-                  <br>
+
                 </div>
               </div>
-              
+
               <div class="row">
                 <div class="col-md-6">
                 
@@ -346,14 +348,14 @@
                     <div class="col-md-3">
                       <div class="text-center">L
                         <label class="container radio-select" style="width: 2%">
-                      <input type="radio" name="jenis_kelamin_wali" value="L" >
+                      <input type="radio" name="jenis_kelamin_wali" <?= $result['jenis_kelamin_wali'] == "L" ? "checked" : '' ?> value="L" >
                       <span class="checkmark"></span>
                         </label>
                       </div>
                     </div>
                     <div class="col-md-3 text-center">P
                       <label class="container radio-select" style="width: 2%">
-                      <input type="radio" name="jenis_kelamin_wali" value="P" >
+                      <input type="radio" name="jenis_kelamin_wali" <?= $result['jenis_kelamin_wali'] == "P" ? "checked" : '' ?> value="P" >
                       <span class="checkmark"></span>
                     </label>
                     </div>
@@ -368,7 +370,7 @@
                 </div>
                 <div class="col-md-6"> 
                   <br> 
-                <div class="row">
+                  <div class="row">
                     <!-- nama -->
                     <div class="col-md-3">
                       <b>Hubungan</b>
@@ -377,27 +379,27 @@
                       <div class="row">
                           <div class="col-xs-6">
                             <label class="container radio-select" style="width: 5%"> Pasien Sendiri
-                              <input type="radio" name="hubungan" value="Pasien Sendiri" >
+                              <input type="radio" name="hubungan" <?= $result['hubungan'] == "Pasien Sendiri" ? "checked" : '' ?> value="Pasien Sendiri" >
                               <span class="checkmark"></span>
                             </label>
                           </div>
                           <div class="col-xs-6">
                             <label class="container radio-select" style="width: 5%"> Suami
-                              <input type="radio" name="hubungan" value="Suami" >
+                              <input type="radio" name="hubungan" <?= $result['hubungan'] == "Suami" ? "checked" : '' ?> value="Suami" >
                               <span class="checkmark"></span>
                             </label>
                           </div>
                       </div>
                       <div class="row">
                           <div class="col-xs-6">
-                            <label class="container radio-select" style="width: 5%"> Istri
-                              <input type="radio" name="hubungan" value="Istri" >
+                            <label class="container radio-select"  style="width: 5%"> Istri
+                              <input type="radio" name="hubungan" <?= $result['hubungan'] == "Istri" ? "checked" : '' ?> value="Istri" >
                               <span class="checkmark"></span>
                             </label>
                           </div>
                           <div class="col-xs-6">
                             <label class="container radio-select" style="width: 5%"> Anak
-                              <input type="radio" name="hubungan" value="Anak" >
+                              <input type="radio" name="hubungan"  <?= $result['hubungan'] == "Anak" ? "checked" : '' ?> value="Anak" >
                               <span class="checkmark"></span>
                             </label>
                           </div>
@@ -405,7 +407,7 @@
                       <div class="row">
                           <div class="col-xs-6">
                             <label class="container radio-select" style="width: 5%"> Orang Tua
-                              <input type="radio" name="hubungan" value="Orang Tua" >
+                              <input type="radio" name="hubungan"  <?= $result['hubungan'] == "Orang Tua" ? "checked" : '' ?> value="Orang Tua" >
                               <span class="checkmark"></span>
                             </label>
                           </div>
@@ -415,9 +417,8 @@
                 </div>
               </div>
 
-              
 
-
+              <br>
           <div class="row">
               <div class="col-md-12"> 
                   <div class="row">
@@ -432,7 +433,7 @@
                       <b>Diagnosis Kerja</b>
                     </div>
                     <div class="col-md-7">
-                      <textarea type="text" name="diagnosis_kerja" id="diagnosis_kerja" class="form-control" placeholder="Diagnosis Kerja"  autocomplete="off"></textarea>
+                      <textarea type="text" name="diagnosis_kerja" id="diagnosis_kerja" class="form-control" placeholder="Diagnosis Kerja"  autocomplete="off"><?=$result['diagnosis_kerja'] ?></textarea>
                     </div>
                   </div>
                   <br>
@@ -444,7 +445,7 @@
                       <b>Diagnosis Banding</b>
                     </div>
                     <div class="col-md-7">
-                      <textarea type="text" name="diagnosis_banding" id="diagnosis_banding" class="form-control" placeholder="Diagnosis Banding"  autocomplete="off"></textarea>
+                      <textarea type="text" name="diagnosis_banding" id="diagnosis_banding" class="form-control" placeholder="Diagnosis Banding"  autocomplete="off"><?=$result['diagnosis_banding']?></textarea>
                     </div>
                   </div>
                   <br>
@@ -456,14 +457,29 @@
                       <b>Tindakan yang dilakukan</b>
                     </div>
                     <div class="col-md-7">
-                      <label class="customcheck"> Anestesi Umum
-                        <input type="checkbox" name="tindakan_yang_dilakukan[]" value="Anestesi Umum">
-                        <span class="checkmark"></span>
-                      </label>
-                      <label class="customcheck"> Sedasi
-                        <input type="checkbox" name="tindakan_yang_dilakukan[]" value="Sedasi">
-                        <span class="checkmark"></span>
-                      </label>
+                    <div class="row">
+                        <div class="col-md-6">
+                          <label class="customcheck"> Anestesi spinal
+                            <input type="checkbox" name="tindakan_yang_dilakukan[]" <?= in_array("Anestesi spinal", $result['tindakan_yang_dilakukan']) ? "checked" : '' ?> value="Anestesi spinal">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="customcheck"> Anestesi epidural
+                            <input type="checkbox" name="tindakan_yang_dilakukan[]" <?= in_array("Anestesi epidural", $result['tindakan_yang_dilakukan']) ? "checked" : '' ?>  value="Anestesi epidural">
+                            <span class="checkmark"></span>
+                          </label>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="customcheck"> Block saraf
+                            <input type="checkbox" name="tindakan_yang_dilakukan[]" <?= in_array("Block saraf", $result['tindakan_yang_dilakukan']) ? "checked" : '' ?> value="Block saraf">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="customcheck"> Lain lain
+                            <input type="checkbox" id="tyd-ll" name="tindakan_yang_dilakukan[]" <?=  $result['tyd_ll_value'] ? "checked" : '' ?> value="Lain lain">
+                            <span class="checkmark"></span>
+                          </label>
+                          <input type="text" name="tyd_ll_value" id="tyd-ll-value" class="form-control" value="<?=$result['tyd_ll_value']?>" style="display: none;" placeholder="Lain lain">
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -480,22 +496,39 @@
                       <b>Indikasi Tindakan</b>
                     </div>
                     <div class="col-md-7">
-                      <label class="customcheck"> Menghilangkan kesadaran selama prosedur atau tindakan pembedahan
-                        <input type="checkbox" name="indikasi_tindakan[]" value="Menghilangkan kesadaran selama prosedur atau tindakan pembedahan">
-                        <span class="checkmark"></span>
-                      </label>
                       <label class="customcheck"> Menghilangkan nyeri selama prosedur atau tindakan pembedahan
-                        <input type="checkbox" name="indikasi_tindakan[]" value="Menghilangkan nyeri selama prosedur atau tindakan pembedahan">
+                        <input type="checkbox" name="indikasi_tindakan[]" <?= in_array("Menghilangkan nyeri selama prosedur atau tindakan pembedahan", $result['indikasi_tindakan']) ? "checked" : '' ?>  value="Menghilangkan nyeri selama prosedur atau tindakan pembedahan">
                         <span class="checkmark"></span>
                       </label>
                       <label class="customcheck"> Relaksasi selama prosedur atau tindakan pembedahan
-                        <input type="checkbox" name="indikasi_tindakan[]" value="Relaksasi selama prosedur atau tindakan pembedahan">
+                        <input type="checkbox" name="indikasi_tindakan[]" <?= in_array("Relaksasi selama prosedur atau tindakan pembedahan", $result['indikasi_tindakan']) ? "checked" : '' ?> value="Relaksasi selama prosedur atau tindakan pembedahan">
                         <span class="checkmark"></span>
                       </label>
                     </div>
                   </div>
                   <br>
                 </div>
+
+                <div class="col-md-12"> 
+                  <div class="row">
+
+                    <div class="col-md-5">
+                      <b>Tata Cara</b>
+                    </div>
+                    <div class="col-md-7">
+                      <label class="customcheck"> Obat anastesi disuntikan melalui jarum  atau kateter yang ditempatkan kedalam rongga sumsum tulang belakang atau rongga didekatnya
+                        <input type="checkbox" <?= in_array('Obat anastesi disuntikan melalui jarum  atau kateter yang ditempatkan kedalam rongga sumsum tulang belakang atau rongga didekatnya', $result['tata_cara']) ? "checked" : '' ?> name="tata_cara[]" value="Obat anastesi disuntikan melalui jarum  atau kateter yang ditempatkan kedalam rongga sumsum tulang belakang atau rongga didekatnya" >
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="customcheck"> Obat anastesi disuntikan kejaringan sekitar saraf melalui kulit
+                        <input type="checkbox" <?= in_array('Obat anastesi disuntikan kejaringan sekitar saraf melalui kulit', $result['tata_cara']) ? "checked" : '' ?> name="tata_cara[]" value="Obat anastesi disuntikan kejaringan sekitar saraf melalui kulit" >
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <br>
+                </div>
+
                 <div class="col-md-12">  
                   <div class="row">
                     <!-- nama -->
@@ -505,42 +538,42 @@
                     <div class="col-md-7">
                         <div class="row">
                           <div class="col-md-6">
-                            <label class="customcheck"> Mual, muntah
-                              <input type="checkbox" name="risiko_tindakan[]" value="Mual, Muntah">
+                            <label class="customcheck"> Mual, Muntah
+                              <input type="checkbox" name="risiko_tindakan[]" <?= in_array("Mual, Muntah", $result['risiko_tindakan']) ? "checked" : '' ?>  value="Mual, Muntah">
                               <span class="checkmark"></span>
                             </label>
-                            <label class="customcheck"> Suara serak
-                              <input type="checkbox" name="risiko_tindakan[]" value="Suara serak">
-                              <span class="checkmark"></span>
-                            </label>
-                            <label class="customcheck"> Nyeri tenggorokan
-                              <input type="checkbox" name="risiko_tindakan[]" value="nyeri tenggorokan">
-                              <span class="checkmark"></span>
-                            </label>
-                            <label class="customcheck"> Penyempitan jalan nafas
-                              <input type="checkbox" name="risiko_tindakan[]" value="Penyempitan jalan nafas">
+                            <label class="customcheck"> Nyeri otot
+                              <input type="checkbox" name="risiko_tindakan[]" <?= in_array("Nyeri otot", $result['risiko_tindakan']) ? "checked" : '' ?> value="Nyeri otot">
                               <span class="checkmark"></span>
                             </label>
                             <label class="customcheck"> Perubahan tekanan darah
-                              <input type="checkbox" name="risiko_tindakan[]" value="Perubahan tekanan darah">
+                              <input type="checkbox" name="risiko_tindakan[]" <?= in_array("Perubahan tekanan darah", $result['risiko_tindakan']) ? "checked" : '' ?> value="Perubahan tekanan darah">
+                              <span class="checkmark"></span>
+                            </label>
+                            <label class="customcheck"> Kelumpuhan
+                              <input type="checkbox" name="risiko_tindakan[]" <?= in_array("Kelumpuhan", $result['risiko_tindakan']) ? "checked" : '' ?> value="Kelumpuhan">
+                              <span class="checkmark"></span>
+                            </label>
+                            <label class="customcheck"> Infeksi
+                              <input type="checkbox" name="risiko_tindakan[]" <?= in_array("Infeksi", $result['risiko_tindakan']) ? "checked" : '' ?> value="Infeksi">
                               <span class="checkmark"></span>
                             </label>
                           </div>
                           <div class="col-md-6">
                             <label class="customcheck"> Penurunan kesadaran
-                                <input type="checkbox" name="risiko_tindakan[]" value="Penurunan kesadaran">
+                                <input type="checkbox" name="risiko_tindakan[]" <?= in_array("Penurunan kesadaran", $result['risiko_tindakan']) ? "checked" : '' ?> value="Penurunan kesadaran">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="customcheck"> Stroke
-                                <input type="checkbox" name="risiko_tindakan[]" value="Stroke">
+                                <input type="checkbox" name="risiko_tindakan[]" <?= in_array("Stroke", $result['risiko_tindakan']) ? "checked" : '' ?> value="Stroke">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="customcheck"> Reaksi alergi
-                                <input type="checkbox" name="risiko_tindakan[]" value="Reaksi alergi">
+                                <input type="checkbox" name="risiko_tindakan[]" <?= in_array("Reaksi alergi", $result['risiko_tindakan']) ? "checked" : '' ?> value="Reaksi alergi">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="customcheck"> Kematian
-                                <input type="checkbox" name="risiko_tindakan[]" value="Kematian">
+                                <input type="checkbox" name="risiko_tindakan[]" <?= in_array("Kematian", $result['risiko_tindakan']) ? "checked" : '' ?> value="Kematian">
                                 <span class="checkmark"></span>
                             </label>
                           </div>
@@ -560,30 +593,30 @@
                     <div class="col-md-7">
                       <div class="row">
                         <div class="col-md-6">
-                          <label class="customcheck"> Luka lecet pada daerah bibir, gusi, dan lidah
-                            <input type="checkbox" name="komplikasi[]" value="Luka lecet pada daerah bibir, gusi, dan lidah">
-                            <span class="checkmark"></span>
-                          </label>
-                          <label class="customcheck"> Trauma pada gigi
-                            <input type="checkbox" name="komplikasi[]" value="Trauma pada gigi">
+                          <label class="customcheck"> Sakit punggung
+                            <input type="checkbox" name="komplikasi[]" <?= in_array("Sakit punggung", $result['komplikasi']) ? "checked" : '' ?>  value="Sakit punggung">
                             <span class="checkmark"></span>
                           </label>
                           <label class="customcheck"> Kerusakan otak
-                            <input type="checkbox" name="komplikasi[]" value="Kerusakan otak">
+                            <input type="checkbox" name="komplikasi[]" <?= in_array("Kerusakan otak", $result['komplikasi']) ? "checked" : '' ?>  value="Kerusakan otak">
+                            <span class="checkmark"></span>
+                          </label>
+                          <label class="customcheck"> Kerusakan saraf
+                            <input type="checkbox" name="komplikasi[]" <?= in_array("Kerusakan saraf", $result['komplikasi']) ? "checked" : '' ?>  value="Kerusakan saraf">
                             <span class="checkmark"></span>
                           </label>
                         </div>
                         <div class="col-md-6">
                           <label class="customcheck"> Serangan jantung
-                            <input type="checkbox" name="komplikasi[]" value="Serangan jantung">
+                            <input type="checkbox" name="komplikasi[]" <?= in_array("Serangan jantung", $result['komplikasi']) ? "checked" : '' ?>  value="Serangan jantung">
                             <span class="checkmark"></span>
                           </label>
                           <label class="customcheck"> Gangguan irama jantung
-                            <input type="checkbox" name="komplikasi[]" value="Gangguan irama jantung">
+                            <input type="checkbox" name="komplikasi[]" <?= in_array("Gangguan irama jantung", $result['komplikasi']) ? "checked" : '' ?>  value="Gangguan irama jantung">
                             <span class="checkmark"></span>
                           </label>
                           <label class="customcheck"> Henti jantung
-                            <input type="checkbox" name="komplikasi[]" value="Henti jantung">
+                            <input type="checkbox" name="komplikasi[]" <?= in_array("Henti jantung", $result['komplikasi']) ? "checked" : '' ?>  value="Henti jantung">
                             <span class="checkmark"></span>
                           </label>
 
@@ -594,22 +627,17 @@
                     
                   </div>
 
-                  
-                  
-                  <br>
 
-                  
                 </div>
               </div>
 
-           </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
         <div class="col-md-6">
           <div class="panel panel-primary">
-            <div class="panel-heading">Tambah Data Fisioterapi Asesment</div>
+            <div class="panel-heading">Edit Data Fisioterapi Asesment</div>
               <div class="panel-body">
 
                 <div class="row">
@@ -619,7 +647,7 @@
                         <b>Prognosis</b>
                       </div>
                       <div class="col-md-7">
-                        <textarea type="text" name="prognosis" id="prognosis" class="form-control" placeholder="Prognosis"  autocomplete="off"></textarea>
+                        <textarea type="text" name="prognosis" id="prognosis" class="form-control" placeholder="Prognosis"  autocomplete="off"><?=$result['prognosis']?></textarea>
                       </div>
                     </div>
                   </div>
@@ -634,7 +662,7 @@
                         <b>Alternatif</b>
                       </div>
                       <div class="col-md-7">
-                        <textarea type="text" name="alternatif" class="form-control" placeholder="Alternatif"  autocomplete="off"></textarea>
+                        <textarea type="text" name="alternatif" class="form-control" placeholder="Alternatif"  autocomplete="off"><?=$result['alternatif']?></textarea>
                       </div>
                     </div>
                     <br>
@@ -649,7 +677,7 @@
                        <b>Lain lain/ analgetik post operasi</b>
                      </div>
                      <div class="col-md-7">
-                       <textarea type="text" name="lain_lain" class="form-control" placeholder="lain_lain"  autocomplete="off"></textarea>
+                       <textarea type="text" name="lain_lain" class="form-control" placeholder="lain_lain"  autocomplete="off"><?=$result['lain_lain']?></textarea>
                      </div>
                    </div>
                    <br>
@@ -672,7 +700,7 @@
                           <button type="button" id="clear-wali">Clear</button>
                           <br>
                           <br>
-                          <input type="hidden" name="coretan_wali" id="coretan_wali">
+                          <input type="hidden" name="coretan_wali" value="<?=$result['coretan_wali']?>" id="coretan_wali" >
                         </center>
                       </div> 
                       <div class="col-md-6 text-center"> 
@@ -689,7 +717,7 @@
                           <button type="button" id="clear-pasien">Clear</button>
                           <br>
                           <br>
-                          <input type="hidden" name="coretan_pasien" id="coretan_pasien" required>
+                          <input type="hidden" name="coretan_pasien" value="<?=$result['coretan_pasien']?>"  id="coretan_pasien" required>
                         </center>
                       </div> 
                     </div>
@@ -710,8 +738,8 @@
                           <button type="button" id="clear-saksi">Clear</button>
                           <br>
                           <br>
-                          <input type="text" name="saksi" placeholder="Saksi Pihak RS" class="form-control">
-                          <input type="hidden" name="coretan_saksi" id="coretan_saksi">
+                          <input type="text" name="saksi" placeholder="Saksi Pihak RS"  value="<?=$result['saksi']?>" class="form-control">
+                          <input type="hidden" name="coretan_saksi" value="<?=$result['coretan_saksi']?>"  id="coretan_saksi">
                         </center>
                       </div> 
                     </div>
@@ -732,16 +760,14 @@
         </div>
 
         </div>
-      </div> -
+      </div> 
+
+
 
     </form>
-<!-- end input panel col 6 sendiri -->
   </div>
 </div>
-
-
 <script type="text/javascript">
-
 
   $('.dokter_approved').select2({
     placeholder: "-- Pilih dokter Approve --"
@@ -751,7 +777,7 @@
     placeholder: "-- Pilih petugas Approve --"
   });
 
-  $('#jam').datetimepicker({
+    $('#jam').datetimepicker({
     format:"HH:mm",
     showTodayButton:true,
     timeZone:'',
@@ -781,7 +807,67 @@
     }
   });
 
-  $('#tanggal, #tanggal_lahir').datetimepicker({
+  $('#jam_akhir').datetimepicker({
+    format:"HH:mm",
+    showTodayButton:true,
+    timeZone:'',
+    dayViewHeaderFormat: 'MMMM YYYY',
+    stepping: 5,
+    locale:moment.locale(),
+    collapse:true,
+    icons: {
+          time:'fa fa-clock-o',
+          date:'fa fa-calendar',
+          up:'fa fa-chevron-up',
+          down:'fa fa-chevron-down',
+          previous:'fa fa-chevron-left',
+          next:'fa fa-chevron-right',
+          today:'fa fa-crosshairs',
+          clear:'fa fa-trash-o',
+          close:'fa fa-times'
+    },
+    sideBySide:true,
+    calendarWeeks:false,
+    viewMode:'days',
+    viewDate:false,
+    toolbarPlacement:'bottom',
+    widgetPositioning:{
+        horizontal: 'left',
+        vertical: 'bottom'
+    }
+  });
+
+  $('#jam_monitoring').datetimepicker({
+    format:"HH:mm",
+    showTodayButton:true,
+    timeZone:'',
+    dayViewHeaderFormat: 'MMMM YYYY',
+    stepping: 5,
+    locale:moment.locale(),
+    collapse:true,
+    icons: {
+          time:'fa fa-clock-o',
+          date:'fa fa-calendar',
+          up:'fa fa-chevron-up',
+          down:'fa fa-chevron-down',
+          previous:'fa fa-chevron-left',
+          next:'fa fa-chevron-right',
+          today:'fa fa-crosshairs',
+          clear:'fa fa-trash-o',
+          close:'fa fa-times'
+    },
+    sideBySide:true,
+    calendarWeeks:false,
+    viewMode:'days',
+    viewDate:false,
+    toolbarPlacement:'bottom',
+    widgetPositioning:{
+        horizontal: 'left',
+        vertical: 'bottom'
+    }
+  });
+
+  $('#tanggal').datetimepicker({
     format:"YYYY-MM-DD",
     showTodayButton:true,
     timeZone:'',
@@ -811,39 +897,27 @@
     }
   });
 
-  $(".btn-toggle").click(function (e) { 
+  $('.btn-batal-<?= $this->router->fetch_class(); ?>').click(function (e) { 
     e.preventDefault();
     
-    $(".btn-toggle").removeClass("btn-primary");
-    $(this).addClass("btn-primary");
-    var id = $(this).data('id');
-
-    $("input[name='btn-toggle-val']").val(id);
-  });
-
-  $('.btn-batal-<?= $this->router->fetch_class(); ?>').click(function (e)
-  {
-    e.preventDefault();
-
     $('#view-container').show();
     $('#form-container').hide();
     $('#form-container').html('');
   });
 
-   $('#form-add-1-<?= $this->router->fetch_class(); ?>').submit(function(e) {
+  $('#form-edit-1-<?= $this->router->fetch_class(); ?>').submit(function (e) { 
     e.preventDefault();
-    // console.log($(this).serialize());
-    
     $('.btn-kirim-<?= $this->router->fetch_class(); ?>').attr('disabled', true);
-
-    $.post('<?php echo base_url(); ?>' + class_name + '/add_process/list', $(this).serialize()).done(function(data) {
+    
+    $.post('<?php echo base_url();?><?= $class_name; ?>/edit_process/', $(this).serialize()
+    ).done(function(data) {
       var data = JSON.parse(data);
-      
+
       if (data.status == '200') {
-        alert('Data berhasil disimpan');
+        alert('Data berhasil diubah');
         location.reload();
       } else {
-        alert('Gagal menampilkan data');
+        alert(data.message);
         $('.btn-kirim-<?= $this->router->fetch_class(); ?>').removeAttr('disabled');
         $('.btn-kirim-<?= $this->router->fetch_class(); ?>').removeAttr('disabled');
       }
@@ -852,6 +926,15 @@
       $('.btn-kirim-<?= $this->router->fetch_class(); ?>').removeAttr('disabled');
     });
   });
+  // update();
+
+
+// $(document).ready(function(){
+//   $("input[type='radio']").click(function(){
+//       update();
+//   });
+// });
+
 
 </script>
 
@@ -859,15 +942,37 @@
  var signaturePadWaliPasien = new SignaturePad(document.getElementById('signature-pad-wali-pasien'));
  var signaturePadPasien = new SignaturePad(document.getElementById('signature-pad-pasien'));
  var signaturePadSaksiPihakRS = new SignaturePad(document.getElementById('signature-pad-saksi-pihak-rs'));
-
 $(document).ready(function() {
 
- $('.btn-kirim-<?= $this->router->fetch_class(); ?>').click(function(){
-   $('#coretan_pasien').val(signaturePadPasien.toDataURL('image/png'))
-   $('#coretan_saksi').val(signaturePadSaksiPihakRS.toDataURL('image/png'))
-   $('#coretan_wali').val(signaturePadWaliPasien.toDataURL('image/png'))
+  if($('#tyd-ll-value').val().length > 0){
+    $('#tyd-ll-value').removeAttr('style')
+  }
 
-   console.log($('#coretan_wali').val())
+ $('.btn-kirim-<?= $this->router->fetch_class(); ?>').click(function(){
+   
+   let ttdPasienImage = signaturePadPasien.toDataURL('image/png')
+   let ttdPasien = signaturePadPasien.toData()
+   if(ttdPasien.pop()){
+      $('#coretan_pasien').val(ttdPasienImage)
+   }
+
+   let ttdWaliImage = signaturePadWaliPasien.toDataURL('image/png')
+   let ttdWali = signaturePadWaliPasien.toData()
+   if(ttdWali.pop()){
+      $('#coretan_wali').val(ttdWaliImage)
+   }
+
+   let ttdSakiImage = signaturePadSaksiPihakRS.toDataURL('image/png')
+   let ttdSaksi = signaturePadSaksiPihakRS.toData()
+   if(ttdSaksi.pop()){
+    $('#coretan_saksi').val(ttdSakiImage)
+   }
+
+   if($('#tyd-ll-value').length > 0){
+     let tydValue = $('#tyd-ll-value').val()
+     $('#tyd-ll').val(`Lain lain - ${tydValue}`)
+   }
+
  });
 
 })
@@ -908,16 +1013,15 @@ $('#clear-saksi').click(() => {
   signaturePadSaksiPihakRS.clear()
 })
 
-$('#undo-dokter').click(() => {
-  let data_dokter = signaturePadDokterAnestesi.toData()
-    if (data_dokter) {
-      data_dokter.pop(); // remove the last dot or line
-      signaturePadDokterAnestesi.fromData(data_dokter)
-    }
-})
-
-$('#clear-dokter').click(() => {
-  signaturePadDokterAnestesi.clear()
+$('#tyd-ll').click(() => {
+  if($('#tyd-ll').is(':checked')){
+    $('#tyd-ll-value').removeAttr('style')
+    $('#tyd-ll-value').attr('required', 'required')
+  }else{
+    $('#tyd-ll-value').attr('style', 'display:none')
+    $('#tyd-ll-value').removeAttr('required')
+    $('#tyd-ll-value').val('')
+  }
 })
 
 

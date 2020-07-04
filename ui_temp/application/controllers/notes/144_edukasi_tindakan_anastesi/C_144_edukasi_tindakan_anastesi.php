@@ -11,7 +11,7 @@ use GuzzleHttp\Exception\ServerException;
  * Menampilkan halaman client/notes_penolakan_resusitasi
  * 
  **********************************************************************************/
-class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
+class C_144_edukasi_tindakan_anastesi extends CI_Controller
 {
   public $data;
   public function __construct()
@@ -32,7 +32,7 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
 
     // token diambil dari postman, kalau sudah expired sikahkan ambil lagi.
     $token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiTkFNQSAyIiwiaWRfdXNlciI6IjM3MzY4MSIsInJtX251bWJlciI6ImFkbWluIiwicnNfa2V5IjoiQTEyMyIsImlwX2FkZHJlc3MiOiIxMjcuMC4xLjEiLCJhY2Nlc3MiOiJ1c2VyIn0.ubW6fyc7ErYOW2T5qFbjXvLIVTLp05s3A0paQ6wfcmo";
-    $this->id_ref_global_tipe_42 = 141;
+    $this->id_ref_global_tipe_42 = 144;
     
     // guzzle client
     $this->_client_rs = new Client([
@@ -61,7 +61,7 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
 
     // NAMA FOLDER DALAM CONTROLLER. 
     // HANYA EDIT DI SINI.. YANG LAIN TIDAK PERLU DIRUBAH... TOLONG GANTI DENGAN NAMA FOLDER YANG BARU
-    $this->c_folder = "C_141_edukasi_tindakan_anastesi_sedasi"; // <<< HANYA INI YANG PERLU DIRUBAH DI CONSTRUCT()!!!! SISANYA DIAMKAN
+    $this->c_folder = "C_144_edukasi_tindakan_anastesi"; // <<< HANYA INI YANG PERLU DIRUBAH DI CONSTRUCT()!!!! SISANYA DIAMKAN
 
     //menghilangkan 'C_' pada nama class untuk dinamisasi routing;
     $this->class = str_replace("c_", "", $this->router->fetch_class());
@@ -93,7 +93,7 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
   public function list()
   {
     $data = array(
-      'title'   => 'Edukasi TIndakan Anastesi Sedasi',
+      'title'   => 'Edukasi TIndakan Anastesi',
       'class_name' => $this->class,
     );
 
@@ -201,7 +201,9 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
             'diagnosis_kerja'                     =>  $jdata['notes']['diagnosis_kerja'],
             'diagnosis_banding'                   =>  $jdata['notes']['diagnosis_banding'],
             'tindakan_yang_dilakukan'             =>  $jdata['notes']['tindakan_yang_dilakukan'],
+            'tyd_ll_value'             =>  $jdata['notes']['tyd_ll_value'],
             'indikasi_tindakan'                   =>  $jdata['notes']['indikasi_tindakan'],
+            'tata_cara'                           =>  $jdata['notes']['tata_cara'],
             'risiko_tindakan'                     =>  $jdata['notes']['risiko_tindakan'],
             'komplikasi'                          =>  $jdata['notes']['komplikasi'],
             'prognosis'                           =>  $jdata['notes']['prognosis'],
@@ -291,7 +293,9 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'diagnosis_kerja'                     =>  $this->input->post('diagnosis_kerja'),
       'diagnosis_banding'                   =>  $this->input->post('diagnosis_banding'),
       'tindakan_yang_dilakukan'             =>  $this->input->post('tindakan_yang_dilakukan'),
+      'tyd_ll_value'                        =>  $this->input->post('tyd_ll_value'),
       'indikasi_tindakan'                   =>  $this->input->post('indikasi_tindakan'),
+      'tata_cara'                           =>  $this->input->post('tata_cara'),
       'risiko_tindakan'                     =>  $this->input->post('risiko_tindakan'),
       'komplikasi'                          =>  $this->input->post('komplikasi'),
       'prognosis'                           =>  $this->input->post('prognosis'),
@@ -315,7 +319,7 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'notes'                 => $notes, // NAMANYA HARUS NOTES
     ];
     
-    // echo json_encode($notes);
+    // echo json_encode($params);
     // exit();
 
     $this->_config['body'] = json_encode($params);
@@ -374,7 +378,9 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'diagnosis_kerja'                     =>  $result['notes']['diagnosis_kerja'],
       'diagnosis_banding'                   =>  $result['notes']['diagnosis_banding'],
       'tindakan_yang_dilakukan'             =>  $result['notes']['tindakan_yang_dilakukan'],
+      'tyd_ll_value'             =>  $result['notes']['tyd_ll_value'],
       'indikasi_tindakan'                   =>  $result['notes']['indikasi_tindakan'],
+      'tata_cara'                           =>  $result['notes']['tata_cara'],
       'risiko_tindakan'                     =>  $result['notes']['risiko_tindakan'],
       'komplikasi'                          =>  $result['notes']['komplikasi'],
       'prognosis'                           =>  $result['notes']['prognosis'],
@@ -417,7 +423,9 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'diagnosis_kerja'                     =>  $this->input->post('diagnosis_kerja'),
       'diagnosis_banding'                   =>  $this->input->post('diagnosis_banding'),
       'tindakan_yang_dilakukan'             =>  $this->input->post('tindakan_yang_dilakukan'),
+      'tyd_ll_value'             =>  $this->input->post('tyd_ll_value'),
       'indikasi_tindakan'                   =>  $this->input->post('indikasi_tindakan'),
+      'tata_cara'                   =>  $this->input->post('tata_cara'),
       'risiko_tindakan'                     =>  $this->input->post('risiko_tindakan'),
       'komplikasi'                          =>  $this->input->post('komplikasi'),
       'prognosis'                           =>  $this->input->post('prognosis'),
@@ -486,9 +494,8 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
     $detail = [
       'digital_signature_approved_petugas'  => $result['digital_signature_approved_petugas'],
       'digital_signature_approved_dokter'  => $result['digital_signature_approved_dokter'],
-      'approved_petugas'                    =>  $result['approved_petugas'],
-      'digital_signature_approved_petugas'  =>  $result['digital_signature_approved_petugas'],
       'approved_dokter'                     => $result['approved_dokter'],
+      'approved_petugas'                    =>  $result['approved_petugas'],
       'tanggal'                             =>  $result['notes']['tanggal'],
       'jam'                                 =>  $result['notes']['jam'],
       'tanggal'                             =>  $result['notes']['tanggal'],
@@ -506,7 +513,9 @@ class C_141_edukasi_tindakan_anastesi_sedasi extends CI_Controller
       'diagnosis_kerja'                     =>  $result['notes']['diagnosis_kerja'],
       'diagnosis_banding'                   =>  $result['notes']['diagnosis_banding'],
       'tindakan_yang_dilakukan'             =>  $result['notes']['tindakan_yang_dilakukan'],
+      'tyd_ll_value'             =>  $result['notes']['tyd_ll_value'],
       'indikasi_tindakan'                   =>  $result['notes']['indikasi_tindakan'],
+      'tata_cara'                   =>  $result['notes']['tata_cara'],
       'risiko_tindakan'                     =>  $result['notes']['risiko_tindakan'],
       'komplikasi'                          =>  $result['notes']['komplikasi'],
       'prognosis'                           =>  $result['notes']['prognosis'],
