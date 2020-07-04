@@ -191,3 +191,10 @@ $route['141_edukasi_tindakan_anastesi_sedasi/(:any)'] = 'notes/141_edukasi_tinda
 $route['141_edukasi_tindakan_anastesi_sedasi/(:any)/(:any)']               = 'notes/141_edukasi_tindakan_anastesi_sedasi/c_141_edukasi_tindakan_anastesi_sedasi/$1/$2';
 $route['141_edukasi_tindakan_anastesi_sedasi/(:any)/(:num)/(:any)']        = 'notes/141_edukasi_tindakan_anastesi_sedasi/c_141_edukasi_tindakan_anastesi_sedasi/$1/$2/$3';
 $route['141_edukasi_tindakan_anastesi_sedasi/(:any)/(:any)/(:any)/(:any)'] = 'notes/141_edukasi_tindakan_anastesi_sedasi/c_141_edukasi_tindakan_anastesi_sedasi/$1/$2/$3/$4';
+
+// ROUTES START FOR 141_edukasi_anastesi
+$route['144_edukasi_tindakan_anastesi'] = 'notes/144_edukasi_tindakan_anastesi/c_144_edukasi_tindakan_anastesi';
+$route['144_edukasi_tindakan_anastesi/(:any)'] = 'notes/144_edukasi_tindakan_anastesi/c_144_edukasi_tindakan_anastesi/$1';
+$route['144_edukasi_tindakan_anastesi/(:any)/(:any)']               = 'notes/144_edukasi_tindakan_anastesi/c_144_edukasi_tindakan_anastesi/$1/$2';
+$route['144_edukasi_tindakan_anastesi/(:any)/(:num)/(:any)']        = 'notes/144_edukasi_tindakan_anastesi/c_144_edukasi_tindakan_anastesi/$1/$2/$3';
+$route['144_edukasi_tindakan_anastesi/(:any)/(:any)/(:any)/(:any)'] = 'notes/144_edukasi_tindakan_anastesi/c_144_edukasi_tindakan_anastesi/$1/$2/$3/$4';
