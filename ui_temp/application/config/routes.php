@@ -156,6 +156,13 @@ $route['29_notes_case_manager_b/(:any)/(:any)']               = 'notes/29_notes_
 $route['29_notes_case_manager_b/(:any)/(:num)/(:any)']        = 'notes/29_notes_case_manager_b/c_29_notes_case_manager_b/$1/$2/$3';
 $route['29_notes_case_manager_b/(:any)/(:any)/(:any)/(:any)'] = 'notes/29_notes_case_manager_b/c_29_notes_case_manager_b/$1/$2/$3/$4';
 
+/// ROUTES START FOR 39_operasi_tanda_lokasi
+$route['39_operasi_tanda_lokasi'] = 'notes/39_operasi_tanda_lokasi/c_39_operasi_tanda_lokasi';
+$route['39_operasi_tanda_lokasi/(:any)'] = 'notes/39_operasi_tanda_lokasi/c_39_operasi_tanda_lokasi/$1';
+$route['39_operasi_tanda_lokasi/(:any)/(:any)']               = 'notes/39_operasi_tanda_lokasi/c_39_operasi_tanda_lokasi/$1/$2';
+$route['39_operasi_tanda_lokasi/(:any)/(:num)/(:any)']        = 'notes/39_operasi_tanda_lokasi/c_39_operasi_tanda_lokasi/$1/$2/$3';
+$route['39_operasi_tanda_lokasi/(:any)/(:any)/(:any)/(:any)'] = 'notes/39_operasi_tanda_lokasi/c_39_operasi_tanda_lokasi/$1/$2/$3/$4';
+
 /// ROUTES START FOR 59_notes_catatan_keperawatan
 $route['59_notes_catatan_keperawatan'] = 'notes/59_notes_catatan_keperawatan/c_59_notes_catatan_keperawatan';
 $route['59_notes_catatan_keperawatan/(:any)'] = 'notes/59_notes_catatan_keperawatan/c_59_notes_catatan_keperawatan/$1';
