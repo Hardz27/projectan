@@ -130,7 +130,7 @@
                       Nama Anak
                     </div>
                     <div class="col-md-8">
-                      <input type="text" class="form-control input-sm" name="nama_anak" value="" required>
+                      <input type="text" class="form-control input-sm" name="nama_anak" value="<?= $data_regis['notes']['nama_anak'] != '' ? $data_regis['notes']['nama_anak'] : '' ?>" <?= $data_regis['notes']['nama_anak'] != '' ? 'readonly' : '' ?> required>
                     </div>
                   </div>
                 </div>
@@ -140,7 +140,7 @@
                       Masa Gestasi
                     </div>
                     <div class="col-xs-6">
-                      <input type="text" class="form-control input-sm" name="gestasi" value="" required>
+                      <input type="text" class="form-control input-sm" name="gestasi" value="<?= $data_regis['notes']['gestasi'] != '' ? $data_regis['notes']['gestasi'] : '' ?>" <?= $data_regis['notes']['gestasi'] != '' ? 'readonly' : '' ?> required>
                     </div>
                     <div class="col-xs-2" style="padding-left: 0px">
                        Minggu
@@ -269,7 +269,6 @@
                 </div>
               </div>
               <br>
-
 
             </div>
           </div>

@@ -283,103 +283,191 @@
         <div class="row-body">
           <table width="100%" cellspacing="0">
             <tr>
-              <td width="3%" class="r-bold font-size-8 border-left-1 centerp-head" rowspan="9"></td>
-              <td class="r-bold font-size-8 border-right-1 centerp-left" colspan="2">Keterangan Item :</td>
-            </tr>
-            <tr>
-              <td width="3%" class="font-size-8 centerp-left"><?= 'A' ?>.</td>
-              <td class="font-size-8 border-right-1 centerp-left">Pelaksanaan Perencanaan MPP</td>
-            </tr>
-            <tr>
-              <td class="font-size-8 centerp-left"><?= 'B' ?>.</td>
-              <td class="font-size-8 border-right-1 centerp-left">Monitoring</td>
-            </tr>
-            <tr>
-              <td class="font-size-8 centerp-left"><?= 'C' ?>.</td>
-              <td class="font-size-8 border-right-1 centerp-left">Identifikasi masalah-resiko-kesempatan</td>
-            </tr>
-            <tr>
-              <td class="font-size-8 centerp-left"><?= 'D' ?>.</td>
-              <td class="font-size-8 border-right-1 centerp-left">Fasilitasi, Koordinasi, Komunikasi</td>
-            </tr>
-            <tr>
-              <td class="font-size-8 centerp-left"><?= 'E' ?>.</td>
-              <td class="font-size-8 border-right-1 centerp-left">Kolaborasi</td>
-            </tr>
-            <tr>
-              <td class="font-size-8 centerp-left"><?= 'F' ?>.</td>
-              <td class="font-size-8 border-right-1 centerp-left">Advokasi</td>
-            </tr>
-            <tr>
-              <td class="font-size-8 centerp-left"><?= 'G' ?>.</td>
-              <td class="font-size-8 border-right-1 centerp-left">Hasil pelayanan</td>
-            </tr>
-            <tr>
-              <td class="font-size-8 centerp-left"><?= 'H' ?>.</td>
-              <td class="font-size-8 border-right-1 centerp-left">Terminal MPP</td>
+              <td width="15%" class="r-bold font-size-8 border-left-1 centerp-head">Nama Anak :</td>
+              <td width="55%" class="font-size-8 centerp-left"><?= $list['notes'][0]['nama_anak']?></td>
+              <td width="15%" class="r-bold font-size-8 centerp-head">Masa Gestasi :</td>
+              <td width="15%" class="font-size-8 border-right-1 centerp-left"><?= $list['notes'][0]['gestasi']?> Minggu</td>
             </tr>
           </table>
 
           <table width="100%" cellspacing="0">
             <tr>
-              <td height="35px" width="20%" class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head">Tanggal & Jam</td>
-              <td height="35px" width="5%" class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head">Item</td>
-              <td height="35px" width="50%" class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head">Kegiatan Managemen Pelayanan Pasien</td>
-              <td height="35px" class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head">Nama Petugas</td>
+              <td width="30%" class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head" rowspan="2"> Pemeriksaan Fisik</td>
+              <td width="30%" class="r-bold font-size-8 border-bottom-1 border-left-1 border-top-1 centerp-head" colspan="2">Normal : &#10003;</td>
+              <td width="30%" class="r-bold font-size-8 border-bottom-1 border-right-1 border-top-1 centerp-head" colspan="2">Tidak normal : &#10005;</td>
             </tr>
-            <?php for($i = count($list['notes']) - 1; $i >= 0; $i--) : ?>
             <tr>
-              <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-head"><?= $list['notes'][$i]['tanggal'] .' '. $list['notes'][$i]['jam'] ?></td>
-              <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-head"><?= $list['notes'][$i]['item'] ?></td>
-              <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left"><?= $list['notes'][$i]['catatan'] ?></td>
-              <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-head"><?= $list['notes'][$i]['approved_petugas'] ?></td>
+              <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+              <td class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">Tgl <?= $list['notes'][$i]['tanggal'] ?></td>
+              <?php endfor; ?>
+              <?php for($i = 0; $i < 4 - count($list['notes']); $i++) : ?>
+              <td class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">Tgl ...../...../.....</td>
+              <?php endfor; ?>
             </tr>
-            <?php endfor; ?>
-            <?php for($i = 0; $i < 18 - count($list['notes']); $i++) : ?>
-              <tr>
-              <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left"></td>
-              <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left"></td>
-              <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left"></td>
-              <td height="25px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left"></td>
+            <tr>
+              <td class=" font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">Tempratur <span class="pull-right">(&#8451;)</span></td>
+              <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"><?= $list['notes'][$i]['tempratur'] ?> &#8451;</td>
+              <?php endfor; ?>
+              <?php for($i = 0; $i < 4 - count($list['notes']); $i++) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"></td>
+              <?php endfor; ?>
             </tr>
-            <?php endfor; ?>
+            <tr>
+              <td class=" font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">Berat Badan (gram)</td>
+              <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"><?= $list['notes'][$i]['bb'] ?> gram</td>
+              <?php endfor; ?>
+              <?php for($i = 0; $i < 4 - count($list['notes']); $i++) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"></td>
+              <?php endfor; ?>
+            </tr>
+            <tr>
+              <td class=" font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">Sianosis <span class="pull-right">(+/-)</span> </td>
+              <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"><?= $list['notes'][$i]['sianosis'] ?> </td>
+              <?php endfor; ?>
+              <?php for($i = 0; $i < 4 - count($list['notes']); $i++) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"></td>
+              <?php endfor; ?>
+            </tr>
+            <tr>
+              <td class=" font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">Bilirubin total (mg/dL)</td>
+              <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"><?= $list['notes'][$i]['bilirubin'] ?> mg/dL</td>
+              <?php endfor; ?>
+              <?php for($i = 0; $i < 4 - count($list['notes']); $i++) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"></td>
+              <?php endfor; ?>
+            </tr>
+            <tr>
+              <td class=" font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">Keadaan Umum</td>
+              <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"><?= $list['notes'][$i]['keadaan_umum'] ?> </td>
+              <?php endfor; ?>
+              <?php for($i = 0; $i < 4 - count($list['notes']); $i++) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"></td>
+              <?php endfor; ?>
+            </tr>
+            <tr>
+              <td class=" font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">SSP, Tonus</td>
+              <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"><?= $list['notes'][$i]['ssp_tonus'] ?> </td>
+              <?php endfor; ?>
+              <?php for($i = 0; $i < 4 - count($list['notes']); $i++) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"></td>
+              <?php endfor; ?>
+            </tr>
+            <tr>
+              <td class=" font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">Kepala, Leher, Palatum</td>
+              <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"><?= $list['notes'][$i]['kepala_leher_palatum'] ?> </td>
+              <?php endfor; ?>
+              <?php for($i = 0; $i < 4 - count($list['notes']); $i++) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"></td>
+              <?php endfor; ?>
+            </tr>
+            <tr>
+              <td class=" font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">Ubun-Ubun, Sutura</td>
+              <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"><?= $list['notes'][$i]['ubun_sutura'] ?> </td>
+              <?php endfor; ?>
+              <?php for($i = 0; $i < 4 - count($list['notes']); $i++) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"></td>
+              <?php endfor; ?>
+            </tr>
+            <tr>
+              <td class=" font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">Paru</td>
+              <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"><?= $list['notes'][$i]['Paru'] ?> </td>
+              <?php endfor; ?>
+              <?php for($i = 0; $i < 4 - count($list['notes']); $i++) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"></td>
+              <?php endfor; ?>
+            </tr>
+            <tr>
+              <td class=" font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">Jantung, a. femoralis</td>
+              <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"><?= $list['notes'][$i]['jantung_femoralis'] ?> </td>
+              <?php endfor; ?>
+              <?php for($i = 0; $i < 4 - count($list['notes']); $i++) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"></td>
+              <?php endfor; ?>
+            </tr>
+            <tr>
+              <td class=" font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">Abdomen, anus (+/-)</td>
+              <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"><?= $list['notes'][$i]['abdomen_anus'] ?> </td>
+              <?php endfor; ?>
+              <?php for($i = 0; $i < 4 - count($list['notes']); $i++) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"></td>
+              <?php endfor; ?>
+            </tr>
+            <tr>
+              <td class=" font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">Sex, (Lk/Pr, Lengkap, tdk)</td>
+              <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"><?= $list['notes'][$i]['sex'] ?> </td>
+              <?php endfor; ?>
+              <?php for($i = 0; $i < 4 - count($list['notes']); $i++) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"></td>
+              <?php endfor; ?>
+            </tr>
+            <tr>
+              <td class=" font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">Kulit (warna, dll)</td>
+              <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"><?= $list['notes'][$i]['kulit'] ?> </td>
+              <?php endfor; ?>
+              <?php for($i = 0; $i < 4 - count($list['notes']); $i++) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"></td>
+              <?php endfor; ?>
+            </tr>
+            <tr>
+              <td class=" font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">Ekstremitas</td>
+              <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"><?= $list['notes'][$i]['ekstremitas'] ?> </td>
+              <?php endfor; ?>
+              <?php for($i = 0; $i < 4 - count($list['notes']); $i++) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"></td>
+              <?php endfor; ?>
+            </tr>
+            <tr>
+              <td class=" font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">Panggul</td>
+              <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"><?= $list['notes'][$i]['panggul'] ?> </td>
+              <?php endfor; ?>
+              <?php for($i = 0; $i < 4 - count($list['notes']); $i++) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"></td>
+              <?php endfor; ?>
+            </tr>
+            <tr>
+              <td class=" font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">Muntah (+/-)</td>
+              <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"><?= $list['notes'][$i]['muntah'] ?> </td>
+              <?php endfor; ?>
+              <?php for($i = 0; $i < 4 - count($list['notes']); $i++) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"></td>
+              <?php endfor; ?>
+            </tr>
+            <tr>
+              <td class=" font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left">Defekasi</td>
+              <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"><?= $list['notes'][$i]['defekasi'] ?> </td>
+              <?php endfor; ?>
+              <?php for($i = 0; $i < 4 - count($list['notes']); $i++) : ?>
+              <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-head"></td>
+              <?php endfor; ?>
+            </tr>
+            <tr>
+              <td height="100px" class="font-size-8 border-bottom-1 border-left-1 border-right-1 border-top-1 centerp-left" style="vertical-align: top;" colspan="5">Catatan :<br>
+                <?php for($i = (count($list['notes']) >= 4 ? 4 : count($list['notes']))- 1; $i >= 0; $i--) : ?>
+                  <?= $list['notes'][$i]['catatan'] ?><br>
+                <?php endfor; ?>
+              </td>
+            </tr>
 
           </table>
 
-           <!-- <div class="row-panel mt-20">
-            <div class="column-left-header">
-               <table border="0" width="100%" style="margin-left:150px">
-                <tr>
-                  <td style="vertical-align:top" class="detail-administration r-bold font-size-7"</td>
-                </tr>
-                <tr>
-                  <td style="vertical-align:top" class="font-table font-size-7"></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align:top" class="font-table font-size-7 pl-3"></td>
-                </tr>
-              </table>
-             
-            </div>
-            <div class="column-right-header">
-              <table border="0" width="100%" style="text-align: right; margin-right: 50px;">
-                <tr>
-                  <td style="vertical-align:top" class="r-bold font-size-7">Kuningan, <?= $list['notes'][0]['tanggal'] .' Jam ' . $list['notes'][0]['jam']?></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align:top" class="r-bold font-size-7">Petugas yang Menyetujui,</td>
-                </tr>
-                <tr>
-                  <td height="77px" style="vertical-align:top" class="font-table font-size-7 pl-5"><img width="125px" src="<?php echo $list['notes'][0]['digital_signature_approved_petugas'];?>"></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align:top" class="font-table font-size-7 pl-3"><?php echo ucwords(strtolower($list['notes'][0]['approved_petugas'])); ?>
-                  </td>
-                </tr>
-              </table>
-              
-            </div>
-          </div> -->
+
 
         </div>
       </div>
