@@ -176,3 +176,10 @@ $route['142_asesmen_pra_anastesi/(:any)'] = 'notes/142_asesmen_pra_anastesi/c_14
 $route['142_asesmen_pra_anastesi/(:any)/(:any)']               = 'notes/142_asesmen_pra_anastesi/c_142_asesmen_pra_anastesi/$1/$2';
 $route['142_asesmen_pra_anastesi/(:any)/(:num)/(:any)']        = 'notes/142_asesmen_pra_anastesi/c_142_asesmen_pra_anastesi/$1/$2/$3';
 $route['142_asesmen_pra_anastesi/(:any)/(:any)/(:any)/(:any)'] = 'notes/142_asesmen_pra_anastesi/c_142_asesmen_pra_anastesi/$1/$2/$3/$4';
+
+/// ROUTES START FOR 39_operasi_tanda_lokasi
+$route['39_operasi_tanda_lokasi'] = 'notes/39_operasi_tanda_lokasi/c_39_operasi_tanda_lokasi';
+$route['39_operasi_tanda_lokasi/(:any)'] = 'notes/39_operasi_tanda_lokasi/c_39_operasi_tanda_lokasi/$1';
+$route['39_operasi_tanda_lokasi/(:any)/(:any)']               = 'notes/39_operasi_tanda_lokasi/c_39_operasi_tanda_lokasi/$1/$2';
+$route['39_operasi_tanda_lokasi/(:any)/(:num)/(:any)']        = 'notes/39_operasi_tanda_lokasi/c_39_operasi_tanda_lokasi/$1/$2/$3';
+$route['39_operasi_tanda_lokasi/(:any)/(:any)/(:any)/(:any)'] = 'notes/39_operasi_tanda_lokasi/c_39_operasi_tanda_lokasi/$1/$2/$3/$4';

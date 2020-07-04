@@ -30,6 +30,7 @@
   [data-toggle="buttons"]>.btn>input[type="checkbox"] {
     clip: rect(1px 1px 1px 1px);
   }
+
   #signature{
     width: 400px; height: 400px;
     border: 1px solid black;
@@ -1232,6 +1233,7 @@
 
 <script>
 $(document).ready(function() {
+
  var signaturePad = new SignaturePad(document.getElementById('signature-pad'));
 
  $('.btn-kirim-<?= $this->router->fetch_class(); ?>').click(function(){
@@ -1258,27 +1260,5 @@ $(document).ready(function() {
   });
 
 })
-
-// document.getElementById('save-png').addEventListener('click', function () {
-//   if (signaturePad.isEmpty()) {
-//     return alert("Please provide a signature first.");
-//   }
-  
-//   var data = signaturePad.toDataURL('image/png');
-//   console.log(data);
-//   window.open(data);
-// });
-
-// document.getElementById('clear').addEventListener('click', function () {
-//   signaturePad.clear();
-// });
-
-// document.getElementById('undo').addEventListener('click', function () {
-//   var data = signaturePad.toData();
-//   if (data) {
-//     data.pop(); // remove the last dot or line
-//     signaturePad.fromData(data);
-//   }
-// });
 
  </script>

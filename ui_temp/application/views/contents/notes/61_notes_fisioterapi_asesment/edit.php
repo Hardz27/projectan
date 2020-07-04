@@ -1322,8 +1322,6 @@ $(document).ready(function() {
   $("#sign_prev").show();
   $("#sign_prev").attr("src",data);
   $('#generate').val(data);
-  // Open image in the browser
-  //window.open(data);
  });
 
  document.getElementById('clear').addEventListener('click', function () {

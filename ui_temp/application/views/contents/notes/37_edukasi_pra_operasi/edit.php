@@ -712,39 +712,6 @@ $(document).ready(function(){
 
 </script>
 
-<!-- <script>
-// $(document).ready(function() {
-//  var signaturePad = new SignaturePad(document.getElementById('signature-pad'));
-
-//  $('.btn-kirim-<?= $this->router->fetch_class(); ?>').click(function(){
-//   var data = signaturePad.toDataURL('image/png');
-//   var set = signaturePad.toData();
-//   if (!set.pop()) {
-//     data = $('#prev').val();
-//   }
-  
-//   $("#sign_prev").show();
-//   $("#sign_prev").attr("src",data);
-//   $('#generate').val(data);
-  
-//  });
-
-//  document.getElementById('clear').addEventListener('click', function () {
-//     signaturePad.clear();
-//   });
-
-//   document.getElementById('undo').addEventListener('click', function () {
-//     var data = signaturePad.toData();
-//     if (data) {
-//       data.pop(); // remove the last dot or line
-//       signaturePad.fromData(data);
-//     }
-//   });
-
-// })
-
- </script> -->
-
  <script>
 $(document).ready(function() {
  var canvas = document.getElementById('signature-pad-paraf');
