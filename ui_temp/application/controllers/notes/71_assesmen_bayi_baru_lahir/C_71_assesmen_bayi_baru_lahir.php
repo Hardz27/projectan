@@ -93,7 +93,7 @@ class C_71_assesmen_bayi_baru_lahir extends CI_Controller
   public function list()
   {
     $data = array(
-      'title'   => 'Notes Fisioterapi Asesment',
+      'title'   => 'Notes Bayi Baru Lahir Assesmen',
       'class_name' => $this->class,
     );
 
