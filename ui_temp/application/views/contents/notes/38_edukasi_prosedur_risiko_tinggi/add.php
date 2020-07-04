@@ -75,12 +75,7 @@
             <div class="panel-body">
 
               <br>
-              <div class="row">
-                <div class="col-md-12"> 
-                  <b>SKRINING (IDENTIFIKASI)</b>
-                </div>
-              </div>
-              <br>
+              
 
               <div class="row">
 
@@ -117,6 +112,7 @@
                     </div>
                   </div>
                   <br>
+
 
                   <div class="row">
                       <!-- nama -->
@@ -180,6 +176,17 @@
 
                   <div class="row">
                       <!-- nama -->
+                    <div class="col-md-5">
+                      <b>Tanggal Lahir</b>
+                    </div>
+                    <div class="col-md-7">
+                      <input type="text" class="form-control input-sm" name="tanggal_lahir_tindakan"  value="" required>
+                    </div>
+                  </div>
+                  <br>
+
+                  <div class="row">
+                      <!-- nama -->
                     <div class="col-xs-5">
                       <b>Jenis Kelamin</b>
                     </div>
@@ -209,13 +216,76 @@
                   <div class="row">
                       <!-- nama -->
                     <div class="col-md-5">
-                      <b>Hubungan</b>
+                      <b>Alamat</b>
                     </div>
                     <div class="col-md-7">
-                      <input type="text" class="form-control input-sm" name="hubungan"  value="" required>
+                      <input type="text" class="form-control input-sm" name="alamat_tindakan"  value="" required>
                     </div>
                   </div>
                   <br>
+
+                  <div class="row">
+                      <!-- nama -->
+                    <div class="col-md-5">
+                      <b>No. Identitas</b>
+                    </div>
+                    <div class="col-md-7">
+                      <input type="text" class="form-control input-sm" name="no_identitas"  value="" required>
+                    </div>
+                  </div>
+
+                  <br>
+
+                  <div class="row">
+                
+                <div class="col-md-12"> 
+                  <br> 
+                <div class="row">
+                    <!-- nama -->
+                    <div class="col-md-3">
+                      <b>Hubungan</b>
+                    </div>
+                    <div class="col-md-9">
+                      <div class="row">
+                          <div class="col-xs-6">
+                            <label class="container radio-select" style="width: 5%"> Pasien Sendiri
+                              <input type="radio" name="hubungan" value="Pasien Sendiri" >
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                          <div class="col-xs-6">
+                            <label class="container radio-select" style="width: 5%"> Suami
+                              <input type="radio" name="hubungan" value="Suami" >
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-6">
+                            <label class="container radio-select" style="width: 5%"> Istri
+                              <input type="radio" name="hubungan" value="Istri" >
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                          <div class="col-xs-6">
+                            <label class="container radio-select" style="width: 5%"> Anak
+                              <input type="radio" name="hubungan" value="Anak" >
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-xs-6">
+                            <label class="container radio-select" style="width: 5%"> Orang Tua
+                              <input type="radio" name="hubungan" value="Orang Tua" >
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
                   <div class="row">
                       <!-- nama -->
@@ -380,111 +450,41 @@
                   <br>
 
                   
+                  
 
-                  <table width="100%">
-                      <thead>
-                        <tr class="text-center bdu">
-                          <td width="100%" class="bd" colspan="10">
-                            <b>Dengan ini saya menyatakan bahwa saya telah diberikan informasi secara jelas, telah memahami, dan menerima tentang hal-hal tersebut diatas</b>
-                          </td>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="text-center bd " width="50%" colspan="5">
-                            <b>Wali Pasien</b>
-                          </td>
-                         <td class="text-center bd " width="50%" colspan="5">
-                            <b>Pasien</b>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="text-center bd " width="50%" colspan="5">
-                            <div class="col-md-12"> 
-                    <!-- Signature -->
-                              <div id="signature" style=''>
-                                <canvas id="signature-pad" class="signature-pad" width="250px" height="75px">
-                              </div><br/>
-                               
-                              <button type="button" id="undo">Undo</button>
-                              <button type="button" id="clear">Clear</button>
-                              <input type='hidden' id='generate' name="ttd_wali" value=''><br/>
+                  <div class="row">
+                      <!-- nama -->
+                    <div class="col-xs-5">
+                      <b>Tindakan yang Dilakukan</b>
+                    </div>
+                    <div class="col-xs-7">
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <div class="row">
+                            <div class="col-xs-4">
+                              <label class="container">Invasif
+                                <input type="radio" name="tindakan_yang_dilakukan" value="invasif" required>
+                                <span class="checkmark"></span>
+                              </label>
                             </div>
-                          </td>
-                          <td class="text-center bd " width="50%" colspan="5">
-                            <div class="col-md-12"> 
-                    <!-- Signature -->
-                              <div id="signature" style=''>
-                                <canvas id="signature-pad1" class="signature-pad" width="250px" height="75px">
-                              </div><br/>
-                               
-                              <button type="button" id="undo1">Undo</button>
-                              <button type="button" id="clear1">Clear</button>
-                              <input type='hidden' id='generate1' name="ttd_pasien" value=''><br/>
-                           </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="text-left bd " width="100%" colspan="10">
-                            <div class="col-md-5">
-                              <b>Bertanda Tangan Untuk Pasien A.N</b>
+                            <div class="col-xs-4">
+                              <label class="container">Bedah
+                                <input type="radio" name="tindakan_yang_dilakukan" value="bedah" required>
+                                <span class="checkmark"></span>
+                              </label>
                             </div>
-                            <div class="col-md-7">
-                              <input type="text" class="form-control input-sm" name="ttd_untuk_pasien"  value="" required>
+                            <div class="col-xs-4">
+                              <label class="container">Tindakan Berisiko Tinggi
+                                <input type="radio" name="tindakan_yang_dilakukan" value="tindakan berisiko tinggi" required>
+                                <span class="checkmark"></span>
+                              </label>
                             </div>
-                          </td>
-                        </tr>
-                        
-                      </tbody>
-                  </table>
-
-                  <table width="100%">
-                      <thead>
-                        <tr class="text-center bdu">
-                          <td width="100%" class="bd" colspan="10">
-                            <b>Dengan ini saya menyatakan bahwa saya telah memberikan informasi secara benar dan jelas, dan memberi kesempatan untuk berdiskusi tentang hal-hal tersebut diatas</b>
-                          </td>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="text-center bd " width="50%" colspan="5">
-                            <b>Saksi Pihak RS</b>
-                          </td>
-                         <td class="text-center bd " width="50%" colspan="5">
-                            <b>Pemberi Edukasi</b>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="text-center bd " width="50%" colspan="5">
-                            <div class="col-md-12"> 
-                    <!-- Signature -->
-                              <div id="signature" style=''>
-                                <canvas id="signature-pad2" class="signature-pad" width="250px" height="75px">
-                              </div><br/>
-                               
-                              <button type="button" id="undo2">Undo</button>
-                              <button type="button" id="clear2">Clear</button>
-                              <input type='hidden' id='generate2' name="saksi_pihak_rs" value=''><br/>
-                            </div>
-                          </td>
-                          <td class="text-center bd " width="50%" colspan="5">
-                            <div class="col-md-12"> 
-                    <!-- Signature -->
-                              <div id="signature" style=''>
-                                <canvas id="signature-pad3" class="signature-pad" width="250px" height="75px">
-                              </div><br/>
-                               
-                              <button type="button" id="undo3">Undo</button>
-                              <button type="button" id="clear3">Clear</button>
-                              <input type='hidden' id='generate3' name="pemberi_edukasi" value=''><br/>
-                           </div>
-                          </td>
-                        </tr>
-                        
-                        
-                      </tbody>
-                  </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
 
                 </div>
               </div>
@@ -500,236 +500,7 @@
             <div class="panel-body">
 
               <br>
-              <div class="row">
-                <div class="text-center col-md-12"> 
-                  <b>Persetujuan Tindakan Invasif, Bedah, Atau Tindakan Berisiko Tinggi</b>
-                </div>
-              </div>
-              <br>
-              <div class="row">
-                <div class="text-center col-md-12"> 
-                  Setelah saya membaca dan diterangkan mengenai tindakan di atas, maka saya yang bertanda tangan dibawah ini :
-                </div>
-              </div>
-              <br>
-
-              <div class="row">
-
-                <div class="col-md-12"> 
-                  <div class="row">
-                      <!-- nama -->
-                    <div class="col-md-5">
-                      <b>Nama</b>
-                    </div>
-                    <div class="col-md-7">
-                      <input type="text" class="form-control input-sm" name="nama_tindakan"  value="" required>
-                    </div>
-                  </div>
-                  <br>
-
-                  <div class="row">
-                      <!-- nama -->
-                    <div class="col-xs-5">
-                      <b>Jenis Kelamin</b>
-                    </div>
-                    <div class="col-xs-7">
-                      <div class="row">
-                        <div class="col-xs-12">
-                          <div class="row">
-                            <div class="col-xs-4">
-                              <label class="container">Laki-laki
-                                <input type="radio" name="jenis_kelamin_tindakan" value="laki-laki" required>
-                                <span class="checkmark"></span>
-                              </label>
-                            </div>
-                            <div class="col-xs-4">
-                              <label class="container">Perempuan
-                                <input type="radio" name="jenis_kelamin_tindakan" value="perempuan" required>
-                                <span class="checkmark"></span>
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                      <!-- nama -->
-                    <div class="col-md-5">
-                      <b>Tanggal Lahir</b>
-                    </div>
-                    <div class="col-md-7">
-                      <input type="text" class="form-control input-sm" name="tanggal_lahir_tindakan"  value="" required>
-                    </div>
-                  </div>
-                  <br>
-
-                  <div class="row">
-                      <!-- nama -->
-                    <div class="col-md-5">
-                      <b>Usia</b>
-                    </div>
-                    <div class="col-md-7">
-                      <input type="text" class="form-control input-sm" name="usia_tindakan"  value="" required>
-                    </div>
-                  </div>
-                  <br>
-
-                  <div class="row">
-                      <!-- nama -->
-                    <div class="col-md-5">
-                      <b>Alamat</b>
-                    </div>
-                    <div class="col-md-7">
-                      <input type="text" class="form-control input-sm" name="alamat_tindakan"  value="" required>
-                    </div>
-                  </div>
-                  <br>
-
-                  <div class="row">
-                      <!-- nama -->
-                    <div class="col-md-5">
-                      <b>No. Identitas</b>
-                    </div>
-                    <div class="col-md-7">
-                      <input type="text" class="form-control input-sm" name="no_identitas"  value="" required>
-                    </div>
-                  </div>
-                  <br>
-
-                  <div class="row">
-                      <!-- nama -->
-                    <div class="col-md-8">
-                      Bertindak selaku pasien, sendiri/suami/istri/anak/orang tua/
-                    </div>
-                    <div class="col-md-4">
-                      <input type="text" class="form-control input-sm" name="bertindak_selaku"  value="" required>
-                    </div>
-                  </div>
-                  <br>
-                  <div class="row">
-                    <div class="text-center col-md-12"> 
-                      dan penanggung jawab atau wali atas pasien, menyatakan<b> SETUJU </b>untuk dilakukan tindakan kedokteran berupa
-                    </div>
-                  </div>
-                  <br>
-
-                  <div class="row">
-                      <!-- nama -->
-                    <div class="col-md-12">
-                      <textarea type="text" class="form-control input-sm" name="tindakan_berupa"  value="" required></textarea>
-                    </div>
-                  </div>
-                  <br>
-                  <div class="row">
-                    <div class="text-center col-md-12"> 
-                      <b>Terhadap :</b>
-                    </div>
-                  </div>
-                  <br>
-
-                  <div class="row">
-                      <!-- nama -->
-                    <div class="col-md-5">
-                      <b>Nama</b>
-                    </div>
-                    <div class="col-md-7">
-                      <input type="text" class="form-control input-sm" name="terhadap_nama"  value="" required>
-                    </div>
-                  </div>
-                  <br>
-
-                  <div class="row">
-                      <!-- nama -->
-                    <div class="col-xs-5">
-                      <b>Jenis Kelamin</b>
-                    </div>
-                    <div class="col-xs-7">
-                      <div class="row">
-                        <div class="col-xs-12">
-                          <div class="row">
-                            <div class="col-xs-4">
-                              <label class="container">Laki-laki
-                                <input type="radio" name="terhadap_jenis_kelamin" value="laki-laki" required>
-                                <span class="checkmark"></span>
-                              </label>
-                            </div>
-                            <div class="col-xs-4">
-                              <label class="container">Perempuan
-                                <input type="radio" name="terhadap_jenis_kelamin" value="perempuan" required>
-                                <span class="checkmark"></span>
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                      <!-- nama -->
-                    <div class="col-md-5">
-                      <b>Tanggal Lahir</b>
-                    </div>
-                    <div class="col-md-7">
-                      <input type="text" class="form-control input-sm" name="terhadap_tanggal_lahir"  value="" required>
-                    </div>
-                  </div>
-                  <br>
-
-                  <div class="row">
-                      <!-- nama -->
-                    <div class="col-md-5">
-                      <b>Usia</b>
-                    </div>
-                    <div class="col-md-7">
-                      <input type="text" class="form-control input-sm" name="terhadap_usia"  value="" required>
-                    </div>
-                  </div>
-                  <br>
-
-                  <div class="row">
-                      <!-- nama -->
-                    <div class="col-md-5">
-                      <b>No. MR</b>
-                    </div>
-                    <div class="col-md-7">
-                      <input type="text" class="form-control input-sm" name="terhadap_no_mr"  value="" required>
-                    </div>
-                  </div>
-                  <br>
-
-                  <div class="row">
-                    <div style="text-align: justify;" class="text-center col-md-12"> 
-                      Saya menyatakan bahwa sesungguhnya dan tanpa paksaan bahwa.<br>
-                      1. Saya telah menerima informasi jenis tindakan yang akan dilakukan.<br>
-                      2. Saya mengerti bahwa tindakan tersebut mengandung beberapa resiko, termasuk perubahan tekanan darah, resiko obat (alergi), henti jantung, kerusakan otak, kelumpuhan, kerusakan syarat serta komplikasi lain yang juga mungkin terjadi bahkan kematian.<br>
-                      3. Saya telah menerima penjelasan secara teliti tentang tindakan yang akan dilakukan, mengerti dan menyetujui penjelasan tentang tindakan yang akan dilakukan termasuk kemungkinan komplikasi yang mungkin terjadi serta kelebihan atau kelemahan dari setiap jenis tindakan yang dilakukan.<br>
-                      4. Saya mempunyai kewajiban untuk memberi informasi kepada dokter mengenai semua penyakit dan obat yang pasien minum, seperti aspirin, pengencer darah, kontrasepsi, obat flu, narkotik, marijuana, kokain, dan lain-lain.<br>
-                      5. Saya bersedia menanggung tindakan kedokteran, kecuali terhadap pihak lain yang menyatakan bertanggung jawab secara finansial terhadap tindakan ini.
-                      <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Berdasarkan hal-hal tersebut diatas, saya enjamin sepenuhnya bahwa tindakan saya untuk menyetujui tindakan medik diatas adalah untuk mewakili kepentingan saya / pasien dan keluarga pasien, dan saya bertanggung jawab sepenuhnya apabila terhadap pihak lain yang mengajukan keberatan atas persetujuan ini.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian surat persetujuan ini dibuat dengan kesadaran dan tanpa paksaan dari pihak manapun juga.
-                    </div>
-                  </div>
-                  <br>
-
-                  <div class="row">
-                      <!-- nama -->
-                    <div class="col-md-3">
-                      <b>Tanggal</b>
-                    </div>
-                    <div class="col-md-3">
-                      <input type="text" name="tanggal1" id="tanggal1" class="form-control" value="<?= date('Y-m-d') ?>" required autocomplete="off">
-                    </div>
-                    <div class="col-md-3">
-                      <b>Jam</b>
-                    </div>
-                    <div class="col-md-3">
-                      <input type="text" name="jam1" id="jam1" class="form-control" value="07:00" required autocomplete="off">
-                    </div>
-                  </div>
-                  <br>
-
+              
                   <table width="100%">
                       <tbody>
                         <tr>
@@ -766,24 +537,7 @@
                            </div>
                           </td>
                         </tr>
-                        <tr>
-                          <td class="text-left bd " width="50%" colspan="5">
-                            <div class="col-md-7">
-                              <b>Nama Jelas Wali Pasien</b>
-                            </div>
-                            <div class="col-md-5">
-                              <input type="text" class="form-control input-sm" name="nama_wali_pasien"  value="" required>
-                            </div>
-                          </td>
-                          <td class="text-left bd " width="50%" colspan="5">
-                            <div class="col-md-5">
-                              <b>Nama Jelas Pasien</b>
-                            </div>
-                            <div class="col-md-7">
-                              <input type="text" class="form-control input-sm" name="nama_pasien2"  value="" required>
-                            </div>
-                          </td>
-                        </tr>
+                       
 
                       </tbody>
                   </table>
@@ -791,15 +545,13 @@
                   <table width="100%">
                       <tbody>
                         <tr>
-                          <td class="text-center bd " width="50%" colspan="5">
+                          <td class="text-center bd " width="100%" colspan="10">
                             <b>Saksi Pihak RS</b>
                           </td>
-                         <td class="text-center bd " width="50%" colspan="5">
-                            <b>Dokter Anestesi</b>
-                          </td>
+                         
                         </tr>
                         <tr>
-                          <td class="text-center bd " width="50%" colspan="5">
+                          <td class="text-center bd " width="100%" colspan="10">
                             <div class="col-md-12"> 
                     <!-- Signature -->
                               <div id="signature" style=''>
@@ -811,21 +563,10 @@
                               <input type='hidden' id='generate6' name="ttd_saksi_rs" value=''><br/>
                             </div>
                           </td>
-                          <td class="text-center bd " width="50%" colspan="5">
-                            <div class="col-md-12"> 
-                    <!-- Signature -->
-                              <div id="signature" style=''>
-                                <canvas id="signature-pad7" class="signature-pad" width="250px" height="75px">
-                              </div><br/>
-                               
-                              <button type="button" id="undo7">Undo</button>
-                              <button type="button" id="clear7">Clear</button>
-                              <input type='hidden' id='generate7' name="ttd_dokter" value=''><br/>
-                           </div>
-                          </td>
+                          
                         </tr>
                         <tr>
-                          <td class="text-left bd " width="50%" colspan="5">
+                          <td class="text-left bd " width="100%" colspan="10">
                             <div class="col-md-7">
                               <b>Nama Jelas Saksi</b>
                             </div>
@@ -833,14 +574,7 @@
                               <input type="text" class="form-control input-sm" name="nama_saksi_rs"  value="" required>
                             </div>
                           </td>
-                          <td class="text-left bd " width="50%" colspan="5">
-                            <div class="col-md-5">
-                              <b>Nama Jelas Dokter</b>
-                            </div>
-                            <div class="col-md-7">
-                              <input type="text" class="form-control input-sm" name="nama_dokter"  value="" required>
-                            </div>
-                          </td>
+                         
                         </tr>
 
                       </tbody>

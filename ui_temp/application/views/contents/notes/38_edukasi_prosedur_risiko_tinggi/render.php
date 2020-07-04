@@ -173,14 +173,21 @@
                       <td>Hubungan</td>
                       <td class="with-ellipsis"><?= $k['hubungan']; ?></td>
                     </tr>
+
                     <tr>
-                      <td>Nama Pemberi Edukasi</td>
-                      <td class="with-ellipsis"><?= $k['nama_pemberi_edukasi']; ?></td>
+                      <td>Tanggal Lahir</td>
+                      <td class="with-ellipsis"><?= $k['tanggal_lahir_tindakan']; ?></td>
                     </tr>
                     <tr>
-                      <td>Nama Pelaksana Tindakan</td>
-                      <td class="with-ellipsis"><?= $k['nama_pelaksana_tindakan']; ?></td>
+                      <td>Alamat</td>
+                      <td class="with-ellipsis"><?= $k['alamat_tindakan'];?></td>
                     </tr>
+                    <tr>
+                      <td>No. Identitas</td>
+                      <td class="with-ellipsis"><?= $k['no_identitas'];?></td>
+                    </tr>
+
+                    
                     
                   </tbody>
                 </table>
@@ -197,10 +204,6 @@
                     <tr>
                       <td>Dasar Diagnosis</td>
                       <td class="with-ellipsis">Anamnesis, pemeriksaan fisik, pemeriksaan penunjang</td>
-                    </tr>
-                    <tr>
-                      <td>Jenis Tindakan</td>
-                      <td class="with-ellipsis"><?= $k['jenis_tindakan']; ?></td>
                     </tr>
                     <tr>
                       <td>Indikasi Tindakan</td>
@@ -248,99 +251,17 @@
                       <td>Jam</td>
                       <td class="with-ellipsis"><?= $k['jam']; ?></td>
                     </tr>
-                    <tr>
-                      <td>Ttd Wali Pasien</td>
-
-                      <td class="with-ellipsis">
-                        <div id="coretan" style=''>
-                  <!-- <canvas id="signature-pad" class="signature-pad" width="400px" height="400px"> -->
-                        <img src='<?= $k['ttd_wali']; ?>' id='sign_prev' />
-                      </div><br/>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Ttd Pasien</td>
-
-                      <td class="with-ellipsis">
-                        <div id="coretan" style=''>
-                  <!-- <canvas id="signature-pad" class="signature-pad" width="400px" height="400px"> -->
-                        <img src='<?= $k['ttd_pasien']; ?>' id='sign_prev' />
-                      </div><br/>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Bertanda tangan untuk pasien a.n</td>
-                      <td class="with-ellipsis"><?= $k['ttd_untuk_pasien']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Ttd Saksi Pihak RS</td>
-
-                      <td class="with-ellipsis">
-                        <div id="coretan" style=''>
-                  <!-- <canvas id="signature-pad" class="signature-pad" width="400px" height="400px"> -->
-                        <img src='<?= $k['saksi_pihak_rs']; ?>' id='sign_prev' />
-                      </div><br/>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Ttd Pemberi Edukasi</td>
-
-                      <td class="with-ellipsis">
-                        <div id="coretan" style=''>
-                  <!-- <canvas id="signature-pad" class="signature-pad" width="400px" height="400px"> -->
-                        <img src='<?= $k['pemberi_edukasi']; ?>' id='sign_prev' />
-                      </div><br/>
-                      </td>
-                    </tr>
-                    
-                  </tbody>
-                </table>
-                
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-4">
-                <table class="table nowrap">
-                  <tbody>
-                    <div class="text-center col-lg-12">
-                      <b>Terhadap</b>
-                    </div>
-                    <tr>
-                      <td>Nama</td>
-                      <td class="with-ellipsis"><?= $k['terhadap_nama']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Jenis Kelamin</td>
-                      <td class="with-ellipsis"><?= $k['terhadap_jenis_kelamin']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Tanggal Lahir</td>
-                      <td class="with-ellipsis"><?= $k['terhadap_tanggal_lahir']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Usia</td>
-                      <td class="with-ellipsis"><?= $k['terhadap_usia']; ?> th</td>
-                    </tr>
-                    <tr>
-                      <td>No. MR</td>
-                      <td class="with-ellipsis"><?= $k['terhadap_no_mr']; ?> cm</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="col-md-4">
-                <table class="table nowrap">
-                  <tbody>
                     
                     <tr>
-                      <td>Tanggal</td>
-                      <td class="with-ellipsis"><?= $k['tanggal1']; ?></td>
+                      <td>Nama Pemberi Edukasi</td>
+                      <td class="with-ellipsis"><?= $k['nama_pemberi_edukasi']; ?></td>
                     </tr>
                     <tr>
-                      <td>Jam</td>
-                      <td class="with-ellipsis"><?= $k['jam1']; ?></td>
+                      <td>Nama Pelaksana Tindakan</td>
+                      <td class="with-ellipsis"><?= $k['nama_pelaksana_tindakan']; ?></td>
                     </tr>
+
+                     
                     <tr>
                       <td>Ttd Wali Pasien</td>
 
@@ -352,10 +273,7 @@
                       </td>
                     </tr>
 
-                    <tr>
-                      <td>Nama Jelas Wali Pasien</td>
-                      <td class="with-ellipsis"><?= $k['nama_wali_pasien']; ?></td>
-                    </tr>
+                    
                     <tr>
                       <td>Ttd pasien</td>
 
@@ -366,10 +284,7 @@
                       </div><br/>
                       </td>
                     </tr>
-                    <tr>
-                      <td>Nama Jelas Pasien</td>
-                      <td class="with-ellipsis"><?= $k['nama_pasien2']; ?></td>
-                    </tr>
+                    
                     <tr>
                       <td>Ttd Saksi Pihak RS</td>
 
@@ -384,71 +299,27 @@
                       <td>Nama Jelas Saksi Pihak RS</td>
                       <td class="with-ellipsis"><?= $k['nama_saksi_rs']; ?></td>
                     </tr>
-                    <tr>
-                      <td>Ttd Dokter Anestesi</td>
+                    
+                    <!-- <tr>
+                      <td>Ttd Pemberi Edukasi</td>
 
                       <td class="with-ellipsis">
                         <div id="coretan" style=''>
-                  <!-- <canvas id="signature-pad" class="signature-pad" width="400px" height="400px"> -->
-                        <img src='<?= $k['ttd_dokter']; ?>' id='sign_prev' />
+                  <canvas id="signature-pad" class="signature-pad" width="400px" height="400px">
+                        <img src='<?= $k['pemberi_edukasi']; ?>' id='sign_prev' />
                       </div><br/>
                       </td>
-                    </tr>
-                    <tr>
-                      <td>Nama Jelas Dokter Anestesi</td>
-                      <td class="with-ellipsis"><?= $k['nama_dokter']; ?></td>
-                    </tr>
+                    </tr> -->
                     
                   </tbody>
                 </table>
+                
               </div>
+            </div>
+
+            
              
 
-            <div class="row">
-              <div class="col-md-4">
-                <table class="table nowrap">
-                  <tbody>
-                    <div class="text-center col-lg-12">
-                      <b>Persetujuan Tindakan Invasif</b>
-                    </div>
-                    <tr>
-                      <td>Nama</td>
-                      <td class="with-ellipsis"><?= $k['nama_tindakan']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Jenis Kelamin</td>
-                      <td class="with-ellipsis"><?= $k['jenis_kelamin_tindakan']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Tanggal Lahir</td>
-                      <td class="with-ellipsis"><?= $k['tanggal_lahir_tindakan']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Usia</td>
-                      <td class="with-ellipsis"><?= $k['usia_tindakan'];?>&nbsp; th</td>
-                    </tr>
-                    <tr>
-                      <td>Alamat</td>
-                      <td class="with-ellipsis"><?= $k['alamat_tindakan'];?></td>
-                    </tr>
-                    <tr>
-                      <td>No. Identitas</td>
-                      <td class="with-ellipsis"><?= $k['no_identitas'];?></td>
-                    </tr>
-                    <tr>
-                      <td>Bertindak Selaku Pasien</td>
-                      <td class="with-ellipsis"><?= $k['bertindak_selaku'];?></td>
-                    </tr>
-                    <tr>
-                      <td>Tindakan Berupa</td>
-                      <td class="with-ellipsis"><?= $k['tindakan_berupa'];?></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              
-              
-            </div>
 
           </div>
           <hr>
