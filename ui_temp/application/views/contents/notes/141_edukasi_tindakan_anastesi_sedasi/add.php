@@ -126,23 +126,40 @@
               </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-4">
               <div class="row">
                 <!-- nama -->
                 <div class="col-md-4">
-                  <b>Petugas Approve</b>
+                  <b>Nama Pemberi Edukasi</b>
                 </div>
                 <div class="col-md-8">
                   <select name="petugas_approved" class="petugas_approved" style="width: 100%" required>
                     <option value=""></option>
                     <?php foreach ($data_perawat as $k => $v) : ?>
                       <option value="<?= $v['id'] ?>"><?= $v['nama'] ?></option>
+                      <?php endforeach; ?>
+                    </select>
+                  </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="row">
+                  <!-- nama -->
+                <div class="col-md-5">
+                  <b>Nama Pelaksana Tindakan</b>
+                </div>
+                <div class="col-md-7">
+                  <select name="dokter_approved" class="dokter_approved" style="width: 100%" required>
+                    <option value=""></option>
+                    <?php foreach ($data_dokter as $dd) : ?>
+                      <option value="<?= $dd['id'] ?>"><?= $dd['nama'] ?></option>
                     <?php endforeach; ?>
                   </select>
                 </div>
               </div>
             </div>
-            <div class="col-md-6"> 
+            
+            <div class="col-md-4"> 
               <div class="col-md-6"> 
                 <div class="row">
                   <!-- nama -->

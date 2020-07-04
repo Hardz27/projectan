@@ -126,23 +126,40 @@
               </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-4">
               <div class="row">
                 <!-- nama -->
                 <div class="col-md-4">
-                  <b>Petugas Approve</b>
+                  <b>Nama Pemberi Edukasi</b>
                 </div>
                 <div class="col-md-8">
                   <select name="petugas_approved" class="petugas_approved" style="width: 100%" required>
                     <option value=""></option>
                     <?php foreach ($data_perawat as $k => $v) : ?>
                       <option value="<?= $v['id'] ?>"><?= $v['nama'] ?></option>
+                      <?php endforeach; ?>
+                    </select>
+                  </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="row">
+                  <!-- nama -->
+                <div class="col-md-5">
+                  <b>Nama Pelaksana Tindakan</b>
+                </div>
+                <div class="col-md-7">
+                  <select name="dokter_approved" class="dokter_approved" style="width: 100%" required>
+                    <option value=""></option>
+                    <?php foreach ($data_dokter as $dd) : ?>
+                      <option value="<?= $dd['id'] ?>"><?= $dd['nama'] ?></option>
                     <?php endforeach; ?>
                   </select>
                 </div>
               </div>
             </div>
-            <div class="col-md-6"> 
+
+            <div class="col-md-4"> 
               <div class="col-md-6"> 
                 <div class="row">
                   <!-- nama -->
@@ -458,9 +475,10 @@
                             <span class="checkmark"></span>
                           </label>
                           <label class="customcheck"> Lain lain
-                            <input type="checkbox" name="tindakan_yang_dilakukan[]" value="Lain lain">
+                            <input type="checkbox" name="tindakan_yang_dilakukan[]" value="Lain lain" id="tyd-ll">
                             <span class="checkmark"></span>
                           </label>
+                          <input type="text" name="tyd_ll_value" id="tyd-ll-value" class="form-control" style="display: none;" placeholder="Lain lain">
                         </div>
                       </div>
                     </div>
@@ -668,7 +686,7 @@
                        <b>Lain lain/ analgetik post operasi</b>
                      </div>
                      <div class="col-md-7">
-                       <textarea type="text" name="lain_lain" class="form-control" placeholder="lain_lain"  autocomplete="off">Bia</textarea>
+                       <textarea type="text" name="lain_lain" class="form-control" placeholder="lain_lain"  autocomplete="off"></textarea>
                      </div>
                    </div>
                    <br>
@@ -886,7 +904,10 @@ $(document).ready(function() {
    $('#coretan_saksi').val(signaturePadSaksiPihakRS.toDataURL('image/png'))
    $('#coretan_wali').val(signaturePadWaliPasien.toDataURL('image/png'))
 
-   console.log($('#coretan_wali').val())
+   if($('#tyd-ll-value').length > 0){
+     let tydValue = $('#tyd-ll-value').val()
+     $('#tyd-ll').val(`Lain lain - ${tydValue}`)
+   }
  });
 
 })
@@ -937,6 +958,17 @@ $('#undo-dokter').click(() => {
 
 $('#clear-dokter').click(() => {
   signaturePadDokterAnestesi.clear()
+})
+
+$('#tyd-ll').click(() => {
+  if($('#tyd-ll').is(':checked')){
+    $('#tyd-ll-value').removeAttr('style')
+    $('#tyd-ll-value').attr('required', 'required')
+  }else{
+    $('#tyd-ll-value').attr('style', 'display:none')
+    $('#tyd-ll-value').removeAttr('required')
+    $('#tyd-ll-value').val('')
+  }
 })
 
 

@@ -132,8 +132,12 @@
                 <table class="table nowrap">
                   <tbody>
                     <tr>
-                      <td>Petugas Approve</td>
+                      <td>Nama Pemberi Edukasi</td>
                       <td class="with-ellipsis"><?= ucwords(strtolower($k['approved_petugas'])); ?></td>
+                    </tr>
+                    <tr>
+                      <td>Nama Pelaksana Tindakan</td>
+                      <td class="with-ellipsis"><?= ucwords(strtolower($k['approved_dokter'])); ?></td>
                     </tr>
                     <tr>
                       <td>Tanggal</td>
@@ -288,13 +292,18 @@
                   </div>
                   <tr>
                     <td>
+                      <?=$k['nama_wali']?>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
                       <center><img src="<?=$k['coretan_wali']?>" alt=""></center>
                     </td>
                   </tr>
                   <tr>
                     <td>
                     <div class="text-center col-lg-12">
-                      Bertanda tangan untuk pasien a.n. : <?=$k['nama_wali']?>
+                      Bertanda tangan untuk pasien a.n. : <?=$k['nama_pasien']?>
                     </div>
                     </td>
                   </tr>
@@ -303,6 +312,11 @@
                   <div class="text-center col-lg-12">
                       <b>Pasien</b>
                   </div>
+                  <tr>
+                    <td>
+                      <?=$k['nama_pasien']?>
+                    </td>
+                  </tr>
                   <tr>
                     <td>
                       <center><img src="<?=$k['coretan_pasien']?>" alt=""></center>
@@ -320,6 +334,11 @@
                   <div class="text-center col-lg-12">
                       <b>Saksi Pihak RS</b>
                   </div>
+                  <tr>
+                    <td>
+                      <?=$k['saksi']?>
+                    </td>
+                  </tr>
                   <tr>
                     <td>
                       <center><img src="<?=$k['coretan_saksi']?>" alt=""></center>

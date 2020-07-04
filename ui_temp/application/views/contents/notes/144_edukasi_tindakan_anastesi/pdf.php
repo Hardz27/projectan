@@ -312,8 +312,11 @@
             <td class="r-bold font-size-8 border-bottom-1 border-left-0 border-right-1 centerp-left"> jenis kelamin: <?= $list['notes']['jenis_kelamin_pasien']; ?></td>
             <td class="font-size-8 border-bottom-1 border-right-1 centerp-row" colspan="3"></td>
           </tr>
+          <tr>
+            <td class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left" colspan="3">Nama Pemberi Edukasi :  <?=$list['notes']['approved_petugas']; ?></td>
+            <td class="r-bold font-size-8 border-bottom-1 border-left-0 border-right-1 centerp-left" colspan="3">Nama Pelaksana Tindakan: <?=$list['notes']['approved_dokter']; ?></td>
+          </tr>
         </table>
-
 
 
         <table width="100%" cellspacing="0">
@@ -344,7 +347,7 @@
                     <lable ><input type="checkbox" <?= in_array( "Anestesi epidural",$list['notes']['tindakan_yang_dilakukan']) ? "checked=checked" : '' ; ?> name="" id=""  >Anestesi epidural</lable>
                   </td>
                   <td class="font-size-8">
-                    <lable ><input type="checkbox" <?= in_array( "Lain lain",$list['notes']['tindakan_yang_dilakukan']) ? "checked=checked" : '' ; ?> name="" id=""  >Lain lain</lable>
+                    <lable ><input type="checkbox" <?= in_array( "Lain lain - ".$list['notes']['tyd_ll_value'], $list['notes']['tindakan_yang_dilakukan']) ? "checked=checked" : '' ; ?> name="" id=""  >Lain lain<?=!empty($list['notes']['tyd_ll_value']) ? " - " . $list['notes']['tyd_ll_value'] : ''?></lable>
                   </td>
                 </tr>
               </table>
@@ -463,14 +466,14 @@
                       <td class="text-center font-size-8">
                         <div class="r-bold">Wali Pasien</div>
                         <center>
-                          <img src="<?= $list['notes']['coretan_wali']; ?>" alt="" height="100px" width="100px">
+                          <img src="<?= $list['notes']['coretan_wali']; ?>" alt="" height="80px" width="80px">
                         </center>
                         <div><?= $list['notes']['nama_wali']; ?></div>
                       </td>
                       <td class="text-center font-size-8"> 
                         <b>Pasien</b>
                         <center>
-                          <img src="<?= $list['notes']['coretan_pasien']; ?>" alt="" height="100px" width="100px">
+                          <img src="<?= $list['notes']['coretan_pasien']; ?>" alt="" height="80px" width="80px">
                         </center>
                           <div>
                             <?= $list['notes']['nama_pasien']; ?>
@@ -491,7 +494,7 @@
                       <td class="text-center font-size-8" width="50%">
                         <div class="r-bold">Saksi Pihak RS</div>
                         <center>
-                          <img src="<?= $list['notes']['coretan_saksi']; ?>" alt="" height="100px" width="100px">
+                          <img src="<?= $list['notes']['coretan_saksi']; ?>" alt="" height="80px" width="80px">
                         </center>
                           <div>
                             <?php echo ucwords(strtolower($list['notes']['saksi'])); ?> 
@@ -500,7 +503,7 @@
                       <td class="text-center font-size-8">
                         <div class="r-bold">Petugas yang Menyetujui</div>
                         <center>
-                          <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>" height="100px" width="100px">
+                          <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>" height="80px" width="80px">
                           <div>
                             <?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?> 
                           </div>

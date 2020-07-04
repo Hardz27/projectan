@@ -312,6 +312,10 @@
             <td class="r-bold font-size-8 border-bottom-1 border-left-0 border-right-1 centerp-left"> jenis kelamin: <?= $list['notes']['jenis_kelamin_pasien']; ?></td>
             <td class="font-size-8 border-bottom-1 border-right-1 centerp-row" colspan="3"></td>
           </tr>
+          <tr>
+            <td class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left" colspan="3">Nama Pemberi Edukasi :  <?=$list['notes']['approved_petugas']; ?></td>
+            <td class="r-bold font-size-8 border-bottom-1 border-left-0 border-right-1 centerp-left" colspan="3">Nama Pelaksana Tindakan: <?=$list['notes']['approved_dokter']; ?></td>
+          </tr>
         </table>
 
 
