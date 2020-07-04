@@ -170,6 +170,14 @@ $route['37_edukasi_pra_operasi/(:any)/(:any)']               = 'notes/37_edukasi
 $route['37_edukasi_pra_operasi/(:any)/(:num)/(:any)']        = 'notes/37_edukasi_pra_operasi/c_37_edukasi_pra_operasi/$1/$2/$3';
 $route['37_edukasi_pra_operasi/(:any)/(:any)/(:any)/(:any)'] = 'notes/37_edukasi_pra_operasi/c_37_edukasi_pra_operasi/$1/$2/$3/$4';
 
+
+/// ROUTES START FOR 39_operasi_tanda_lokasi
+$route['39_operasi_tanda_lokasi'] = 'notes/39_operasi_tanda_lokasi/c_39_operasi_tanda_lokasi';
+$route['39_operasi_tanda_lokasi/(:any)'] = 'notes/39_operasi_tanda_lokasi/c_39_operasi_tanda_lokasi/$1';
+$route['39_operasi_tanda_lokasi/(:any)/(:any)']               = 'notes/39_operasi_tanda_lokasi/c_39_operasi_tanda_lokasi/$1/$2';
+$route['39_operasi_tanda_lokasi/(:any)/(:num)/(:any)']        = 'notes/39_operasi_tanda_lokasi/c_39_operasi_tanda_lokasi/$1/$2/$3';
+$route['39_operasi_tanda_lokasi/(:any)/(:any)/(:any)/(:any)'] = 'notes/39_operasi_tanda_lokasi/c_39_operasi_tanda_lokasi/$1/$2/$3/$4';
+
 /// ROUTES START FOR 71_assesmen_bayi_baru_lahir
 $route['71_assesmen_bayi_baru_lahir'] = 'notes/71_assesmen_bayi_baru_lahir/c_71_assesmen_bayi_baru_lahir';
 $route['71_assesmen_bayi_baru_lahir/(:any)'] = 'notes/71_assesmen_bayi_baru_lahir/c_71_assesmen_bayi_baru_lahir/$1';
