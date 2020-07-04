@@ -569,7 +569,7 @@ class C_142_asesmen_pra_anastesi extends CI_Controller
     $result = json_decode($response->getbody()->getcontents(), true);
 
     echo json_encode($result);
-    echo trace($params);
+    // echo trace($params);
   }
 
   public function edit()
