@@ -328,7 +328,7 @@
                   </div>
                   <tr>
                     <td>
-                      <?=$k['nama_wali']?>
+                      <?=$k['nama_pasien']?>
                     </td>
                   </tr>
                   <tr>
