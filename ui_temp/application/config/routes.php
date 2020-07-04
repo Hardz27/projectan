@@ -176,3 +176,10 @@ $route['142_asesmen_pra_anastesi/(:any)'] = 'notes/142_asesmen_pra_anastesi/c_14
 $route['142_asesmen_pra_anastesi/(:any)/(:any)']               = 'notes/142_asesmen_pra_anastesi/c_142_asesmen_pra_anastesi/$1/$2';
 $route['142_asesmen_pra_anastesi/(:any)/(:num)/(:any)']        = 'notes/142_asesmen_pra_anastesi/c_142_asesmen_pra_anastesi/$1/$2/$3';
 $route['142_asesmen_pra_anastesi/(:any)/(:any)/(:any)/(:any)'] = 'notes/142_asesmen_pra_anastesi/c_142_asesmen_pra_anastesi/$1/$2/$3/$4';
+
+/// ROUTES START FOR 38_edukasi_prosedur_risiko_tinggi
+$route['38_edukasi_prosedur_risiko_tinggi'] = 'notes/38_edukasi_prosedur_risiko_tinggi/c_38_edukasi_prosedur_risiko_tinggi';
+$route['38_edukasi_prosedur_risiko_tinggi/(:any)'] = 'notes/38_edukasi_prosedur_risiko_tinggi/c_38_edukasi_prosedur_risiko_tinggi/$1';
+$route['38_edukasi_prosedur_risiko_tinggi/(:any)/(:any)']               = 'notes/38_edukasi_prosedur_risiko_tinggi/c_38_edukasi_prosedur_risiko_tinggi/$1/$2';
+$route['38_edukasi_prosedur_risiko_tinggi/(:any)/(:num)/(:any)']        = 'notes/38_edukasi_prosedur_risiko_tinggi/c_38_edukasi_prosedur_risiko_tinggi/$1/$2/$3';
+$route['38_edukasi_prosedur_risiko_tinggi/(:any)/(:any)/(:any)/(:any)'] = 'notes/38_edukasi_prosedur_risiko_tinggi/c_38_edukasi_prosedur_risiko_tinggi/$1/$2/$3/$4';
