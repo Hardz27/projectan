@@ -2362,12 +2362,10 @@
     // console.log($(this).serialize());
     
     $('.btn-kirim-<?= $this->router->fetch_class(); ?>').attr('disabled', true);
-    console.log('masuk sini');
+
     $.post('<?php echo base_url(); ?>' + class_name + '/add_process/list', $(this).serialize()).done(function(data) {
-      console.log(data);
       var data = JSON.parse(data);
-      console.log(data);
-      console.log('masuk last step');
+      
       if (data.status == '200') {
         alert('Data berhasil disimpan');
         location.reload();

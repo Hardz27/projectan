@@ -184,6 +184,13 @@ $route['142_asesmen_pra_anastesi/(:any)/(:any)']               = 'notes/142_ases
 $route['142_asesmen_pra_anastesi/(:any)/(:num)/(:any)']        = 'notes/142_asesmen_pra_anastesi/c_142_asesmen_pra_anastesi/$1/$2/$3';
 $route['142_asesmen_pra_anastesi/(:any)/(:any)/(:any)/(:any)'] = 'notes/142_asesmen_pra_anastesi/c_142_asesmen_pra_anastesi/$1/$2/$3/$4';
 
+/// ROUTES START FOR 102_pengkajian_nyeri_komprehensif
+$route['102_pengkajian_nyeri_komprehensif'] = 'notes/102_pengkajian_nyeri_komprehensif/c_102_pengkajian_nyeri_komprehensif';
+$route['102_pengkajian_nyeri_komprehensif/(:any)'] = 'notes/102_pengkajian_nyeri_komprehensif/c_102_pengkajian_nyeri_komprehensif/$1';
+$route['102_pengkajian_nyeri_komprehensif/(:any)/(:any)']               = 'notes/102_pengkajian_nyeri_komprehensif/c_102_pengkajian_nyeri_komprehensif/$1/$2';
+$route['102_pengkajian_nyeri_komprehensif/(:any)/(:num)/(:any)']        = 'notes/102_pengkajian_nyeri_komprehensif/c_102_pengkajian_nyeri_komprehensif/$1/$2/$3';
+$route['102_pengkajian_nyeri_komprehensif/(:any)/(:any)/(:any)/(:any)'] = 'notes/102_pengkajian_nyeri_komprehensif/c_102_pengkajian_nyeri_komprehensif/$1/$2/$3/$4';
+
 /// ROUTES START FOR 41_edukasi_tindakan_sc
 $route['41_edukasi_tindakan_sc'] = 'notes/41_edukasi_tindakan_sc/c_41_edukasi_tindakan_sc';
 $route['41_edukasi_tindakan_sc/(:any)'] = 'notes/41_edukasi_tindakan_sc/c_41_edukasi_tindakan_sc/$1';
