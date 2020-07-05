@@ -22,7 +22,7 @@
   }
 
   .centerp-row {
-    padding: 2px 0px 2px 5px;
+    padding: 1px 5px 1px 5px;
   }
 
 
@@ -287,457 +287,1170 @@
     <div class="row-panel">
       <div class="row-heading border-blue bg-blue font-white font-size-9 r-bold">Data <?= $title; ?></div>
         <div class="row-body">
-          <table width="100%" cellspacing="0">
+        <table width="100%" cellspacing="0">
           <tr>
-            <td width="20%" class="r-bold font-size-8 border-left-1 centerp-left">No. RM</td>
+            <td width="20%" class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">Nama Pasien</td>
+            <td width="30%" class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['nama_pasien']; ?></td>
+            <td width="20%" class="r-bold font-size-8 border-bottom-0 border-left-0 border-right-0 centerp-left">Nama Wali</td>
+            <td width="30%" class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['nama_wali']; ?></td>
+          </tr>
+          <tr>
+            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  No. MR</td>
             <td class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['no_rm']; ?></td>
+            <td class="r-bold font-size-8 border-bottom-0 border-left-0 border-right-0 centerp-left">  Usia</td>
+            <td class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['usia_wali']; ?></td>
           </tr>
           <tr>
-            <td class="r-bold font-size-8 border-left-1 centerp-left">  Nama</td>
-            <td class="font-size-8 centerp-row">: <?= $list['notes']['nama_pasien']; ?></td>
-            <td class="r-bold font-size-8 border-right-1 centerp-left"> jenis kelamin: <?= $list['notes']['jenis_kelamin']; ?></td>
+            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  Tempat, Tgl.Lahir</td>
+            <td class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['tempat_lahir']; ?>, <?= $list['notes']['tanggal_lahir']; ?></td>
+            <td class="r-bold font-size-8 border-bottom-0 border-left-0 border-right-0 centerp-left"> Hubungan</td>
+            <td class="font-size-8 border-right-0 centerp-row">:<?= $list['notes']['hubungan_wali']; ?></td>
+            <td class="r-bold font-size-8 border-bottom-0 border-left-0 border-right-1 centerp-left"> jenis kelamin: <?= $list['notes']['jenis_kelamin_wali']; ?></td>
           </tr>
           <tr>
-            <td class="r-bold font-size-8 border-left-1 centerp-left">  Tanggal Lahir</td>
-            <td class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['tanggal_lahir']; ?></td>
+            <td class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-0 centerp-left">  Usia</td>
+            <td class="font-size-8 border-bottom-1 border-right-0 centerp-row">:<?= $list['notes']['usia_pasien']; ?></td>
+            <td class="r-bold font-size-8 border-bottom-1 border-left-0 border-right-1 centerp-left"> jenis kelamin: <?= $list['notes']['jenis_kelamin_pasien']; ?></td>
+            <td class="font-size-8 border-bottom-1 border-right-1 centerp-row" colspan="3"></td>
           </tr>
           <tr>
-            <td class="r-bold font-size-8 border-bottom-1 border-left-1 centerp-left">  Ruangan</td>
-            <td class="font-size-8 border-right-1 border-bottom-1 centerp-row" colspan="2">: <?= $list['notes']['ruangan']; ?></td>
+            <td class="r-bold  font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-left" colspan="3"><center>Assesmen Pra Operasi</center></td>
+            <td class="r-bold  font-size-8 border-bottom-1 border-left-0 border-right-1 centerp-left" colspan="3"><center>Checklist Dokumen</center></td>
+          </tr>
+          <tr>
+            <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 " colspan="3" valign="top">
+              <table width="100%" cellspacing="0">
+                <tr>
+                  <td class="font-size-8 r-bold centerp-row">Anamnesis:</td>
+                </tr>
+                <tr>
+                  <td class="font-size-8 border-bottom-1 centerp-row">
+                    <?= $list['notes']['anamnesis']; ?>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-size-8 r-bold centerp-row">Pemeriksaan Fisik:</td>
+                </tr>
+                <tr>
+                  <td class="font-size-8 border-bottom-1 centerp-row">
+                    <?= $list['notes']['pemeriksaan_fisik']; ?>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-size-8 r-bold centerp-row">Catatan Alergi:</td>
+                </tr>
+                <tr>
+                  <td class="font-size-8 border-bottom-1 centerp-row">
+                    <?= $list['notes']['catatan_alergi']; ?>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-size-8 r-bold centerp-row">Diagnosis Praoperasi:</td>
+                </tr>
+                <tr>
+                  <td class="font-size-8 border-bottom-1 centerp-row">
+                    <?= $list['notes']['diagnosa_praoperasi']; ?>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-size-8 r-bold centerp-row">Rencana Operasi:</td>
+                </tr>
+                <tr>
+                  <td class="font-size-8 border-bottom-1 centerp-row">
+                    <?= $list['notes']['rencana_operasi']; ?>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-size-8 r-bold centerp-row">Estimasi Waktu:</td>
+                </tr>
+                <tr>
+                  <td class="font-size-8 border-bottom-1 centerp-row">
+                    <?= $list['notes']['estimasi_waktu']; ?>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-size-8 r-bold centerp-row">Pramedikasi:</td>
+                </tr>
+                <tr>
+                  <td class="font-size-8 border-bottom-1 centerp-row">
+                    <?= $list['notes']['premedikasi']; ?>
+                  </td>
+                </tr>
+              </table>
+            </td>
+
+            <td class="font-size-8 border-bottom-1 border-left-1 border-right-1" colspan="3" valign="top">
+              <table width="100%" cellspacing="0">
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row r-bold" width="40%">
+                    Jenis Persiapan
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row r-bold" width="30%">
+                    Perawat Ruangan
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row r-bold" width="30%">
+                    Perawat Ok
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    1. Rekam medik pasien
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_rekam_medik_pasien'] == 'ada' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ada </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_rekam_medik_pasien'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_rekam_medik_pasien'] == 'ada' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ada</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_rekam_medik_pasien'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    2. Informed consent operasi
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_informed_consent_operasi'] == 'ada' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ada </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_informed_consent_operasi'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_informed_consent_operasi'] == 'ada' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ada</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_informed_consent_operasi'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    3. Informed consent anestesi
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_informed_consent_anestesi'] == 'ada' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ada </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_informed_consent_anestesi'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_informed_consent_anestesi'] == 'ada' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ada</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_informed_consent_anestesi'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    4. Hasil Laboratorium
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_hasil_laboratorium'] == 'ada' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ada </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_hasil_laboratorium'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_hasil_laboratorium'] == 'ada' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ada</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_hasil_laboratorium'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    5. Hasil radiologi/USG
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_hasil_radiologi'] == 'ada' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ada </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_hasil_radiologi'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_hasil_radiologi'] == 'ada' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ada</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_hasil_radiologi'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    6. Hasil EKG
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_hasil_ekg'] == 'ada' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ada </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_hasil_ekg'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_hasil_ekg'] == 'ada' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ada</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_hasil_ekg'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    7. Hasil CTG
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_hasil_ctg'] == 'ada' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ada </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_hasil_ctg'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_hasil_ctg'] == 'ada' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ada</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_hasil_ctg'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    8. Daftar terapi yang sudah diberikan
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_hasil_ctg'] == 'ada' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ada </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_hasil_ctg'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_hasil_ctg'] == 'ada' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ada</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_hasil_ctg'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    9. Catatan keperawatan
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_catatan_keperawatan'] == 'ada' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ada </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_catatan_keperawatan'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_catatan_keperawatan'] == 'ada' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ada</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_catatan_keperawatan'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td colspan="3" class="font-size-8 border-bottom-1 border-left-1 border-right-0 r-bold">
+                    <center>Checklist Pasien</center>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row r-bold">
+                    Jenis Persiapan
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row r-bold">
+                    Perawat Ruangan
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row r-bold">
+                    Perawat Ok
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    1. Periksa keadaan umum
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_periksa_keadaan_umum'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_periksa_keadaan_umum'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_periksa_keadaan_umum'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_periksa_keadaan_umum'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    2. Periksa vital sign
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_periksa_vital_sign'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_periksa_vital_sign'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_periksa_vital_sign'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_periksa_vital_sign'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    3. Gelang identitas
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_gelang_identitas'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_gelang_identitas'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_gelang_identitas'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_gelang_identitas'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    4. Identifikasi alergi
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_identifikasi_alergi'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_identifikasi_alergi'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_identifikasi_alergi'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_identifikasi_alergi'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    5. Puasa jam <span class="r-bold"><?=$list['notes']['desc_puasa']?></span> 
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_puasa'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_puasa'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_puasa'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_puasa'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    5. Mandi
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_mandi'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_mandi'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_mandi'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_mandi'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    6. Oral hygiene
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_oral'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_oral'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_oral'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_oral'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    7. Cukur daerah operasi
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_cukur_daerah_operasi'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_cukur_daerah_operasi'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_cukur_daerah_operasi'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_cukur_daerah_operasi'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    8. Hapus make-up
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_make_up'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_make_up'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_make_up'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_make_up'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    9. Hapus make-up
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_make_up'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_make_up'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_make_up'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_make_up'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    10. Lepas aksesoris
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_lepas_aksesoris'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_lepas_aksesoris'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_lepas_aksesoris'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_lepas_aksesoris'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    11. Lepas alat bantu (ABD, gigi palsu, soft lenses)
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_lepas_alat_bantu'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_lepas_alat_bantu'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_lepas_alat_bantu'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_lepas_alat_bantu'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    12. Pemasangan IV line
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_pemasangan_iv_line'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_pemasangan_iv_line'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_pemasangan_iv_line'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_pemasangan_iv_line'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    13. Pemberian pramedikasi
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_pemberian_premedikasi'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_pemberian_premedikasi'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_pemberian_premedikasi'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_pemberian_premedikasi'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    14. Pemasangan kateter urin
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_pemasangan_kateter_urin'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_pemasangan_kateter_urin'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_pemasangan_kateter_urin'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_pemasangan_kateter_urin'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    14. Pemasangan NGT
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_pemasangan_ngt'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_pemasangan_ngt'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_pemasangan_ngt'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_pemasangan_ngt'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    15. Latihan nafas dalam
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_latihan_nafas_dalam'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_latihan_nafas_dalam'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_latihan_nafas_dalam'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_latihan_nafas_dalam'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    16. Latihan batuk efektif
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_latihan_batuk_efektif'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_latihan_batuk_efektif'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_latihan_batuk_efektif'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_latihan_batuk_efektif'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-1 border-left-0 border-right-1  centerp-row">
+                    17. Latihan batuk efektif
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_latihan_batuk_efektif'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_latihan_batuk_efektif'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-1 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_latihan_batuk_efektif'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_latihan_batuk_efektif'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td class="font-size-8 border-bottom-0 border-left-0 border-right-1  centerp-row">
+                    18. Kebutuhan darah
+                  </td>
+                  <td class="font-size-8 border-bottom-0 border-left-1 border-right-1  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_kebutuhan_darah'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya </td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ruangan_kebutuhan_darah'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="font-size-8 border-bottom-0 border-left-1 border-right-0  centerp-row">
+                    <table width="100%" cellspacing="0">
+                      <tr>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_kebutuhan_darah'] == 'ya' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; ya</td>
+                        <td class="font-size-8  centerp-row"><input type="radio" <?= $list['notes']['ok_kebutuhan_darah'] == 'tdk' ? "checked=checked" : ''; ?>>&nbsp; &nbsp; tdk</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+              </table>
+            </td>
+
           </tr>
         </table>
-
         <table width="100%" cellspacing="0">
           <tr>
-            <td class="r-bold font-size-8 border-bottom-1 border-left-1 centerp-head" colspan="2"><b>Langkah-langkah</b></td>
-            <td width="10%" class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-head"><b>Paraf</b></td>
-          </tr>
-          <tr class="text-center bdu ">
-            <td align="center" width="10%" class="font-size-8 border-left-1 border-right-1 border-bottom-1 centerp-row" rowspan="12" style="text-rotate: 90">Relaksasi Nafas dalam (Manajemen Nyeri)</td>
-            <?php $no = 1; ?>
-            <td width="80%" class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= $no ?>. Ciptakan Ruangan yang tenang</td>
-            <td width="10%" class="font-size-8 border-bottom-1 border-right-1 centerp-head" rowspan="12" id="paraf" height="auto">
-              <div class="paraf">
-                <img height="200px" width="60px" src='<?php echo $list['notes']['coretan_paraf']; ?>' id="signature-pad-paraf">
+            <td class="font-size-8  border-bottom-1 border-left-1 border-right-0">
+              <div class="r-bold">Tanda Tangan Dokter Operator</div>
+              <center>
+                <img src="<?=$list['notes']['coretan_dokter_operator']?>" alt="" width="80" height="80">
+              </center>
+              <div>
+                <?=$list['notes']['nama_dokter_operator']?>
               </div>
             </td>
-          </tr>
-          <tr>
-            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Usahakan tetap rileks dan tenang</td>
-          </tr>
-          <tr>
-            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Menarik nafas dalam dari hidung dan mengisi paru-paru dengan udara melalui hitungan 1,2,3</td>
-          </tr>
-          <tr>
-            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Perlahan-lahan udara dihembuskan melalui mulut sambil merasakan ekstremitas atas dan bawah rileks</td>
-          </tr>
-          <tr>
-            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Anjurkan bernafas dengan irama normal tiga kali</td>
-          </tr>
-          <tr>
-            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Menarik nafas lagi melalui hidung dan menghembuskan melalui mulut secara perlahan</td>
-          </tr>
-          <tr>
-            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Membiarkan telapak tangan dan kaki rileks</td>
-          </tr>
-          <tr>
-            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Usahakan agar tetap konsentrasi mata sambil terpejam</td>
-          </tr>
-          <tr>
-            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Pada saat konsentrasi pusatkan pada daerah yang nyeri</td>
-          </tr>
-          <tr>
-            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Anjurkan untuk mengulangi prosedur hingga nyeri terasa berkurang</td>
-          </tr>
-          <tr>
-            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Ulangi sampai 15 kali, dengan selang istirahat singkat setiap 5 kali</td>
-          </tr>
-          <tr>
-            <td class="font-size-8 border-right-1 border-bottom-1 centerp-left"><?= ++$no ?>. Bila nyeri menjadi hebat, anjurkan pasien bernafas secara dangkal dan cepat</td>
-          </tr>
-          <tr>
-            <td align="center" class="font-size-8 border-left-1 border-right-1 border-bottom-1 centerp-row" style="text-rotate: 90" rowspan="5" >Batuk efektif</td>
-            <?php $no = 1; ?>
-            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= $no ?>. Duduk tegap</td>
-            <td class="font-size-8 border-bottom-1 border-right-1 centerp-head" rowspan="5" height="auto">
-              <div class="paraf">
-                <img height="80px" width="60px" src='<?php echo $list['notes']['coretan_paraf_batuk']; ?>' id="signature-pad-paraf-batuk">
+            <td class="font-size-8 border-bottom-1 border-left-1 border-right-0">
+              <div class="r-bold">Tanda Tangan Perawat Ruang Rawat Inap</div>
+              <center>
+                <img src="<?=$list['notes']['coretan_perawat_ruang_rawat_inap']?>" alt="" width="80" height="80">
+              </center>
+              <div>
+                <?=$list['notes']['nama_perawat_ruang_rawat_inap']?>
               </div>
             </td>
-          </tr>
-          <tr>
-            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Hirup nafas dalam 2x secara perlahan-lahan melalui hidung dan hembuskan melalui mulut</td>
-          </tr>
-          <tr>
-            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Hirup nafas dalam ketiga kalinya dan tahan nafas sampai hitungan ke-3, batukkan dengan kuat-kuat 3x secara berturut-turut tanpa menghirup nafas kembali selama melakukan batuk</td>
-          </tr>
-          <tr>
-            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Lanjutkan latihan batuk sebanyak 2-3x pada saat terjaga</td>
-          </tr>
-          <tr>
-            <td class="font-size-8 border-right-1 border-bottom-1 centerp-left"><?= ++$no ?>. Ulangi sesuai kebutuhan</td>
-          </tr>
-
-          <tr>
-            <td height="55px" align="center" class="font-size-8 border-left-1 border-right-1 border-bottom-1 centerp-row" style="text-rotate: 90; overflow: auto; height: 55px !important;" rowspan="4">Informasi tentang kamar operasi</td>
-            <?php $no = 1; ?>
-            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= $no ?>. Ruangannya sangat bersih dan bebas kuman, suhunya dingin</td>
-            <td class="font-size-8 border-bottom-1 border-right-1 centerp-head" rowspan="4" height="auto">
-              <div class="paraf">
-                <img height="55px" width="60px" src='<?php echo $list['notes']['coretan_paraf_kamar']; ?>' id="signature-pad-paraf-kamar">
+            <td class="font-size-8 border-bottom-1 border-left-1 border-right-1">
+              <div class="r-bold">Tanda Tangan Perawat Ruang OK</div>
+              <center>
+                <img src="<?=$list['notes']['coretan_perawat_ruang_ok']?>" alt="" width="80" height="80">
+              </center>
+              <div>
+                <?=$list['notes']['nama_perawat_ruang_ok']?>
               </div>
             </td>
-          </tr>
-          <tr>
-            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Pencahayaan sangat terang</td>
-          </tr>
-          <tr>
-            <td class="font-size-8 border-right-1 border-bottom-0 centerp-left"><?= ++$no ?>. Dilengkapi dengan alat canggih</td>
-          </tr>
-          <tr>
-            <td class="font-size-8 border-right-1 border-bottom-1 centerp-left"><?= ++$no ?>. Tim terdiri dari ahli bedah, ahli anestesi dan perawat berketerampilan khusus</td>
           </tr>
         </table>
-
-
-
-        <table width="100%" cellspacing="0">
-          <tr>
-            <td width="25%" class="r-bold font-size-8 border-bottom-1 border-left-1 centerp-left">  Tanggal</td>
-            <td width="25%" class="font-size-8 border-bottom-1 border-right-1 centerp-row">: <!-- <?= $list['notes']['tanggal']; ?> --></td>
-            <td width="25%" class="r-bold font-size-8 border-bottom-1 centerp-left"> Jam</td>
-            <td width="25%" class="font-size-8 border-bottom-1 border-right-1 centerp-row">: <!-- <?= $list['notes']['jam']; ?> --></td>
-          </tr>
-          <!-- <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-1 centerp-head" colspan="6"><b>A. Autoanamnesis / Alloanamnesis</b></td>
-          </tr>
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  Keluhan Utama</td>
-            <td class="font-size-8 border-bottom-0 border-right-1 centerp-row" colspan="5">: <!-- <?= $list['notes']['keluhan_utama']; ?> --@></td>
-          </tr>
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  Riwayat Penyakit Sekarang</td>
-            <td class="font-size-8 border-bottom-0 border-right-1 centerp-row" colspan="5">: <!-- <?= $list['notes']['riwayat_penyakit_sekarang']; ?> --@></td>
-          </tr>
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-0 centerp-left">  Riwayat Penyakit Dahulu</td>
-            <td class="font-size-8 border-bottom-1 border-right-1 centerp-row" colspan="5">: <!-- <?= $list['notes']['riwayat_penyakit_dahulu']; ?> --@></td>
-          </tr> -->
-        </table>
-
-
-        <!-- <table width="100%" cellspacing="0">
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-1 centerp-head" colspan="2"><b> B. Pemeriksaan Fisik & Tanda Vital</b></td>
-            <td class="r-bold font-size-8 border-bottom-0 border-left- border-right-1 centerp-head" colspan="3"><b> C. Kemampuan Fungsional</b></td>
-            <td class="r-bold font-size-8 border-bottom-0 border-left- border-right-1 centerp-head"><b> Kanan - Kiri dan Kiri - Kanan</b></td>
-          </tr>
-          <tr>
-            <td width="15%" class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  TD</td>
-            <td width="15%" class="font-size-8 border-bottom-0 border-right-1 centerp-row">: <?= $list['notes']['td']; ?> mmHg</td>
-            <td width="10%" class="font-size-8 border-bottom-0 border-right-0 centerp-row">&nbsp;
-              <label class="container">
-               <input type="radio" name="tidur_bedrest_gendong" <?= $list['notes']['tidur_bedrest_gendong'] == 'tidur' ? 'checked="checked"' : ''; ?> >
-                <span class="checkmark"></span>
-              </label>&nbsp;&nbsp; tidur
-            </td>
-            <td width="10%" class="font-size-8 border-bottom-0 border-right-0 centerp-row">
-              <label class="container">
-               <input type="radio" name="tidur_bedrest_gendong" <?= $list['notes']['tidur_bedrest_gendong'] == 'bedrest' ? 'checked="checked"' : ''; ?> >
-                <span class="checkmark"></span>
-              </label>&nbsp; bedrest
-            </td>
-            <td width="10%" class="font-size-8 border-bottom-0 border-right-1 centerp-row">
-              <label class="container">
-               <input type="radio" name="tidur_bedrest_gendong" <?= $list['notes']['tidur_bedrest_gendong'] == 'gendong' ? 'checked="checked"' : ''; ?> >
-                <span class="checkmark"></span>
-              </label>&nbsp; gendong
-            </td>
-            <td rowspan="8" width="20%" class="font-size-8 border-bottom-1 border-right-1 centerp-row text-center">
-              <img width="150px" height="150px" src="<?php echo base_url() . 'assets/image/Human.png'; ?>">
-              <img style="margin-bottom: 15px; margin-left: -155px;" width="150px" height="150px" src='<?php echo $list['notes']['coretan']; ?>' id='sign_prev'>
-                </div><br/>
-            </td>
-          </tr>
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  HR</td>
-            <td class="font-size-8 border-bottom-0 border-right-0 centerp-row">: <?= $list['notes']['hr']; ?> x/m</td>
-            <td width="20%" class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left"> 2. Jalan Sendiri</td>
-            <td class="font-size-8 border-bottom-0 border-right-0 centerp-row">
-              <label class="container">
-               <input type="radio" name="jalan_sendiri" <?= $list['notes']['jalan_sendiri'] == 'ya' ? 'checked="checked"' : ''; ?> >
-                <span class="checkmark"></span>
-              </label>&nbsp; ya
-            </td>
-            <td class="font-size-8 border-bottom-0 border-right-1 centerp-row">
-              <label class="container">
-               <input type="radio" name="jalan_sendiri" <?= $list['notes']['jalan_sendiri'] == 'tidak' ? 'checked="checked"' : ''; ?> >
-                <span class="checkmark"></span>
-              </label>&nbsp; tidak
-            </td>
-          </tr>
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  RR</td>
-            <td class="font-size-8 border-bottom-0 border-right-0 centerp-row">: <?= $list['notes']['rr']; ?> x/m</td>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left"> 3. Kursi Roda</td>
-            <td class="font-size-8 border-bottom-0 border-right-0 centerp-row">
-              <label class="container">
-               <input type="radio" name="kursi_roda" <?= $list['notes']['kursi_roda'] == 'ya' ? 'checked="checked"' : ''; ?> >
-                <span class="checkmark"></span>
-              </label>&nbsp; ya
-            </td>
-            <td class="font-size-8 border-bottom-0 border-right-1 centerp-row">
-              <label class="container">
-               <input type="radio" name="kursi_roda" <?= $list['notes']['kursi_roda'] == 'tidak' ? 'checked="checked"' : ''; ?> >
-                <span class="checkmark"></span>
-              </label>&nbsp; tidak
-            </td>
-          </tr>
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  Suhu</td>
-            <td class="font-size-8 border-bottom-0 border-right-0 centerp-row">: <?= $list['notes']['suhu']; ?> °C</td>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left"> 4. Alat Bantu</td>
-            <td class="font-size-8 border-bottom-0 border-right-1 centerp-row"  colspan="2">: <?= $list['notes']['alat_bantu']; ?></td>
-          </tr>
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  Skala Nyeri</td>
-            <td class="font-size-8 border-bottom-0 border-right-0 centerp-row">: <?= $list['notes']['skala_nyeri']; ?></td>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left"> 5. Prothesis</td>
-            <td class="font-size-8 border-bottom-0 border-right-1 centerp-row"  colspan="2">: <?= $list['notes']['prothesis']; ?></td>
-          </tr>
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left"></td>
-            <td class="font-size-8 border-bottom-0 border-right-0 centerp-row"></td>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  6. Deformitas</td>
-            <td class="font-size-8 border-bottom-0 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['deformitas']; ?></td>
-          </tr>
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left"></td>
-            <td class="font-size-8 border-bottom-0 border-right-0 centerp-row"></td>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  7. Resiko Jatuh</td>
-            <td class="font-size-8 border-bottom-0 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['resiko_jatuh']; ?></td>
-          </tr>
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-0 centerp-left"></td>
-            <td class="font-size-8 border-bottom-1 border-right-0 centerp-row"></td>
-            <td class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-0 centerp-left">  8. Lain-lain</td>
-            <td class="font-size-8 border-bottom-1 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['lainlain']; ?> </td>
-          </tr>
-        </table> -->
-
-
-        <!-- <table width="100%" cellspacing="0">
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-1 centerp-head" colspan="8"><b>Pemeriksaan Sistemik Khusus</b></td>
-          </tr>
-          <tr>
-            <td width="20%" class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  a. Muskuloskeletal</td>
-            <td width="30%" class="font-size-8 border-bottom-0 border-right-1 centerp-row" colspan="7">: <?= $list['notes']['pemeriksaan_muskuloskeletal']; ?></td>
-          </tr>
-          <tr>
-            <td width="20%" class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  b. Neuromuskular</td>
-            <td width="30%" class="font-size-8 border-bottom-0 border-right-1 centerp-row" colspan="7">: <?= $list['notes']['pemeriksaan_neuromuskular']; ?></td>
-          </tr>
-          <tr>
-            <td width="20%" class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  c. Kardiopulmonal</td>
-            <td width="30%" class="font-size-8 border-bottom-0 border-right-1 centerp-row" colspan="7">: <?= $list['notes']['pemeriksaan_kardiopulmonal']; ?></td>
-          </tr>
-          <tr>
-            <td width="20%" class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-0 centerp-left">  d. Integumentum</td>
-            <td width="30%" class="font-size-8 border-bottom-1 border-right-1 centerp-row" colspan="7">: <?= $list['notes']['pemeriksaan_integumentum']; ?></td>
-          </tr>
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-1 centerp-head" colspan="8"><b>Pengukuran Khusus</b></td>
-          </tr>
-          <tr>
-            <td width="20%" class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  a. Muskuloskeletal</td>
-            <td width="30%" class="font-size-8 border-bottom-0 border-right-1 centerp-row" colspan="7">: <?= $list['notes']['pengukuran_muskuloskeletal']; ?></td>
-          </tr>
-          <tr>
-            <td width="20%" class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  b. Neuromuskular</td>
-            <td width="30%" class="font-size-8 border-bottom-0 border-right-1 centerp-row" colspan="7">: <?= $list['notes']['pengukuran_neuromuskular']; ?></td>
-          </tr>
-          <tr>
-            <td width="20%" class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  c. Kardiopulmonal</td>
-            <td width="30%" class="font-size-8 border-bottom-0 border-right-1 centerp-row" colspan="7">: <?= $list['notes']['pengukuran_kardiopulmonal']; ?></td>
-          </tr>
-          <tr>
-            <td width="20%" class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-0 centerp-left">  d. Integumentum</td>
-            <td width="30%" class="font-size-8 border-bottom-1 border-right-1 centerp-row" colspan="7">: <?= $list['notes']['pengukuran_integumentum']; ?></td>
-          </tr>
-         
-        </table> -->
-
-        <!-- <div class="row-panel mt-20">
-          <div class="column-left-header">
-            <table border="0" width="100%" style="margin-left:150px">
-              <tr>
-                <td style="vertical-align:top" class="detail-administration r-bold font-size-7"><!-- Petugas yang Menyetujui, --@></td>
-              </tr>
-              <tr>
-                <td style="vertical-align:top" class="font-table font-size-7"><!-- <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>"> --@></td>
-              </tr>
-              <tr>
-                <td style="vertical-align:top" class="font-table font-size-7 pl-3"><!-- <?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?> --@></td>
-              </tr>
-            </table>
-          </div>
-          <div class="column-right-header">
-            <table border="0" width="100%" style="text-align: right; margin-right: 50px;">
-              <tr>
-                <td style="vertical-align:top" class="r-bold font-size-7">Petugas yang Menyetujui,</td>
-              </tr>
-              <tr>
-                <td height="77px" style="vertical-align:top" class="font-table font-size-7 pl-5"><img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>"></td>
-              </tr>
-              <tr>
-                <td style="vertical-align:top" class="font-table font-size-7 pl-3"><?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?>
-                <!-- <br>digital signature added: <?php echo date("d-m-Y H:i",strtotime($list['notes']['created_date']));?> --@></td>
-              </tr>
-            </table>
-          </div>
-        </div> -->
-
       </div>
     </div>
   </div>
-  <br><br><br><br>
-  
-  <!-- <div class="row" style="margin-bottom:0px;">
-    <?php $no = 1; ?>
-    
+
+  <div class="row" style="margin-bottom:0px;">
     <div class="row-panel">
       <div class="row-heading border-blue bg-blue font-white font-size-9 r-bold">Data <?= $title; ?></div>
-        <div class="row-body">
-          <table width="100%" cellspacing="0">
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-1 centerp-head" colspan="8"><b>Data Penunjang</b></td>
-          </tr>
-          <tr>
-            <td width="20%" class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  a. Radiologi</td>
-            <td width="30%" class="font-size-8 border-bottom-0 border-right-1 centerp-row" colspan="7">: <?= $list['notes']['radiologi']; ?></td>
-          </tr>
-          <tr>
-            <td width="20%" class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  b. EMG</td>
-            <td width="30%" class="font-size-8 border-bottom-0 border-right-1 centerp-row" colspan="7">: <?= $list['notes']['emg']; ?></td>
-          </tr>
-          <tr>
-            <td width="20%" class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  c. Laboratorium</td>
-            <td width="30%" class="font-size-8 border-bottom-0 border-right-1 centerp-row" colspan="7">: <?= $list['notes']['laboratorium']; ?></td>
-          </tr>
-          <tr>
-            <td width="20%" class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-0 centerp-left">  d. Lain-lain</td>
-            <td width="30%" class="font-size-8 border-bottom-1 border-right-1 centerp-row" colspan="7">: <?= $list['notes']['lain_lain']; ?></td>
-          </tr>
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-1 centerp-head" colspan="8"><b>D. Diagnosis Fisitoterapi</b></td>
-          </tr>
-          <tr>
-            <td  class="font-size-8 border-bottom-1 border-right-1 border-left-1 centerp-row" colspan="8"> <?= $list['notes']['diagnosis_fisioterapi']; ?></td>
-          </tr>
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-1 centerp-head" colspan="8"><b>E. Program/Rencana Fisioterapi</b></td>
-          </tr>
-          <tr>
-            <td  class="font-size-8 border-bottom-1 border-right-1 border-left-1 centerp-row" colspan="8"> <?= $list['notes']['program_rencana_fisioterapi']; ?></td>
-          </tr>
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-head" colspan="8"><b>F. Intervensi</b></td>
-          </tr>
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-head" colspan="2"><b> Tanggal</b></td>
-            <td class="r-bold font-size-8 border-bottom-1 border-left-0 border-right-1 centerp-head" colspan="3"><b> Intervensi</b></td>
-            <td class="r-bold font-size-8 border-bottom-1 border-left-0 border-right-1 centerp-head" colspan="3"><b> Tempat / Area yang Diterapi </b></td>
-          </tr>
-          <tr>
-            <td  class="font-size-8 border-bottom-0border-right-1 border-left-1 centerp-row" colspan="2"> <?= $list['notes']['tgl1']; ?></td>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['intervensi1']; ?></td>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['area_diterapi1']; ?></td>
-          </tr>
-          <tr>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="2"> <?= $list['notes']['tgl2']; ?></td>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['intervensi2']; ?></td>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['area_diterapi2']; ?></td>
-          </tr>
-          <tr>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="2"> <?= $list['notes']['tgl3']; ?></td>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['intervensi3']; ?></td>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['area_diterapi3']; ?></td>
-          </tr>
-          <tr>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="2"> <?= $list['notes']['tgl4']; ?></td>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['intervensi4']; ?></td>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['area_diterapi4']; ?></td>
-          </tr>
-          <tr>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="2"> <?= $list['notes']['tgl5']; ?></td>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['intervensi5']; ?></td>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['area_diterapi5']; ?></td>
-          </tr>
-          <tr>
-            <td  class="font-size-8 border-bottom-0border-right-1 border-left-1 centerp-row" colspan="2"> <?= $list['notes']['tgl6']; ?></td>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['intervensi6']; ?></td>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['area_diterapi6']; ?></td>
-          </tr>
-          <tr>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="2"> <?= $list['notes']['tgl7']; ?></td>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['intervensi7']; ?></td>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['area_diterapi7']; ?></td>
-          </tr>
-          <tr>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="2"> <?= $list['notes']['tgl8']; ?></td>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['intervensi8']; ?></td>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['area_diterapi8']; ?></td>
-          </tr>
-          <tr>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="2"> <?= $list['notes']['tgl9']; ?></td>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['intervensi9']; ?></td>
-            <td  class="font-size-8 border-bottom-0 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['area_diterapi9']; ?></td>
-          </tr>
-          <tr>
-            <td  class="font-size-8 border-bottom-1 border-right-1 border-left-1 centerp-row" colspan="2"> <?= $list['notes']['tgl10']; ?></td>
-            <td  class="font-size-8 border-bottom-1 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['intervensi10']; ?></td>
-            <td  class="font-size-8 border-bottom-1 border-right-1 border-left-1 centerp-row" colspan="3"> <?= $list['notes']['area_diterapi10']; ?></td>
-          </tr>
-          <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-1 centerp-head" colspan="8"><b>G. Evaluasi</b></td>
-          </tr>
-          <tr>
-            <td  class="font-size-8 border-bottom-1 border-right-1 border-left-1 centerp-row" colspan="8"> <?= $list['notes']['evaluasi']; ?></td>
-          </tr>
+      <div class="row-body">
 
-        </table> -->
+        <table width="100%" cellspacing="0">
+          <tr>
+            <td class="font-size-8 border-bottom-0 border-left-1 border-right-1 r-bold centerp-left">Nama Prosedur</td>
+          </tr>
+          <tr>
+            <td class="font-size-8 border-bottom-1 border-left-1 border-right-1 centerp-row"><?= $list['notes']['nama_prosedur'] ?></td>
+          </tr>
+        </table>
 
-           <!--<div class="row-panel mt-20">
-            <div class="column-left-header">
-              <table border="0" width="100%" style="margin-left:150px">
+        <table  width="100%" cellspacing="0">
+
+          <tr>
+            <td class="font-size-8 border-bottom-1" width="50%">
+              <div class="r-bold">
+                Pria
+              </div>
+              <table width="100%" cellspacing="0">
                 <tr>
-                  <td style="vertical-align:top" class="detail-administration r-bold font-size-7"><!-- Petugas yang Menyetujui, --@></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align:top" class="font-table font-size-7"><!-- <img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>"> --@></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align:top" class="font-table font-size-7 pl-3"><!-- <?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?> --@></td>
+                  <td>
+                    <table>
+                      <tr>
+                        <td class="font-size-8">Kanan</td>
+                        <td class="font-size-8" align="right">Kiri</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <img style="margin-left: 0px" width="100px" height="300px" src="<?php echo base_url() . 'assets/image/body_man_front.png'; ?>">
+                          <img style="margin-bottom: 0px; margin-left: -99px;" width="100px" height="300px" src='<?php echo $list['notes']['body_man_front']; ?>' id='sign_prev'>
+                        </td>
+                        <td></td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td>
+                    <table>
+                      <tr>
+                        <td class="font-size-8">Kiri</td>
+                        <td class="font-size-8" align="right">Kanan</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <img style="margin-left: 0px" width="100px" height="300px" src="<?php echo base_url() . 'assets/image/body_man_back.png'; ?>">
+                          <img style="margin-bottom: 0px; margin-left: -99px;" width="100px" height="300px" src='<?php echo $list['notes']['body_man_back']; ?>' id='sign_prev'>
+                        </td>
+                        <td></td>
+                      </tr>
+                    </table>
+                  </td>
                 </tr>
               </table>
-            </div>
-            <div class="column-right-header">
-              <table border="0" width="100%" style="text-align: right; margin-right: 50px;">
+            </td>
+            <td class="font-size-8 border-bottom-1" width="50%">
+              <div class="r-bold">
+                Wanita
+              </div>
+              <table width="100%" cellspacing="0">
                 <tr>
-                  <td style="vertical-align:top" class="r-bold font-size-7">Petugas yang Menyetujui,</td>
-                </tr>
-                <tr>
-                  <td height="77px" style="vertical-align:top" class="font-table font-size-7 pl-5"><img width="125px" src="<?php echo $list['notes']['digital_signature_approved_petugas'];?>"></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align:top" class="font-table font-size-7 pl-3"><?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?>
-                  <!-- <br>digital signature added: <?php echo date("d-m-Y H:i",strtotime($list['notes']['created_date']));?> --@></td>
+                  <td>
+                    <table>
+                      <tr>
+                        <td class="font-size-8">Kanan</td>
+                        <td class="font-size-8" align="right">Kiri</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <img style="margin-left: 0px" width="100px" height="300px" src="<?php echo base_url() . 'assets/image/body_woman_front.png'; ?>">
+                          <img style="margin-bottom: 0px; margin-left: -99px;" width="100px" height="300px" src='<?php echo $list['notes']['body_woman_front']; ?>' id='sign_prev'>
+                        </td>
+                        <td></td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td>
+                    <table>
+                      <tr>
+                        <td class="font-size-8">Kiri</td>
+                        <td class="font-size-8" align="right">Kanan</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <img style="margin-left: 0px" width="100px" height="300px" src="<?php echo base_url() . 'assets/image/body_woman_back.png'; ?>">
+                          <img style="margin-bottom: 0px; margin-left: -99px;" width="100px" height="300px" src='<?php echo $list['notes']['body_woman_back']; ?>' id='sign_prev'>
+                        </td>
+                        <td></td>
+                      </tr>
+                    </table>
+                  </td>
                 </tr>
               </table>
-              
-            </div>
-          </div>-->
+            </td>
+          </tr>
+
+          <tr>
+            <td class="font-size-8 border-bottom-1" width="50%"> 
+              <div class="r-bold">
+                Palman (anterior)
+              </div>
+              <table width="100%" cellspacing="0">
+                <tr>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>Kiri</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <img style="margin-left: 0px" width="80px" height="100px" src="<?php echo base_url() . 'assets/image/palmar_hand_kiri.png'; ?>">
+                          <img style="margin-bottom: 0px; margin-left: -85px;" width="80px" height="100px" src='<?php echo $list['notes']['palmar_hand_kiri']; ?>' id='sign_prev'>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td>
+                    <table>
+                      <tr>
+                        <td valign="right">Kanan</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <img style="margin-left: 0px" width="80px" height="100px" src="<?php echo base_url() . 'assets/image/palmar_hand_kanan.png'; ?>">
+                          <img style="margin-bottom: 0px; margin-left: -85px;" width="80px" height="100px" src='<?php echo $list['notes']['palmar_hand_kanan']; ?>' id='sign_prev'>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td class="font-size-8 border-bottom-1" width="50%">
+              <table width="100%" cellspacing="0">
+                <tr>
+                  <td  width="25%">
+                    <table>
+                        <tr>
+                          <td>
+                          <table  width="100%">
+                              <tr><td class="font-size-8" align="center" colspan="2">Kiri</td></tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <img style="margin-left: 0px" width="80px" height="100px" src="<?php echo base_url() . 'assets/image/head_kiri.png'; ?>">
+                            <img style="margin-bottom: 0px; margin-left: -83px;" width="80px" height="100px" src='<?php echo $list['notes']['head_kiri']; ?>' id='sign_prev'>
+                          </td>
+                        </tr>
+                      </table>
+                  </td>
+                  <td  width="25%">
+                    <table>
+                        <tr>
+                          <td>
+                          <table  width="100%">
+                              <tr><td class="font-size-8" align="center" colspan="2">Kanan</td></tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <img style="margin-left: 0px" width="80px" height="100px" src="<?php echo base_url() . 'assets/image/head_kanan.png'; ?>">
+                            <img style="margin-bottom: 0px; margin-left: -85px;" width="80px" height="100px" src='<?php echo $list['notes']['head_kanan']; ?>' id='sign_prev'>
+                          </td>
+                        </tr>
+                      </table>
+                  </td>
+                  <td  width="25%">
+                    <table>
+                        <tr>
+                          <td>
+                            <table  width="100%">
+                              <tr><td class="font-size-8" align="left">Kanan</td><td class="font-size-8" align="right">Kiri</td></tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <img style="margin-left: 0px" width="80px" height="100px" src="<?php echo base_url() . 'assets/image/head_front.png'; ?>">
+                            <img style="margin-bottom: 0px; margin-left: -85px;" width="80px" height="100px" src='<?php echo $list['notes']['head_front']; ?>' id='sign_prev'>
+                          </td>
+                        </tr>
+                      </table>
+                  </td>
+                  <td  width="25%">
+                    <table>
+                        <tr>
+                          <td>
+                            <table  width="100%">
+                                <tr><td class="font-size-8" align="left">Kiri</td><td class="font-size-8" align="right">Kanan</td></tr>
+                              </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <img style="margin-left: 0px" width="80px" height="100px" src="<?php echo base_url() . 'assets/image/head_back.png'; ?>">
+                            <img style="margin-bottom: 0px; margin-left: -85px;" width="80px" height="100px" src='<?php echo $list['notes']['head_back']; ?>' id='sign_prev'>
+                          </td>
+                        </tr>
+                      </table>
+                  </td>
+
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="font-size-8" width="50%">
+              <div class="r-bold">
+                Dorsal (posterior)
+              </div>
+            
+              <table width="100%">
+                <tr>
+                  <td class="border-bottom-1">
+                    <table>
+                      <tr>
+                        <td><center>Kiri</center></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <img style="margin-left: 0px; margin-bottom: -10;" width="80px" height="100px" src="<?php echo base_url() . 'assets/image/dorsal_kiri.png'; ?>">
+                          <img style="margin-bottom: 0px; margin-left: -5px; margin-top: -120;" width="80px" height="100px" src='<?php echo $list['notes']['dorsal_kiri']; ?>' id='sign_prev'>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="border-bottom-1">
+                    <table>
+                      <tr>
+                        <td><center>Kanan</center></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <img style="margin-left: 0px; margin-bottom: -10;" width="80px" height="100px" src="<?php echo base_url() . 'assets/image/dorsal_kanan.png'; ?>">
+                          <img style="margin-bottom: 0px; margin-left: -5px; margin-top: -120;" width="80px" height="100px" src='<?php echo $list['notes']['dorsal_kanan']; ?>' id='sign_prev'>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  
+                </tr>
+              </table>
+            </td>
+
+
+            <td class="font-size-8" width="50%">
+              <table>
+                <tr>
+                  <td>
+                    <div class="r-bold font-size-8">
+                    Plantar (posterior)
+                    </div>
+                    <table>
+                      <tr>
+                        <td class="border-bottom-1">
+                          <table>
+                            <tr>
+                              <td class="font-size-8"><center>Kanan</center></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <img style="margin-left: 0px; margin-bottom: -28px;" width="80px" height="150px" src="<?php echo base_url() . 'assets/image/plantar_kanan.png'; ?>">
+                                <img style="margin-bottom: 0px; margin-left: -5px; margin-top: -120;" width="80px" height="150px" src='<?php echo $list['notes']['plantar_kanan']; ?>' id='sign_prev'>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td class="border-bottom-1">
+                          <table>
+                            <tr>
+                              <td class="font-size-8"><center>Kiri</center></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <img style="margin-left: 0px; margin-bottom: -28px;" width="80px" height="150px" src="<?php echo base_url() . 'assets/image/plantar_kiri.png'; ?>">
+                                <img style="margin-bottom: 0px; margin-left: -5px; margin-top: -120;" width="80px" height="150px" src='<?php echo $list['notes']['plantar_kiri']; ?>' id='sign_prev'>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td>
+                    <div class="r-bold font-size-8">
+                      Plantar (anterior)
+                    </div>
+                    <table>
+                      <tr>
+                        <td class="border-bottom-1">
+                          <table>
+                            <tr>
+                              <td class="font-size-8"><center>Kanan</center></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <img style="margin-left: 0px; margin-bottom: -28px;" width="80px" height="150px" src="<?php echo base_url() . 'assets/image/palmar_feet_kiri.png'; ?>">
+                                <img style="margin-bottom: 0px; margin-left: -5px; margin-top: -120;" width="80px" height="150px" src='<?php echo $list['notes']['palmar_feet_kiri']; ?>' id='sign_prev'>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td class="border-bottom-1">
+                          <table>
+                            <tr>
+                              <td class="font-size-8"><center>Kiri</center></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <img style="margin-left: 0px; margin-bottom: -28px;" width="80px" height="150px" src="<?php echo base_url() . 'assets/image/palmar_feet_kanan.png'; ?>">
+                                <img style="margin-bottom: 0px; margin-left: -5px; margin-top: -120;" width="80px" height="150px" src='<?php echo $list['notes']['palmar_feet_kanan']; ?>' id='sign_prev'>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+
+        </table>
+        <br>
+        <br>
+        <table width="100%" cellspacing="0">
+          <tr>
+            <td colspan="3" class="font-size-8 centerp-row" >
+              Dengan ini saya menyatakan bahwa lokasi operasi yang telah ditetapkan pada diagram diatas adalah benar.
+              <br><br>
+            </td>
+            <td class="font-size-8 centerp-row" valign="top">Tanggal : <?=$list['notes']['tanggal']?></td>
+          </tr>
+          <tr>
+            <td class="r-bold font-size-8"><center>Wali Pasien</center></td>
+            <td class="r-bold font-size-8"><center>Pasien</center></td>
+            <td class="r-bold font-size-8"><center>Saksi Pihak RS</center></td>
+            <td class="r-bold font-size-8"><center>Dokter Operator</center></td>
+          </tr>
+          <tr>
+            <td><center><img src="<?=$list['notes']['coretan_wali']?>" alt="" width="80px" height="80px"> <div  class="font-size-8">Bertanda tangan untuk pasien a.n : <?=$list['notes']['nama_pasien']?> </div></center></td>
+            <td><center><img src="<?=$list['notes']['coretan_wali']?>" alt="" width="80px" height="80px"><div  class="font-size-8"><?=$list['notes']['nama_wali']?></div></center></td>
+            <td><center><img src="<?=$list['notes']['coretan_saksi']?>" alt="" width="80px" height="80px"><div  class="font-size-8"><?=$list['notes']['nama_saksi']?></div></center></td>
+            <td><center><img src="<?=$list['notes']['coretan_dokter_operator']?>" alt="" width="80px" height="80px"><div  class="font-size-8"><?=$list['notes']['nama_dokter_operator']?></div></center></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  
+<div class="row" style="margin-bottom:0px;">
+    <?php $no = 1; ?>
+    
+   
 
         
 

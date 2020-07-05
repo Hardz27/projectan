@@ -171,16 +171,18 @@
       <input type="hidden" class="form-control input-sm" name="id_visit" id="id_visit" value="<?= $result['id_visit']; ?>" >
 
       <div class="panel panel-primary">
-        <div class="panel-heading"></div>
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-lg-12 mb-5">
-              <div class="btn-group-toggle" data-toggle="buttons">
-                <?php foreach ($data_visit as $v) : ?>
+        <div class="panel-heading">
+            <?php foreach ($data_visit as $v) : ?>
                   <?php if ($v['id_visit'] == $result['id_visit']) { ?>
                     <?= $v['nama_dept']; ?> - <?= $v['checkin']; ?>
                     <?php } ?>
                   <?php endforeach; ?>
+              </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12 mb-5">
+              <div class="btn-group-toggle" data-toggle="buttons">
+
                 </div>
               </div>
             </div>
@@ -192,7 +194,7 @@
                   <b>Petugas Approve</b>
                 </div>
                 <div class="col-md-8">
-                  <select name="petugas_approved" class="petugas_approved" style="width: 100%" required>
+                  <select name="petugas_approved" class="petugas_approved" style="width: 100%" >
                     <option value=""></option>
                     <?php foreach ($data_perawat as $k => $v) : ?>
                       <option value="<?= $v['id'] ?>" <?= $v['nama'] == $result['approved_petugas'] ? 'selected' : ''; ?>><?= $v['nama'] ?></option>
@@ -209,7 +211,7 @@
                     <b>Tanggal</b>
                   </div>
                   <div class="col-md-9">
-                    <input type="text" name="tanggal" id="tanggal" class="form-control" value="<?= date('Y-m-d') ?>" required autocomplete="off">
+                    <input type="text" name="tanggal" id="tanggal" class="form-control" value="<?= date('Y-m-d') ?>"  autocomplete="off">
                   </div>
                 </div>
                 <br>
@@ -221,7 +223,7 @@
                     <b>Jam</b>
                   </div>
                   <div class="col-md-10">
-                    <input type="text" name="jam" id="jam" class="form-control" value="<?= $result['jam']; ?>" required autocomplete="off">
+                    <input type="text" name="jam" id="jam" class="form-control" value="<?= $result['jam']; ?>"  autocomplete="off">
                   </div>
                 </div>
               </div>
@@ -240,13 +242,13 @@
                           <b>Nama Pasien</b>
                         </div>
                         <div class="col-md-4">
-                          <input type="text" name="nama_pasien" id="nama_pasien" value="<?= $result['nama_pasien']; ?>" class="form-control" placeholder="Nama Pasien"  required autocomplete="off">
+                          <input type="text" name="nama_pasien" id="nama_pasien" value="<?= $result['nama_pasien']; ?>" class="form-control" placeholder="Nama Pasien"   autocomplete="off">
                         </div>
                         <div class="col-md-2">
                           <b>Nama Wali</b>
                         </div>
                         <div class="col-md-4">
-                          <input type="text" name="nama_wali" id="nama_wali" value="<?= $result['nama_wali']; ?>" class="form-control" placeholder="Nama Wali"  required autocomplete="off">
+                          <input type="text" name="nama_wali" id="nama_wali" value="<?= $result['nama_wali']; ?>" class="form-control" placeholder="Nama Wali"   autocomplete="off">
                         </div>
                       </div>
 
@@ -257,7 +259,7 @@
                         </div>
                         <div class="col-md-4">
                           <br>
-                          <input type="text" name="no_rm" id="no_rm" value="<?= $result['no_rm']; ?>" class="form-control" placeholder="No. RM"  required autocomplete="off">
+                          <input type="text" name="no_rm" id="no_rm" value="<?= $result['no_rm']; ?>" class="form-control" placeholder="No. RM"   autocomplete="off">
                         </div>
                         <div class="col-md-1">
                           <br>
@@ -265,7 +267,7 @@
                         </div>
                         <div class="col-md-2">
                           <br>
-                          <input type="text" name="usia_wali" id="usia_wali" value="<?= $result['usia_wali']; ?>" class="form-control" placeholder="Usia Wali"  required autocomplete="off">
+                          <input type="text" name="usia_wali" id="usia_wali" value="<?= $result['usia_wali']; ?>" class="form-control" placeholder="Usia Wali"   autocomplete="off">
                         </div>
                         <div class="col-md-1">
                           <br>
@@ -274,7 +276,7 @@
                         <div class="col-md-1">
                            <div class="text-center" style="padding-left: 0px"><br>L
                             <label class="container radio-select" style="width: 2%">
-                              <input type="radio" name="jenis_kelamin_wali" <?= $result['jenis_kelamin_wali'] == 'L' ? 'checked' : ''; ?> value="L" required >
+                              <input type="radio" name="jenis_kelamin_wali" <?= $result['jenis_kelamin_wali'] == 'L' ? 'checked' : ''; ?> value="L"  >
                               <span class="checkmark"></span>
                             </label>
                           </div>
@@ -282,7 +284,7 @@
                         <div class="col-md-1">
                           <div class="text-center" style="padding-left: 0px"><br>P
                             <label class="container radio-select" style="width: 2%">
-                              <input type="radio" name="jenis_kelamin_wali" value="P" <?= $result['jenis_kelamin_wali'] == 'P' ? 'checked' : ''; ?> required >
+                              <input type="radio" name="jenis_kelamin_wali" value="P" <?= $result['jenis_kelamin_wali'] == 'P' ? 'checked' : ''; ?> >
                               <span class="checkmark"></span>
                             </label>
                           </div>
@@ -296,11 +298,11 @@
                         </div>
                         <div class="col-md-2">
                           <br>
-                          <input type="text" name="tempat_lahir" id="tempat_lahir" value="<?= $result['tempat_lahir']; ?>" class="form-control" placeholder="Tempat Lahir" required autocomplete="off">
+                          <input type="text" name="tempat_lahir" id="tempat_lahir" value="<?= $result['tempat_lahir']; ?>" class="form-control" placeholder="Tempat Lahir"  autocomplete="off">
                         </div>
                         <div class="col-md-2">
                           <br>
-                          <input type="text" name="tanggal_lahir" id="tanggal_lahir" class="form-control" value="<?= date('Y-m-d') ?>" value="<?= $result['tanggal_lahir']; ?>"  required autocomplete="off">
+                          <input type="text" name="tanggal_lahir" id="tanggal_lahir" class="form-control" value="<?= date('Y-m-d') ?>" value="<?= $result['tanggal_lahir']; ?>"   autocomplete="off">
                         </div>
                         <div class="col-md-2">
                           <br>
@@ -308,7 +310,7 @@
                         </div>
                         <div class="col-md-4">
                           <br>
-                          <input type="text" name="hubungan_wali" id="hubungan_wali" value="<?= $result['hubungan_wali']; ?>" class="form-control" placeholder="Hubungan Wali"  required autocomplete="off">
+                          <input type="text" name="hubungan_wali" id="hubungan_wali" value="<?= $result['hubungan_wali']; ?>" class="form-control" placeholder="Hubungan Wali"   autocomplete="off">
                         </div>
                       </div>
 
@@ -319,7 +321,7 @@
                         </div>
                         <div class="col-md-2">
                           <br>
-                          <input type="text" name="usia_pasien" id="usia_pasien" value="<?= $result['usia_pasien']; ?>" class="form-control" placeholder="Usia Pasien"  required autocomplete="off">
+                          <input type="text" name="usia_pasien" id="usia_pasien" value="<?= $result['usia_pasien']; ?>" class="form-control" placeholder="Usia Pasien"   autocomplete="off">
                         </div>
                         <div class="col-md-1">
                           <br>
@@ -328,7 +330,7 @@
                         <div class="col-md-1">
                            <div class="text-center" style="padding-left: 0px"><br>L
                             <label class="container radio-select" style="width: 2%">
-                              <input type="radio" name="jenis_kelamin_pasien" <?= $result['jenis_kelamin_pasien'] == 'L' ? 'checked' : ''; ?> value="L" required >
+                              <input type="radio" name="jenis_kelamin_pasien" <?= $result['jenis_kelamin_pasien'] == 'L' ? 'checked' : ''; ?> value="L"  >
                               <span class="checkmark"></span>
                             </label>
                           </div>
@@ -336,7 +338,7 @@
                         <div class="col-md-1">
                           <div class="text-center" style="padding-left: 0px"><br>P
                             <label class="container radio-select" style="width: 2%">
-                              <input type="radio" name="jenis_kelamin_pasien" value="P" <?= $result['jenis_kelamin_pasien'] == 'P' ? 'checked' : ''; ?> required >
+                              <input type="radio" name="jenis_kelamin_pasien" value="P" <?= $result['jenis_kelamin_pasien'] == 'P' ? 'checked' : ''; ?>  >
                               <span class="checkmark"></span>
                             </label>
                           </div>
@@ -365,7 +367,7 @@
                       </div>
                       <div class="row">
                         <div class="col-md-12"><br>
-                          <textarea style="height: 100px" type="text" name="anamnesis" id="anamnesis" class="form-control" placeholder="Anamnesis"  required autocomplete="off"><?= $result['anamnesis']; ?></textarea>
+                          <textarea style="height: 100px" type="text" name="anamnesis" id="anamnesis" class="form-control" placeholder="Anamnesis"   autocomplete="off"><?= $result['anamnesis']; ?></textarea>
                         </div>
                       </div>
                       <br>
@@ -381,7 +383,7 @@
                       </div>
                       <div class="row">
                         <div class="col-md-12"><br>
-                          <textarea style="height: 100px" type="text" name="pemeriksaan_fisik" id="pemeriksaan_fisik" class="form-control" placeholder="Pemeriksaan Fisik"  required autocomplete="off"><?= $result['pemeriksaan_fisik']; ?></textarea>
+                          <textarea style="height: 100px" type="text" name="pemeriksaan_fisik" id="pemeriksaan_fisik" class="form-control" placeholder="Pemeriksaan Fisik"   autocomplete="off"><?= $result['pemeriksaan_fisik']; ?></textarea>
                         </div>
                       </div>
                       <br>
@@ -397,7 +399,7 @@
                       </div>
                       <div class="row">
                         <div class="col-md-12"><br>
-                          <textarea style="height: 100px" type="text" name="catatan_alergi" id="catatan_alergi" class="form-control" placeholder="Catatan Alergi"  required autocomplete="off"><?= $result['catatan_alergi']; ?></textarea>
+                          <textarea style="height: 100px" type="text" name="catatan_alergi" id="catatan_alergi" class="form-control" placeholder="Catatan Alergi"   autocomplete="off"><?= $result['catatan_alergi']; ?></textarea>
                         </div>
                       </div>
                       <br>
@@ -413,7 +415,7 @@
                       </div>
                       <div class="row">
                         <div class="col-md-12"><br>
-                          <textarea style="height: 100px" type="text" name="diagnosa_praoperasi" id="diagnosa_praoperasi" class="form-control" placeholder="Diagnosa Praoperasi"  required autocomplete="off"><?= $result['diagnosa_praoperasi']; ?></textarea>
+                          <textarea style="height: 100px" type="text" name="diagnosa_praoperasi" id="diagnosa_praoperasi" class="form-control" placeholder="Diagnosa Praoperasi"   autocomplete="off"><?= $result['diagnosa_praoperasi']; ?></textarea>
                         </div>
                       </div>
                       <br>
@@ -429,7 +431,7 @@
                       </div>
                       <div class="row">
                         <div class="col-md-12"><br>
-                          <textarea style="height: 100px" type="text" name="rencana_operasi" id="rencana_operasi" class="form-control" placeholder="Rencana Operasi"  required autocomplete="off"><?= $result['rencana_operasi']; ?></textarea>
+                          <textarea style="height: 100px" type="text" name="rencana_operasi" id="rencana_operasi" class="form-control" placeholder="Rencana Operasi"   autocomplete="off"><?= $result['rencana_operasi']; ?></textarea>
                         </div>
                       </div>
                       <br>
@@ -445,7 +447,7 @@
                       </div>
                       <div class="row">
                         <div class="col-md-12"><br>
-                          <input type="text" name="estimasi_waktu" id="estimasi_waktu" value="<?= $result['estimasi_waktu']; ?>" class="form-control" placeholder="Estimasi Waktu"  required autocomplete="off">
+                          <input type="text" name="estimasi_waktu" id="estimasi_waktu" value="<?= $result['estimasi_waktu']; ?>" class="form-control" placeholder="Estimasi Waktu"   autocomplete="off">
                         </div>
                       </div>
                       <br>
@@ -461,7 +463,7 @@
                       </div>
                       <div class="row">
                         <div class="col-md-12"><br>
-                         <textarea style="height: 100px" type="text" name="premedikasi" id="premedikasi" class="form-control" placeholder="Premedikasi"  required autocomplete="off"><?= $result['premedikasi']; ?></textarea>
+                         <textarea style="height: 100px" type="text" name="premedikasi" id="premedikasi" class="form-control" placeholder="Premedikasi"   autocomplete="off"><?= $result['premedikasi']; ?></textarea>
                        </div>
                      </div>
                      <br>
@@ -495,7 +497,7 @@
                           <button type="button" id="undo_dokter_operator">Undo</button>
                           <button type="button" id="clear_dokter_operator">Clear</button>
                           <input type="hidden" id="prev_dokter_operator" value="<?= $result['coretan_dokter_operator']; ?>">
-                          <input type='hidden' id='generate_dokter_operator' name="coretan_dokter_operator" value='' required ><br/>
+                          <input type='hidden' id='generate_dokter_operator' name="coretan_dokter_operator" value=''  ><br/>
                         </div>
                         <div class="col-md-6 text-center"> 
                           <b>Perawat Ruang Rawat Inap</b>
@@ -510,13 +512,13 @@
                             <button type="button" id="undo_perawat_ruang_rawat_inap">Undo</button>
                             <button type="button" id="clear_perawat_ruang_rawat_inap">Clear</button>
                             <input type="hidden" id="prev_coretan_perawat_ruang_rawat_inap" value="<?= $result['coretan_perawat_ruang_rawat_inap']; ?>">
-                            <input type='hidden' id='generate_perawat_ruang_rawat_inap' name="coretan_perawat_ruang_rawat_inap" value='' required ><br/>
+                            <input type='hidden' id='generate_perawat_ruang_rawat_inap' name="coretan_perawat_ruang_rawat_inap" value=''  ><br/>
                           </div>
                           <div class="col-md-6 text-center" style="margin: 20px 0px 20px 0px;"> 
-                            <input type="text" name="nama_dokter_operator" value="<?= $result['nama_dokter_operator']; ?>" class="form-control" placeholder="Nama Dokter Operator"  required autocomplete="off">
+                            <input type="text" name="nama_dokter_operator" value="<?= $result['nama_dokter_operator']; ?>" class="form-control" placeholder="Nama Dokter Operator"   autocomplete="off">
                           </div>
                           <div class="col-md-6 text-center" style="margin: 20px 0px 20px 0px;"> 
-                            <input type="text" name="nama_perawat_ruang_rawat_inap" value="<?= $result['nama_perawat_ruang_rawat_inap']; ?>" class="form-control" placeholder="Nama Perawat R.Rawat Inap"  required autocomplete="off">
+                            <input type="text" name="nama_perawat_ruang_rawat_inap" value="<?= $result['nama_perawat_ruang_rawat_inap']; ?>" class="form-control" placeholder="Nama Perawat R.Rawat Inap"   autocomplete="off">
                           </div>
                           <br><br>
                           <div class="col-md-12 text-center"> 
@@ -532,11 +534,11 @@
                               <button type="button" id="undo_perawat_ruang_ok">Undo</button>
                               <button type="button" id="clear_perawat_ruang_ok">Clear</button>
                               <input type="hidden" id="prev_coretan_perawat_ruang_ok" value="<?= $result['coretan_perawat_ruang_ok']; ?>">
-                              <input type='hidden' id='generate_perawat_ruang_ok' name="coretan_perawat_ruang_ok" value='' required ><br/>
+                              <input type='hidden' id='generate_perawat_ruang_ok' name="coretan_perawat_ruang_ok" value=''  ><br/>
                             </div>
                             <div class="col-md-3"></div>
                             <div class="col-md-6 text-center" style="margin: 20px 0px 20px 0px;"> 
-                              <input type="text" name="nama_perawat_ruang_ok" value="<?= $result['nama_perawat_ruang_ok']; ?>" class="form-control" placeholder="Perawat Ruang OK"  required autocomplete="off">
+                              <input type="text" name="nama_perawat_ruang_ok" value="<?= $result['nama_perawat_ruang_ok']; ?>" class="form-control" placeholder="Perawat Ruang OK"   autocomplete="off">
                             </div>
                             <div class="col-md-3"></div>
                           </div> 
@@ -572,7 +574,7 @@
                                   <div class="col-md-3">
                                     <div class="text-center" style="padding-left: 0px"><br>
                                       <label class="container radio-select" style="width: 2%">
-                                        <input type="radio" name="ruangan_rekam_medik_pasien" value="ada" <?= $result['ruangan_rekam_medik_pasien'] == 'ada' ? 'checked' : ''; ?> required >
+                                        <input type="radio" name="ruangan_rekam_medik_pasien" value="ada" <?= $result['ruangan_rekam_medik_pasien'] == 'ada' ? 'checked' : ''; ?>  >
                                         <span class="checkmark"></span>
                                       </label>
                                     </div>
@@ -584,7 +586,7 @@
                                   <div class="col-md-3">
                                     <div class="text-center" style="padding-left: 0px"><br>
                                       <label class="container radio-select" style="width: 2%">
-                                        <input type="radio" name="ruangan_rekam_medik_pasien" value="tdk" <?= $result['ruangan_rekam_medik_pasien'] == 'ada' ? 'checked' : ''; ?> required >
+                                        <input type="radio" name="ruangan_rekam_medik_pasien" value="tdk" <?= $result['ruangan_rekam_medik_pasien'] == 'ada' ? 'checked' : ''; ?>  >
                                         <span class="checkmark"></span>
                                       </label>
                                     </div>
@@ -599,7 +601,7 @@
                                     <div class="col-md-3">
                                       <div class="text-center" style="padding-left: 0px"><br>
                                         <label class="container radio-select" style="width: 2%">
-                                          <input type="radio" name="ok_rekam_medik_pasien" value="ada" <?= $result['ok_rekam_medik_pasien'] == 'ada' ? 'checked' : ''; ?> required >
+                                          <input type="radio" name="ok_rekam_medik_pasien" value="ada" <?= $result['ok_rekam_medik_pasien'] == 'ada' ? 'checked' : ''; ?>  >
                                           <span class="checkmark"></span>
                                         </label>
                                       </div>
@@ -611,7 +613,7 @@
                                     <div class="col-md-3">
                                       <div class="text-center" style="padding-left: 0px"><br>
                                         <label class="container radio-select" style="width: 2%">
-                                          <input type="radio" name="ok_rekam_medik_pasien" value="tdk" <?= $result['ok_rekam_medik_pasien'] == 'tdk' ? 'checked' : ''; ?> required >
+                                          <input type="radio" name="ok_rekam_medik_pasien" value="tdk" <?= $result['ok_rekam_medik_pasien'] == 'tdk' ? 'checked' : ''; ?>  >
                                           <span class="checkmark"></span>
                                         </label>
                                       </div>
@@ -630,7 +632,7 @@
                                       <div class="col-md-3">
                                         <div class="text-center" style="padding-left: 0px"><br>
                                           <label class="container radio-select" style="width: 2%">
-                                            <input type="radio" name="ruangan_informed_consent_operasi" value="ada" <?= $result['ruangan_informed_consent_operasi'] == 'ada' ? 'checked' : ''; ?> required >
+                                            <input type="radio" name="ruangan_informed_consent_operasi" value="ada" <?= $result['ruangan_informed_consent_operasi'] == 'ada' ? 'checked' : ''; ?>  >
                                             <span class="checkmark"></span>
                                           </label>
                                         </div>
@@ -642,7 +644,7 @@
                                       <div class="col-md-3">
                                         <div class="text-center" style="padding-left: 0px"><br>
                                           <label class="container radio-select" style="width: 2%">
-                                            <input type="radio" name="ruangan_informed_consent_operasi" value="tdk" <?= $result['ruangan_informed_consent_operasi'] == 'tdk' ? 'checked' : ''; ?> required >
+                                            <input type="radio" name="ruangan_informed_consent_operasi" value="tdk" <?= $result['ruangan_informed_consent_operasi'] == 'tdk' ? 'checked' : ''; ?>  >
                                             <span class="checkmark"></span>
                                           </label>
                                         </div>
@@ -657,7 +659,7 @@
                                         <div class="col-md-3">
                                           <div class="text-center" style="padding-left: 0px"><br>
                                             <label class="container radio-select" style="width: 2%">
-                                              <input type="radio" name="ok_informed_consent_operasi" value="ada" <?= $result['ok_informed_consent_operasi'] == 'ada' ? 'checked' : ''; ?> required >
+                                              <input type="radio" name="ok_informed_consent_operasi" value="ada" <?= $result['ok_informed_consent_operasi'] == 'ada' ? 'checked' : ''; ?>  >
                                               <span class="checkmark"></span>
                                             </label>
                                           </div>
@@ -669,7 +671,7 @@
                                         <div class="col-md-3">
                                           <div class="text-center" style="padding-left: 0px"><br>
                                             <label class="container radio-select" style="width: 2%">
-                                              <input type="radio" name="ok_informed_consent_operasi" value="tdk" <?= $result['ok_informed_consent_operasi'] == 'tdk' ? 'checked' : ''; ?> required >
+                                              <input type="radio" name="ok_informed_consent_operasi" value="tdk" <?= $result['ok_informed_consent_operasi'] == 'tdk' ? 'checked' : ''; ?>  >
                                               <span class="checkmark"></span>
                                             </label>
                                           </div>
@@ -688,7 +690,7 @@
                                           <div class="col-md-3">
                                             <div class="text-center" style="padding-left: 0px"><br>
                                               <label class="container radio-select" style="width: 2%">
-                                                <input type="radio" name="ruangan_informed_consent_anestesi" value="ada" <?= $result['ruangan_informed_consent_anestesi'] == 'ada' ? 'checked' : ''; ?> required >
+                                                <input type="radio" name="ruangan_informed_consent_anestesi" value="ada" <?= $result['ruangan_informed_consent_anestesi'] == 'ada' ? 'checked' : ''; ?>  >
                                                 <span class="checkmark"></span>
                                               </label>
                                             </div>
@@ -700,7 +702,7 @@
                                           <div class="col-md-3">
                                             <div class="text-center" style="padding-left: 0px"><br>
                                               <label class="container radio-select" style="width: 2%">
-                                                <input type="radio" name="ruangan_informed_consent_anestesi" value="tdk" <?= $result['ruangan_informed_consent_anestesi'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                <input type="radio" name="ruangan_informed_consent_anestesi" value="tdk" <?= $result['ruangan_informed_consent_anestesi'] == 'tdk' ? 'checked' : ''; ?>  >
                                                 <span class="checkmark"></span>
                                               </label>
                                             </div>
@@ -715,7 +717,7 @@
                                             <div class="col-md-3">
                                               <div class="text-center" style="padding-left: 0px"><br>
                                                 <label class="container radio-select" style="width: 2%">
-                                                  <input type="radio" name="ok_informed_consent_anestesi" value="ada" <?= $result['ok_informed_consent_anestesi'] == 'ada' ? 'checked' : ''; ?> required >
+                                                  <input type="radio" name="ok_informed_consent_anestesi" value="ada" <?= $result['ok_informed_consent_anestesi'] == 'ada' ? 'checked' : ''; ?>  >
                                                   <span class="checkmark"></span>
                                                 </label>
                                               </div>
@@ -727,7 +729,7 @@
                                             <div class="col-md-3">
                                               <div class="text-center" style="padding-left: 0px"><br>
                                                 <label class="container radio-select" style="width: 2%">
-                                                  <input type="radio" name="ok_informed_consent_anestesi" value="tdk" <?= $result['ok_informed_consent_anestesi'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                  <input type="radio" name="ok_informed_consent_anestesi" value="tdk" <?= $result['ok_informed_consent_anestesi'] == 'tdk' ? 'checked' : ''; ?>  >
                                                   <span class="checkmark"></span>
                                                 </label>
                                               </div>
@@ -746,7 +748,7 @@
                                               <div class="col-md-3">
                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                   <label class="container radio-select" style="width: 2%">
-                                                    <input type="radio" name="ruangan_hasil_laboratorium" value="ada" <?= $result['ruangan_hasil_laboratorium'] == 'ada' ? 'checked' : ''; ?> required >
+                                                    <input type="radio" name="ruangan_hasil_laboratorium" value="ada" <?= $result['ruangan_hasil_laboratorium'] == 'ada' ? 'checked' : ''; ?>  >
                                                     <span class="checkmark"></span>
                                                   </label>
                                                 </div>
@@ -758,7 +760,7 @@
                                               <div class="col-md-3">
                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                   <label class="container radio-select" style="width: 2%">
-                                                    <input type="radio" name="ruangan_hasil_laboratorium" value="tdk" <?= $result['ruangan_hasil_laboratorium'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                    <input type="radio" name="ruangan_hasil_laboratorium" value="tdk" <?= $result['ruangan_hasil_laboratorium'] == 'tdk' ? 'checked' : ''; ?>  >
                                                     <span class="checkmark"></span>
                                                   </label>
                                                 </div>
@@ -773,7 +775,7 @@
                                                 <div class="col-md-3">
                                                   <div class="text-center" style="padding-left: 0px"><br>
                                                     <label class="container radio-select" style="width: 2%">
-                                                      <input type="radio" name="ok_hasil_laboratorium" value="ada" <?= $result['ok_hasil_laboratorium'] == 'ada' ? 'checked' : ''; ?> required >
+                                                      <input type="radio" name="ok_hasil_laboratorium" value="ada" <?= $result['ok_hasil_laboratorium'] == 'ada' ? 'checked' : ''; ?>  >
                                                       <span class="checkmark"></span>
                                                     </label>
                                                   </div>
@@ -785,7 +787,7 @@
                                                 <div class="col-md-3">
                                                   <div class="text-center" style="padding-left: 0px"><br>
                                                     <label class="container radio-select" style="width: 2%">
-                                                      <input type="radio" name="ok_hasil_laboratorium" value="tdk" <?= $result['ok_hasil_laboratorium'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                      <input type="radio" name="ok_hasil_laboratorium" value="tdk" <?= $result['ok_hasil_laboratorium'] == 'tdk' ? 'checked' : ''; ?>  >
                                                       <span class="checkmark"></span>
                                                     </label>
                                                   </div>
@@ -804,7 +806,7 @@
                                                   <div class="col-md-3">
                                                     <div class="text-center" style="padding-left: 0px"><br>
                                                       <label class="container radio-select" style="width: 2%">
-                                                        <input type="radio" name="ruangan_hasil_radiologi" value="ada" <?= $result['ruangan_hasil_radiologi'] == 'ada' ? 'checked' : ''; ?> required >
+                                                        <input type="radio" name="ruangan_hasil_radiologi" value="ada" <?= $result['ruangan_hasil_radiologi'] == 'ada' ? 'checked' : ''; ?>  >
                                                         <span class="checkmark"></span>
                                                       </label>
                                                     </div>
@@ -816,7 +818,7 @@
                                                   <div class="col-md-3">
                                                     <div class="text-center" style="padding-left: 0px"><br>
                                                       <label class="container radio-select" style="width: 2%">
-                                                        <input type="radio" name="ruangan_hasil_radiologi" value="tdk" <?= $result['ruangan_hasil_radiologi'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                        <input type="radio" name="ruangan_hasil_radiologi" value="tdk" <?= $result['ruangan_hasil_radiologi'] == 'tdk' ? 'checked' : ''; ?>  >
                                                         <span class="checkmark"></span>
                                                       </label>
                                                     </div>
@@ -831,7 +833,7 @@
                                                     <div class="col-md-3">
                                                       <div class="text-center" style="padding-left: 0px"><br>
                                                         <label class="container radio-select" style="width: 2%">
-                                                          <input type="radio" name="ok_hasil_radiologi" value="ada" <?= $result['ok_hasil_radiologi'] == 'ada' ? 'checked' : ''; ?> required >
+                                                          <input type="radio" name="ok_hasil_radiologi" value="ada" <?= $result['ok_hasil_radiologi'] == 'ada' ? 'checked' : ''; ?>  >
                                                           <span class="checkmark"></span>
                                                         </label>
                                                       </div>
@@ -843,7 +845,7 @@
                                                     <div class="col-md-3">
                                                       <div class="text-center" style="padding-left: 0px"><br>
                                                         <label class="container radio-select" style="width: 2%">
-                                                          <input type="radio" name="ok_hasil_radiologi" value="tdk" <?= $result['ok_hasil_radiologi'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                          <input type="radio" name="ok_hasil_radiologi" value="tdk" <?= $result['ok_hasil_radiologi'] == 'tdk' ? 'checked' : ''; ?>  >
                                                           <span class="checkmark"></span>
                                                         </label>
                                                       </div>
@@ -862,7 +864,7 @@
                                                       <div class="col-md-3">
                                                         <div class="text-center" style="padding-left: 0px"><br>
                                                           <label class="container radio-select" style="width: 2%">
-                                                            <input type="radio" name="ruangan_hasil_ekg" value="ada" <?= $result['ruangan_hasil_ekg'] == 'ada' ? 'checked' : ''; ?> required >
+                                                            <input type="radio" name="ruangan_hasil_ekg" value="ada" <?= $result['ruangan_hasil_ekg'] == 'ada' ? 'checked' : ''; ?>  >
                                                             <span class="checkmark"></span>
                                                           </label>
                                                         </div>
@@ -874,7 +876,7 @@
                                                       <div class="col-md-3">
                                                         <div class="text-center" style="padding-left: 0px"><br>
                                                           <label class="container radio-select" style="width: 2%">
-                                                            <input type="radio" name="ruangan_hasil_ekg" value="tdk" <?= $result['ruangan_hasil_ekg'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                            <input type="radio" name="ruangan_hasil_ekg" value="tdk" <?= $result['ruangan_hasil_ekg'] == 'tdk' ? 'checked' : ''; ?>  >
                                                             <span class="checkmark"></span>
                                                           </label>
                                                         </div>
@@ -889,7 +891,7 @@
                                                         <div class="col-md-3">
                                                           <div class="text-center" style="padding-left: 0px"><br>
                                                             <label class="container radio-select" style="width: 2%">
-                                                              <input type="radio" name="ok_hasil_ekg" value="ada" <?= $result['ok_hasil_ekg'] == 'ada' ? 'checked' : ''; ?> required >
+                                                              <input type="radio" name="ok_hasil_ekg" value="ada" <?= $result['ok_hasil_ekg'] == 'ada' ? 'checked' : ''; ?>  >
                                                               <span class="checkmark"></span>
                                                             </label>
                                                           </div>
@@ -901,7 +903,7 @@
                                                         <div class="col-md-3">
                                                           <div class="text-center" style="padding-left: 0px"><br>
                                                             <label class="container radio-select" style="width: 2%">
-                                                              <input type="radio" name="ok_hasil_ekg" value="tdk" <?= $result['ok_hasil_ekg'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                              <input type="radio" name="ok_hasil_ekg" value="tdk" <?= $result['ok_hasil_ekg'] == 'tdk' ? 'checked' : ''; ?>  >
                                                               <span class="checkmark"></span>
                                                             </label>
                                                           </div>
@@ -920,7 +922,7 @@
                                                           <div class="col-md-3">
                                                             <div class="text-center" style="padding-left: 0px"><br>
                                                               <label class="container radio-select" style="width: 2%">
-                                                                <input type="radio" name="ruangan_hasil_ctg" value="ada" <?= $result['ruangan_hasil_ctg'] == 'ada' ? 'checked' : ''; ?> required >
+                                                                <input type="radio" name="ruangan_hasil_ctg" value="ada" <?= $result['ruangan_hasil_ctg'] == 'ada' ? 'checked' : ''; ?>  >
                                                                 <span class="checkmark"></span>
                                                               </label>
                                                             </div>
@@ -932,7 +934,7 @@
                                                           <div class="col-md-3">
                                                             <div class="text-center" style="padding-left: 0px"><br>
                                                               <label class="container radio-select" style="width: 2%">
-                                                                <input type="radio" name="ruangan_hasil_ctg" value="tdk" <?= $result['ruangan_hasil_ctg'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                <input type="radio" name="ruangan_hasil_ctg" value="tdk" <?= $result['ruangan_hasil_ctg'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                 <span class="checkmark"></span>
                                                               </label>
                                                             </div>
@@ -947,7 +949,7 @@
                                                             <div class="col-md-3">
                                                               <div class="text-center" style="padding-left: 0px"><br>
                                                                 <label class="container radio-select" style="width: 2%">
-                                                                  <input type="radio" name="ok_hasil_ctg" value="ada" <?= $result['ok_hasil_ctg'] == 'ada' ? 'checked' : ''; ?> required >
+                                                                  <input type="radio" name="ok_hasil_ctg" value="ada" <?= $result['ok_hasil_ctg'] == 'ada' ? 'checked' : ''; ?>  >
                                                                   <span class="checkmark"></span>
                                                                 </label>
                                                               </div>
@@ -959,7 +961,7 @@
                                                             <div class="col-md-3">
                                                               <div class="text-center" style="padding-left: 0px"><br>
                                                                 <label class="container radio-select" style="width: 2%">
-                                                                  <input type="radio" name="ok_hasil_ctg" value="tdk" <?= $result['ok_hasil_ctg'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                  <input type="radio" name="ok_hasil_ctg" value="tdk" <?= $result['ok_hasil_ctg'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                   <span class="checkmark"></span>
                                                                 </label>
                                                               </div>
@@ -980,7 +982,7 @@
                                                               <div class="col-md-3">
                                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                                   <label class="container radio-select" style="width: 2%">
-                                                                    <input type="radio" name="ruangan_daftar_terapi" value="ada" <?= $result['ruangan_daftar_terapi'] == 'ada' ? 'checked' : ''; ?> required >
+                                                                    <input type="radio" name="ruangan_daftar_terapi" value="ada" <?= $result['ruangan_daftar_terapi'] == 'ada' ? 'checked' : ''; ?>  >
                                                                     <span class="checkmark"></span>
                                                                   </label>
                                                                 </div>
@@ -992,7 +994,7 @@
                                                               <div class="col-md-3">
                                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                                   <label class="container radio-select" style="width: 2%">
-                                                                    <input type="radio" name="ruangan_daftar_terapi" value="tdk" <?= $result['ruangan_daftar_terapi'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                    <input type="radio" name="ruangan_daftar_terapi" value="tdk" <?= $result['ruangan_daftar_terapi'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                     <span class="checkmark"></span>
                                                                   </label>
                                                                 </div>
@@ -1007,7 +1009,7 @@
                                                                 <div class="col-md-3">
                                                                   <div class="text-center" style="padding-left: 0px"><br>
                                                                     <label class="container radio-select" style="width: 2%">
-                                                                      <input type="radio" name="ok_daftar_terapi" value="ada" <?= $result['ok_daftar_terapi'] == 'ada' ? 'checked' : ''; ?> required >
+                                                                      <input type="radio" name="ok_daftar_terapi" value="ada" <?= $result['ok_daftar_terapi'] == 'ada' ? 'checked' : ''; ?>  >
                                                                       <span class="checkmark"></span>
                                                                     </label>
                                                                   </div>
@@ -1019,7 +1021,7 @@
                                                                 <div class="col-md-3">
                                                                   <div class="text-center" style="padding-left: 0px"><br>
                                                                     <label class="container radio-select" style="width: 2%">
-                                                                      <input type="radio" name="ok_daftar_terapi" value="tdk" <?= $result['ok_daftar_terapi'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                      <input type="radio" name="ok_daftar_terapi" value="tdk" <?= $result['ok_daftar_terapi'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                       <span class="checkmark"></span>
                                                                     </label>
                                                                   </div>
@@ -1038,7 +1040,7 @@
                                                                   <div class="col-md-3">
                                                                     <div class="text-center" style="padding-left: 0px"><br>
                                                                       <label class="container radio-select" style="width: 2%">
-                                                                        <input type="radio" name="ruangan_catatan_keperawatan" value="ada" <?= $result['ruangan_catatan_keperawatan'] == 'ada' ? 'checked' : ''; ?> required >
+                                                                        <input type="radio" name="ruangan_catatan_keperawatan" value="ada" <?= $result['ruangan_catatan_keperawatan'] == 'ada' ? 'checked' : ''; ?>  >
                                                                         <span class="checkmark"></span>
                                                                       </label>
                                                                     </div>
@@ -1050,7 +1052,7 @@
                                                                   <div class="col-md-3">
                                                                     <div class="text-center" style="padding-left: 0px"><br>
                                                                       <label class="container radio-select" style="width: 2%">
-                                                                        <input type="radio" name="ruangan_catatan_keperawatan" value="tdk" <?= $result['ruangan_catatan_keperawatan'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                        <input type="radio" name="ruangan_catatan_keperawatan" value="tdk" <?= $result['ruangan_catatan_keperawatan'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                         <span class="checkmark"></span>
                                                                       </label>
                                                                     </div>
@@ -1065,7 +1067,7 @@
                                                                     <div class="col-md-3">
                                                                       <div class="text-center" style="padding-left: 0px"><br>
                                                                         <label class="container radio-select" style="width: 2%">
-                                                                          <input type="radio" name="ok_catatan_keperawatan" value="ada" <?= $result['ok_catatan_keperawatan'] == 'ada' ? 'checked' : ''; ?> required >
+                                                                          <input type="radio" name="ok_catatan_keperawatan" value="ada" <?= $result['ok_catatan_keperawatan'] == 'ada' ? 'checked' : ''; ?>  >
                                                                           <span class="checkmark"></span>
                                                                         </label>
                                                                       </div>
@@ -1077,7 +1079,7 @@
                                                                     <div class="col-md-3">
                                                                       <div class="text-center" style="padding-left: 0px"><br>
                                                                         <label class="container radio-select" style="width: 2%">
-                                                                          <input type="radio" name="ok_catatan_keperawatan" value="tdk" <?= $result['ok_catatan_keperawatan'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                          <input type="radio" name="ok_catatan_keperawatan" value="tdk" <?= $result['ok_catatan_keperawatan'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                           <span class="checkmark"></span>
                                                                         </label>
                                                                       </div>
@@ -1107,7 +1109,7 @@
                                                                       <div class="col-md-3">
                                                                         <div class="text-center" style="padding-left: 0px"><br>
                                                                           <label class="container radio-select" style="width: 2%">
-                                                                            <input type="radio" name="ruangan_periksa_keadaan_umum" value="ya" <?= $result['ruangan_periksa_keadaan_umum'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                            <input type="radio" name="ruangan_periksa_keadaan_umum" value="ya" <?= $result['ruangan_periksa_keadaan_umum'] == 'ya' ? 'checked' : ''; ?>  >
                                                                             <span class="checkmark"></span>
                                                                           </label>
                                                                         </div>
@@ -1119,7 +1121,7 @@
                                                                       <div class="col-md-3">
                                                                         <div class="text-center" style="padding-left: 0px"><br>
                                                                           <label class="container radio-select" style="width: 2%">
-                                                                            <input type="radio" name="ruangan_periksa_keadaan_umum" value="tdk" <?= $result['ruangan_periksa_keadaan_umum'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                            <input type="radio" name="ruangan_periksa_keadaan_umum" value="tdk" <?= $result['ruangan_periksa_keadaan_umum'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                             <span class="checkmark"></span>
                                                                           </label>
                                                                         </div>
@@ -1134,7 +1136,7 @@
                                                                         <div class="col-md-3">
                                                                           <div class="text-center" style="padding-left: 0px"><br>
                                                                             <label class="container radio-select" style="width: 2%">
-                                                                              <input type="radio" name="ok_periksa_keadaan_umum" value="ya" <?= $result['ok_periksa_keadaan_umum'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                              <input type="radio" name="ok_periksa_keadaan_umum" value="ya" <?= $result['ok_periksa_keadaan_umum'] == 'ya' ? 'checked' : ''; ?>  >
                                                                               <span class="checkmark"></span>
                                                                             </label>
                                                                           </div>
@@ -1146,7 +1148,7 @@
                                                                         <div class="col-md-3">
                                                                           <div class="text-center" style="padding-left: 0px"><br>
                                                                             <label class="container radio-select" style="width: 2%">
-                                                                              <input type="radio" name="ok_periksa_keadaan_umum" value="tdk" <?= $result['ok_periksa_keadaan_umum'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                              <input type="radio" name="ok_periksa_keadaan_umum" value="tdk" <?= $result['ok_periksa_keadaan_umum'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                               <span class="checkmark"></span>
                                                                             </label>
                                                                           </div>
@@ -1165,7 +1167,7 @@
                                                               <div class="col-md-3">
                                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                                   <label class="container radio-select" style="width: 2%">
-                                                                    <input type="radio" name="ruangan_periksa_vital_sign" value="ya" <?= $result['ruangan_periksa_vital_sign'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                    <input type="radio" name="ruangan_periksa_vital_sign" value="ya" <?= $result['ruangan_periksa_vital_sign'] == 'ya' ? 'checked' : ''; ?>  >
                                                                     <span class="checkmark"></span>
                                                                   </label>
                                                                 </div>
@@ -1177,7 +1179,7 @@
                                                               <div class="col-md-3">
                                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                                   <label class="container radio-select" style="width: 2%">
-                                                                    <input type="radio" name="ruangan_periksa_vital_sign" value="tdk" <?= $result['ruangan_periksa_vital_sign'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                    <input type="radio" name="ruangan_periksa_vital_sign" value="tdk" <?= $result['ruangan_periksa_vital_sign'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                     <span class="checkmark"></span>
                                                                   </label>
                                                                 </div>
@@ -1192,7 +1194,7 @@
                                                                 <div class="col-md-3">
                                                                   <div class="text-center" style="padding-left: 0px"><br>
                                                                     <label class="container radio-select" style="width: 2%">
-                                                                      <input type="radio" name="ok_periksa_vital_sign" value="ya" <?= $result['ok_periksa_vital_sign'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                      <input type="radio" name="ok_periksa_vital_sign" value="ya" <?= $result['ok_periksa_vital_sign'] == 'ya' ? 'checked' : ''; ?>  >
                                                                       <span class="checkmark"></span>
                                                                     </label>
                                                                   </div>
@@ -1204,7 +1206,7 @@
                                                                 <div class="col-md-3">
                                                                   <div class="text-center" style="padding-left: 0px"><br>
                                                                     <label class="container radio-select" style="width: 2%">
-                                                                      <input type="radio" name="ok_periksa_vital_sign" value="tdk" <?= $result['ok_periksa_vital_sign'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                      <input type="radio" name="ok_periksa_vital_sign" value="tdk" <?= $result['ok_periksa_vital_sign'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                       <span class="checkmark"></span>
                                                                     </label>
                                                                   </div>
@@ -1223,7 +1225,7 @@
                                                                   <div class="col-md-3">
                                                                     <div class="text-center" style="padding-left: 0px"><br>
                                                                       <label class="container radio-select" style="width: 2%">
-                                                                        <input type="radio" name="ruangan_gelang_identitas" value="ya" <?= $result['ruangan_gelang_identitas'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                        <input type="radio" name="ruangan_gelang_identitas" value="ya" <?= $result['ruangan_gelang_identitas'] == 'ya' ? 'checked' : ''; ?>  >
                                                                         <span class="checkmark"></span>
                                                                       </label>
                                                                     </div>
@@ -1235,7 +1237,7 @@
                                                                   <div class="col-md-3">
                                                                     <div class="text-center" style="padding-left: 0px"><br>
                                                                       <label class="container radio-select" style="width: 2%">
-                                                                        <input type="radio" name="ruangan_gelang_identitas" value="tdk" <?= $result['ruangan_gelang_identitas'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                        <input type="radio" name="ruangan_gelang_identitas" value="tdk" <?= $result['ruangan_gelang_identitas'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                         <span class="checkmark"></span>
                                                                       </label>
                                                                     </div>
@@ -1250,7 +1252,7 @@
                                                                     <div class="col-md-3">
                                                                       <div class="text-center" style="padding-left: 0px"><br>
                                                                         <label class="container radio-select" style="width: 2%">
-                                                                          <input type="radio" name="ok_gelang_identitas" value="ya" <?= $result['ok_gelang_identitas'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                          <input type="radio" name="ok_gelang_identitas" value="ya" <?= $result['ok_gelang_identitas'] == 'ya' ? 'checked' : ''; ?>  >
                                                                           <span class="checkmark"></span>
                                                                         </label>
                                                                       </div>
@@ -1262,7 +1264,7 @@
                                                                     <div class="col-md-3">
                                                                       <div class="text-center" style="padding-left: 0px"><br>
                                                                         <label class="container radio-select" style="width: 2%">
-                                                                          <input type="radio" name="ok_gelang_identitas" value="tdk" <?= $result['ok_gelang_identitas'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                          <input type="radio" name="ok_gelang_identitas" value="tdk" <?= $result['ok_gelang_identitas'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                           <span class="checkmark"></span>
                                                                         </label>
                                                                       </div>
@@ -1281,7 +1283,7 @@
                                                                       <div class="col-md-3">
                                                                         <div class="text-center" style="padding-left: 0px"><br>
                                                                           <label class="container radio-select" style="width: 2%">
-                                                                            <input type="radio" name="ruangan_identifikasi_alergi" value="ya" <?= $result['ruangan_identifikasi_alergi'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                            <input type="radio" name="ruangan_identifikasi_alergi" value="ya" <?= $result['ruangan_identifikasi_alergi'] == 'ya' ? 'checked' : ''; ?>  >
                                                                             <span class="checkmark"></span>
                                                                           </label>
                                                                         </div>
@@ -1293,7 +1295,7 @@
                                                                       <div class="col-md-3">
                                                                         <div class="text-center" style="padding-left: 0px"><br>
                                                                           <label class="container radio-select" style="width: 2%">
-                                                                            <input type="radio" name="ruangan_identifikasi_alergi" value="tdk" <?= $result['ruangan_identifikasi_alergi'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                            <input type="radio" name="ruangan_identifikasi_alergi" value="tdk" <?= $result['ruangan_identifikasi_alergi'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                             <span class="checkmark"></span>
                                                                           </label>
                                                                         </div>
@@ -1308,7 +1310,7 @@
                                                                         <div class="col-md-3">
                                                                           <div class="text-center" style="padding-left: 0px"><br>
                                                                             <label class="container radio-select" style="width: 2%">
-                                                                              <input type="radio" name="ok_identifikasi_alergi" value="ya" <?= $result['ok_identifikasi_alergi'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                              <input type="radio" name="ok_identifikasi_alergi" value="ya" <?= $result['ok_identifikasi_alergi'] == 'ya' ? 'checked' : ''; ?>  >
                                                                               <span class="checkmark"></span>
                                                                             </label>
                                                                           </div>
@@ -1320,7 +1322,7 @@
                                                                         <div class="col-md-3">
                                                                           <div class="text-center" style="padding-left: 0px"><br>
                                                                             <label class="container radio-select" style="width: 2%">
-                                                                              <input type="radio" name="ok_identifikasi_alergi" value="tdk" <?= $result['ok_identifikasi_alergi'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                              <input type="radio" name="ok_identifikasi_alergi" value="tdk" <?= $result['ok_identifikasi_alergi'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                               <span class="checkmark"></span>
                                                                             </label>
                                                                           </div>
@@ -1339,7 +1341,7 @@
                                                                   <?= ++$no ?>.Puasa Jam
                                                                 </div>
                                                                 <div class="col-md-6">                           
-                                                                  <input style="width: 100px" type="text" name="desc_puasa" id="puasa" class="form-control" value="<?= $result['desc_puasa']; ?>" placeholder="puasa jam"  required autocomplete="off">
+                                                                  <input style="width: 100px" type="text" name="desc_puasa" id="puasa" class="form-control" value="<?= $result['desc_puasa']; ?>" placeholder="puasa jam"   autocomplete="off">
                                                                 </div>
                                                               </td>
                                                               <td class="bd text-left">
@@ -1347,7 +1349,7 @@
                                                                   <div class="col-md-3">
                                                                     <div class="text-center" style="padding-left: 0px"><br>
                                                                       <label class="container radio-select" style="width: 2%">
-                                                                        <input type="radio" name="ruangan_puasa" value="ya" <?= $result['ruangan_puasa'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                        <input type="radio" name="ruangan_puasa" value="ya" <?= $result['ruangan_puasa'] == 'ya' ? 'checked' : ''; ?>  >
                                                                         <span class="checkmark"></span>
                                                                       </label>
                                                                     </div>
@@ -1359,7 +1361,7 @@
                                                                   <div class="col-md-3">
                                                                     <div class="text-center" style="padding-left: 0px"><br>
                                                                       <label class="container radio-select" style="width: 2%">
-                                                                        <input type="radio" name="ruangan_puasa" value="tdk" <?= $result['ruangan_puasa'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                        <input type="radio" name="ruangan_puasa" value="tdk" <?= $result['ruangan_puasa'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                         <span class="checkmark"></span>
                                                                       </label>
                                                                     </div>
@@ -1374,7 +1376,7 @@
                                                                     <div class="col-md-3">
                                                                       <div class="text-center" style="padding-left: 0px"><br>
                                                                         <label class="container radio-select" style="width: 2%">
-                                                                          <input type="radio" name="ok_puasa" value="ya" <?= $result['ok_puasa'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                          <input type="radio" name="ok_puasa" value="ya" <?= $result['ok_puasa'] == 'ya' ? 'checked' : ''; ?>  >
                                                                           <span class="checkmark"></span>
                                                                         </label>
                                                                       </div>
@@ -1386,7 +1388,7 @@
                                                                     <div class="col-md-3">
                                                                       <div class="text-center" style="padding-left: 0px"><br>
                                                                         <label class="container radio-select" style="width: 2%">
-                                                                          <input type="radio" name="ok_puasa" value="tdk" <?= $result['ok_puasa'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                          <input type="radio" name="ok_puasa" value="tdk" <?= $result['ok_puasa'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                           <span class="checkmark"></span>
                                                                         </label>
                                                                       </div>
@@ -1405,7 +1407,7 @@
                                                             <div class="col-md-3">
                                                               <div class="text-center" style="padding-left: 0px"><br>
                                                                 <label class="container radio-select" style="width: 2%">
-                                                                  <input type="radio" name="ruangan_mandi" value="ya" <?= $result['ruangan_mandi'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                  <input type="radio" name="ruangan_mandi" value="ya" <?= $result['ruangan_mandi'] == 'ya' ? 'checked' : ''; ?>  >
                                                                   <span class="checkmark"></span>
                                                                 </label>
                                                               </div>
@@ -1417,7 +1419,7 @@
                                                             <div class="col-md-3">
                                                               <div class="text-center" style="padding-left: 0px"><br>
                                                                 <label class="container radio-select" style="width: 2%">
-                                                                  <input type="radio" name="ruangan_mandi" value="tdk" <?= $result['ruangan_mandi'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                  <input type="radio" name="ruangan_mandi" value="tdk" <?= $result['ruangan_mandi'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                   <span class="checkmark"></span>
                                                                 </label>
                                                               </div>
@@ -1432,7 +1434,7 @@
                                                               <div class="col-md-3">
                                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                                   <label class="container radio-select" style="width: 2%">
-                                                                    <input type="radio" name="ok_mandi" value="ya" <?= $result['ok_mandi'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                    <input type="radio" name="ok_mandi" value="ya" <?= $result['ok_mandi'] == 'ya' ? 'checked' : ''; ?>  >
                                                                     <span class="checkmark"></span>
                                                                   </label>
                                                                 </div>
@@ -1444,7 +1446,7 @@
                                                               <div class="col-md-3">
                                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                                   <label class="container radio-select" style="width: 2%">
-                                                                    <input type="radio" name="ok_mandi" value="tdk" <?= $result['ok_mandi'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                    <input type="radio" name="ok_mandi" value="tdk" <?= $result['ok_mandi'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                     <span class="checkmark"></span>
                                                                   </label>
                                                                 </div>
@@ -1463,7 +1465,7 @@
                                                             <div class="col-md-3">
                                                               <div class="text-center" style="padding-left: 0px"><br>
                                                                 <label class="container radio-select" style="width: 2%">
-                                                                  <input type="radio" name="ruangan_oral" value="ya" <?= $result['ruangan_oral'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                  <input type="radio" name="ruangan_oral" value="ya" <?= $result['ruangan_oral'] == 'ya' ? 'checked' : ''; ?>  >
                                                                   <span class="checkmark"></span>
                                                                 </label>
                                                               </div>
@@ -1475,7 +1477,7 @@
                                                             <div class="col-md-3">
                                                               <div class="text-center" style="padding-left: 0px"><br>
                                                                 <label class="container radio-select" style="width: 2%">
-                                                                  <input type="radio" name="ruangan_oral" value="tdk" <?= $result['ruangan_oral'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                  <input type="radio" name="ruangan_oral" value="tdk" <?= $result['ruangan_oral'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                   <span class="checkmark"></span>
                                                                 </label>
                                                               </div>
@@ -1490,7 +1492,7 @@
                                                               <div class="col-md-3">
                                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                                   <label class="container radio-select" style="width: 2%">
-                                                                    <input type="radio" name="ok_oral" value="ya" <?= $result['ok_oral'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                    <input type="radio" name="ok_oral" value="ya" <?= $result['ok_oral'] == 'ya' ? 'checked' : ''; ?>  >
                                                                     <span class="checkmark"></span>
                                                                   </label>
                                                                 </div>
@@ -1502,7 +1504,7 @@
                                                               <div class="col-md-3">
                                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                                   <label class="container radio-select" style="width: 2%">
-                                                                    <input type="radio" name="ok_oral" value="tdk" <?= $result['ok_oral'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                    <input type="radio" name="ok_oral" value="tdk" <?= $result['ok_oral'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                     <span class="checkmark"></span>
                                                                   </label>
                                                                 </div>
@@ -1521,7 +1523,7 @@
                                                             <div class="col-md-3">
                                                               <div class="text-center" style="padding-left: 0px"><br>
                                                                 <label class="container radio-select" style="width: 2%">
-                                                                  <input type="radio" name="ruangan_cukur_daerah_operasi" value="ya" <?= $result['ruangan_cukur_daerah_operasi'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                  <input type="radio" name="ruangan_cukur_daerah_operasi" value="ya" <?= $result['ruangan_cukur_daerah_operasi'] == 'ya' ? 'checked' : ''; ?>  >
                                                                   <span class="checkmark"></span>
                                                                 </label>
                                                               </div>
@@ -1533,7 +1535,7 @@
                                                             <div class="col-md-3">
                                                               <div class="text-center" style="padding-left: 0px"><br>
                                                                 <label class="container radio-select" style="width: 2%">
-                                                                  <input type="radio" name="ruangan_cukur_daerah_operasi" value="tdk" <?= $result['ruangan_cukur_daerah_operasi'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                  <input type="radio" name="ruangan_cukur_daerah_operasi" value="tdk" <?= $result['ruangan_cukur_daerah_operasi'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                   <span class="checkmark"></span>
                                                                 </label>
                                                               </div>
@@ -1548,7 +1550,7 @@
                                                               <div class="col-md-3">
                                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                                   <label class="container radio-select" style="width: 2%">
-                                                                    <input type="radio" name="ok_cukur_daerah_operasi" value="ya" <?= $result['ok_cukur_daerah_operasi'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                    <input type="radio" name="ok_cukur_daerah_operasi" value="ya" <?= $result['ok_cukur_daerah_operasi'] == 'ya' ? 'checked' : ''; ?>  >
                                                                     <span class="checkmark"></span>
                                                                   </label>
                                                                 </div>
@@ -1560,7 +1562,7 @@
                                                               <div class="col-md-3">
                                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                                   <label class="container radio-select" style="width: 2%">
-                                                                    <input type="radio" name="ok_cukur_daerah_operasi" value="tdk" <?= $result['ok_cukur_daerah_operasi'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                    <input type="radio" name="ok_cukur_daerah_operasi" value="tdk" <?= $result['ok_cukur_daerah_operasi'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                     <span class="checkmark"></span>
                                                                   </label>
                                                                 </div>
@@ -1579,7 +1581,7 @@
                                                             <div class="col-md-3">
                                                               <div class="text-center" style="padding-left: 0px"><br>
                                                                 <label class="container radio-select" style="width: 2%">
-                                                                  <input type="radio" name="ruangan_make_up" value="ya" <?= $result['ruangan_make_up'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                  <input type="radio" name="ruangan_make_up" value="ya" <?= $result['ruangan_make_up'] == 'ya' ? 'checked' : ''; ?>  >
                                                                   <span class="checkmark"></span>
                                                                 </label>
                                                               </div>
@@ -1591,7 +1593,7 @@
                                                             <div class="col-md-3">
                                                               <div class="text-center" style="padding-left: 0px"><br>
                                                                 <label class="container radio-select" style="width: 2%">
-                                                                  <input type="radio" name="ruangan_make_up" value="tdk" <?= $result['ruangan_make_up'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                  <input type="radio" name="ruangan_make_up" value="tdk" <?= $result['ruangan_make_up'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                   <span class="checkmark"></span>
                                                                 </label>
                                                               </div>
@@ -1606,7 +1608,7 @@
                                                               <div class="col-md-3">
                                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                                   <label class="container radio-select" style="width: 2%">
-                                                                    <input type="radio" name="ok_make_up" value="ya" <?= $result['ok_make_up'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                    <input type="radio" name="ok_make_up" value="ya" <?= $result['ok_make_up'] == 'ya' ? 'checked' : ''; ?>  >
                                                                     <span class="checkmark"></span>
                                                                   </label>
                                                                 </div>
@@ -1618,7 +1620,7 @@
                                                               <div class="col-md-3">
                                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                                   <label class="container radio-select" style="width: 2%">
-                                                                    <input type="radio" name="ok_make_up" value="tdk" <?= $result['ok_make_up'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                    <input type="radio" name="ok_make_up" value="tdk" <?= $result['ok_make_up'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                     <span class="checkmark"></span>
                                                                   </label>
                                                                 </div>
@@ -1637,7 +1639,7 @@
                                                             <div class="col-md-3">
                                                               <div class="text-center" style="padding-left: 0px"><br>
                                                                 <label class="container radio-select" style="width: 2%">
-                                                                  <input type="radio" name="ruangan_lepas_aksesoris" value="ya" <?= $result['ruangan_lepas_aksesoris'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                  <input type="radio" name="ruangan_lepas_aksesoris" value="ya" <?= $result['ruangan_lepas_aksesoris'] == 'ya' ? 'checked' : ''; ?>  >
                                                                   <span class="checkmark"></span>
                                                                 </label>
                                                               </div>
@@ -1649,7 +1651,7 @@
                                                             <div class="col-md-3">
                                                               <div class="text-center" style="padding-left: 0px"><br>
                                                                 <label class="container radio-select" style="width: 2%">
-                                                                  <input type="radio" name="ruangan_lepas_aksesoris" value="tdk" <?= $result['ruangan_lepas_aksesoris'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                  <input type="radio" name="ruangan_lepas_aksesoris" value="tdk" <?= $result['ruangan_lepas_aksesoris'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                   <span class="checkmark"></span>
                                                                 </label>
                                                               </div>
@@ -1664,7 +1666,7 @@
                                                               <div class="col-md-3">
                                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                                   <label class="container radio-select" style="width: 2%">
-                                                                    <input type="radio" name="ok_lepas_aksesoris" value="ya" <?= $result['ok_lepas_aksesoris'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                    <input type="radio" name="ok_lepas_aksesoris" value="ya" <?= $result['ok_lepas_aksesoris'] == 'ya' ? 'checked' : ''; ?>  >
                                                                     <span class="checkmark"></span>
                                                                   </label>
                                                                 </div>
@@ -1676,7 +1678,7 @@
                                                               <div class="col-md-3">
                                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                                   <label class="container radio-select" style="width: 2%">
-                                                                    <input type="radio" name="ok_lepas_aksesoris" value="tdk" <?= $result['ok_lepas_aksesoris'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                    <input type="radio" name="ok_lepas_aksesoris" value="tdk" <?= $result['ok_lepas_aksesoris'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                     <span class="checkmark"></span>
                                                                   </label>
                                                                 </div>
@@ -1695,7 +1697,7 @@
                                                             <div class="col-md-3">
                                                               <div class="text-center" style="padding-left: 0px"><br>
                                                                 <label class="container radio-select" style="width: 2%">
-                                                                  <input type="radio" name="ruangan_lepas_alat_bantu" value="ya" <?= $result['ruangan_lepas_alat_bantu'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                  <input type="radio" name="ruangan_lepas_alat_bantu" value="ya" <?= $result['ruangan_lepas_alat_bantu'] == 'ya' ? 'checked' : ''; ?>  >
                                                                   <span class="checkmark"></span>
                                                                 </label>
                                                               </div>
@@ -1707,7 +1709,7 @@
                                                             <div class="col-md-3">
                                                               <div class="text-center" style="padding-left: 0px"><br>
                                                                 <label class="container radio-select" style="width: 2%">
-                                                                  <input type="radio" name="ruangan_lepas_alat_bantu" value="tdk" <?= $result['ruangan_lepas_alat_bantu'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                  <input type="radio" name="ruangan_lepas_alat_bantu" value="tdk" <?= $result['ruangan_lepas_alat_bantu'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                   <span class="checkmark"></span>
                                                                 </label>
                                                               </div>
@@ -1722,7 +1724,7 @@
                                                               <div class="col-md-3">
                                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                                   <label class="container radio-select" style="width: 2%">
-                                                                    <input type="radio" name="ok_lepas_alat_bantu" value="ya" <?= $result['ok_lepas_alat_bantu'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                    <input type="radio" name="ok_lepas_alat_bantu" value="ya" <?= $result['ok_lepas_alat_bantu'] == 'ya' ? 'checked' : ''; ?>  >
                                                                     <span class="checkmark"></span>
                                                                   </label>
                                                                 </div>
@@ -1734,7 +1736,7 @@
                                                               <div class="col-md-3">
                                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                                   <label class="container radio-select" style="width: 2%">
-                                                                    <input type="radio" name="ok_lepas_alat_bantu" value="tdk" <?= $result['ok_lepas_alat_bantu'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                    <input type="radio" name="ok_lepas_alat_bantu" value="tdk" <?= $result['ok_lepas_alat_bantu'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                     <span class="checkmark"></span>
                                                                   </label>
                                                                 </div>
@@ -1753,7 +1755,7 @@
                                                             <div class="col-md-3">
                                                               <div class="text-center" style="padding-left: 0px"><br>
                                                                 <label class="container radio-select" style="width: 2%">
-                                                                  <input type="radio" name="ruangan_pemasangan_iv_line" value="ya" <?= $result['ruangan_pemasangan_iv_line'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                  <input type="radio" name="ruangan_pemasangan_iv_line" value="ya" <?= $result['ruangan_pemasangan_iv_line'] == 'ya' ? 'checked' : ''; ?>  >
                                                                   <span class="checkmark"></span>
                                                                 </label>
                                                               </div>
@@ -1765,7 +1767,7 @@
                                                             <div class="col-md-3">
                                                               <div class="text-center" style="padding-left: 0px"><br>
                                                                 <label class="container radio-select" style="width: 2%">
-                                                                  <input type="radio" name="ruangan_pemasangan_iv_line" value="tdk" <?= $result['ruangan_pemasangan_iv_line'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                  <input type="radio" name="ruangan_pemasangan_iv_line" value="tdk" <?= $result['ruangan_pemasangan_iv_line'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                   <span class="checkmark"></span>
                                                                 </label>
                                                               </div>
@@ -1780,7 +1782,7 @@
                                                               <div class="col-md-3">
                                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                                   <label class="container radio-select" style="width: 2%">
-                                                                    <input type="radio" name="ok_pemasangan_iv_line" value="ya" <?= $result['ok_pemasangan_iv_line'] == 'ya' ? 'checked' : ''; ?> required >
+                                                                    <input type="radio" name="ok_pemasangan_iv_line" value="ya" <?= $result['ok_pemasangan_iv_line'] == 'ya' ? 'checked' : ''; ?>  >
                                                                     <span class="checkmark"></span>
                                                                   </label>
                                                                 </div>
@@ -1792,7 +1794,7 @@
                                                               <div class="col-md-3">
                                                                 <div class="text-center" style="padding-left: 0px"><br>
                                                                   <label class="container radio-select" style="width: 2%">
-                                                                    <input type="radio" name="ok_pemasangan_iv_line" value="tdk" <?= $result['ok_pemasangan_iv_line'] == 'tdk' ? 'checked' : ''; ?> required >
+                                                                    <input type="radio" name="ok_pemasangan_iv_line" value="tdk" <?= $result['ok_pemasangan_iv_line'] == 'tdk' ? 'checked' : ''; ?>  >
                                                                     <span class="checkmark"></span>
                                                                   </label>
                                                                 </div>
@@ -1811,7 +1813,7 @@
           <div class="col-md-3">
             <div class="text-center" style="padding-left: 0px"><br>
               <label class="container radio-select" style="width: 2%">
-                <input type="radio" name="ruangan_pemberian_premedikasi" value="ya" <?= $result['ruangan_pemberian_premedikasi'] == 'ya' ? 'checked' : ''; ?> required >
+                <input type="radio" name="ruangan_pemberian_premedikasi" value="ya" <?= $result['ruangan_pemberian_premedikasi'] == 'ya' ? 'checked' : ''; ?>  >
                 <span class="checkmark"></span>
               </label>
             </div>
@@ -1823,7 +1825,7 @@
           <div class="col-md-3">
             <div class="text-center" style="padding-left: 0px"><br>
               <label class="container radio-select" style="width: 2%">
-                <input type="radio" name="ruangan_pemberian_premedikasi" value="tdk" <?= $result['ruangan_pemberian_premedikasi'] == 'tdk' ? 'checked' : ''; ?> required >
+                <input type="radio" name="ruangan_pemberian_premedikasi" value="tdk" <?= $result['ruangan_pemberian_premedikasi'] == 'tdk' ? 'checked' : ''; ?>  >
                 <span class="checkmark"></span>
               </label>
             </div>
@@ -1838,7 +1840,7 @@
             <div class="col-md-3">
               <div class="text-center" style="padding-left: 0px"><br>
                 <label class="container radio-select" style="width: 2%">
-                  <input type="radio" name="ok_pemberian_premedikasi" value="ya" <?= $result['ok_pemberian_premedikasi'] == 'ya' ? 'checked' : ''; ?> required >
+                  <input type="radio" name="ok_pemberian_premedikasi" value="ya" <?= $result['ok_pemberian_premedikasi'] == 'ya' ? 'checked' : ''; ?>  >
                   <span class="checkmark"></span>
                 </label>
               </div>
@@ -1850,7 +1852,7 @@
             <div class="col-md-3">
               <div class="text-center" style="padding-left: 0px"><br>
                 <label class="container radio-select" style="width: 2%">
-                  <input type="radio" name="ok_pemberian_premedikasi" value="tdk" <?= $result['ok_pemberian_premedikasi'] == 'tdk' ? 'checked' : ''; ?> required >
+                  <input type="radio" name="ok_pemberian_premedikasi" value="tdk" <?= $result['ok_pemberian_premedikasi'] == 'tdk' ? 'checked' : ''; ?>  >
                   <span class="checkmark"></span>
                 </label>
               </div>
@@ -1870,7 +1872,7 @@
           <div class="col-md-3">
             <div class="text-center" style="padding-left: 0px"><br>
               <label class="container radio-select" style="width: 2%">
-                <input type="radio" name="ruangan_pemasangan_kateter_urin" value="ya" <?= $result['ruangan_pemasangan_kateter_urin'] == 'ya' ? 'checked' : ''; ?> required >
+                <input type="radio" name="ruangan_pemasangan_kateter_urin" value="ya" <?= $result['ruangan_pemasangan_kateter_urin'] == 'ya' ? 'checked' : ''; ?>  >
                 <span class="checkmark"></span>
               </label>
             </div>
@@ -1882,7 +1884,7 @@
           <div class="col-md-3">
             <div class="text-center" style="padding-left: 0px"><br>
               <label class="container radio-select" style="width: 2%">
-                <input type="radio" name="ruangan_pemasangan_kateter_urin" value="tdk" <?= $result['ruangan_pemasangan_kateter_urin'] == 'tdk' ? 'checked' : ''; ?> required >
+                <input type="radio" name="ruangan_pemasangan_kateter_urin" value="tdk" <?= $result['ruangan_pemasangan_kateter_urin'] == 'tdk' ? 'checked' : ''; ?>  >
                 <span class="checkmark"></span>
               </label>
             </div>
@@ -1897,7 +1899,7 @@
             <div class="col-md-3">
               <div class="text-center" style="padding-left: 0px"><br>
                 <label class="container radio-select" style="width: 2%">
-                  <input type="radio" name="ok_pemasangan_kateter_urin" value="ya" <?= $result['ok_pemasangan_kateter_urin'] == 'ya' ? 'checked' : ''; ?> required >
+                  <input type="radio" name="ok_pemasangan_kateter_urin" value="ya" <?= $result['ok_pemasangan_kateter_urin'] == 'ya' ? 'checked' : ''; ?>  >
                   <span class="checkmark"></span>
                 </label>
               </div>
@@ -1909,7 +1911,7 @@
             <div class="col-md-3">
               <div class="text-center" style="padding-left: 0px"><br>
                 <label class="container radio-select" style="width: 2%">
-                  <input type="radio" name="ok_pemasangan_kateter_urin" value="tdk" <?= $result['ok_pemasangan_kateter_urin'] == 'tdk' ? 'checked' : ''; ?> required >
+                  <input type="radio" name="ok_pemasangan_kateter_urin" value="tdk" <?= $result['ok_pemasangan_kateter_urin'] == 'tdk' ? 'checked' : ''; ?>  >
                   <span class="checkmark"></span>
                 </label>
               </div>
@@ -1928,7 +1930,7 @@
               <div class="col-md-3">
                 <div class="text-center" style="padding-left: 0px"><br>
                   <label class="container radio-select" style="width: 2%">
-                    <input type="radio" name="ruangan_pemasangan_ngt" value="ya" <?= $result['ruangan_pemasangan_ngt'] == 'ya' ? 'checked' : ''; ?> required >
+                    <input type="radio" name="ruangan_pemasangan_ngt" value="ya" <?= $result['ruangan_pemasangan_ngt'] == 'ya' ? 'checked' : ''; ?>  >
                     <span class="checkmark"></span>
                   </label>
                 </div>
@@ -1940,7 +1942,7 @@
               <div class="col-md-3">
                 <div class="text-center" style="padding-left: 0px"><br>
                   <label class="container radio-select" style="width: 2%">
-                    <input type="radio" name="ruangan_pemasangan_ngt" value="tdk" <?= $result['ruangan_pemasangan_ngt'] == 'tdk' ? 'checked' : ''; ?> required >
+                    <input type="radio" name="ruangan_pemasangan_ngt" value="tdk" <?= $result['ruangan_pemasangan_ngt'] == 'tdk' ? 'checked' : ''; ?>  >
                     <span class="checkmark"></span>
                   </label>
                 </div>
@@ -1955,7 +1957,7 @@
                 <div class="col-md-3">
                   <div class="text-center" style="padding-left: 0px"><br>
                     <label class="container radio-select" style="width: 2%">
-                      <input type="radio" name="ok_pemasangan_ngt" value="ya" <?= $result['ok_pemasangan_ngt'] == 'ya' ? 'checked' : ''; ?> required >
+                      <input type="radio" name="ok_pemasangan_ngt" value="ya" <?= $result['ok_pemasangan_ngt'] == 'ya' ? 'checked' : ''; ?>  >
                       <span class="checkmark"></span>
                     </label>
                   </div>
@@ -1967,7 +1969,7 @@
                 <div class="col-md-3">
                   <div class="text-center" style="padding-left: 0px"><br>
                     <label class="container radio-select" style="width: 2%">
-                      <input type="radio" name="ok_pemasangan_ngt" value="tdk" <?= $result['ok_pemasangan_ngt'] == 'tdk' ? 'checked' : ''; ?> required >
+                      <input type="radio" name="ok_pemasangan_ngt" value="tdk" <?= $result['ok_pemasangan_ngt'] == 'tdk' ? 'checked' : ''; ?>  >
                       <span class="checkmark"></span>
                     </label>
                   </div>
@@ -1986,7 +1988,7 @@
                   <div class="col-md-3">
                     <div class="text-center" style="padding-left: 0px"><br>
                       <label class="container radio-select" style="width: 2%">
-                        <input type="radio" name="ruangan_latihan_nafas_dalam" value="ya" <?= $result['ruangan_latihan_nafas_dalam'] == 'ya' ? 'checked' : ''; ?> required >
+                        <input type="radio" name="ruangan_latihan_nafas_dalam" value="ya" <?= $result['ruangan_latihan_nafas_dalam'] == 'ya' ? 'checked' : ''; ?>  >
                         <span class="checkmark"></span>
                       </label>
                     </div>
@@ -1998,7 +2000,7 @@
                   <div class="col-md-3">
                     <div class="text-center" style="padding-left: 0px"><br>
                       <label class="container radio-select" style="width: 2%">
-                        <input type="radio" name="ruangan_latihan_nafas_dalam" value="tdk" <?= $result['ruangan_latihan_nafas_dalam'] == 'tdk' ? 'checked' : ''; ?> required >
+                        <input type="radio" name="ruangan_latihan_nafas_dalam" value="tdk" <?= $result['ruangan_latihan_nafas_dalam'] == 'tdk' ? 'checked' : ''; ?>  >
                         <span class="checkmark"></span>
                       </label>
                     </div>
@@ -2013,7 +2015,7 @@
                     <div class="col-md-3">
                       <div class="text-center" style="padding-left: 0px"><br>
                         <label class="container radio-select" style="width: 2%">
-                          <input type="radio" name="ok_latihan_nafas_dalam" value="ya" <?= $result['ok_latihan_nafas_dalam'] == 'ya' ? 'checked' : ''; ?> required >
+                          <input type="radio" name="ok_latihan_nafas_dalam" value="ya" <?= $result['ok_latihan_nafas_dalam'] == 'ya' ? 'checked' : ''; ?>  >
                           <span class="checkmark"></span>
                         </label>
                       </div>
@@ -2025,7 +2027,7 @@
                     <div class="col-md-3">
                       <div class="text-center" style="padding-left: 0px"><br>
                         <label class="container radio-select" style="width: 2%">
-                          <input type="radio" name="ok_latihan_nafas_dalam" value="tdk" <?= $result['ok_latihan_nafas_dalam'] == 'tdk' ? 'checked' : ''; ?> required >
+                          <input type="radio" name="ok_latihan_nafas_dalam" value="tdk" <?= $result['ok_latihan_nafas_dalam'] == 'tdk' ? 'checked' : ''; ?>  >
                           <span class="checkmark"></span>
                         </label>
                       </div>
@@ -2044,7 +2046,7 @@
                       <div class="col-md-3">
                         <div class="text-center" style="padding-left: 0px"><br>
                           <label class="container radio-select" style="width: 2%">
-                            <input type="radio" name="ruangan_latihan_batuk_efektif" value="ya" <?= $result['ruangan_latihan_batuk_efektif'] == 'ya' ? 'checked' : ''; ?> required >
+                            <input type="radio" name="ruangan_latihan_batuk_efektif" value="ya" <?= $result['ruangan_latihan_batuk_efektif'] == 'ya' ? 'checked' : ''; ?>  >
                             <span class="checkmark"></span>
                           </label>
                         </div>
@@ -2056,7 +2058,7 @@
                       <div class="col-md-3">
                         <div class="text-center" style="padding-left: 0px"><br>
                           <label class="container radio-select" style="width: 2%">
-                            <input type="radio" name="ruangan_latihan_batuk_efektif" value="tdk" <?= $result['ruangan_latihan_batuk_efektif'] == 'tdk' ? 'checked' : ''; ?> required >
+                            <input type="radio" name="ruangan_latihan_batuk_efektif" value="tdk" <?= $result['ruangan_latihan_batuk_efektif'] == 'tdk' ? 'checked' : ''; ?>  >
                             <span class="checkmark"></span>
                           </label>
                         </div>
@@ -2071,7 +2073,7 @@
                         <div class="col-md-3">
                           <div class="text-center" style="padding-left: 0px"><br>
                             <label class="container radio-select" style="width: 2%">
-                              <input type="radio" name="ok_latihan_batuk_efektif" value="ya" <?= $result['ok_latihan_batuk_efektif'] == 'ya' ? 'checked' : ''; ?> required >
+                              <input type="radio" name="ok_latihan_batuk_efektif" value="ya" <?= $result['ok_latihan_batuk_efektif'] == 'ya' ? 'checked' : ''; ?>  >
                               <span class="checkmark"></span>
                             </label>
                           </div>
@@ -2083,7 +2085,7 @@
                         <div class="col-md-3">
                           <div class="text-center" style="padding-left: 0px"><br>
                             <label class="container radio-select" style="width: 2%">
-                              <input type="radio" name="ok_latihan_batuk_efektif" value="tdk" <?= $result['ok_latihan_batuk_efektif'] == 'tdk' ? 'checked' : ''; ?> required >
+                              <input type="radio" name="ok_latihan_batuk_efektif" value="tdk" <?= $result['ok_latihan_batuk_efektif'] == 'tdk' ? 'checked' : ''; ?>  >
                               <span class="checkmark"></span>
                             </label>
                           </div>
@@ -2102,7 +2104,7 @@
                           <div class="col-md-3">
                             <div class="text-center" style="padding-left: 0px"><br>
                               <label class="container radio-select" style="width: 2%">
-                                <input type="radio" name="ruangan_kebutuhan_darah" value="ya" <?= $result['ruangan_kebutuhan_darah'] == 'ya' ? 'checked' : ''; ?> required >
+                                <input type="radio" name="ruangan_kebutuhan_darah" value="ya" <?= $result['ruangan_kebutuhan_darah'] == 'ya' ? 'checked' : ''; ?>  >
                                 <span class="checkmark"></span>
                               </label>
                             </div>
@@ -2114,7 +2116,7 @@
                           <div class="col-md-3">
                             <div class="text-center" style="padding-left: 0px"><br>
                               <label class="container radio-select" style="width: 2%">
-                                <input type="radio" name="ruangan_kebutuhan_darah" value="tdk" <?= $result['ruangan_kebutuhan_darah'] == 'tdk' ? 'checked' : ''; ?> required >
+                                <input type="radio" name="ruangan_kebutuhan_darah" value="tdk" <?= $result['ruangan_kebutuhan_darah'] == 'tdk' ? 'checked' : ''; ?>  >
                                 <span class="checkmark"></span>
                               </label>
                             </div>
@@ -2129,7 +2131,7 @@
                             <div class="col-md-3">
                               <div class="text-center" style="padding-left: 0px"><br>
                                 <label class="container radio-select" style="width: 2%">
-                                  <input type="radio" name="ok_kebutuhan_darah" value="ya" <?= $result['ok_kebutuhan_darah'] == 'ya' ? 'checked' : ''; ?> required >
+                                  <input type="radio" name="ok_kebutuhan_darah" value="ya" <?= $result['ok_kebutuhan_darah'] == 'ya' ? 'checked' : ''; ?>  >
                                   <span class="checkmark"></span>
                                 </label>
                               </div>
@@ -2141,7 +2143,7 @@
                             <div class="col-md-3">
                               <div class="text-center" style="padding-left: 0px"><br>
                                 <label class="container radio-select" style="width: 2%">
-                                  <input type="radio" name="ok_kebutuhan_darah" value="tdk" <?= $result['ok_kebutuhan_darah'] == 'tdk' ? 'checked' : ''; ?> required >
+                                  <input type="radio" name="ok_kebutuhan_darah" value="tdk" <?= $result['ok_kebutuhan_darah'] == 'tdk' ? 'checked' : ''; ?>  >
                                   <span class="checkmark"></span>
                                 </label>
                               </div>
@@ -2171,7 +2173,7 @@
                             <b>Nama Prosedur :</b>
                           </div>
                           <div class="col-md-6">
-                            <textarea type="text" name="nama_prosedur" id="nama_prosedur" class="form-control" placeholder="Nama Prosedur"  required autocomplete="off"><?= $result['nama_prosedur']; ?></textarea>
+                            <textarea type="text" name="nama_prosedur" id="nama_prosedur" class="form-control" placeholder="Nama Prosedur"   autocomplete="off"><?= $result['nama_prosedur']; ?></textarea>
                           </div>
                           <div class="col-md-4">
                           </div>
@@ -2793,7 +2795,7 @@
                                      
                                     <button type="button" id="undo_wali">Undo</button>
                                     <button type="button" id="clear_wali">Clear</button>
-                                    <input type='hidden' id='generate_wali' name="coretan_wali" value='' required ><br/>
+                                    <input type='hidden' id='generate_wali' name="coretan_wali" value='' ><br/>
                                   </div>
                                   <div class="col-md-6 text-center"> 
                                     <b>Pasien</b>
@@ -2807,13 +2809,13 @@
                                      
                                     <button type="button" id="undo_pasien">Undo</button>
                                     <button type="button" id="clear_pasien">Clear</button>
-                                    <input type='hidden' id='generate_pasien' name="coretan_pasien" value='' required ><br/>
+                                    <input type='hidden' id='generate_pasien' name="coretan_pasien" value=''  ><br/>
                                   </div>
                                   <div class="col-md-6 text-center" style="margin: 20px 0px 20px 0px;"> 
-                                    <input style="width: 80%" type="text" name="nama_wali_ttd" value="<?= $result['nama_wali_ttd']; ?>" class="form-control" placeholder="Wali"  required autocomplete="off">
+                                    <input style="width: 80%" type="text" name="nama_wali_ttd" value="<?= $result['nama_wali_ttd']; ?>" class="form-control" placeholder="Wali"   autocomplete="off">
                                   </div>
                                   <div class="col-md-6 text-center" style="margin: 20px 0px 20px 0px;"> 
-                                    <input style="width: 80%" type="text" name="nama_pasien_ttd" value="<?= $result['nama_pasien_ttd']; ?>" class="form-control" placeholder="Pasien"  required autocomplete="off">
+                                    <input style="width: 80%" type="text" name="nama_pasien_ttd" value="<?= $result['nama_pasien_ttd']; ?>" class="form-control" placeholder="Pasien"   autocomplete="off">
                                   </div>
                                   <br><br>
                                   <div class="col-md-12 text-center" style="margin: 20px 0px 20px 0px;"> 
@@ -2823,7 +2825,7 @@
                                         Bertanda tangan untuk pasien a.n
                                       </div>
                                       <div class="col-md-8">
-                                        <input type="text" name="pasien_a_n" id="pasien" value="<?= $result['pasien_a_n']; ?>" class="form-control" placeholder="Nama Pasien"  required autocomplete="off">
+                                        <input type="text" name="pasien_a_n" id="pasien" value="<?= $result['pasien_a_n']; ?>" class="form-control" placeholder="Nama Pasien"   autocomplete="off">
                                       </div>
                                     </div>
                                   </div>
@@ -2840,7 +2842,7 @@
                                      
                                     <button type="button" id="undo_saksi">Undo</button>
                                     <button type="button" id="clear_saksi">Clear</button>
-                                    <input type='hidden' id='generate_saksi' name="coretan_saksi" value='' required ><br/>
+                                    <input type='hidden' id='generate_saksi' name="coretan_saksi" value=''  ><br/>
                                   </div>
                                   <div class="col-md-6 text-center" style="margin: 20px 0px 20px 0px;"> 
                                   </div>
@@ -2856,13 +2858,13 @@
                                      
                                     <button type="button" id="undo_dokter_operator2">Undo</button>
                                     <button type="button" id="clear_dokter_operator2">Clear</button>
-                                    <input type='hidden' id='generate_dokter_operator2' name="coretan_dokter_operator2" value='' required ><br/>
+                                    <input type='hidden' id='generate_dokter_operator2' name="coretan_dokter_operator2" value=''  ><br/>
                                   </div>
                                   <div class="col-md-6 text-center" style="margin: 20px 0px 20px 0px;"> 
-                                    <input style="width: 80%" type="text" name="nama_saksi" value="<?= $result['nama_saksi']; ?>" class="form-control" placeholder="Saksi"  required autocomplete="off">
+                                    <input style="width: 80%" type="text" name="nama_saksi" value="<?= $result['nama_saksi']; ?>" class="form-control" placeholder="Saksi"   autocomplete="off">
                                   </div>
                                   <div class="col-md-6 text-center" style="margin: 20px 0px 20px 0px;"> 
-                                    <input style="width: 80%" type="text" name="nama_dokter_operator2" value="<?= $result['nama_dokter_operator2']; ?>" class="form-control" placeholder="Dokter Operator"  required autocomplete="off">
+                                    <input style="width: 80%" type="text" name="nama_dokter_operator2" value="<?= $result['nama_dokter_operator2']; ?>" class="form-control" placeholder="Dokter Operator"   autocomplete="off">
                                   </div>
                                 </div> 
                                 <br>               
@@ -2978,38 +2980,37 @@
         $('#form-container').html('');
       });
 
-        $('#form-edit-1').submit(function (e) { 
-    e.preventDefault();
-    $('.btn-kirim-<?= $this->router->fetch_class(); ?>').attr('disabled', true);
+      let cekForm =  $('#form-edit-1')
+      console.log(cekForm)
+
+      $('#form-edit-1').submit(function (e) { 
+        console.log('submit')
+        // e.preventDefault();
+        $('.btn-kirim-<?= $this->router->fetch_class(); ?>').attr('disabled', true);
+  
+        $.post('<?php echo base_url();?><?= $class_name; ?>/edit_process/', $(this).serialize()
+              ).done(function(data) {
+                var data = JSON.parse(data);
+
+                if (data.status == '200') {
+                  alert('Data berhasil diubah');
+                  location.reload();
+                } else {
+                  alert(data.message);
+                  $('.btn-kirim-<?= $this->router->fetch_class(); ?>').removeAttr('disabled');
+                  $('.btn-kirim-<?= $this->router->fetch_class(); ?>').removeAttr('disabled');
+                }
+              }).fail(function() {
+                  alert('Gagal menampilkan data')
+                  $('.btn-kirim-<?= $this->router->fetch_class(); ?>').removeAttr('disabled');
+                });
+        });
+  // update();
     
-    $.post('<?php echo base_url();?><?= $class_name; ?>/edit_process/', $(this).serialize()
-    ).done(function(data) {
-      var data = JSON.parse(data);
+    $('.btn-kirim-<?= $this->router->fetch_class(); ?>').click(() => {
+      console.log('test')
+    })
 
-      if (data.status == '200') {
-        alert('Data berhasil diubah');
-        location.reload();
-      } else {
-        alert(data.message);
-        $('.btn-kirim-<?= $this->router->fetch_class(); ?>').removeAttr('disabled');
-        $('.btn-kirim-<?= $this->router->fetch_class(); ?>').removeAttr('disabled');
-      }
-    }).fail(function() {
-      alert('Gagal menampilkan data')
-      $('.btn-kirim-<?= $this->router->fetch_class(); ?>').removeAttr('disabled');
-    });
-  });
-  update();
-
-
-$(document).ready(function(){
-  $("input[type='radio']").click(function(){
-      update();
-  });
-});
-</script>
-
-<script>
   $(document).ready(function() {
 
    var signaturePadDokter           = new SignaturePad(document.getElementById('signature-pad-dokter-operator'));
