@@ -282,18 +282,9 @@ class C_39_operasi_tanda_lokasi extends CI_Controller
             'coretan_wali'                        =>  $jdata['notes']['coretan_wali'],
             'coretan_pasien'                      =>  $jdata['notes']['coretan_pasien'],
             'coretan_saksi'                       =>  $jdata['notes']['coretan_saksi'],
-            'coretan_dokter_operator2'            =>  $jdata['notes']['coretan_dokter_operator2'],
-            'coretan_perawat_ruang_ok'            =>  $jdata['notes']['coretan_perawat_ruang_ok'],
             'coretan_perawat_ruang_rawat_inap'    =>  $jdata['notes']['coretan_perawat_ruang_rawat_inap'],
-            'coretan_dokter_operator'             =>  $jdata['notes']['coretan_dokter_operator'],
-            'pasien_a_n'                          =>  $jdata['notes']['pasien_a_n'],
-            'nama_wali_ttd'                       =>  $jdata['notes']['nama_wali_ttd'],
-            'nama_pasien_ttd'                     =>  $jdata['notes']['nama_pasien_ttd'],
             'nama_saksi'                          =>  $jdata['notes']['nama_saksi'],
-            'nama_dokter_operator2'               =>  $jdata['notes']['nama_dokter_operator2'],
-            'nama_perawat_ruang_ok'               =>  $jdata['notes']['nama_perawat_ruang_ok'],
             'nama_perawat_ruang_rawat_inap'       =>  $jdata['notes']['nama_perawat_ruang_rawat_inap'],
-            'nama_dokter_operator'                =>  $jdata['notes']['nama_dokter_operator'],
 
           ];
         };
@@ -350,6 +341,7 @@ class C_39_operasi_tanda_lokasi extends CI_Controller
       $this->load->view('contents/notes/' . $this->class  . '/add', $data);
     }
   }
+
 
   public function add_process()
   {
@@ -453,18 +445,9 @@ class C_39_operasi_tanda_lokasi extends CI_Controller
       'coretan_wali'                        =>  $this->input->post('coretan_wali'),
       'coretan_pasien'                      =>  $this->input->post('coretan_pasien'),
       'coretan_saksi'                       =>  $this->input->post('coretan_saksi'),
-      'coretan_dokter_operator2'            =>  $this->input->post('coretan_dokter_operator2'),
-      'coretan_perawat_ruang_ok'            =>  $this->input->post('coretan_perawat_ruang_ok'),
       'coretan_perawat_ruang_rawat_inap'    =>  $this->input->post('coretan_perawat_ruang_rawat_inap'),
-      'coretan_dokter_operator'             =>  $this->input->post('coretan_dokter_operator'),
-      'pasien_a_n'                          =>  $this->input->post('pasien_a_n'),
-      'nama_wali_ttd'                       =>  $this->input->post('nama_wali_ttd'),
-      'nama_pasien_ttd'                     =>  $this->input->post('nama_pasien_ttd'),
       'nama_saksi'                          =>  $this->input->post('nama_saksi'),
-      'nama_dokter_operator2'               =>  $this->input->post('nama_dokter_operator2'),
-      'nama_perawat_ruang_ok'               =>  $this->input->post('nama_perawat_ruang_ok'),
       'nama_perawat_ruang_rawat_inap'       =>  $this->input->post('nama_perawat_ruang_rawat_inap'),      
-      'nama_dokter_operator'                =>  $this->input->post('nama_dokter_operator'),
 
     ];
 
@@ -515,7 +498,8 @@ class C_39_operasi_tanda_lokasi extends CI_Controller
     // trace($result_data);
     $result = $result_data['data'][0]['json_data'];
     $detail = [
-      'approved_petugas'                    => $result['approved_petugas'],
+      'approved_petugas'                    =>  $result['approved_petugas'],
+      'approved_dokter'                     => $result['approved_dokter'],
       'tanggal'                             => $result['notes']['tanggal'],
       'jam'                                 => $result['notes']['jam'],
       'no_rm'                               => $result['notes']['no_rm'],
@@ -613,18 +597,9 @@ class C_39_operasi_tanda_lokasi extends CI_Controller
       'coretan_wali'                        =>  $result['notes']['coretan_wali'],
       'coretan_pasien'                      =>  $result['notes']['coretan_pasien'],
       'coretan_saksi'                       =>  $result['notes']['coretan_saksi'],
-      'coretan_dokter_operator2'            =>  $result['notes']['coretan_dokter_operator2'],
-      'coretan_perawat_ruang_ok'            =>  $result['notes']['coretan_perawat_ruang_ok'],
       'coretan_perawat_ruang_rawat_inap'    =>  $result['notes']['coretan_perawat_ruang_rawat_inap'],
-      'coretan_dokter_operator'             =>  $result['notes']['coretan_dokter_operator'],
-      'pasien_a_n'                          =>  $result['notes']['pasien_a_n'],
-      'nama_wali_ttd'                       =>  $result['notes']['nama_wali_ttd'],
-      'nama_pasien_ttd'                     =>  $result['notes']['nama_pasien_ttd'],
       'nama_saksi'                          =>  $result['notes']['nama_saksi'],
-      'nama_dokter_operator2'               =>  $result['notes']['nama_dokter_operator2'],
-      'nama_perawat_ruang_ok'               =>  $result['notes']['nama_perawat_ruang_ok'],
       'nama_perawat_ruang_rawat_inap'       =>  $result['notes']['nama_perawat_ruang_rawat_inap'],
-      'nama_dokter_operator'                =>  $result['notes']['nama_dokter_operator'],
     ];
     $result_data = $result_data['data'][0];
 
@@ -740,19 +715,13 @@ class C_39_operasi_tanda_lokasi extends CI_Controller
       'coretan_wali'                        =>  $this->input->post('coretan_wali'),
       'coretan_pasien'                      =>  $this->input->post('coretan_pasien'),
       'coretan_saksi'                       =>  $this->input->post('coretan_saksi'),
-      'coretan_dokter_operator2'            =>  $this->input->post('coretan_dokter_operator2'),
-      'coretan_perawat_ruang_ok'            =>  $this->input->post('coretan_perawat_ruang_ok'),
       'coretan_perawat_ruang_rawat_inap'    =>  $this->input->post('coretan_perawat_ruang_rawat_inap'),
-      'coretan_dokter_operator'             =>  $this->input->post('coretan_dokter_operator'),
-      'pasien_a_n'                          =>  $this->input->post('pasien_a_n'),
-      'nama_wali_ttd'                       =>  $this->input->post('nama_wali_ttd'),
-      'nama_pasien_ttd'                     =>  $this->input->post('nama_pasien_ttd'),
       'nama_saksi'                          =>  $this->input->post('nama_saksi'),
-      'nama_dokter_operator2'               =>  $this->input->post('nama_dokter_operator2'),
-      'nama_perawat_ruang_ok'               =>  $this->input->post('nama_perawat_ruang_ok'),
       'nama_perawat_ruang_rawat_inap'       =>  $this->input->post('nama_perawat_ruang_rawat_inap'),      
-      'nama_dokter_operator'                =>  $this->input->post('nama_dokter_operator'),
     ];
+
+    // echo json_encode($notes);
+    // exit();
 
     $params = [
       'id_notes'             => $this->input->post('id_notes'),

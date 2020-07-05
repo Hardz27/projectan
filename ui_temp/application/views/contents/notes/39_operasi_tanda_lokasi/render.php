@@ -174,7 +174,7 @@
                         <b>Tanda tangan pasien</b>
                       </div>
                       <tr>
-                        <td><?= $k['nama_pasien_ttd']; ?></td>
+                        <td><?= $k['nama_pasien']; ?></td>
                       </tr>
                       <tr>
                         <td><center><img src='<?= $k['coretan_pasien']; ?>' id='sign_prev' /></center></td>
@@ -197,7 +197,7 @@
                       </tr>
                       <tr>
                         <td>Bertanda tangan untuk pasien a.n</td>
-                        <td class="with-ellipsis"><?= $k['pasien_a_n']; ?></td>
+                        <td class="with-ellipsis"><?= $k['nama_pasien']; ?></td>
                       </tr>
                     </tbody>
                   </table>
