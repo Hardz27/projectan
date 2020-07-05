@@ -179,8 +179,10 @@ class C_38_edukasi_prosedur_risiko_tinggi extends CI_Controller
           $jdata = $o['json_data'];
 
           $notes[$n] = [
+
             'notes_id'                    => $o['id'],
-            'approved_petugas'            => $jdata['approved_petugas'],
+            'approved_petugas'                    => $jdata['approved_petugas'],
+            'approved_dokter'                     => $jdata['approved_dokter'],
             'nama_pasien'                 => $jdata['notes']['nama_pasien'],
             'no_mr'                       => $jdata['notes']['no_mr'],
             'tindakan_yang_dilakukan'     => $jdata['notes']['tindakan_yang_dilakukan'],
@@ -205,10 +207,9 @@ class C_38_edukasi_prosedur_risiko_tinggi extends CI_Controller
             'lain_lain'                   => $jdata['notes']['lain_lain'],
             'tanggal'                     => $jdata['notes']['tanggal'],
             'jam'                         => $jdata['notes']['jam'],
-            'ttd_wali'                    => $jdata['notes']['ttd_wali'],
-            'ttd_pasien'                  => $jdata['notes']['ttd_pasien'],
+            
             'ttd_untuk_pasien'            => $jdata['notes']['ttd_untuk_pasien'],
-            'saksi_pihak_rs'              => $jdata['notes']['saksi_pihak_rs'],
+            
             'pemberi_edukasi'             => $jdata['notes']['pemberi_edukasi'],
             'nama_tindakan'               => $jdata['notes']['nama_tindakan'],
             'jenis_kelamin_tindakan'      => $jdata['notes']['jenis_kelamin_tindakan'],
@@ -225,14 +226,11 @@ class C_38_edukasi_prosedur_risiko_tinggi extends CI_Controller
             'terhadap_no_mr'              => $jdata['notes']['terhadap_no_mr'],
             'tanggal1'                    => $jdata['notes']['tanggal1'],
             'jam1'                        => $jdata['notes']['jam1'],
-            'ttd_wali_pasien'             => $jdata['notes']['ttd_wali_pasien'],
-            'nama_wali_pasien'            => $jdata['notes']['nama_wali_pasien'],
-            'ttd_pasien2'                 => $jdata['notes']['ttd_pasien2'],
-            'nama_pasien2'                => $jdata['notes']['nama_pasien2'],
-            'ttd_saksi_rs'                => $jdata['notes']['ttd_saksi_rs'],
+            'coretan_pasien'              => $jdata['notes']['coretan_pasien'],
+            'coretan_wali'                => $jdata['notes']['coretan_wali'],
+            'coretan_saksi'               => $jdata['notes']['coretan_saksi'],
             'nama_saksi_rs'               => $jdata['notes']['nama_saksi_rs'],
-            'ttd_dokter'                  => $jdata['notes']['ttd_dokter'],
-            'nama_dokter'                 => $jdata['notes']['nama_dokter'],
+            
           ];
         };
 
@@ -336,14 +334,11 @@ class C_38_edukasi_prosedur_risiko_tinggi extends CI_Controller
       'terhadap_no_mr'                      =>  $this->input->post('terhadap_no_mr'),
       'tanggal1'                            =>  $this->input->post('tanggal1'),
       'jam1'                                =>  $this->input->post('jam1'),
-      'ttd_wali_pasien'                     =>  $this->input->post('ttd_wali_pasien'),
-      'nama_wali_pasien'                    =>  $this->input->post('nama_wali_pasien'),
-      'ttd_pasien2'                         =>  $this->input->post('ttd_pasien2'),
-      'nama_pasien2'                        =>  $this->input->post('nama_pasien2'),
-      'ttd_saksi_rs'                        =>  $this->input->post('ttd_saksi_rs'),
+       'coretan_pasien'                      =>  $this->input->post('coretan_pasien'),
+      'coretan_wali'                        =>  $this->input->post('coretan_wali'),
+      'coretan_saksi'                       =>  $this->input->post('coretan_saksi'),
       'nama_saksi_rs'                       =>  $this->input->post('nama_saksi_rs'),
-      'ttd_dokter'                          =>  $this->input->post('ttd_dokter'),
-      'nama_dokter'                         =>  $this->input->post('nama_dokter'),
+      
       
     ];
 
@@ -394,7 +389,8 @@ class C_38_edukasi_prosedur_risiko_tinggi extends CI_Controller
     // trace($result_data);
     $result = $result_data['data'][0]['json_data'];
     $detail = [
-            'approved_petugas'            => $result['approved_petugas'],
+            'approved_petugas'            =>  $result['approved_petugas'],
+            'approved_dokter'             => $result['approved_dokter'],
             'nama_pasien'                 => $result['notes']['nama_pasien'],
             'no_mr'                       => $result['notes']['no_mr'],
             'ttl'                         => $result['notes']['ttl'],
@@ -439,14 +435,11 @@ class C_38_edukasi_prosedur_risiko_tinggi extends CI_Controller
             'terhadap_no_mr'              => $result['notes']['terhadap_no_mr'],
             'tanggal1'                    => $result['notes']['tanggal1'],
             'jam1'                        => $result['notes']['jam1'],
-            'ttd_wali_pasien'             => $result['notes']['ttd_wali_pasien'],
-            'nama_wali_pasien'            => $result['notes']['nama_wali_pasien'],
-            'ttd_pasien2'                 => $result['notes']['ttd_pasien2'],
-            'nama_pasien2'                => $result['notes']['nama_pasien2'],
-            'ttd_saksi_rs'                => $result['notes']['ttd_saksi_rs'],
+            'coretan_pasien'                      =>  $result['notes']['coretan_pasien'],
+      'coretan_wali'                        =>  $result['notes']['coretan_wali'],
+      'coretan_saksi'                       =>  $result['notes']['coretan_saksi'],
             'nama_saksi_rs'               => $result['notes']['nama_saksi_rs'],
-            'ttd_dokter'                  => $result['notes']['ttd_dokter'],
-            'nama_dokter'                 => $result['notes']['nama_dokter'],
+            
     ];
     $result_data = $result_data['data'][0];
 
@@ -462,6 +455,7 @@ class C_38_edukasi_prosedur_risiko_tinggi extends CI_Controller
   public function edit_process()
   {
     $notes = [
+
       'nama_pasien'                         =>  $this->input->post('nama_pasien'),
       'no_mr'                               =>  $this->input->post('no_mr'),
       'ttl'                                 =>  $this->input->post('ttl'),
@@ -506,14 +500,11 @@ class C_38_edukasi_prosedur_risiko_tinggi extends CI_Controller
       'terhadap_no_mr'                      =>  $this->input->post('terhadap_no_mr'),
       'tanggal1'                            =>  $this->input->post('tanggal1'),
       'jam1'                                =>  $this->input->post('jam1'),
-      'ttd_wali_pasien'                     =>  $this->input->post('ttd_wali_pasien'),
-      'nama_wali_pasien'                    =>  $this->input->post('nama_wali_pasien'),
-      'ttd_pasien2'                         =>  $this->input->post('ttd_pasien2'),
-      'nama_pasien2'                        =>  $this->input->post('nama_pasien2'),
-      'ttd_saksi_rs'                        =>  $this->input->post('ttd_saksi_rs'),
+       'coretan_pasien'                      =>  $this->input->post('coretan_pasien'),
+      'coretan_wali'                        =>  $this->input->post('coretan_wali'),
+      'coretan_saksi'                       =>  $this->input->post('coretan_saksi'),
       'nama_saksi_rs'                       =>  $this->input->post('nama_saksi_rs'),
-      'ttd_dokter'                          =>  $this->input->post('ttd_dokter'),
-      'nama_dokter'                         =>  $this->input->post('nama_dokter'),
+      
       
     ];
 
@@ -570,8 +561,11 @@ class C_38_edukasi_prosedur_risiko_tinggi extends CI_Controller
     // $no_rm = $result_data['data'][0]['no_rm'];
     $result = $result_data['data'][0]['json_data'];
     $detail = [
-            'approved_petugas'                => $result['approved_petugas'],
             'digital_signature_approved_petugas'  => $result['digital_signature_approved_petugas'],
+      'digital_signature_approved_dokter'  => $result['digital_signature_approved_dokter'],
+      'approved_petugas'                    =>  $result['approved_petugas'],
+      'digital_signature_approved_petugas'  =>  $result['digital_signature_approved_petugas'],
+      'approved_dokter'                     => $result['approved_dokter'],
             'nama_pasien'                 => $result['notes']['nama_pasien'],
             'no_mr'                       => $result['notes']['no_mr'],
             'ttl'                         => $result['notes']['ttl'],
@@ -616,14 +610,11 @@ class C_38_edukasi_prosedur_risiko_tinggi extends CI_Controller
             'terhadap_no_mr'              => $result['notes']['terhadap_no_mr'],
             'tanggal1'                    => $result['notes']['tanggal1'],
             'jam1'                        => $result['notes']['jam1'],
-            'ttd_wali_pasien'             => $result['notes']['ttd_wali_pasien'],
-            'nama_wali_pasien'            => $result['notes']['nama_wali_pasien'],
-            'ttd_pasien2'                 => $result['notes']['ttd_pasien2'],
-            'nama_pasien2'                => $result['notes']['nama_pasien2'],
-            'ttd_saksi_rs'                => $result['notes']['ttd_saksi_rs'],
+            'coretan_pasien'                      =>  $result['notes']['coretan_pasien'],
+      'coretan_wali'                        =>  $result['notes']['coretan_wali'],
+      'coretan_saksi'                       =>  $result['notes']['coretan_saksi'],
             'nama_saksi_rs'               => $result['notes']['nama_saksi_rs'],
-            'ttd_dokter'                  => $result['notes']['ttd_dokter'],
-            'nama_dokter'                 => $result['notes']['nama_dokter'],
+            
     ];
     $result_data = $result_data['data'][0];
     $detail['id_notes'] = $result_data['id'];

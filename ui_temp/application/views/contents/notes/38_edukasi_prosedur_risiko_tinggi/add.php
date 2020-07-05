@@ -47,22 +47,63 @@
               </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-4">
               <div class="row">
                 <!-- nama -->
                 <div class="col-md-4">
-                  <b>Petugas Approve</b>
+                  <b>Nama Pemberi Edukasi</b>
                 </div>
                 <div class="col-md-8">
                   <select name="petugas_approved" class="petugas_approved" style="width: 100%" required>
                     <option value=""></option>
                     <?php foreach ($data_perawat as $k => $v) : ?>
                       <option value="<?= $v['id'] ?>"><?= $v['nama'] ?></option>
+                      <?php endforeach; ?>
+                    </select>
+                  </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="row">
+                  <!-- nama -->
+                <div class="col-md-5">
+                  <b>Nama Pelaksana Tindakan</b>
+                </div>
+                <div class="col-md-7">
+                  <select name="dokter_approved" class="dokter_approved" style="width: 100%" required>
+                    <option value=""></option>
+                    <?php foreach ($data_dokter as $dd) : ?>
+                      <option value="<?= $dd['id'] ?>"><?= $dd['nama'] ?></option>
                     <?php endforeach; ?>
                   </select>
                 </div>
               </div>
             </div>
+
+            <div class="col-md-4"> 
+              <div class="col-md-6"> 
+                <div class="row">
+                  <!-- nama -->
+                  <div class="col-md-3">
+                    <b>Tanggal</b>
+                  </div>
+                  <div class="col-md-9">
+                    <input type="text" name="tanggal" id="tanggal" class="form-control" value="<?= date('Y-m-d') ?>" required autocomplete="off">
+                  </div>
+                </div>
+                <br>
+              </div>
+              <div class="col-md-6">  
+                <div class="row">
+                  <!-- nama -->
+                  <div class="col-md-2">
+                    <b>Jam</b>
+                  </div>
+                  <div class="col-md-10">
+                    <input type="text" name="jam" id="jam" class="form-control" value="07:00" required autocomplete="off">
+                  </div>
+                </div>
+              </div>
             
           </div>
         </div>
@@ -287,23 +328,7 @@
                 </div>
               </div>
 
-                  <div class="row">
-                      <!-- nama -->
-                    <div class="col-md-3">
-                      <b>Nama Pemberi Edukasi</b>
-                    </div>
-                    <div class="col-md-3">
-                      <input type="text" class="form-control input-sm" name="usia_wali"  value="" required>
-                    </div>
-                    <div class="col-md-3">
-                      <b>Nama Pelaksana Tindakan</b>
-                    </div>
-                    <div class="col-md-3">
-                      <input type="text" class="form-control input-sm" name="usia_wali"  value="" required>
-                    </div>
-                  </div>
-                  <br>
-
+              
                   <table width="100%">
                       <thead>
                         <tr class="text-center bdu ">
@@ -434,28 +459,8 @@
 
                   <div class="row">
                       <!-- nama -->
-                    <div class="col-md-3">
-                      <b>Tanggal</b>
-                    </div>
-                    <div class="col-md-3">
-                      <input type="text" name="tanggal" id="tanggal" class="form-control" value="<?= date('Y-m-d') ?>" required autocomplete="off">
-                    </div>
-                    <div class="col-md-3">
-                      <b>Jam</b>
-                    </div>
-                    <div class="col-md-3">
-                      <input type="text" name="jam" id="jam" class="form-control" value="07:00" required autocomplete="off">
-                    </div>
-                  </div>
-                  <br>
-
-                  
-                  
-
-                  <div class="row">
-                      <!-- nama -->
                     <div class="col-xs-5">
-                      <b>Tindakan yang Dilakukan</b>
+                      <b>Jenis Tindakan</b>
                     </div>
                     <div class="col-xs-7">
                       <div class="row">
@@ -521,7 +526,7 @@
                                
                               <button type="button" id="undo4">Undo</button>
                               <button type="button" id="clear4">Clear</button>
-                              <input type='hidden' id='generate4' name="ttd_wali_pasien" value=''><br/>
+                              <input type='hidden' id='generate4' name="coretan_wali" value=''><br/>
                             </div>
                           </td>
                           <td class="text-center bd " width="50%" colspan="5">
@@ -533,7 +538,7 @@
                                
                               <button type="button" id="undo5">Undo</button>
                               <button type="button" id="clear5">Clear</button>
-                              <input type='hidden' id='generate5' name="ttd_pasien2" value=''><br/>
+                              <input type='hidden' id='generate5' name="coretan_pasien" value=''><br/>
                            </div>
                           </td>
                         </tr>
@@ -560,7 +565,7 @@
                                
                               <button type="button" id="undo6">Undo</button>
                               <button type="button" id="clear6">Clear</button>
-                              <input type='hidden' id='generate6' name="ttd_saksi_rs" value=''><br/>
+                              <input type='hidden' id='generate6' name="coretan_saksi" value=''><br/>
                             </div>
                           </td>
                           

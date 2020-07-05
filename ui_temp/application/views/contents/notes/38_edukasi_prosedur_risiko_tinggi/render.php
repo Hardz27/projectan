@@ -131,9 +131,13 @@
               <div class="col-md-4">
                 <table class="table nowrap">
                   <tbody>
-                    <tr>
-                      <td>Petugas Approve</td>
+                   <tr>
+                      <td>Nama Pemberi Edukasi</td>
                       <td class="with-ellipsis"><?= ucwords(strtolower($k['approved_petugas'])); ?></td>
+                    </tr>
+                    <tr>
+                      <td>Nama Pelaksana Tindakan</td>
+                      <td class="with-ellipsis"><?= ucwords(strtolower($k['approved_dokter'])); ?></td>
                     </tr>
                     
                     <tr>
@@ -196,7 +200,10 @@
               <div class="col-md-4">
                 <table class="table nowrap">
                   <tbody>
-                    
+                    <tr>
+                      <td>Tindakan yang Dilakukan</td>
+                      <td class="with-ellipsis"><?= $k['tindakan_yang_dilakukan'];?></td>
+                    </tr>
                     <tr>
                       <td>Diagnosis (WD dan DD)</td>
                       <td class="with-ellipsis"><?= $k['diagnosis']; ?></td>
@@ -252,23 +259,15 @@
                       <td class="with-ellipsis"><?= $k['jam']; ?></td>
                     </tr>
                     
-                    <tr>
-                      <td>Nama Pemberi Edukasi</td>
-                      <td class="with-ellipsis"><?= $k['nama_pemberi_edukasi']; ?></td>
-                    </tr>
-                    <tr>
-                      <td>Nama Pelaksana Tindakan</td>
-                      <td class="with-ellipsis"><?= $k['nama_pelaksana_tindakan']; ?></td>
-                    </tr>
 
-                     
+
                     <tr>
                       <td>Ttd Wali Pasien</td>
 
                       <td class="with-ellipsis">
                         <div id="coretan" style=''>
                   <!-- <canvas id="signature-pad" class="signature-pad" width="400px" height="400px"> -->
-                        <img src='<?= $k['ttd_wali_pasien']; ?>' id='sign_prev' />
+                        <img src='<?= $k['coretan_wali']; ?>' id='sign_prev' />
                       </div><br/>
                       </td>
                     </tr>
@@ -280,7 +279,7 @@
                       <td class="with-ellipsis">
                         <div id="coretan" style=''>
                   <!-- <canvas id="signature-pad" class="signature-pad" width="400px" height="400px"> -->
-                        <img src='<?= $k['ttd_pasien2']; ?>' id='sign_prev' />
+                        <img src='<?= $k['coretan_pasien']; ?>' id='sign_prev' />
                       </div><br/>
                       </td>
                     </tr>
@@ -291,7 +290,7 @@
                       <td class="with-ellipsis">
                         <div id="coretan" style=''>
                   <!-- <canvas id="signature-pad" class="signature-pad" width="400px" height="400px"> -->
-                        <img src='<?= $k['ttd_saksi_rs']; ?>' id='sign_prev' />
+                        <img src='<?= $k['coretan_saksi']; ?>' id='sign_prev' />
                       </div><br/>
                       </td>
                     </tr>
