@@ -772,8 +772,10 @@ class C_39_operasi_tanda_lokasi extends CI_Controller
     // $no_rm = $result_data['data'][0]['no_rm'];
     $result = $result_data['data'][0]['json_data'];
     $detail = [
-      'approved_petugas'                    => $result['approved_petugas'],
       'digital_signature_approved_petugas'  => $result['digital_signature_approved_petugas'],
+      'digital_signature_approved_dokter'  => $result['digital_signature_approved_dokter'],
+      'approved_petugas'                    =>  $result['approved_petugas'],
+      'approved_dokter'                     => $result['approved_dokter'],
       'tanggal'                             => $result['notes']['tanggal'],
       'jam'                                 => $result['notes']['jam'],
       'no_rm'                               => $result['notes']['no_rm'],
@@ -871,18 +873,9 @@ class C_39_operasi_tanda_lokasi extends CI_Controller
       'coretan_wali'                        =>  $result['notes']['coretan_wali'],
       'coretan_pasien'                      =>  $result['notes']['coretan_pasien'],
       'coretan_saksi'                       =>  $result['notes']['coretan_saksi'],
-      'coretan_dokter_operator2'            =>  $result['notes']['coretan_dokter_operator2'],
-      'coretan_perawat_ruang_ok'            =>  $result['notes']['coretan_perawat_ruang_ok'],
       'coretan_perawat_ruang_rawat_inap'    =>  $result['notes']['coretan_perawat_ruang_rawat_inap'],
-      'coretan_dokter_operator'             =>  $result['notes']['coretan_dokter_operator'],
-      'pasien_a_n'                          =>  $result['notes']['pasien_a_n'],
-      'nama_wali_ttd'                       =>  $result['notes']['nama_wali_ttd'],
-      'nama_pasien_ttd'                     =>  $result['notes']['nama_pasien_ttd'],
       'nama_saksi'                          =>  $result['notes']['nama_saksi'],
-      'nama_dokter_operator2'               =>  $result['notes']['nama_dokter_operator2'],
-      'nama_perawat_ruang_ok'               =>  $result['notes']['nama_perawat_ruang_ok'],
       'nama_perawat_ruang_rawat_inap'       =>  $result['notes']['nama_perawat_ruang_rawat_inap'],
-      'nama_dokter_operator'                =>  $result['notes']['nama_dokter_operator'],
     ];
     $result_data = $result_data['data'][0];
     $detail['id_notes'] = $result_data['id'];

@@ -3180,6 +3180,62 @@
     headBack.clear()
   })
 
+  $('#undo-pasien').click(function(e){
+    e.preventDefault()
+    let data = signaturePadPasien.toData()
+    if(data){
+      data.pop()
+      signaturePadPasien.fromData(data)
+    }
+  })
+
+  $('#clear-pasien').click(function(e){
+    e.preventDefault()
+    signaturePadPasien.clear()
+  })
+
+  $('#undo-wali').click(function(e){
+    e.preventDefault()
+    let data = signaturePadWali.toData()
+    if(data){
+      data.pop()
+      signaturePadWali.fromData(data)
+    }
+  })
+
+  $('#clear-wali').click(function(e){
+    e.preventDefault()
+    signaturePadWali.clear()
+  })
+
+  $('#undo-saksi').click(function(e){
+    e.preventDefault()
+    let data = signaturePadSaksi.toData()
+    if(data){
+      data.pop()
+      signaturePadSaksi.fromData(data)
+    }
+  })
+
+  $('#clear-saksi').click(function(e){
+    e.preventDefault()
+    signaturePadSaksi.clear()
+  })
+
+  $('#undo_perawat_ruang_rawat_inap').click(function(e){
+    e.preventDefault()
+    let data = signaturePadPerawat_Inap.toData()
+    if(data){
+      data.pop()
+      signaturePadPerawat_Inap.fromData(data)
+    }
+  })
+
+  $('#clear_perawat_ruang_rawat_inap').click(function(e){
+    e.preventDefault()
+    signaturePadPerawat_Inap.clear()
+  })
+
 })
 
 

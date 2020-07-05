@@ -205,7 +205,7 @@
                   <b>Dokter Operator</b>
                 </div>
                 <div class="col-md-8">
-                  <select name="petugas_approved" class="petugas_approved" style="width: 100%" required>
+                  <select name="dokter_approved" class="petugas_approved" style="width: 100%" required>
                     <option value=""></option>
                     <?php foreach ($data_dokter as $dd) : ?>
                       <option value="<?= $dd['id'] ?>"><?= $dd['nama'] ?></option>
