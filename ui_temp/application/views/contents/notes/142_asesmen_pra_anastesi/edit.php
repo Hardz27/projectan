@@ -64,13 +64,13 @@
               <div class="row">
                 <!-- nama -->
                 <div class="col-md-4">
-                  <b>Petugas Approve</b>
+                  <b>Dokter Approve</b>
                 </div>
                 <div class="col-md-8">
-                  <select name="petugas_approved" class="petugas_approved" style="width: 100%" required>
+                  <select name="dokter_approved" class="dokter_approved" style="width: 100%" required>
                     <option value=""></option>
-                    <?php foreach ($data_perawat as $k => $v) : ?>
-                      <option value="<?= $v['id'] ?>" <?= $v['nama'] == $result['approved_petugas'] ? 'selected' : ''; ?>><?= $v['nama'] ?></option>
+                    <?php foreach ($data_dokter as $k => $v) : ?>
+                      <option value="<?= $v['id'] ?>" <?= $v['nama'] == $result['approved_dokter'] ? 'selected' : ''; ?>><?= $v['nama'] ?></option>
                     <?php endforeach; ?>
                   </select>
                 </div>

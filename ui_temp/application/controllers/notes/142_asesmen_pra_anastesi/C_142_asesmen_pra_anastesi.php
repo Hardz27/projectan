@@ -180,7 +180,7 @@ class C_142_asesmen_pra_anastesi extends CI_Controller
 
           $notes[$n] = [
             'notes_id'                                       => $o['id'],
-            'approved_petugas'                               => $jdata['approved_petugas'],
+            'approved_dokter'                               => $jdata['approved_dokter'],
             'tanggal'                                        => $jdata['notes']['tanggal'],
             'jam'                                            => $jdata['notes']['jam'],
             'nama_pasien'                                    => $jdata['notes']['nama_pasien'],
@@ -569,7 +569,7 @@ class C_142_asesmen_pra_anastesi extends CI_Controller
     $result = json_decode($response->getbody()->getcontents(), true);
 
     echo json_encode($result);
-    echo trace($params);
+    // echo trace($params);
   }
 
   public function edit()
@@ -600,7 +600,7 @@ class C_142_asesmen_pra_anastesi extends CI_Controller
     // trace($result_data);
     $result = $result_data['data'][0]['json_data'];
     $detail = [
-      'approved_petugas'                               => $result['approved_petugas'],
+      'approved_dokter'                               => $result['approved_dokter'],
       'tanggal'                                        => $result['notes']['tanggal'],
       'jam'                                            => $result['notes']['jam'],
       'nama_pasien'                                    => $result['notes']['nama_pasien'],
@@ -981,7 +981,8 @@ class C_142_asesmen_pra_anastesi extends CI_Controller
     // $no_rm = $result_data['data'][0]['no_rm'];
     $result = $result_data['data'][0]['json_data'];
     $detail = [
-      'approved_petugas'                               => $result['approved_petugas'],
+      'approved_dokter'                               => $result['approved_dokter'],
+      'digital_signature_approved_dokter'             => $result['digital_signature_approved_dokter'],
       'tanggal'                                        => $result['notes']['tanggal'],
       'jam'                                            => $result['notes']['jam'],
       'nama_pasien'                                    => $result['notes']['nama_pasien'],

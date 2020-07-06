@@ -132,8 +132,8 @@
                   <table class="table nowrap">
                     <tbody>
                       <tr>
-                        <td>Petugas Approve</td>
-                        <td class="with-ellipsis"><?= ucwords(strtolower($k['approved_petugas'])); ?></td>
+                        <td>Dokter Approve</td>
+                        <td class="with-ellipsis"><?= ucwords(strtolower($k['approved_dokter'])); ?></td>
                       </tr>
                       <tr>
                         <td>Tanggal</td>

@@ -185,6 +185,7 @@ class C_39_operasi_tanda_lokasi extends CI_Controller
 
             'notes_id'                            => $o['id'],
             'approved_petugas'                    => $jdata['approved_petugas'],
+            'approved_dokter'                     => $jdata['approved_dokter'],
             'tanggal'                             => $jdata['notes']['tanggal'],
             'jam'                                 => $jdata['notes']['jam'],
             'no_rm'                               => $jdata['notes']['no_rm'],
@@ -516,6 +517,7 @@ class C_39_operasi_tanda_lokasi extends CI_Controller
     $result = $result_data['data'][0]['json_data'];
     $detail = [
       'approved_petugas'                    => $result['approved_petugas'],
+      'approved_dokter'                    => $result['approved_dokter'],
       'tanggal'                             => $result['notes']['tanggal'],
       'jam'                                 => $result['notes']['jam'],
       'no_rm'                               => $result['notes']['no_rm'],
@@ -804,6 +806,7 @@ class C_39_operasi_tanda_lokasi extends CI_Controller
     $result = $result_data['data'][0]['json_data'];
     $detail = [
       'approved_petugas'                    => $result['approved_petugas'],
+      'approved_dokter'                    => $result['approved_dokter'],
       'digital_signature_approved_petugas'  => $result['digital_signature_approved_petugas'],
       'tanggal'                             => $result['notes']['tanggal'],
       'jam'                                 => $result['notes']['jam'],

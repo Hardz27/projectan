@@ -181,7 +181,7 @@
               </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-3">
               <div class="row">
                 <!-- nama -->
                 <div class="col-md-4">
@@ -197,8 +197,26 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6"> 
-              <div class="col-md-6"> 
+
+            <div class="col-lg-3">
+              <div class="row">
+                <!-- nama -->
+                <div class="col-md-4">
+                  <b>Dokter Approve</b>
+                </div>
+                <div class="col-md-8">
+                  <select name="dokter_approved" class="dokter_approved" style="width: 100%" required>
+                    <option value=""></option>
+                    <?php foreach ($data_dokter as $k => $v) : ?>
+                      <option value="<?= $v['id'] ?>"><?= $v['nama'] ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-md-3">  
                 <div class="row">
                   <!-- nama -->
                   <div class="col-md-3">
@@ -210,7 +228,7 @@
                 </div>
                 <br>
               </div>
-              <div class="col-md-6">  
+              <div class="col-md-3">  
                 <div class="row">
                   <!-- nama -->
                   <div class="col-md-2">
@@ -482,8 +500,7 @@
                   <div class="col-md-12"> 
                     <div class="row">
                       <div class="col-md-6 text-center">
-                        <b>Dokter Operator</b>
-                        <!-- Signature -->
+                        <!-- <b>Dokter Operator</b>
                         <center>
                           <div class="signature">
                             <canvas id="signature-pad-dokter-operator" class="signature-pad-dokter-operator" width="200px" height="200px">
@@ -493,7 +510,7 @@
 
                           <button type="button" id="undo_dokter_operator">Undo</button>
                           <button type="button" id="clear_dokter_operator">Clear</button>
-                          <input type='hidden' id='generate_dokter_operator' name="coretan_dokter_operator" value='' required ><br/>
+                          <input type='hidden' id='generate_dokter_operator' name="coretan_dokter_operator" value='' required ><br/> -->
                         </div>
                         <div class="col-md-6 text-center"> 
                           <b>Perawat Ruang Rawat Inap</b>
@@ -510,15 +527,14 @@
                             <input type='hidden' id='generate_perawat_ruang_rawat_inap' name="coretan_perawat_ruang_rawat_inap" value='' required ><br/>
                           </div>
                           <div class="col-md-6 text-center" style="margin: 20px 0px 20px 0px;"> 
-                            <input type="text" name="nama_dokter_operator" class="form-control" placeholder="Nama Dokter Operator"  required autocomplete="off">
+                            <!-- <input type="text" name="nama_dokter_operator" class="form-control" placeholder="Nama Dokter Operator"  required autocomplete="off"> -->
                           </div>
                           <div class="col-md-6 text-center" style="margin: 20px 0px 20px 0px;"> 
                             <input type="text" name="nama_perawat_ruang_rawat_inap" class="form-control" placeholder="Nama Perawat R.Rawat Inap"  required autocomplete="off">
                           </div>
                           <br><br>
                           <div class="col-md-12 text-center"> 
-                            <b>Perawat Ruang OK</b>
-                            <!-- Signature -->
+                            <!-- <b>Perawat Ruang OK</b>
                             <center>
                               <div class="signature">
                                 <canvas id="signature-pad-perawat_ruang_ok" class="signature-pad-perawat_ruang_ok" width="200px" height="200px">
@@ -528,11 +544,11 @@
 
                               <button type="button" id="undo_perawat_ruang_ok">Undo</button>
                               <button type="button" id="clear_perawat_ruang_ok">Clear</button>
-                              <input type='hidden' id='generate_perawat_ruang_ok' name="coretan_perawat_ruang_ok" value='' required ><br/>
+                              <input type='hidden' id='generate_perawat_ruang_ok' name="coretan_perawat_ruang_ok" value='' required ><br/> -->
                             </div>
                             <div class="col-md-3"></div>
                             <div class="col-md-6 text-center" style="margin: 20px 0px 20px 0px;"> 
-                              <input type="text" name="nama_perawat_ruang_ok" class="form-control" placeholder="Perawat Ruang OK"  required autocomplete="off">
+                              <!-- <input type="text" name="nama_perawat_ruang_ok" class="form-control" placeholder="Perawat Ruang OK"  required autocomplete="off"> -->
                             </div>
                             <div class="col-md-3"></div>
                           </div> 
@@ -2568,29 +2584,10 @@
                                     <button type="button" id="undo_saksi">Undo</button>
                                     <button type="button" id="clear_saksi">Clear</button>
                                     <input type='hidden' id='generate_saksi' name="coretan_saksi" value='' required ><br/>
-                                  </div>
-                                  <div class="col-md-6 text-center" style="margin: 20px 0px 20px 0px;"> 
-                                  </div>
-                                  <div class="col-md-6 text-center"> 
-                                    <b>Dokter Operator</b>
-                                     <!-- Signature -->
-                                    <center>
-                                      <div class="signature">
-                                        <canvas id="signature-pad-dokter-operator2" class="signature-pad-dokter-operator2" width="200px" height="200px">
-                                      </div>
-                                    </center>
-                                    <br/>
-                                     
-                                    <button type="button" id="undo_dokter_operator2">Undo</button>
-                                    <button type="button" id="clear_dokter_operator2">Clear</button>
-                                    <input type='hidden' id='generate_dokter_operator2' name="coretan_dokter_operator2" value='' required ><br/>
-                                  </div>
-                                  <div class="col-md-6 text-center" style="margin: 20px 0px 20px 0px;"> 
+                                    <br><br>
                                     <input style="width: 80%" type="text" name="nama_saksi" class="form-control" placeholder="Saksi"  required autocomplete="off">
                                   </div>
-                                  <div class="col-md-6 text-center" style="margin: 20px 0px 20px 0px;"> 
-                                    <input style="width: 80%" type="text" name="nama_dokter_operator2" class="form-control" placeholder="Dokter Operator"  required autocomplete="off">
-                                  </div>
+                                  
                                 </div> 
                                 <br>               
                               </div>
