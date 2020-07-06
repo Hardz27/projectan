@@ -1059,10 +1059,10 @@
             <td class="font-size-8  border-bottom-1 border-left-1 border-right-0">
               <div class="r-bold">Tanda Tangan Dokter Operator</div>
               <center>
-                <img src="<?=$listt['notes']['digital_signature_approved_dokter']?>" alt="" width="80" height="80">
+                <img src="<?php echo $list['notes']['digital_signature_approved_dokter'];?>" alt="" width="80" height="80">
               </center>
               <div>
-                <?=$listt['notes']['approved_dokter']?>
+              <?php echo ucwords(strtolower($list['notes']['approved_dokter'])); ?>
               </div>
             </td>
             <td class="font-size-8 border-bottom-1 border-left-1 border-right-0">
@@ -1077,10 +1077,10 @@
             <td class="font-size-8 border-bottom-1 border-left-1 border-right-1">
               <div class="r-bold">Tanda Tangan Perawat Ruang OK</div>
               <center>
-                <img src="<?=$listt['notes']['digital_signature_approved_petugas']?>" alt="" width="80" height="80">
+                <img src="<?=$list['notes']['digital_signature_approved_petugas']?>" alt="" width="80" height="80">
               </center>
               <div>
-                <?=$listt['notes']['approved_petugas']?>
+                <?=$list['notes']['approved_petugas']?>
               </div>
             </td>
           </tr>
@@ -1090,6 +1090,7 @@
   </div>
 
   <div class="row" style="margin-bottom:0px;">
+  <?php $no = 1; ?>
     <div class="row-panel">
       <div class="row-heading border-blue bg-blue font-white font-size-9 r-bold">Data <?= $title; ?></div>
       <div class="row-body">
@@ -1439,7 +1440,7 @@
             <td><center><img src="<?=$list['notes']['coretan_wali']?>" alt="" width="80px" height="80px"> <div  class="font-size-8">Bertanda tangan untuk pasien a.n : <?=$list['notes']['nama_pasien']?> </div></center></td>
             <td><center><img src="<?=$list['notes']['coretan_wali']?>" alt="" width="80px" height="80px"><div  class="font-size-8"><?=$list['notes']['nama_wali']?></div></center></td>
             <td><center><img src="<?=$list['notes']['coretan_saksi']?>" alt="" width="80px" height="80px"><div  class="font-size-8"><?=$list['notes']['nama_saksi']?></div></center></td>
-            <td><center><img src="<?=$listt['notes']['digital_signature_approved_dokter']?>" alt="" width="80px" height="80px"><div  class="font-size-8"><<?php echo ucwords(strtolower($list['notes']['approved_petugas'])); ?> </div></center></td>
+            <td><center><img src="<?=$list['notes']['digital_signature_approved_dokter']?>" alt="" width="80px" height="80px"><div  class="font-size-8"><<?php echo ucwords(strtolower($list['notes']['approved_dokter'])); ?> </div></center></td>
           </tr>
         </table>
       </div>
