@@ -324,7 +324,7 @@
                   <td class="font-size-8 r-bold centerp-row">Anamnesis:</td>
                 </tr>
                 <tr>
-                  <td class="font-size-8 border-bottom-1 centerp-row">
+                  <td class="font-size-8 border-bottom-1 centerp-row" height="65px">
                     <?= $list['notes']['anamnesis']; ?>
                   </td>
                 </tr>
@@ -332,7 +332,7 @@
                   <td class="font-size-8 r-bold centerp-row">Pemeriksaan Fisik:</td>
                 </tr>
                 <tr>
-                  <td class="font-size-8 border-bottom-1 centerp-row">
+                  <td class="font-size-8 border-bottom-1 centerp-row" height="65px">
                     <?= $list['notes']['pemeriksaan_fisik']; ?>
                   </td>
                 </tr>
@@ -340,7 +340,7 @@
                   <td class="font-size-8 r-bold centerp-row">Catatan Alergi:</td>
                 </tr>
                 <tr>
-                  <td class="font-size-8 border-bottom-1 centerp-row">
+                  <td class="font-size-8 border-bottom-1 centerp-row" height="65px">
                     <?= $list['notes']['catatan_alergi']; ?>
                   </td>
                 </tr>
@@ -348,7 +348,7 @@
                   <td class="font-size-8 r-bold centerp-row">Diagnosis Praoperasi:</td>
                 </tr>
                 <tr>
-                  <td class="font-size-8 border-bottom-1 centerp-row">
+                  <td class="font-size-8 border-bottom-1 centerp-row" height="65px">
                     <?= $list['notes']['diagnosa_praoperasi']; ?>
                   </td>
                 </tr>
@@ -356,7 +356,7 @@
                   <td class="font-size-8 r-bold centerp-row">Rencana Operasi:</td>
                 </tr>
                 <tr>
-                  <td class="font-size-8 border-bottom-1 centerp-row">
+                  <td class="font-size-8 border-bottom-1 centerp-row" height="65px">
                     <?= $list['notes']['rencana_operasi']; ?>
                   </td>
                 </tr>
@@ -364,7 +364,7 @@
                   <td class="font-size-8 r-bold centerp-row">Estimasi Waktu:</td>
                 </tr>
                 <tr>
-                  <td class="font-size-8 border-bottom-1 centerp-row">
+                  <td class="font-size-8 border-bottom-1 centerp-row" height="65px">
                     <?= $list['notes']['estimasi_waktu']; ?>
                   </td>
                 </tr>
@@ -372,7 +372,7 @@
                   <td class="font-size-8 r-bold centerp-row">Pramedikasi:</td>
                 </tr>
                 <tr>
-                  <td class="font-size-8 border-bottom-1 centerp-row">
+                  <td class="font-size-8 border-bottom-0 centerp-row" height="65px"> 
                     <?= $list['notes']['premedikasi']; ?>
                   </td>
                 </tr>
