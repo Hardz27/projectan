@@ -1440,26 +1440,12 @@
             <td><center><img src="<?=$list['notes']['coretan_wali']?>" alt="" width="80px" height="80px"> <div  class="font-size-8">Bertanda tangan untuk pasien a.n : <?=$list['notes']['nama_pasien']?> </div></center></td>
             <td><center><img src="<?=$list['notes']['coretan_wali']?>" alt="" width="80px" height="80px"><div  class="font-size-8"><?=$list['notes']['nama_wali']?></div></center></td>
             <td><center><img src="<?=$list['notes']['coretan_saksi']?>" alt="" width="80px" height="80px"><div  class="font-size-8"><?=$list['notes']['nama_saksi']?></div></center></td>
-            <td><center><img src="<?=$list['notes']['digital_signature_approved_dokter']?>" alt="" width="80px" height="80px"><div  class="font-size-8"><<?php echo ucwords(strtolower($list['notes']['approved_dokter'])); ?> </div></center></td>
+            <td><center><img src="<?php echo $list['notes']['digital_signature_approved_dokter'];?>" alt="" width="80" height="80"><div  class="font-size-8"><?php echo ucwords(strtolower($list['notes']['approved_dokter'])); ?></div></center></td>
           </tr>
         </table>
       </div>
     </div>
   </div>
   
-  
-<div class="row" style="margin-bottom:0px;">
-    <?php $no = 1; ?>
-    
-   
-
-        
-
-        </div>
-      </div>
-    </div>
-
-  </div>
-
 </body>
 </html>
