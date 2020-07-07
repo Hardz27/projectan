@@ -282,7 +282,7 @@
                         </div>
                         <div class="col-md-2">
                           <br>
-                          <input type="text" name="usia_wali" id="usia_wali" value="<?=$result['usia_wali']?>" class="form-control" placeholder="Usia Wali"  required autocomplete="off">
+                          <input type="number" name="usia_wali" id="usia_wali" value="<?=$result['usia_wali']?>" class="form-control" placeholder="Usia Wali"  required autocomplete="off">
                         </div>
                         <div class="col-md-1">
                           <br>
@@ -336,7 +336,7 @@
                         </div>
                         <div class="col-md-2">
                           <br>
-                          <input type="text" name="usia_pasien" id="usia_pasien" value="<?=$result['usia_pasien']?>" class="form-control" placeholder="Usia Pasien"  required autocomplete="off">
+                          <input type="number" name="usia_pasien" id="usia_pasien" value="<?=$result['usia_pasien']?>" class="form-control" placeholder="Usia Pasien"  required autocomplete="off">
                         </div>
                         <div class="col-md-1">
                           <br>
@@ -510,6 +510,7 @@
                               <canvas id="signature-pad-perawat_ruang_rawat_inap" class="signature-pad-perawat_ruang_rawat_inap" width="200px" height="200px">
                               </div>
                             </center>
+                            *kosongkan jika tidak ada perubahan
                             <br/>
 
                             <button type="button" id="undo_perawat_ruang_rawat_inap">Undo</button>
@@ -1319,7 +1320,7 @@
                                                                   <?= ++$no ?>.Puasa Jam
                                                                 </div>
                                                                 <div class="col-md-6">                           
-                                                                  <input style="width: 100px" type="text" name="desc_puasa" value="<?= $result['desc_puasa'] ?>" <?= $result['desc_puasa'] ?> id="puasa" class="form-control" placeholder="puasa jam"  required autocomplete="off">
+                                                                  <input style="width: 100px" type="number" name="desc_puasa" value="<?= $result['desc_puasa'] ?>" <?= $result['desc_puasa'] ?> id="puasa" class="form-control" placeholder="puasa jam"  required autocomplete="off">
                                                                 </div>
                                                               </td>
                                                               <td class="bd text-left">
@@ -2178,6 +2179,7 @@
                             <div class="col-md-3">
                               <div class="row">
                                 <div class="col-md-12">G. Baru :</div>
+                                <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
                               </div>
                               <div class="row">
                                 <div class="col-md-6">Kanan</div>
@@ -2207,6 +2209,7 @@
                             <div class="col-md-3">
                               <div class="row">
                                 <div class="col-md-12">G. Baru :</div>
+                                <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
                               </div>
                               <div class="row">
                                 <div class="col-md-6">Kiri</div>
@@ -2247,6 +2250,7 @@
                             <div class="col-md-3">
                               <div class="row">
                                 <div class="col-md-12">G. Baru :</div>
+                                <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
                               </div>
                               <div class="row">
                                 <div class="col-md-6">Kanan</div>
@@ -2276,6 +2280,7 @@
                             <div class="col-md-3">
                               <div class="row">
                                 <div class="col-md-12">G. Baru :</div>
+                                <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
                               </div>
                               <div class="row">
                                 <div class="col-md-6">Kiri</div>
@@ -2313,6 +2318,7 @@
                               <div class="col-md-2">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
+                                  <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
                                   <div class="col-md-12">Kiri</div>
                                   <div class="col-md-12"><div class="signature-phkiri"><canvas id="palmar-hand-kiri" width="200px" height="300px"></div> </div>
                                   <input type="hidden" id="generate-palmar-hand-kiri" name="palmar_hand_kiri" value="<?=$result["palmar_hand_kiri"]?>">
@@ -2332,6 +2338,7 @@
                               <div class="col-md-2">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
+                                  <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
                                   <div class="col-md-12">Kanan</div>
                                   <div class="col-md-12"><div class="signature-phkanan"><canvas id="palmar-hand-kanan"  width="200px" height="300px"></div> </div>
                                   <input type="hidden" id="generate-palmar-hand-kanan" name="palmar_hand_kanan" value="<?=$result["palmar_hand_kanan"]?>">
@@ -2364,6 +2371,7 @@
                               <div class="col-md-2">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
+                                  <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
                                   <div class="col-md-12">Kiri</div>
                                   <div class="col-md-12"><div class="signature-dorkiri"><canvas id="dorsal-kiri" width="200px" height="300px"></div> </div>
                                   <input type="hidden" id="generate-dorsal-kiri" name="dorsal_kiri" value="<?=$result["dorsal_kiri"]?>">
@@ -2383,6 +2391,7 @@
                               <div class="col-md-2">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
+                                  <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
                                   <div class="col-md-12">Kanan</div>
                                   <div class="col-md-12"><div class="signature-dorkanan"><canvas id="dorsal-kanan"  width="200px" height="300px"></div> </div>
                                   <input type="hidden" id="generate-dorsal-kanan" name="dorsal_kanan" value="<?=$result["dorsal_kanan"]?>">
@@ -2416,6 +2425,7 @@
                               <div class="col-md-2">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
+                                  <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
                                   <div class="col-md-12">Kanan</div>
                                   <div class="col-md-12"><div class="signature-pkanan"><canvas id="plantar-kanan" width="200px" height="450px"></div> </div>
                                   <input type="hidden" id="generate-plantar-kanan" name="plantar_kanan" value="<?=$result["plantar_kanan"]?>">
@@ -2435,6 +2445,7 @@
                               <div class="col-md-2">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
+                                  <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
                                   <div class="col-md-12">Kiri</div>
                                   <div class="col-md-12"><div class="signature-pkiri"><canvas id="plantar-kiri"  width="200px" height="450px"></div> </div>
                                   <input type="hidden" id="generate-plantar-kiri" name="plantar_kiri" value="<?=$result["plantar_kiri"]?>">
@@ -2466,6 +2477,7 @@
                               <div class="col-md-2">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
+                                  <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
                                   <div class="col-md-12">Kiri</div>
                                   <div class="col-md-12"><div class="signature-pfkiri"><canvas id="palmar-feet-kiri" width="200px" height="450px"></div> </div>
                                   <input type="hidden" id="generate-palmar-feet-kiri" name="palmar_feet_kiri" value="<?=$result["palmar_feet_kiri"]?>">
@@ -2485,6 +2497,7 @@
                               <div class="col-md-2">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
+                                  <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
                                   <div class="col-md-12">Kanan</div>
                                   <div class="col-md-12"><div class="signature-pfkanan"><canvas id="palmar-feet-kanan"  width="200px" height="450px"></div> </div>
                                   <input type="hidden" id="generate-palmar-feet-kanan" name="palmar_feet_kanan" value="<?=$result["palmar_feet_kanan"]?>">
@@ -2515,6 +2528,7 @@
                               <div class="col-md-2">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
+                                  <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
                                   <div class="col-md-12">Kiri</div>
                                   <div class="col-md-12"><div class="signature-hkiri"><canvas id="head-kiri" width="200px" height="450px"></div> </div>
                                   <input type="hidden" id="generate-head-kiri" name="head_kiri" value="<?=$result["head_kiri"]?>">
@@ -2534,6 +2548,7 @@
                               <div class="col-md-2">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
+                                  <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
                                   <div class="col-md-12">Kanan</div>
                                   <div class="col-md-12"><div class="signature-hkanan"><canvas id="head-kanan"  width="200px" height="450px"></div> </div>
                                   <input type="hidden" id="generate-head-kanan" name="head_kanan" value="<?=$result["head_kanan"]?>">
@@ -2565,6 +2580,7 @@
                               <div class="col-md-2">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
+                                  <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
                                   <div class="col-md-6">kanan</div>
                                   <div class="col-md-6">Kiri</div>
                                   <div class="col-md-12"><div class="signature-hf"><canvas id="head-front" width="200px" height="450px"></div> </div>
@@ -2585,7 +2601,8 @@
 
                               <div class="col-md-2">
                                 <div class="row">
-                                  <div class="col-md-12">G. Ba ru:</div>
+                                  <div class="col-md-12">G. Baru:</div>
+                                  <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
                                   <div class="col-md-6">Kiri</div>    
                                   <div class="col-md-6">kanan</div>
                                   <div class="col-md-12"><div class="signature-hb"><canvas id="head-back"  width="200px" height="450px"></div> </div>
@@ -2624,6 +2641,7 @@
                                       <div class="signature">
                                         <canvas id="signature-pad-wali" class="signature-pad-wali" width="200px" height="200px">
                                       </div>
+                                      *kosongkan jika tidak ada perubahan
                                     </center>
                                     <br/>
                                      
@@ -2638,6 +2656,7 @@
                                       <div class="signature">
                                         <canvas id="signature-pad-pasien" class="signature-pad-pasien" width="200px" height="200px">
                                       </div>
+                                      *kosongkan jika tidak ada perubahan
                                     </center>
                                     <br/>
                                      
@@ -2653,6 +2672,7 @@
                                       <div class="signature">
                                         <canvas id="signature-pad-saksi" class="signature-pad-saksi" width="200px" height="200px">
                                       </div>
+                                      *kosongkan jika tidak ada perubahan
                                     </center>
                                     <br/>
                                     
