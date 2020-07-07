@@ -610,24 +610,25 @@
 
                       </tbody>
                   </table>
-
+                </div>
+                <div class="panel-footer text-right">
+                  <button class="btn btn-default btn-sm btn-batal-<?= $this->router->fetch_class(); ?>">Batal</button>
+                  <button type="submit" class="btn btn-primary btn-sm btn-kirim-<?= $this->router->fetch_class(); ?>">Simpan</button>
                 </div>
               </div>
             </div>
-            <div class="panel-footer text-right">
-              <button class="btn btn-default btn-sm btn-batal-<?= $this->router->fetch_class(); ?>">Batal</button>
-              <button type="submit" class="btn btn-primary btn-sm btn-kirim-<?= $this->router->fetch_class(); ?>">Simpan</button>
-            </div>
-          </div>
-        </div>
 
-      </div>
+            
+          </div>
+
+        
    
       </form>
 <!-- end input panel col 6 sendiri -->
 
   
   </div>
+
 </div>
 
 <script type="text/javascript">
