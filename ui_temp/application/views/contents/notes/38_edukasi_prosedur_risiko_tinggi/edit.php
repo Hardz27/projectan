@@ -533,6 +533,11 @@
                   <table width="100%">
                       <tbody>
                         <tr>
+                          <td class="text-left" width="100%">
+                             <b>Note : Kosongkan Jika Tidak Ada Perubahan</b>
+                          </td>
+                        </tr><br>
+                        <tr>
                           <td class="text-center bd " width="50%" colspan="5">
                             <b>Wali Pasien</b>
                           </td>
