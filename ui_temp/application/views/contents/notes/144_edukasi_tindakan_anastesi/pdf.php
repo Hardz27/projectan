@@ -607,7 +607,7 @@
                 </tr>
                 <tr>
                   <td width="40%" class="font-size-8 ">Tanggal lahir</td>
-                  <td class="font-size-8">: <?=$list['notes']['ttl'];?></td>
+                  <td class="font-size-8">: <?=$list['notes']['tl'];?></td>
                 </tr>
                 <tr>
                   <td width="40%" class="font-size-8 ">No. MR</td>

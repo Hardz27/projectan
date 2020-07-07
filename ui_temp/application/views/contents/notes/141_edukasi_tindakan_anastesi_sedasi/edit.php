@@ -240,7 +240,7 @@
                       <b>No Identitas</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="no_identitas" class="form-control" placeholder="no_identitas" value="<?=$result['no_identitas']?>" autocomplete="off">
+                      <input type="number" name="no_identitas" class="form-control" placeholder="no_identitas" value="<?=$result['no_identitas']?>" autocomplete="off">
                     </div>
                   </div>
                 </div>
@@ -257,7 +257,7 @@
                       <input type="text" name="tempat_lahir" id="tempat-lahir" class="form-control" placeholder="Tempat lahir"  value="<?=$result['tempat_lahir']?>" autocomplete="off">
                     </div>
                     <div class="col-md-5">
-                      <input type="text" name="ttl" id="tgl-lahir-lahir-pasien" class="form-control" placeholder="Tanggal lahir"  value="<?=$result['ttl']?>" autocomplete="off">
+                      <input type="text" name="ttl" id="tgl-lahir-pasien" class="form-control" placeholder="Tanggal lahir"  value="<?=$result['ttl']?>" autocomplete="off">
                     </div>
                   </div>
                   <br>
@@ -269,7 +269,7 @@
                       <b>Usia</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="usia_wali" id="usia_wali" class="form-control" placeholder="Usia" value="<?=$result['usia_wali']?>" autocomplete="off">
+                      <input type="number" name="usia_wali" id="usia_wali" class="form-control" placeholder="Usia" value="<?=$result['usia_wali']?>" autocomplete="off">
                     </div>
                   </div>
                   <br> 
@@ -284,7 +284,7 @@
                       <b>Usia</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="usia" id="usia" class="form-control" placeholder="Usia" value="<?=$result['usia']?>"  autocomplete="off">
+                      <input type="number" name="usia" id="usia" class="form-control" placeholder="Usia" value="<?=$result['usia']?>"  autocomplete="off">
                     </div>
                   </div>
                 </div>
@@ -421,55 +421,6 @@
               </div>
 
 
-          <div class="row">
-            <div class="col-md-12">  
-                  <div class="row">
-                    <!-- <table width="100%">
-                      <thead>
-                        <tr>
-                          <td width="100%" class="text-center bd" colspan="4"><b>Status Pernikahan</b></td>
-                        </tr>
-                        <tr class="text-center bdu ">
-                          <td width="25%" class="bd" ><b>Menikah</b></td>
-                          <td width="25%" class="bd"><b>Belum Menikah</b></td>
-                          <td width="25%" class="bd"><b>Janda</b></td>
-                          <td width="25%" class="bd"><b>Duda</b></td>
-                        </tr>
-                      </thead>
-                      <tbody>
-                       
-                        <tr>
-                          
-                          <td class="text-center bd ">
-                            <label class="container radio-select" style="width: 2%">
-                                <input type="radio" name="status_pernikahan" value="menikah" >
-                      <span class="checkmark"></span>
-                              </label>
-                          </td>
-                          <td class="text-center bd">
-                            <label class="container radio-select" style="width: 2%">
-                                <input type="radio" name="status_pernikahan" value="belum menikah" >
-                      <span class="checkmark"></span>
-                              </label>
-                          </td>
-                          <td class="text-center bd">
-                            <label class="container radio-select" style="width: 2%">
-                                  <input type="radio" name="status_pernikahan" value="janda" >
-                      <span class="checkmark"></span>
-                              </label>
-                          </td>
-                          <td class="text-center bd">
-                            <label class="container radio-select" style="width: 2%">
-                                 <input type="radio" name="status_pernikahan" value="duda" >
-                      <span class="checkmark"></span>
-                              </label>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table> -->
-              </div>
-            </div>
-              </div>
           <br><br>
           <div class="row">
               <div class="col-md-12"> 
@@ -721,6 +672,7 @@
                           <br>
                           <br>
                           <input type="hidden" name="coretan_wali" value="<?=$result['coretan_wali']?>" id="coretan_wali" >
+                          *kosongkan jika tidak ada perubahan
                         </center>
                       </div> 
                       <div class="col-md-6 text-center"> 
@@ -738,6 +690,7 @@
                           <br>
                           <br>
                           <input type="hidden" name="coretan_pasien" value="<?=$result['coretan_pasien']?>"  id="coretan_pasien" required>
+                          *kosongkan jika tidak ada perubahan
                         </center>
                       </div> 
                     </div>
@@ -757,6 +710,7 @@
                           <button type="button" id="undo-saksi">Undo</button>
                           <button type="button" id="clear-saksi">Clear</button>
                           <br>
+                          *kosongkan jika tidak ada perubahan
                           <br>
                           <input type="text" name="saksi" placeholder="Saksi Pihak RS"  value="<?=$result['saksi']?>" class="form-control">
                           <input type="hidden" name="coretan_saksi" value="<?=$result['coretan_saksi']?>"  id="coretan_saksi">

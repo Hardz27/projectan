@@ -240,7 +240,7 @@
                       <b>No Identitas</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="no_identitas" class="form-control" placeholder="no_identitas" value="<?=$result['no_identitas']?>" autocomplete="off">
+                      <input type="number" name="no_identitas" class="form-control" placeholder="no_identitas" value="<?=$result['no_identitas']?>" autocomplete="off">
                     </div>
                   </div>
                 </div>
@@ -253,8 +253,11 @@
                     <div class="col-md-3">
                       <b>Tempat. Tgl.Lahir</b>
                     </div>
-                    <div class="col-md-9">
-                      <input type="text" name="ttl" id="ttl" class="form-control" placeholder="Tempat. Tgl.Lahir"  value="<?=$result['ttl']?>" autocomplete="off">
+                    <div class="col-md-5">
+                      <input type="text" name="tempat_lahir" id="tempat-lahir" class="form-control" placeholder="Tempat Lahir"  value="<?=$result['tempat_lahir']?>" autocomplete="off">
+                    </div>
+                    <div class="col-md-4">
+                      <input type="text" name="ttl" id="tgl-lahir-pasien" class="form-control" placeholder="Tanggal.Lahir"  value="<?=$result['ttl']?>" autocomplete="off">
                     </div>
                   </div>
                   <br>
@@ -266,7 +269,7 @@
                       <b>Usia</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="usia_wali" id="usia_wali" class="form-control" placeholder="Usia" value="<?=$result['usia_wali']?>" autocomplete="off">
+                      <input type="number" name="usia_wali" id="usia_wali" class="form-control" placeholder="Usia" value="<?=$result['usia_wali']?>" autocomplete="off">
                     </div>
                   </div>
                   <br> 
@@ -281,7 +284,7 @@
                       <b>Usia</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="usia" id="usia" class="form-control" placeholder="Usia" value="<?=$result['usia']?>"  autocomplete="off">
+                      <input type="number" name="usia" id="usia" class="form-control" placeholder="Usia" value="<?=$result['usia']?>"  autocomplete="off">
                     </div>
                   </div>
                 </div>
@@ -292,7 +295,7 @@
                       <b>Tgl.Lahir</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="ttl_wali" value="<?=$result['ttl_wali']?>" id="ttl_wali" class="form-control" placeholder="Tgl.Lahir"  autocomplete="off">
+                      <input type="text" name="ttl_wali" id="ttl-wali" value="<?=$result['ttl_wali']?>" id="ttl_wali" class="form-control" placeholder="Tgl.Lahir"  autocomplete="off">
                     </div>
                   </div>
                 </div>
@@ -701,6 +704,7 @@
                           <br>
                           <br>
                           <input type="hidden" name="coretan_wali" value="<?=$result['coretan_wali']?>" id="coretan_wali" >
+                          *kosongkan jika tidak ada perubahan
                         </center>
                       </div> 
                       <div class="col-md-6 text-center"> 
@@ -718,6 +722,7 @@
                           <br>
                           <br>
                           <input type="hidden" name="coretan_pasien" value="<?=$result['coretan_pasien']?>"  id="coretan_pasien" required>
+                          *kosongkan jika tidak ada perubahan
                         </center>
                       </div> 
                     </div>
@@ -740,6 +745,7 @@
                           <br>
                           <input type="text" name="saksi" placeholder="Saksi Pihak RS"  value="<?=$result['saksi']?>" class="form-control">
                           <input type="hidden" name="coretan_saksi" value="<?=$result['coretan_saksi']?>"  id="coretan_saksi">
+                          *kosongkan jika tidak ada perubahan
                         </center>
                       </div> 
                     </div>
@@ -776,6 +782,14 @@
   $('.petugas_approved').select2({
     placeholder: "-- Pilih petugas Approve --"
   });
+
+  $('#tgl-lahir-pasien').datetimepicker({
+    format:"YYYY-MM-DD",
+  })
+
+  $('#ttl-wali').datetimepicker({
+    format:"YYYY-MM-DD",
+  })
 
     $('#jam').datetimepicker({
     format:"HH:mm",
