@@ -307,8 +307,9 @@
             <td class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['usia']; ?> &nbsp; th</td>
           </tr>
           <tr>
-            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  Tempat, Tgl.Lahir</td>
-            <td class="font-size-8 border-right-1 centerp-row" colspan="2">: <?= $list['notes']['ttl']; ?></td>
+            <td class="r-bold font-size-8 border-bottom-0 border-left-1 border-right-0 centerp-left">  Tempat</td>
+            <td class="font-size-8 border-right-0 centerp-row" >: <?= $list['notes']['tempat']; ?></td>
+             <td class="r-bold font-size-8 border-bottom-0 border-left-0 border-right-1 centerp-left"> Tgl.Lahir: <?= $list['notes']['ttl']; ?></td>
             <td class="r-bold font-size-8 border-bottom-0 border-left-0 border-right-0 centerp-left"> Hubungan</td>
             <td class="font-size-8 border-right-0 centerp-row">:<?= $list['notes']['hubungan']; ?> &nbsp;&nbsp;&nbsp;</td>
             <td class="r-bold font-size-8 border-bottom-0 border-left-0 border-right-1 centerp-left"> jenis kelamin: <?= $list['notes']['jenis_kelamin_wali']; ?></td>

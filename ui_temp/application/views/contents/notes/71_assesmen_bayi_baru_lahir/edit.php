@@ -365,7 +365,7 @@
                         <tr>
                           <td class="text-left bd">
                              <label class="col-md-12">
-                             <input type="text" name="tahun1" id="tahun1" class="form-control" placeholder="20..." value="<?= $result['tahun1'] ?>" autocomplete="off">
+                             <input type="number" name="tahun1" id="tahun1" class="form-control" placeholder="20..." value="<?= $result['tahun1'] ?>" autocomplete="off">
                              </label>
                         </td>
                         <td class="text-left bd">
@@ -413,7 +413,7 @@
                         <tr>
                           <td class="text-left bd">
                              <label class="col-md-12">
-                             <input type="text" name="tahun2" id="tahun2" class="form-control" placeholder="20..." value="<?= $result['tahun2'] ?>" autocomplete="off">
+                             <input type="number" name="tahun2" id="tahun2" class="form-control" placeholder="20..." value="<?= $result['tahun2'] ?>" autocomplete="off">
                              </label>
                         </td>
                         <td class="text-left bd">
@@ -426,7 +426,7 @@
                         <tr>
                           <td class="text-left bd">
                              <label class="col-md-12">
-                             <input type="text" name="tahun3" id="tahun3" class="form-control" placeholder="20..." value="<?= $result['tahun3'] ?>" autocomplete="off">
+                             <input type="number" name="tahun3" id="tahun3" class="form-control" placeholder="20..." value="<?= $result['tahun3'] ?>" autocomplete="off">
                              </label>
                         </td>
                         <td class="text-left bd">
@@ -439,7 +439,7 @@
                         <tr>
                           <td class="text-left bd">
                              <label class="col-md-12">
-                             <input type="text" name="tahun4" id="tahun4" class="form-control" placeholder="20..." value="<?= $result['tahun4'] ?>" autocomplete="off">
+                             <input type="number" name="tahun4" id="tahun4" class="form-control" placeholder="20..." value="<?= $result['tahun4'] ?>" autocomplete="off">
                              </label>
                         </td>
                         <td class="text-left bd">
@@ -588,7 +588,7 @@
                                         <b>Denyut Jantung Bayi</b>
                                       </div>
                                        <label class="col-md-7">
-                                       <input type="text" name="denyut_jantung_bayi" id="denyut_jantung_bayi" class="form-control" placeholder="x/menit" value="<?= $result['denyut_jantung_bayi'] ?> " autocomplete="off">
+                                       <input type="number" name="denyut_jantung_bayi" id="denyut_jantung_bayi" class="form-control" placeholder="x/menit" value="<?= $result['denyut_jantung_bayi'] ?> " autocomplete="off">
                                        </label>
                                        
                                     </div>
@@ -693,7 +693,7 @@
                               <b>Berat Badan </b>
                               </div>
                               <div class="col-md-5">
-                                    <input type="text" name="bayi_bb" id="bayi_bb" class="form-control" placeholder="gram" value="<?= $result['bayi_bb'] ?>" required autocomplete="off">
+                                    <input type="number" name="bayi_bb" id="bayi_bb" class="form-control" placeholder="gram" value="<?= $result['bayi_bb'] ?>" required autocomplete="off">
                               </div>
                              </label>
                              
@@ -707,7 +707,7 @@
                                     <b>Panjang Badan</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="bayi_panjang" class="form-control" placeholder="cm" value="<?= $result['bayi_panjang'] ?>" required autocomplete="off">
+                                    <input type="number" name="bayi_panjang" class="form-control" placeholder="cm" value="<?= $result['bayi_panjang'] ?>" required autocomplete="off">
                                   </div>
                                 </div>
                                 <br>
@@ -719,7 +719,7 @@
                                     <b>Lingkar Kepala</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="bayi_lingkar_kepala" class="form-control" placeholder="cm" value="<?= $result['bayi_lingkar_kepala'] ?>" required autocomplete="off">
+                                    <input type="number" name="bayi_lingkar_kepala" class="form-control" placeholder="cm" value="<?= $result['bayi_lingkar_kepala'] ?>" required autocomplete="off">
                                   </div>
                                 </div>
                               </div>
@@ -730,7 +730,7 @@
                                     <b>Lingkar Dada</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="bayi_lingkar_dada" class="form-control" placeholder="cm" value="<?= $result['bayi_lingkar_dada'] ?>" required autocomplete="off">
+                                    <input type="number" name="bayi_lingkar_dada" class="form-control" placeholder="cm" value="<?= $result['bayi_lingkar_dada'] ?>" required autocomplete="off">
                                   </div>
                                 </div>
                               </div>
@@ -744,7 +744,7 @@
                                     <b>Masa Gestasi</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="masa_gestasi" class="form-control" placeholder="minggu" value="<?= $result['masa_gestasi'] ?>" required autocomplete="off">
+                                    <input type="number" name="masa_gestasi" class="form-control" placeholder="minggu" value="<?= $result['masa_gestasi'] ?>" required autocomplete="off">
                                   </div>
                                 </div>
                                 <br>
@@ -864,7 +864,7 @@
                                     <b>Dari Menit Ke</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="dari_menitke_intubasi" class="form-control" placeholder="menit" value="<?= $result['dari_menitke_intubasi'] ?>" required autocomplete="off">
+                                    <input type="number" name="dari_menitke_intubasi" class="form-control" placeholder="menit" value="<?= $result['dari_menitke_intubasi'] ?>" required autocomplete="off">
                                   </div>
                                 </div>
                               </div>
@@ -875,7 +875,7 @@
                                     <b>s/d menit ke</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="sd_menitke_intubasi" class="form-control" placeholder="menit" value="<?= $result['sd_menitke_intubasi'] ?>" required autocomplete="off">
+                                    <input type="number" name="sd_menitke_intubasi" class="form-control" placeholder="menit" value="<?= $result['sd_menitke_intubasi'] ?>" required autocomplete="off">
                                   </div>
                                 </div>
                               </div>
@@ -900,7 +900,7 @@
                                     <b>Dari Menit Ke</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="dari_menitke_bagging" class="form-control" placeholder="menit" value="<?= $result['dari_menitke_bagging'] ?>" autocomplete="off">
+                                    <input type="number" name="dari_menitke_bagging" class="form-control" placeholder="menit" value="<?= $result['dari_menitke_bagging'] ?>" autocomplete="off">
                                   </div>
                                 </div>
                               </div>
@@ -911,7 +911,7 @@
                                     <b>s/d menit ke</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="sd_menitke_bagging" class="form-control" placeholder="menit" value="<?= $result['sd_menitke_bagging'] ?>" autocomplete="off">
+                                    <input type="number" name="sd_menitke_bagging" class="form-control" placeholder="menit" value="<?= $result['sd_menitke_bagging'] ?>" autocomplete="off">
                                   </div>
                                 </div>
                               </div>
@@ -936,7 +936,7 @@
                                     <b>Dari Menit Ke</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="dari_menitke_pijat_jantung" class="form-control" placeholder="menit" value="<?= $result['dari_menitke_pijat_jantung'] ?>" autocomplete="off">
+                                    <input type="number" name="dari_menitke_pijat_jantung" class="form-control" placeholder="menit" value="<?= $result['dari_menitke_pijat_jantung'] ?>" autocomplete="off">
                                   </div>
                                 </div>
                               </div>
@@ -947,7 +947,7 @@
                                     <b>s/d menit ke</b>
                                   </div>
                                   <div class="col-md-8">
-                                    <input type="text" name="sd_menitke_pijat_jantung" class="form-control" placeholder="menit" value="<?= $result['sd_menitke_pijat_jantung'] ?>" autocomplete="off">
+                                    <input type="number" name="sd_menitke_pijat_jantung" class="form-control" placeholder="menit" value="<?= $result['sd_menitke_pijat_jantung'] ?>" autocomplete="off">
                                   </div>
                                 </div>
                               </div>
@@ -1338,7 +1338,7 @@
                               
                               </div>     
                               <label class="col-md-9">
-                              <input type="text" name="nafas_pertama" class="form-control" placeholder="" value="<?= $result['nafas_pertama'] ?>" required autocomplete="off">
+                              <input type="number" name="nafas_pertama" class="form-control" placeholder="" value="<?= $result['nafas_pertama'] ?>" required autocomplete="off">
                              </label> 
                             </td>
                             
@@ -1348,7 +1348,7 @@
                               
                               </div>      
                               <label class="col-md-7">
-                              <input type="text" name="nafas_spontan" class="form-control" placeholder="menit" value="<?= $result['nafas_spontan'] ?>" required autocomplete="off">
+                              <input type="number" name="nafas_spontan" class="form-control" placeholder="menit" value="<?= $result['nafas_spontan'] ?>" required autocomplete="off">
                               </label>
                             </td>
                             <td class="text-right bd">
@@ -1357,7 +1357,7 @@
                               
                               </div>     
                               <label class="col-md-7">
-                              <input type="text" name="waktu_sd_menangis" class="form-control" placeholder="menit" value="<?= $result['waktu_sd_menangis'] ?>" required autocomplete="off">
+                              <input type="number" name="waktu_sd_menangis" class="form-control" placeholder="menit" value="<?= $result['waktu_sd_menangis'] ?>" required autocomplete="off">
                               </label> 
                             </td>
                           </tr>

@@ -159,7 +159,18 @@
                   <div class="row">
                       <!-- nama -->
                     <div class="col-md-5">
-                      <b>Tempat, Tanggal Lahir</b>
+                      <b>Tempat</b>
+                    </div>
+                    <div class="col-md-7">
+                      <input type="text" class="form-control input-sm" name="tempat"  value="<?=$result['tempat']?>"  required>
+                    </div>
+                  </div>
+                  <br>
+
+                  <div class="row">
+                      <!-- nama -->
+                    <div class="col-md-5">
+                      <b>Tanggal Lahir</b>
                     </div>
                     <div class="col-md-7">
                       <input type="text" class="form-control input-sm" name="ttl"  value="<?=$result['ttl']?>"  required>
@@ -174,7 +185,7 @@
                       <b>Usia</b>
                     </div>
                     <div class="col-md-7">
-                      <input type="text" class="form-control input-sm" name="usia"  value="<?=$result['usia']?>"  required>
+                      <input type="number" class="form-control input-sm" name="usia"  value="<?=$result['usia']?>"  required>
                     </div>
                   </div>
                   <br>
@@ -223,7 +234,7 @@
                       <b>Usia</b>
                     </div>
                     <div class="col-md-7">
-                      <input type="text" class="form-control input-sm" name="usia_wali" value="<?=$result['usia_wali']?>"  required>
+                      <input type="number" class="form-control input-sm" name="usia_wali" value="<?=$result['usia_wali']?>"  required>
                     </div>
                   </div>
                   <br>
@@ -234,7 +245,7 @@
                       <b>Tanggal Lahir</b>
                     </div>
                     <div class="col-md-7">
-                      <input type="text" class="form-control input-sm" name="tanggal_lahir_tindakan" value="<?=$result['tanggal_lahir_tindakan']?>"  required>
+                      <input type="text" class="form-control input-sm" id="tanggal_lahir_tindakan" name="tanggal_lahir_tindakan" value="<?=$result['tanggal_lahir_tindakan']?>"  required>
                     </div>
                   </div>
                   <br>
@@ -801,7 +812,7 @@
     }
   });
 
-  $('#tanggal, #ketuban_pecah_tgl, #bayi_lahir_tgl').datetimepicker({
+  $('#tanggal, #bayi_lahir_tgl,  #tanggal_lahir_tindakan, #tanggal_lahir').datetimepicker({
     format:"YYYY-MM-DD",
     showTodayButton:true,
     timeZone:'',

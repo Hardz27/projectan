@@ -148,8 +148,12 @@
                       <td>No. Mr</td>
                       <td class="with-ellipsis"><?= $k['no_mr']; ?></td>
                     </tr>
+                     <tr>
+                      <td>Tempat</td>
+                      <td class="with-ellipsis"><?= $k['tempat']; ?></td>
+                    </tr>
                     <tr>
-                      <td>Tempat, Tgl.Lahir</td>
+                      <td>Tgl.Lahir</td>
                       <td class="with-ellipsis"><?= $k['ttl']; ?></td>
                     </tr>
                     <tr>

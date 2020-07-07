@@ -146,10 +146,21 @@
                   <div class="row">
                       <!-- nama -->
                     <div class="col-md-5">
-                      <b>Tempat, Tanggal Lahir</b>
+                      <b>Tempat</b>
                     </div>
                     <div class="col-md-7">
-                      <input type="text" class="form-control input-sm" name="ttl"  value="" required>
+                      <input type="text" class="form-control input-sm" name="tempat" required>
+                    </div>
+                  </div>
+                  <br>
+
+                  <div class="row">
+                      <!-- nama -->
+                    <div class="col-md-5">
+                      <b>Tanggal Lahir</b>
+                    </div>
+                    <div class="col-md-7">
+                      <input type="text" class="form-control input-sm" id="tanggal_lahir" name="ttl" value="<?= date('Y-m-d') ?>" required>
                     </div>
                   </div>
                   <br>
@@ -161,7 +172,7 @@
                       <b>Usia</b>
                     </div>
                     <div class="col-md-7">
-                      <input type="text" class="form-control input-sm" name="usia"  value="" required>
+                      <input type="number" class="form-control input-sm" name="usia"  value="" required>
                     </div>
                   </div>
                   <br>
@@ -210,7 +221,7 @@
                       <b>Usia</b>
                     </div>
                     <div class="col-md-7">
-                      <input type="text" class="form-control input-sm" name="usia_wali"  value="" required>
+                      <input type="number" class="form-control input-sm" name="usia_wali"  value="" required>
                     </div>
                   </div>
                   <br>
@@ -221,7 +232,7 @@
                       <b>Tanggal Lahir</b>
                     </div>
                     <div class="col-md-7">
-                      <input type="text" class="form-control input-sm" name="tanggal_lahir_tindakan"  value="" required>
+                      <input type="text" class="form-control input-sm" id="tanggal_lahir_tindakan" name="tanggal_lahir_tindakan"  value="<?= date('Y-m-d') ?>" required>
                     </div>
                   </div>
                   <br>
@@ -271,7 +282,7 @@
                       <b>No. Identitas</b>
                     </div>
                     <div class="col-md-7">
-                      <input type="text" class="form-control input-sm" name="no_identitas"  value="" required>
+                      <input type="number" class="form-control input-sm" name="no_identitas"  value="" required>
                     </div>
                   </div>
 
@@ -646,7 +657,7 @@
     }
   });
 
-  $('#tanggal, #tanggal_lahir, #tanggal1').datetimepicker({
+  $('#tanggal, #tanggal_lahir,4 #tanggal1, #tanggal_lahir_tindakan').datetimepicker({
     format:"YYYY-MM-DD",
     showTodayButton:true,
     timeZone:'',
