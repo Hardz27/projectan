@@ -2301,13 +2301,13 @@
                         <br>
                         
                         <div class="row">
-                          <div class="col-md-10">
+                          <div class="col-md-12">
                             <div class="row">
                               <div class="col-md-12 text-center"><b>Palmar (anterior)</b></div>
                             </div>
 
                             <div class="row">
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                   <div class="col-md-12">H. Sebelumnya:</div>
                                   <div class="col-md-12">Kiri</div>
@@ -2315,7 +2315,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
                                   <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
@@ -2327,7 +2327,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                 <div class="col-md-12">H. Sebelumnya:</div>
                                   <div class="col-md-12">Kanan</div>
@@ -2335,7 +2335,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
                                   <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
@@ -2354,13 +2354,13 @@
                         <br>
 
                         <div class="row">
-                          <div class="col-md-10">
+                          <div class="col-md-12">
                             <div class="row">
                               <div class="col-md-12 text-center"><b>Dorsal (posterior)</b></div>
                             </div>
 
                             <div class="row">
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                   <div class="col-md-12">H. Sebelumnya:</div>
                                   <div class="col-md-12">Kiri</div>
@@ -2368,7 +2368,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
                                   <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
@@ -2380,7 +2380,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                 <div class="col-md-12">H. Sebelumnya:</div>
                                   <div class="col-md-12">Kanan</div>
@@ -2388,7 +2388,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
                                   <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
@@ -2408,13 +2408,13 @@
 
                         
                         <div class="row">
-                          <div class="col-md-10">
+                          <div class="col-md-12">
                             <div class="row">
                               <div class="col-md-12 text-center"><b>Plantar (posterior)</b></div>
                             </div>
 
                             <div class="row">
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                   <div class="col-md-12">H. Sebelumnya:</div>
                                   <div class="col-md-12">Kanan</div>
@@ -2422,7 +2422,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
                                   <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
@@ -2434,7 +2434,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                 <div class="col-md-12">H. Sebelumnya:</div>
                                   <div class="col-md-12">Kiri</div>
@@ -2442,7 +2442,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
                                   <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
@@ -2460,13 +2460,13 @@
 
 
                         <div class="row">
-                          <div class="col-md-10">
+                          <div class="col-md-12">
                             <div class="row">
                               <div class="col-md-12 text-center"><b>palmar (anterior)</b></div>
                             </div>
 
                             <div class="row">
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                   <div class="col-md-12">H. Sebelumnya:</div>
                                   <div class="col-md-12">Kiri</div>
@@ -2474,7 +2474,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
                                   <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
@@ -2486,7 +2486,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                 <div class="col-md-12">H. Sebelumnya:</div>
                                   <div class="col-md-12">Kanan</div>
@@ -2494,7 +2494,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
                                   <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
@@ -2514,10 +2514,10 @@
                         <br>
                         <br>
                         <div class="row">
-                          <div class="col-md-10">
+                          <div class="col-md-12">
 
                             <div class="row">
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                   <div class="col-md-12">H. Sebelumnya:</div>
                                   <div class="col-md-12">Kiri</div>
@@ -2525,7 +2525,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
                                   <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
@@ -2537,7 +2537,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                 <div class="col-md-12">H. Sebelumnya:</div>
                                   <div class="col-md-12">Kanan</div>
@@ -2545,7 +2545,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
                                   <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
@@ -2565,10 +2565,10 @@
                         <br>
                         <br>
                         <div class="row">
-                          <div class="col-md-10">
+                          <div class="col-md-12">
 
                             <div class="row">
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                   <div class="col-md-12">H. Sebelumnya:</div>
                                   <div class="col-md-6">kanan</div>
@@ -2577,7 +2577,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
                                   <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
@@ -2590,7 +2590,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                 <div class="col-md-12">H. Sebelumnya:</div>
                                 <div class="col-md-6">Kiri</div>
@@ -2599,7 +2599,7 @@
                                 </div>
                               </div>
 
-                              <div class="col-md-2">
+                              <div class="col-md-3">
                                 <div class="row">
                                   <div class="col-md-12">G. Baru:</div>
                                   <div class="col-md-12"> *kosongkan jika tidak ada perubahan</div>
