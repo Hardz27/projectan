@@ -239,7 +239,7 @@
                       <b>No Identitas</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="no_identitas" id="no_identitas" class="form-control" placeholder="No Identitas"  autocomplete="off">
+                      <input type="number" name="no_identitas" id="no_identitas" class="form-control" placeholder="No Identitas"  autocomplete="off">
                     </div>
                   </div>
                   <br>
@@ -253,8 +253,11 @@
                     <div class="col-md-3">
                       <b>Tempat. Tgl.Lahir</b>
                     </div>
-                    <div class="col-md-9">
-                      <input type="text" name="ttl" id="ttl" class="form-control" placeholder="Tempat. Tgl.Lahir"  autocomplete="off">
+                    <div class="col-md-4">
+                      <input type="text" name="tempat_lahir" id="ttl" class="form-control" placeholder="Tempat lahir"  autocomplete="off">
+                    </div>
+                    <div class="col-md-5">
+                      <input type="text" name="ttl" id="tgl-lahir-pasien" class="form-control" placeholder="Tanggal lahir"  autocomplete="off">
                     </div>
                   </div>
                   <br>
@@ -266,7 +269,7 @@
                       <b>Usia</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="usia_wali" id="usia_wali" class="form-control" placeholder="Usia"  autocomplete="off">
+                      <input type="number" name="usia_wali" id="usia-wali" class="form-control" placeholder="Usia"  autocomplete="off">
                     </div>
                   </div>
                 </div>
@@ -280,7 +283,7 @@
                       <b>Usia</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="usia" id="usia" class="form-control" placeholder="Usia"  autocomplete="off">
+                      <input type="number" name="usia" id="usia" class="form-control" placeholder="Usia"  autocomplete="off">
                     </div>
                   </div>
                 </div>
@@ -291,7 +294,7 @@
                       <b>Tgl.Lahir</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="ttl_wali" id="ttl_wali" class="form-control" placeholder="Tgl.Lahir"  autocomplete="off">
+                      <input type="text" name="ttl_wali" id="ttl-wali" class="form-control" placeholder="Tgl.Lahir"  autocomplete="off">
                     </div>
                   </div>
                   <br>
@@ -750,6 +753,14 @@
   $('.petugas_approved').select2({
     placeholder: "-- Pilih petugas Approve --"
   });
+
+  $('#tgl-lahir-pasien').datetimepicker({
+    format:"YYYY-MM-DD",
+  })
+
+  $('#ttl-wali').datetimepicker({
+    format:"YYYY-MM-DD",
+  })
 
   $('#jam').datetimepicker({
     format:"HH:mm",

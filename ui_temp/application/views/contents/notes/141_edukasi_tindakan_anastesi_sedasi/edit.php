@@ -253,8 +253,11 @@
                     <div class="col-md-3">
                       <b>Tempat. Tgl.Lahir</b>
                     </div>
-                    <div class="col-md-9">
-                      <input type="text" name="ttl" id="ttl" class="form-control" placeholder="Tempat. Tgl.Lahir"  value="<?=$result['ttl']?>" autocomplete="off">
+                    <div class="col-md-4">
+                      <input type="text" name="tempat_lahir" id="tempat-lahir" class="form-control" placeholder="Tempat lahir"  value="<?=$result['tempat_lahir']?>" autocomplete="off">
+                    </div>
+                    <div class="col-md-5">
+                      <input type="text" name="ttl" id="tgl-lahir-lahir-pasien" class="form-control" placeholder="Tanggal lahir"  value="<?=$result['ttl']?>" autocomplete="off">
                     </div>
                   </div>
                   <br>
@@ -292,7 +295,7 @@
                       <b>Tgl.Lahir</b>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="ttl_wali" value="<?=$result['ttl_wali']?>" id="ttl_wali" class="form-control" placeholder="Tgl.Lahir"  autocomplete="off">
+                      <input type="text" id="ttl-wali" name="ttl_wali" value="<?=$result['ttl_wali']?>" id="ttl_wali" class="form-control" placeholder="Tgl.Lahir"  autocomplete="off">
                     </div>
                   </div>
                 </div>
@@ -793,6 +796,14 @@
   $('.petugas_approved').select2({
     placeholder: "-- Pilih petugas Approve --"
   });
+
+  $('#tgl-lahir-pasien').datetimepicker({
+    format:"YYYY-MM-DD",
+  })
+
+  $('#ttl-wali').datetimepicker({
+    format:"YYYY-MM-DD",
+  })
 
     $('#jam').datetimepicker({
     format:"HH:mm",
