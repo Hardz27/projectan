@@ -295,7 +295,7 @@
                               
                               </div>    
                               <label class="col-md-7">
-                              <input type="text" name="goldar_ayah" class="form-control" placeholder="goldar bayi" value="<?= $result['goldar_ayah'] ?>" required autocomplete="off">
+                              <input type="text" name="goldar_ayah" class="form-control" placeholder="goldar ayah" value="<?= $result['goldar_ayah'] ?>" required autocomplete="off">
                               </label>  
                             </td>
                           </tr>
@@ -969,7 +969,7 @@
                                 <div class="row">
                                   <!-- nama -->
                                   <div class="col-md-12">
-                                    <textarea type="text" name="lainlain" class="form-control" placeholder="jelaskan" required autocomplete="off"><?= $result['lainlain'] ?></textarea>
+                                    <textarea type="text" name="lainlain" class="form-control" placeholder="jelaskan" autocomplete="off"><?= $result['lainlain'] ?></textarea>
                                   </div>
                                 </div>
                               </div>

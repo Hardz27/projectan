@@ -287,7 +287,7 @@
                               
                               </div>    
                               <label class="col-md-7">
-                              <input type="text" name="goldar_ayah" class="form-control" placeholder="goldar bayi" required autocomplete="off">
+                              <input type="text" name="goldar_ayah" class="form-control" placeholder="goldar ayah" required autocomplete="off">
                               </label>  
                             </td>
                           </tr>
@@ -335,7 +335,7 @@
                               
                               </div>     
                               <label class="col-md-9">
-                              <input type="text" name="telpon" class="form-control" placeholder="" required autocomplete="off">
+                              <input type="number" name="telpon" class="form-control" placeholder="" required autocomplete="off">
                              </label> 
                             </td>
                             
@@ -961,7 +961,7 @@
                                 <div class="row">
                                   <!-- nama -->
                                   <div class="col-md-12">
-                                    <textarea type="text" name="lainlain" class="form-control" placeholder="jelaskan" required autocomplete="off"></textarea>
+                                    <textarea type="text" name="lainlain" class="form-control" placeholder="jelaskan" autocomplete="off"></textarea>
                                   </div>
                                 </div>
                               </div>
